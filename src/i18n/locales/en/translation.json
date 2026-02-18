@@ -68,6 +68,7 @@
     "fifteenMin": "15 min"
   },
   "footer": {
+    "cta": "Let's Talk.",
     "tagline": "Empowering social workers by automating administrative burdens.",
     "location": "Munich \u00b7 Germany",
     "gdpr": "GDPR Compliant \u00b7 AWS eu-central-1",

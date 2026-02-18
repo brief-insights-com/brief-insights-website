@@ -25,6 +25,53 @@ import { Button } from "@/components/ui/button";
 import docWorker from "@/assets/doc-worker.jpg";
 import docStack from "@/assets/doc-stack.jpg";
 
+// ─── AnimatedWords ────────────────────────────────────────────────────────────
+const AnimatedWords = ({
+  text,
+  className,
+  delay = 0,
+  animate: useAnimateMode = false,
+}: {
+  text: string;
+  className?: string;
+  delay?: number;
+  animate?: boolean;
+}) => {
+  const words = text.split(" ");
+  return (
+    <span className={className}>
+      {words.map((word, i) => {
+        const sharedProps = {
+          initial: { opacity: 0, y: 20, x: i % 2 === 0 ? -15 : 15 },
+          transition: {
+            duration: 0.6,
+            delay: delay + i * 0.08,
+            ease: [0.16, 1, 0.3, 1],
+          },
+          className: "inline-block mr-[0.25em]",
+        };
+        if (useAnimateMode) {
+          return (
+            <motion.span key={i} {...sharedProps} animate={{ opacity: 1, y: 0, x: 0 }}>
+              {word}
+            </motion.span>
+          );
+        }
+        return (
+          <motion.span
+            key={i}
+            {...sharedProps}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            viewport={{ once: true }}
+          >
+            {word}
+          </motion.span>
+        );
+      })}
+    </span>
+  );
+};
+
 // ─── Navbar ────────────────────────────────────────────────────────────────
 const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
@@ -41,7 +88,7 @@ const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className="fixed top-0 left-0 right-0 z-40 border-b border-border/50 backdrop-blur-xl bg-background/60"
+      className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-foreground/5"
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <span className="text-sm font-semibold tracking-tight text-foreground">
@@ -108,35 +155,32 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
   return (
-    <section className="pt-32 pb-16 px-6">
+    <section className="bg-section-yellow pt-32 pb-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border text-xs text-muted-foreground mb-8">
-            <span className="h-1.5 w-1.5 rounded-full bg-glow animate-pulse" />
-            {t("hero.badge")}
-          </div>
-        </motion.div>
+          AI Document Processing · Munich, Germany
+        </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
-        >
-          {t("hero.title1")}
-          <br />
-          {t("hero.title2")}
-        </motion.h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
+          <AnimatedWords text={t("hero.title1")} className="block" delay={0.25} animate />
+          <AnimatedWords
+            text={t("hero.title2")}
+            className="block font-serif italic font-normal tracking-normal"
+            delay={0.45}
+            animate
+          />
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-10"
         >
           {t("hero.subtitle")}
         </motion.p>
@@ -144,7 +188,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
           className="flex items-center justify-center gap-4"
         >
           <button
@@ -156,7 +200,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           </button>
           <button
             onClick={() => document.getElementById("before-after")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-2.5"
+            className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors px-6 py-2.5"
           >
             {t("hero.secondary")}
           </button>
@@ -178,16 +222,16 @@ const StatsBar = () => {
   ];
 
   return (
-    <section className="px-6 pb-16">
+    <section className="bg-section-yellow px-6 pb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-border/40 rounded-xl overflow-hidden border border-border/40"
+        className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/10 rounded-xl overflow-hidden border border-foreground/10"
       >
         {stats.map((s, i) => (
-          <div key={i} className="bg-surface-1 px-8 py-7 flex flex-col gap-1">
+          <div key={i} className="bg-background/80 px-8 py-7 flex flex-col gap-1">
             <span className="text-3xl font-bold text-foreground tracking-tight">{s.value}</span>
             <span className="text-sm text-muted-foreground">{s.label}</span>
           </div>
@@ -206,7 +250,7 @@ const ProblemVisual = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
 
   return (
-    <section id="problem" ref={ref} className="px-6 pb-24">
+    <section id="problem" ref={ref} className="bg-background px-6 py-24">
       <div className="max-w-6xl mx-auto">
         {/* Hero image — parallax */}
         <motion.div
@@ -304,27 +348,20 @@ const Features = () => {
   ];
 
   return (
-    <section id="product" className="px-6 pb-24">
-      <div className="max-w-6xl mx-auto mb-10">
+    <section id="product" className="bg-section-lavender px-6 py-24">
+      <div className="max-w-6xl mx-auto mb-12">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3"
+          className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4"
         >
           {t("features.label")}
         </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold tracking-tight text-foreground"
-        >
-          {t("features.title1")}
-          <br />
-          <span className="text-muted-foreground">{t("features.title2")}</span>
-        </motion.h2>
+        <h2 className="font-serif italic text-5xl md:text-6xl text-foreground leading-tight">
+          <AnimatedWords text={t("features.title1")} className="block" delay={0.1} />
+          <AnimatedWords text={t("features.title2")} className="block text-foreground/50" delay={0.3} />
+        </h2>
       </div>
 
       <BentoGrid>
@@ -333,6 +370,7 @@ const Features = () => {
           description={t("features.extractionDesc")}
           icon={ScanText}
           colSpan={2}
+          className="bento-card-frosted"
         >
           <div className="h-32 rounded-lg bg-surface-3/50 border border-border/50 p-4 font-mono text-xs text-muted-foreground space-y-2 overflow-hidden">
             {extractionRows.map((row, i) => (
@@ -356,12 +394,14 @@ const Features = () => {
           title={t("features.gdpr")}
           description={t("features.gdprDesc")}
           icon={ShieldCheck}
+          className="bento-card-frosted"
         />
 
         <BentoCard
           title={t("features.urgency")}
           description={t("features.urgencyDesc")}
           icon={FileWarning}
+          className="bento-card-frosted"
         />
 
         <BentoCard
@@ -369,6 +409,7 @@ const Features = () => {
           description={t("features.caseEngineDesc")}
           icon={Workflow}
           colSpan={2}
+          className="bento-card-frosted"
         >
           <div className="h-20 rounded-lg bg-surface-3/50 border border-border/50 flex items-center px-4 gap-3 flex-wrap">
             {caseDocuments.map((item) => (
@@ -388,12 +429,14 @@ const Features = () => {
           title={t("features.faster")}
           description={t("features.fasterDesc")}
           icon={Zap}
+          className="bento-card-frosted"
         />
 
         <BentoCard
           title={t("features.vivendi")}
           description={t("features.vivendiDesc")}
           icon={Plug}
+          className="bento-card-frosted"
         />
       </BentoGrid>
     </section>
@@ -421,7 +464,7 @@ const BeforeAfter = () => {
   ];
 
   return (
-    <section id="before-after" className="px-6 pb-24">
+    <section id="before-after" className="bg-section-lavender px-6 pb-24">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -429,11 +472,11 @@ const BeforeAfter = () => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
             {t("beforeAfter.label")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            {t("beforeAfter.title")}
+          <h2 className="font-serif italic text-4xl md:text-5xl text-foreground leading-tight">
+            <AnimatedWords text={t("beforeAfter.title")} delay={0.1} />
           </h2>
         </motion.div>
 
@@ -443,7 +486,7 @@ const BeforeAfter = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bento-card rounded-xl p-6"
+            className="bento-card bento-card-frosted rounded-xl p-6"
           >
             <div className="flex items-center gap-2 mb-5">
               <span className="h-2 w-2 rounded-full bg-destructive" />
@@ -474,7 +517,7 @@ const BeforeAfter = () => {
             transition={{ delay: 0.3 }}
             className="flex items-center justify-center pt-14"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-3 border border-border/50">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-background/60 border border-foreground/10">
               <MoveRight className="h-4 w-4 text-foreground" />
             </div>
           </motion.div>
@@ -485,7 +528,7 @@ const BeforeAfter = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="bento-card rounded-xl p-6 border-status-online/20"
+            className="bento-card bento-card-frosted rounded-xl p-6 border-status-online/20"
           >
             <div className="flex items-center gap-2 mb-5">
               <span className="h-2 w-2 rounded-full bg-status-online animate-pulse" />
@@ -515,7 +558,7 @@ const BeforeAfter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-6 bento-card rounded-xl p-6"
+          className="mt-6 bento-card bento-card-frosted rounded-xl p-6"
         >
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs text-muted-foreground font-mono">{t("beforeAfter.timePerCase")}</span>
@@ -570,7 +613,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   ];
 
   return (
-    <section id="about" className="px-6 pb-24">
+    <section id="about" className="bg-section-yellow px-6 py-24">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -578,11 +621,11 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
             {t("about.label")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground max-w-2xl">
-            {t("about.title")}
+          <h2 className="font-serif italic text-4xl md:text-5xl text-foreground leading-tight">
+            <AnimatedWords text={t("about.title")} delay={0.1} />
           </h2>
         </motion.div>
 
@@ -591,7 +634,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bento-card rounded-xl p-8 flex flex-col gap-4"
+            className="bento-card bento-card-frosted rounded-xl p-8 flex flex-col gap-4"
           >
             <p className="text-sm text-muted-foreground leading-relaxed">{t("about.mission")}</p>
             <p className="text-sm text-muted-foreground leading-relaxed">{t("about.team")}</p>
@@ -602,13 +645,13 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bento-card rounded-xl p-8 flex flex-col justify-between gap-6"
+            className="bento-card bento-card-frosted rounded-xl p-8 flex flex-col justify-between gap-6"
           >
             <div className="space-y-4">
               {stats.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center justify-between border-b border-border/40 pb-3 last:border-0 last:pb-0"
+                  className="flex items-center justify-between border-b border-foreground/10 pb-3 last:border-0 last:pb-0"
                 >
                   <span className="text-sm text-muted-foreground">{item.label}</span>
                   <span className="text-sm font-semibold text-foreground">{item.value}</span>
@@ -625,7 +668,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
               </button>
               <a
                 href={`mailto:${t("about.contactEmail")}`}
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground border border-border/60 px-5 py-2 rounded-lg hover:text-foreground hover:border-border transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-foreground/60 border border-foreground/20 px-5 py-2 rounded-lg hover:text-foreground hover:border-foreground/40 transition-colors"
               >
                 <Mail className="h-4 w-4" />
                 {t("about.contactEmail")}
@@ -643,21 +686,34 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-t border-border/50 px-6 py-10">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
+    <footer className="bg-section-yellow px-6 pt-20 pb-16">
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14"
+        >
+          <h2 className="font-serif italic text-6xl md:text-8xl text-foreground leading-none mb-6">
+            <AnimatedWords text={t("footer.cta")} delay={0} />
+          </h2>
+          <a
+            href="mailto:hello@briefinsights.de"
+            className="text-lg text-foreground/60 hover:text-foreground transition-colors underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/60"
+          >
+            hello@briefinsights.de
+          </a>
+        </motion.div>
+
+        <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-foreground/50">
           <span className="text-sm font-semibold tracking-tight text-foreground">
-            Brief<span className="text-muted-foreground">Insights</span>
+            Brief<span className="text-foreground/50">Insights</span>
           </span>
-          <p className="text-xs text-muted-foreground mt-1">
-            {t("footer.tagline")}
-          </p>
-          <p className="text-xs text-muted-foreground mt-1">{t("footer.location")}</p>
-        </div>
-        <div className="flex flex-col gap-1 text-xs text-muted-foreground text-right">
-          <span>{t("footer.gdpr")}</span>
-          <span>{t("footer.zeroData")}</span>
-          <span className="mt-2">{t("footer.copyright")}</span>
+          <div className="flex flex-col items-center gap-1">
+            <span>{t("footer.gdpr")}</span>
+            <span>{t("footer.zeroData")}</span>
+          </div>
+          <span>{t("footer.copyright")}</span>
         </div>
       </div>
     </footer>

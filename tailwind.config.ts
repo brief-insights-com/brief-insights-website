@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +62,10 @@ export default {
         },
         status: {
           online: "hsl(var(--status-online))",
+        },
+        section: {
+          yellow: "hsl(var(--section-yellow))",
+          lavender: "hsl(var(--section-lavender))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

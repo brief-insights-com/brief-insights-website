@@ -68,6 +68,7 @@
     "fifteenMin": "15 Min."
   },
   "footer": {
+    "cta": "Kontakt aufnehmen.",
     "tagline": "Sozialarbeiter entlasten durch Automatisierung administrativer Aufgaben.",
     "location": "M\u00fcnchen \u00b7 Deutschland",
     "gdpr": "DSGVO-konform \u00b7 AWS eu-central-1",

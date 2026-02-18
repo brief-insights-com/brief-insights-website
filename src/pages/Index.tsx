@@ -27,6 +27,7 @@ import paperworkBurden from "@/assets/Gemini_Generated_Paperwork_Burden.png";
 import manualProcess from "@/assets/Gemini_Generated_Manual_Process.png";
 import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
 import logoImg from "@/assets/Brief_Insights_name_color.png";
+import heroVideo from "@/assets/Video_Generation_for_Counselor_Paperwork.mp4";
 
 // ─── AnimatedWords ────────────────────────────────────────────────────────────
 const AnimatedWords = ({
@@ -162,22 +163,46 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-section-orange pt-32 pb-16 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Full-bleed background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+
+      {/* Cinematic dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Subtle vignette — darkens edges for focus */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55)_100%)]" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-14">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-8"
+          className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-8"
         >
           AI Document Processing · Munich, Germany
         </motion.p>
 
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
-          <AnimatedWords text={t("hero.title1")} className="block" delay={0.25} animate />
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+          <AnimatedWords
+            text={t("hero.title1")}
+            className="block text-white"
+            delay={0.25}
+            animate
+          />
           <AnimatedWords
             text={t("hero.title2")}
-            className="block font-serif italic font-normal tracking-normal"
+            className="block font-serif italic font-normal tracking-normal text-primary"
             delay={0.45}
             animate
           />
@@ -187,7 +212,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10"
         >
           {t("hero.subtitle")}
         </motion.p>
@@ -200,19 +225,34 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
         >
           <button
             onClick={onRequestDemo}
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/40"
           >
             {t("hero.cta")}
             <ArrowRight className="h-4 w-4" />
           </button>
           <button
-            onClick={() => document.getElementById("before-after")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors px-6 py-2.5"
+            onClick={() => document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-sm font-medium text-white/60 hover:text-white transition-colors px-6 py-2.5 border border-white/20 rounded-lg hover:border-white/40"
           >
             {t("hero.secondary")}
           </button>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-xs text-white/40 uppercase tracking-widest">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"
+        />
+      </motion.div>
     </section>
   );
 };

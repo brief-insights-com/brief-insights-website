@@ -26,6 +26,7 @@ import overwork from "@/assets/Gemini_Generated_Overwork.png";
 import paperworkBurden from "@/assets/Gemini_Generated_Paperwork_Burden.png";
 import manualProcess from "@/assets/Gemini_Generated_Manual_Process.png";
 import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
+import logoImg from "@/assets/Brief_Insights_name_color.png";
 
 // ─── AnimatedWords ────────────────────────────────────────────────────────────
 const AnimatedWords = ({
@@ -93,9 +94,13 @@ const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
       className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm border-b border-foreground/5"
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <span className="text-sm font-semibold tracking-tight text-foreground">
-          Brief<span className="text-primary">Insights</span>
-        </span>
+        <a href="#" className="flex items-center shrink-0">
+          <img
+            src={logoImg}
+            alt="BriefInsights"
+            className="h-8 w-auto object-contain dark:brightness-[1.15]"
+          />
+        </a>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">

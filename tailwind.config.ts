@@ -64,8 +64,8 @@ export default {
           online: "hsl(var(--status-online))",
         },
         section: {
-          yellow: "hsl(var(--section-yellow))",
-          lavender: "hsl(var(--section-lavender))",
+          orange: "hsl(var(--section-orange))",
+          blue: "hsl(var(--section-blue))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

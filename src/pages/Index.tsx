@@ -22,8 +22,10 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import DemoModal from "@/components/DemoModal";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import docWorker from "@/assets/doc-worker.jpg";
-import docStack from "@/assets/doc-stack.jpg";
+import overwork from "@/assets/Gemini_Generated_Overwork.png";
+import paperworkBurden from "@/assets/Gemini_Generated_Paperwork_Burden.png";
+import manualProcess from "@/assets/Gemini_Generated_Manual_Process.png";
+import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
 
 // ─── AnimatedWords ────────────────────────────────────────────────────────────
 const AnimatedWords = ({
@@ -92,7 +94,7 @@ const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <span className="text-sm font-semibold tracking-tight text-foreground">
-          Brief<span className="text-muted-foreground">Insights</span>
+          Brief<span className="text-primary">Insights</span>
         </span>
 
         {/* Desktop nav links */}
@@ -155,7 +157,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-section-yellow pt-32 pb-16 px-6">
+    <section className="bg-section-orange pt-32 pb-16 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -193,7 +195,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
         >
           <button
             onClick={onRequestDemo}
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
           >
             {t("hero.cta")}
             <ArrowRight className="h-4 w-4" />
@@ -222,7 +224,7 @@ const StatsBar = () => {
   ];
 
   return (
-    <section className="bg-section-yellow px-6 pb-16">
+    <section className="bg-section-orange px-6 pb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -232,7 +234,7 @@ const StatsBar = () => {
       >
         {stats.map((s, i) => (
           <div key={i} className="bg-background/80 px-8 py-7 flex flex-col gap-1">
-            <span className="text-3xl font-bold text-foreground tracking-tight">{s.value}</span>
+            <span className="text-3xl font-bold text-primary tracking-tight">{s.value}</span>
             <span className="text-sm text-muted-foreground">{s.label}</span>
           </div>
         ))}
@@ -252,15 +254,15 @@ const ProblemVisual = () => {
   return (
     <section id="problem" ref={ref} className="bg-background px-6 py-24">
       <div className="max-w-6xl mx-auto">
-        {/* Hero image — parallax */}
+        {/* Main parallax image — the emotional peak: exhausted counselor working late */}
         <motion.div
           style={{ scale }}
           className="relative rounded-2xl overflow-hidden border border-border/40 mb-6"
         >
           <motion.img
-            style={{ y, height: "480px", objectPosition: "center top" }}
-            src={docWorker}
-            alt="Debt counselor overwhelmed by paper documents"
+            style={{ y, height: "480px", objectPosition: "center 30%" }}
+            src={overwork}
+            alt="Debt counselor exhausted, asleep on stacks of paper late at night"
             className="w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
@@ -288,35 +290,46 @@ const ProblemVisual = () => {
 
         {/* Two-column caption row */}
         <div className="grid md:grid-cols-2 gap-4">
+          {/* Left card — manual review image: close-up of magnifying glass on documents */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bento-card rounded-xl p-6 flex gap-4 items-start"
+            className="relative rounded-xl overflow-hidden border border-border/40"
+            style={{ minHeight: "160px" }}
           >
-            <Clock className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
-            <div>
-              <h4 className="text-sm font-semibold text-foreground mb-1">{t("problem.hoursTitle")}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {t("problem.hoursDesc")}
-              </p>
+            <img
+              src={manualProcess}
+              alt="Close-up of manual document review with magnifying glass"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/40" />
+            <div className="relative z-10 p-6 flex gap-4 items-start">
+              <Clock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <h4 className="text-sm font-semibold text-foreground mb-1">{t("problem.hoursTitle")}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t("problem.hoursDesc")}
+                </p>
+              </div>
             </div>
           </motion.div>
 
+          {/* Right card — paperwork burden: stressed counselor with stacks of binders */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="relative rounded-xl overflow-hidden border border-border/40"
-            style={{ minHeight: "140px" }}
+            style={{ minHeight: "160px" }}
           >
             <img
-              src={docStack}
-              alt="Stack of German debt collection letters and invoices"
-              className="absolute inset-0 w-full h-full object-cover opacity-60"
+              src={paperworkBurden}
+              alt="Counselor overwhelmed by stacks of binders and paper files"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/40" />
             <div className="relative z-10 p-6">
               <h4 className="text-sm font-semibold text-foreground mb-1">{t("problem.debtTitle")}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -348,7 +361,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="product" className="bg-section-lavender px-6 py-24">
+    <section id="product" className="bg-section-blue px-6 py-24">
       <div className="max-w-6xl mx-auto mb-12">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -417,7 +430,7 @@ const Features = () => {
                 key={item.label}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-2 border border-border/50 text-xs text-muted-foreground"
               >
-                <span className={`h-1.5 w-1.5 rounded-full ${item.linked ? "bg-status-online" : "bg-glow"}`} />
+                <span className={`h-1.5 w-1.5 rounded-full ${item.linked ? "bg-status-online" : "bg-primary"}`} />
                 {item.label}
               </div>
             ))}
@@ -464,7 +477,7 @@ const BeforeAfter = () => {
   ];
 
   return (
-    <section id="before-after" className="bg-section-lavender px-6 pb-24">
+    <section id="before-after" className="bg-section-blue px-6 pb-24">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -528,7 +541,7 @@ const BeforeAfter = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="bento-card bento-card-frosted rounded-xl p-6 border-status-online/20"
+            className="bento-card bento-card-frosted rounded-xl p-6"
           >
             <div className="flex items-center gap-2 mb-5">
               <span className="h-2 w-2 rounded-full bg-status-online animate-pulse" />
@@ -613,7 +626,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   ];
 
   return (
-    <section id="about" className="bg-section-yellow px-6 py-24">
+    <section id="about" className="bg-section-orange px-6 py-24">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -630,16 +643,28 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          {/* Left card — Digital Solution image header + mission text */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bento-card bento-card-frosted rounded-xl p-8 flex flex-col gap-4"
+            className="bento-card bento-card-frosted rounded-xl overflow-hidden flex flex-col"
           >
-            <p className="text-sm text-muted-foreground leading-relaxed">{t("about.mission")}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">{t("about.team")}</p>
+            <div className="relative h-52 overflow-hidden">
+              <img
+                src={digitalSolution}
+                alt="Counselor smiling, efficiently using BriefXtract on a tablet"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </div>
+            <div className="p-8 flex flex-col gap-4">
+              <p className="text-sm text-muted-foreground leading-relaxed">{t("about.mission")}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t("about.team")}</p>
+            </div>
           </motion.div>
 
+          {/* Right card — stats + contact */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -661,7 +686,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={onRequestDemo}
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-5 py-2 rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-5 py-2 rounded-lg hover:opacity-90 transition-opacity shadow-md shadow-primary/25"
               >
                 {t("about.contact")}
                 <ArrowRight className="h-4 w-4" />
@@ -686,7 +711,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-section-yellow px-6 pt-20 pb-16">
+    <footer className="bg-section-orange px-6 pt-20 pb-16">
       <div className="max-w-6xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -699,7 +724,7 @@ const Footer = () => {
           </h2>
           <a
             href="mailto:hello@briefinsights.de"
-            className="text-lg text-foreground/60 hover:text-foreground transition-colors underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/60"
+            className="text-lg text-foreground/60 hover:text-primary transition-colors underline underline-offset-4 decoration-foreground/20 hover:decoration-primary/60"
           >
             hello@briefinsights.de
           </a>
@@ -707,7 +732,7 @@ const Footer = () => {
 
         <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-foreground/50">
           <span className="text-sm font-semibold tracking-tight text-foreground">
-            Brief<span className="text-foreground/50">Insights</span>
+            Brief<span className="text-primary">Insights</span>
           </span>
           <div className="flex flex-col items-center gap-1">
             <span>{t("footer.gdpr")}</span>

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { BentoGrid } from "@/components/BentoGrid";
 import { BentoCard } from "@/components/BentoCard";
 import {
@@ -6,15 +7,15 @@ import {
   ShieldCheck,
   Zap,
   Workflow,
-  BarChart3,
-  ArrowRight,
-  CheckCircle2,
-  Clock,
-  Users,
-  Building2,
   FileWarning,
   Plug,
+  ArrowRight,
+  Clock,
+  CheckCheck,
+  MoveRight,
 } from "lucide-react";
+import docWorker from "@/assets/doc-worker.jpg";
+import docStack from "@/assets/doc-stack.jpg";
 
 // ─── Navbar ────────────────────────────────────────────────────────────────
 const Navbar = () => (
@@ -29,9 +30,9 @@ const Navbar = () => (
         Brief<span className="text-muted-foreground">Insights</span>
       </span>
       <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <a href="#problem" className="hover:text-foreground transition-colors">Problem</a>
         <a href="#product" className="hover:text-foreground transition-colors">Product</a>
-        <a href="#market" className="hover:text-foreground transition-colors">Market</a>
-        <a href="#roadmap" className="hover:text-foreground transition-colors">Roadmap</a>
+        <a href="#before-after" className="hover:text-foreground transition-colors">Results</a>
         <a href="#about" className="hover:text-foreground transition-colors">About</a>
       </div>
       <button className="text-sm font-medium text-primary-foreground bg-primary px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity">
@@ -122,6 +123,98 @@ const StatsBar = () => (
   </section>
 );
 
+// ─── Problem Visual ─────────────────────────────────────────────────────────
+const ProblemVisual = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
+
+  return (
+    <section id="problem" ref={ref} className="px-6 pb-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Hero image — parallax */}
+        <motion.div
+          style={{ scale }}
+          className="relative rounded-2xl overflow-hidden border border-border/40 mb-6"
+        >
+          <motion.img
+            style={{ y, height: "480px", objectPosition: "center top" }}
+            src={docWorker}
+            alt="Debt counselor overwhelmed by paper documents"
+            className="w-full object-cover"
+          />
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+
+          {/* Text overlaid on image */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3"
+            >
+              The Problem
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-bold tracking-tight text-foreground max-w-2xl leading-tight"
+            >
+              Every client arrives with a box of chaos.
+            </motion.h2>
+          </div>
+        </motion.div>
+
+        {/* Two-column caption row */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bento-card rounded-xl p-6 flex gap-4 items-start"
+          >
+            <Clock className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-1">1–8 hours per client</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Debt counselors in Germany manually sort and transcribe chaotic paper mail —
+                letters, court orders, invoices — before any actual counseling can begin.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative rounded-xl overflow-hidden border border-border/40"
+            style={{ minHeight: "140px" }}
+          >
+            <img
+              src={docStack}
+              alt="Stack of German debt collection letters and invoices"
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
+            <div className="relative z-10 p-6">
+              <h4 className="text-sm font-semibold text-foreground mb-1">9% of Germany in debt</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                1,400 counseling centers, 4,000+ counselors — all overwhelmed by the
+                sheer volume of unsorted paper correspondence from creditors.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Features ───────────────────────────────────────────────────────────────
 const Features = () => (
   <section id="product" className="px-6 pb-24">
@@ -178,21 +271,18 @@ const Features = () => (
         </div>
       </BentoCard>
 
-      {/* GDPR Compliance — 1 col */}
       <BentoCard
         title="Zero Retention GDPR"
         description="Client data never trains AI models. Hosted on AWS Frankfurt (eu-central-1) with church data protection law compliance built in."
         icon={ShieldCheck}
       />
 
-      {/* Priority Alerts — 1 col */}
       <BentoCard
         title="Urgency Flagging"
         description="Eviction notices, court deadlines, and enforcement orders are automatically detected and surfaced with visual priority alerts."
         icon={FileWarning}
       />
 
-      {/* Master Debt Case — 2 col */}
       <BentoCard
         title="Master Debt Case Engine"
         description="Automatically links disparate documents — e.g., a Vodafone invoice and a Riverty collection letter — into a single unified debt case record."
@@ -209,9 +299,7 @@ const Features = () => (
               key={item.label}
               className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-2 border border-border/50 text-xs text-muted-foreground"
             >
-              <span
-                className={`h-1.5 w-1.5 rounded-full ${item.linked ? "bg-status-online" : "bg-glow"}`}
-              />
+              <span className={`h-1.5 w-1.5 rounded-full ${item.linked ? "bg-status-online" : "bg-glow"}`} />
               {item.label}
             </div>
           ))}
@@ -219,14 +307,12 @@ const Features = () => (
         </div>
       </BentoCard>
 
-      {/* Speed — 1 col */}
       <BentoCard
         title="90% Faster Processing"
         description="What used to take 1–8 hours per client now takes 15 minutes. Counselors reclaim capacity for the people, not the paperwork."
         icon={Zap}
       />
 
-      {/* Vivendi Integration — 1 col */}
       <BentoCard
         title="Vivendi Integration"
         description="Export to Excel or connect via API directly to Vivendi, the legacy case management system used across Caritas centers."
@@ -236,104 +322,25 @@ const Features = () => (
   </section>
 );
 
-// ─── Market Section ──────────────────────────────────────────────────────────
-const marketPoints = [
-  "~9% of Germany's population is in serious debt — centers are overwhelmed.",
-  "1,400 debt counseling centers with 4,000+ counselors nationwide.",
-  "Counselors spend 1–8 hours per client on manual data entry.",
-  "Expansion path: legal aid, government social services, insolvency administrators.",
+// ─── Before / After ─────────────────────────────────────────────────────────
+const beforeItems = [
+  "Manually sort 30–80 letters per client",
+  "Type data into Vivendi by hand",
+  "No way to flag urgent notices",
+  "1–8 hours lost before counseling starts",
+  "Bottleneck limits how many clients are seen",
 ];
 
-const Market = () => (
-  <section id="market" className="px-6 pb-24">
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-          Market Opportunity
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-          A crisis waiting
-          <br />
-          for a solution.
-        </h2>
-        <ul className="space-y-4">
-          {marketPoints.map((point, i) => (
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-3 text-sm text-muted-foreground"
-            >
-              <CheckCircle2 className="h-4 w-4 text-status-online mt-0.5 shrink-0" />
-              {point}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="grid grid-cols-2 gap-4"
-      >
-        {[
-          { icon: Users, title: "Primary Segment", body: "Non-profit debt counseling centers: Caritas, Diakonie, Red Cross" },
-          { icon: Building2, title: "Pilot Partner", body: "Caritas Nexus Munich/Upper Bavaria — 120 counselors, phased rollout" },
-          { icon: BarChart3, title: "Revenue Model", body: "Tiered SaaS: per-counselor monthly license + volume-based document fee" },
-          { icon: Clock, title: "Go-to-Market", body: "Leverage Caritas success story to expand to Diakonie and municipalities" },
-        ].map(({ icon: Icon, title, body }, i) => (
-          <div key={i} className="bento-card rounded-xl p-5">
-            <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-surface-3">
-              <Icon className="h-4 w-4 text-foreground" />
-            </div>
-            <h4 className="text-sm font-semibold text-foreground mb-1">{title}</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  </section>
-);
-
-// ─── Roadmap ─────────────────────────────────────────────────────────────────
-const roadmap = [
-  {
-    quarter: "Q1 2026",
-    status: "active",
-    title: "Pilot Launch",
-    items: ["Finalize MVP", "Incorporate BriefInsights GmbH", "Deploy to 30 Caritas users"],
-  },
-  {
-    quarter: "Q2 2026",
-    status: "upcoming",
-    title: "Pilot Expansion",
-    items: ["Scale to 120 users", "Refine AI accuracy (<5% error)", "Apply for EXIST grant"],
-  },
-  {
-    quarter: "Q3 2026",
-    status: "upcoming",
-    title: "Commercial Launch",
-    items: ["API integration with Vivendi", "Expand to Diakonie & Red Cross", "Seed fundraise"],
-  },
-  {
-    quarter: "Q4 2026",
-    status: "upcoming",
-    title: "Client Portal",
-    items: ["Direct document upload by end-users", "Multi-tenant architecture", "Government contracts"],
-  },
+const afterItems = [
+  "Upload a PDF — AI handles the rest",
+  "Data auto-populated into structured cases",
+  "Eviction notices flagged instantly",
+  "Case ready in ~15 minutes",
+  "Counselors focus entirely on clients",
 ];
 
-const Roadmap = () => (
-  <section id="roadmap" className="px-6 pb-24">
+const BeforeAfter = () => (
+  <section id="before-after" className="px-6 pb-24">
     <div className="max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -342,45 +349,130 @@ const Roadmap = () => (
         className="mb-10"
       >
         <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-          Product Roadmap
+          The Transformation
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-          2026 milestones.
+          What changes with BriefXtract.
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {roadmap.map((phase, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className={`bento-card rounded-xl p-6 ${
-              phase.status === "active" ? "border-glow/30" : ""
-            }`}
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span
-                className={`h-1.5 w-1.5 rounded-full ${
-                  phase.status === "active" ? "bg-status-online animate-pulse" : "bg-border"
-                }`}
-              />
-              <span className="text-xs font-mono text-muted-foreground">{phase.quarter}</span>
-            </div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">{phase.title}</h4>
-            <ul className="space-y-2">
-              {phase.items.map((item, j) => (
-                <li key={j} className="flex items-start gap-2 text-xs text-muted-foreground">
-                  <span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground/40 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+      <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 items-start">
+        {/* Before */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="bento-card rounded-xl p-6"
+        >
+          <div className="flex items-center gap-2 mb-5">
+            <span className="h-2 w-2 rounded-full bg-destructive" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Before</span>
+          </div>
+          <ul className="space-y-4">
+            {beforeItems.map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex items-start gap-3 text-sm text-muted-foreground"
+              >
+                <Clock className="h-4 w-4 shrink-0 mt-0.5 text-destructive/60" />
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Arrow */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex items-center justify-center pt-14"
+        >
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-3 border border-border/50">
+            <MoveRight className="h-4 w-4 text-foreground" />
+          </div>
+        </motion.div>
+
+        {/* After */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="bento-card rounded-xl p-6 border-status-online/20"
+        >
+          <div className="flex items-center gap-2 mb-5">
+            <span className="h-2 w-2 rounded-full bg-status-online animate-pulse" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">After BriefXtract</span>
+          </div>
+          <ul className="space-y-4">
+            {afterItems.map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: 8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 + 0.2 }}
+                className="flex items-start gap-3 text-sm text-muted-foreground"
+              >
+                <CheckCheck className="h-4 w-4 shrink-0 mt-0.5 text-status-online" />
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
+
+      {/* Animated time bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className="mt-6 bento-card rounded-xl p-6"
+      >
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xs text-muted-foreground font-mono">Time per client case</span>
+          <span className="text-xs font-semibold text-status-online">90% reduction</span>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
+              <span>Manual (avg. 4 hrs)</span>
+              <span>480 min</span>
+            </div>
+            <div className="h-2 w-full rounded-full bg-surface-3 overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+                className="h-full rounded-full bg-destructive/50"
+              />
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
+              <span>With BriefXtract</span>
+              <span>15 min</span>
+            </div>
+            <div className="h-2 w-full rounded-full bg-surface-3 overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "3.1%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+                className="h-full rounded-full bg-status-online"
+              />
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   </section>
 );
@@ -408,18 +500,16 @@ const Footer = () => (
 );
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
-const Index = () => {
-  return (
-    <div className="grain-overlay min-h-screen bg-background">
-      <Navbar />
-      <Hero />
-      <StatsBar />
-      <Features />
-      <Market />
-      <Roadmap />
-      <Footer />
-    </div>
-  );
-};
+const Index = () => (
+  <div className="grain-overlay min-h-screen bg-background">
+    <Navbar />
+    <Hero />
+    <StatsBar />
+    <ProblemVisual />
+    <Features />
+    <BeforeAfter />
+    <Footer />
+  </div>
+);
 
 export default Index;

@@ -16,6 +16,8 @@ import {
   MoveRight,
   Menu,
   Mail,
+  Play,
+  Pause,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -28,6 +30,7 @@ import manualProcess from "@/assets/Gemini_Generated_Manual_Process.png";
 import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
 import logoImg from "@/assets/Brief_Insights_name_color.png";
 import heroVideo from "@/assets/Video_Generation_for_Counselor_Paperwork.mp4";
+import demoVideo from "@/assets/Generate_Product_Demo_Video.mp4";
 
 // ─── AnimatedWords ────────────────────────────────────────────────────────────
 const AnimatedWords = ({
@@ -388,6 +391,67 @@ const ProblemVisual = () => {
   );
 };
 
+// ─── Demo Player ─────────────────────────────────────────────────────────────
+const DemoPlayer = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggle = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="max-w-6xl mx-auto mb-12"
+    >
+      <div
+        className="bento-card bento-card-frosted rounded-2xl overflow-hidden relative cursor-pointer group"
+        onClick={toggle}
+      >
+        <video
+          ref={videoRef}
+          className="w-full aspect-video"
+          preload="metadata"
+          onEnded={() => setIsPlaying(false)}
+        >
+          <source src={demoVideo} type="video/mp4" />
+        </video>
+
+        {/* Play / pause overlay */}
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 bg-black/30 ${
+            isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+          }`}
+        >
+          {/* Label */}
+          {!isPlaying && (
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-5">
+              Product Demo
+            </p>
+          )}
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-2xl shadow-primary/50 transition-transform duration-200 group-hover:scale-110">
+            {isPlaying ? (
+              <Pause className="h-7 w-7 text-white" />
+            ) : (
+              <Play className="h-7 w-7 text-white ml-1" />
+            )}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 // ─── Features ───────────────────────────────────────────────────────────────
 const Features = () => {
   const { t } = useTranslation();
@@ -421,6 +485,8 @@ const Features = () => {
           <AnimatedWords text={t("features.title2")} className="block text-foreground/50" delay={0.3} />
         </h2>
       </div>
+
+      <DemoPlayer />
 
       <BentoGrid>
         <BentoCard

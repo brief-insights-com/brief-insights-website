@@ -29,6 +29,7 @@ import overwork from "@/assets/Gemini_Generated_Overwork.png";
 import paperworkBurden from "@/assets/Gemini_Generated_Paperwork_Burden.png";
 import manualProcess from "@/assets/Gemini_Generated_Manual_Process.png";
 import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
+import bagChaos from "@/assets/Gemini_Generated_bag_chaos.png";
 import logoImg from "@/assets/Brief_Insights_name_color.png";
 import heroVideo from "@/assets/Video_Generation_for_Counselor_Paperwork.mp4";
 import demoVideo from "@/assets/Generate_Product_Demo_Video.mp4";
@@ -309,8 +310,8 @@ const ProblemVisual = () => {
         >
           <motion.img
             style={{ y, height: "480px", objectPosition: "center 40%" }}
-            src={digitalSolution}
-            alt="Debt counselor working efficiently with digital document processing"
+            src={bagChaos}
+            alt="Client arriving with a bag full of chaotic paper documents"
             className="w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

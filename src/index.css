@@ -6,6 +6,48 @@
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 92%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 240 5% 92%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 5% 92%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 60%;
+
+    --radius: 0.75rem;
+
+    --glow: 210 100% 50%;
+    --glow-muted: 210 80% 40%;
+
+    --surface-1: 0 0% 96%;
+    --surface-2: 0 0% 93%;
+    --surface-3: 0 0% 90%;
+    --status-online: 142 71% 45%;
+
+    --card-border: 0 0% 0%;
+  }
+
+  .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 95%;
 
@@ -34,8 +76,6 @@
     --input: 0 0% 14%;
     --ring: 0 0% 30%;
 
-    --radius: 0.75rem;
-
     --glow: 210 100% 60%;
     --glow-muted: 210 80% 45%;
 
@@ -43,6 +83,8 @@
     --surface-2: 0 0% 9%;
     --surface-3: 0 0% 12%;
     --status-online: 142 71% 45%;
+
+    --card-border: 0 0% 100%;
   }
 }
 
@@ -82,12 +124,12 @@
     hsl(var(--surface-1)),
     hsl(var(--surface-2))
   );
-  border: 1px solid hsl(0 0% 100% / 0.06);
+  border: 1px solid hsl(var(--card-border) / 0.06);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bento-card:hover {
-  border-color: hsl(0 0% 100% / 0.12);
+  border-color: hsl(var(--card-border) / 0.12);
   transform: translateY(-2px) scale(1.005);
   box-shadow:
     0 0 40px -10px hsl(var(--glow) / 0.08),
@@ -102,10 +144,10 @@
   padding: 1px;
   background: linear-gradient(
     145deg,
-    hsl(0 0% 100% / 0.1),
+    hsl(var(--card-border) / 0.1),
     transparent 40%,
     transparent 60%,
-    hsl(0 0% 100% / 0.05)
+    hsl(var(--card-border) / 0.05)
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

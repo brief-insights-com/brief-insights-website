@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "problem": "Problem",
+    "product": "Product",
+    "results": "Results",
+    "about": "About",
+    "requestDemo": "Request Demo"
+  },
+  "hero": {
+    "badge": "Pilot live with Caritas Nexus \u00b7 Munich, Germany",
+    "title1": "Stop drowning",
+    "title2": "in paperwork.",
+    "subtitle": "BriefXtract uses Generative AI to automate document processing for debt counselors \u2014 cutting case prep from 8 hours to 15 minutes.",
+    "cta": "Request a Demo",
+    "secondary": "Read the Case Study"
+  },
+  "stats": {
+    "timeSaved": "Time saved per case",
+    "downFrom": "Down from 8 hours",
+    "counselors": "Counselors in Germany",
+    "pilotUsers": "Pilot users at Caritas"
+  },
+  "problem": {
+    "label": "The Problem",
+    "title": "Every client arrives with a box of chaos.",
+    "hoursTitle": "1\u20138 hours per client",
+    "hoursDesc": "Debt counselors in Germany manually sort and transcribe chaotic paper mail \u2014 letters, court orders, invoices \u2014 before any actual counseling can begin.",
+    "debtTitle": "9% of Germany in debt",
+    "debtDesc": "1,400 counseling centers, 4,000+ counselors \u2014 all overwhelmed by the sheer volume of unsorted paper correspondence from creditors."
+  },
+  "features": {
+    "label": "BriefXtract Platform",
+    "title1": "Everything a counselor needs.",
+    "title2": "Nothing extra.",
+    "extraction": "Intelligent Extraction",
+    "extractionDesc": "LLMs via Amazon Bedrock extract creditor name, file number, amount, and date from mixed PDFs \u2014 letters, court orders, invoices \u2014 in one pass.",
+    "gdpr": "Zero Retention GDPR",
+    "gdprDesc": "Client data never trains AI models. Hosted on AWS Frankfurt (eu-central-1) with church data protection law compliance built in.",
+    "urgency": "Urgency Flagging",
+    "urgencyDesc": "Eviction notices, court deadlines, and enforcement orders are automatically detected and surfaced with visual priority alerts.",
+    "caseEngine": "Master Debt Case Engine",
+    "caseEngineDesc": "Automatically links disparate documents \u2014 e.g., a Vodafone invoice and a Riverty collection letter \u2014 into a single unified debt case record.",
+    "faster": "90% Faster Processing",
+    "fasterDesc": "What used to take 1\u20138 hours per client now takes 15 minutes. Counselors reclaim capacity for the people, not the paperwork.",
+    "vivendi": "Vivendi Integration",
+    "vivendiDesc": "Export to Excel or connect via API directly to Vivendi, the legacy case management system used across Caritas centers."
+  },
+  "beforeAfter": {
+    "label": "The Transformation",
+    "title": "What changes with BriefXtract.",
+    "beforeLabel": "Before",
+    "afterLabel": "After BriefXtract",
+    "before1": "Manually sort 30\u201380 letters per client",
+    "before2": "Type data into Vivendi by hand",
+    "before3": "No way to flag urgent notices",
+    "before4": "1\u20138 hours lost before counseling starts",
+    "before5": "Bottleneck limits how many clients are seen",
+    "after1": "Upload a PDF \u2014 AI handles the rest",
+    "after2": "Data auto-populated into structured cases",
+    "after3": "Eviction notices flagged instantly",
+    "after4": "Case ready in ~15 minutes",
+    "after5": "Counselors focus entirely on clients",
+    "timePerCase": "Time per client case",
+    "reduction": "90% reduction",
+    "manualAvg": "Manual (avg. 4 hrs)",
+    "manualMin": "480 min",
+    "withBriefXtract": "With BriefXtract",
+    "fifteenMin": "15 min"
+  },
+  "footer": {
+    "tagline": "Empowering social workers by automating administrative burdens.",
+    "location": "Munich \u00b7 Germany",
+    "gdpr": "GDPR Compliant \u00b7 AWS eu-central-1",
+    "zeroData": "Zero Data Retention Policy",
+    "copyright": "\u00a9 2026 BriefInsights. All rights reserved."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "link": "Return to Home"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "problem": "Problem",
+    "product": "Produkt",
+    "results": "Ergebnisse",
+    "about": "\u00dcber uns",
+    "requestDemo": "Demo anfragen"
+  },
+  "hero": {
+    "badge": "Pilot live bei Caritas Nexus \u00b7 M\u00fcnchen, Deutschland",
+    "title1": "Schluss mit dem",
+    "title2": "Papierchaos.",
+    "subtitle": "BriefXtract nutzt Generative KI, um die Dokumentenverarbeitung f\u00fcr Schuldnerberater zu automatisieren \u2014 von 8 Stunden auf 15 Minuten.",
+    "cta": "Demo anfragen",
+    "secondary": "Fallstudie lesen"
+  },
+  "stats": {
+    "timeSaved": "Zeitersparnis pro Fall",
+    "downFrom": "Statt 8 Stunden",
+    "counselors": "Berater in Deutschland",
+    "pilotUsers": "Pilotnutzer bei Caritas"
+  },
+  "problem": {
+    "label": "Das Problem",
+    "title": "Jeder Klient bringt eine Kiste voller Chaos mit.",
+    "hoursTitle": "1\u20138 Stunden pro Klient",
+    "hoursDesc": "Schuldnerberater in Deutschland sortieren und \u00fcbertragen chaotische Papierpost manuell \u2014 Briefe, Gerichtsbeschl\u00fcsse, Rechnungen \u2014 bevor die eigentliche Beratung beginnen kann.",
+    "debtTitle": "9 % der Deutschen verschuldet",
+    "debtDesc": "1.400 Beratungsstellen, 4.000+ Berater \u2014 alle \u00fcberfordert vom schieren Volumen unsortierter Korrespondenz von Gl\u00e4ubigern."
+  },
+  "features": {
+    "label": "BriefXtract Plattform",
+    "title1": "Alles, was ein Berater braucht.",
+    "title2": "Nichts \u00dcberfl\u00fcssiges.",
+    "extraction": "Intelligente Extraktion",
+    "extractionDesc": "LLMs \u00fcber Amazon Bedrock extrahieren Gl\u00e4ubigername, Aktenzeichen, Betrag und Datum aus gemischten PDFs \u2014 Briefe, Gerichtsbeschl\u00fcsse, Rechnungen \u2014 in einem Durchgang.",
+    "gdpr": "Zero-Retention DSGVO",
+    "gdprDesc": "Mandantendaten trainieren niemals KI-Modelle. Gehostet auf AWS Frankfurt (eu-central-1) mit integrierter kirchlicher Datenschutzkonformit\u00e4t.",
+    "urgency": "Dringlichkeitserkennung",
+    "urgencyDesc": "R\u00e4umungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden automatisch erkannt und mit visuellen Priorit\u00e4tswarnungen angezeigt.",
+    "caseEngine": "Master-Schuldenfall-Engine",
+    "caseEngineDesc": "Verkn\u00fcpft automatisch unterschiedliche Dokumente \u2014 z.\u00a0B. eine Vodafone-Rechnung und ein Riverty-Inkassoschreiben \u2014 zu einem einheitlichen Schuldenfallbericht.",
+    "faster": "90 % schnellere Verarbeitung",
+    "fasterDesc": "Was fr\u00fcher 1\u20138 Stunden pro Klient dauerte, dauert jetzt 15 Minuten. Berater gewinnen Kapazit\u00e4t f\u00fcr Menschen statt Papierkram.",
+    "vivendi": "Vivendi-Integration",
+    "vivendiDesc": "Export nach Excel oder direkte API-Anbindung an Vivendi, das Legacy-Fallmanagementsystem der Caritas-Zentren."
+  },
+  "beforeAfter": {
+    "label": "Die Transformation",
+    "title": "Was sich mit BriefXtract \u00e4ndert.",
+    "beforeLabel": "Vorher",
+    "afterLabel": "Nach BriefXtract",
+    "before1": "30\u201380 Briefe pro Klient manuell sortieren",
+    "before2": "Daten per Hand in Vivendi eintippen",
+    "before3": "Keine M\u00f6glichkeit, dringende Bescheide zu erkennen",
+    "before4": "1\u20138 Stunden verloren, bevor die Beratung beginnt",
+    "before5": "Engpass begrenzt die Anzahl betreuter Klienten",
+    "after1": "PDF hochladen \u2014 KI erledigt den Rest",
+    "after2": "Daten automatisch in strukturierte F\u00e4lle \u00fcbertragen",
+    "after3": "R\u00e4umungsklagen sofort markiert",
+    "after4": "Fall in ~15 Minuten fertig",
+    "after5": "Berater konzentrieren sich ganz auf die Klienten",
+    "timePerCase": "Zeit pro Klientenfall",
+    "reduction": "90 % Reduktion",
+    "manualAvg": "Manuell (Ø 4 Std.)",
+    "manualMin": "480 Min.",
+    "withBriefXtract": "Mit BriefXtract",
+    "fifteenMin": "15 Min."
+  },
+  "footer": {
+    "tagline": "Sozialarbeiter entlasten durch Automatisierung administrativer Aufgaben.",
+    "location": "M\u00fcnchen \u00b7 Deutschland",
+    "gdpr": "DSGVO-konform \u00b7 AWS eu-central-1",
+    "zeroData": "Zero-Data-Retention-Richtlinie",
+    "copyright": "\u00a9 2026 BriefInsights. Alle Rechte vorbehalten."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Seite nicht gefunden",
+    "link": "Zur Startseite"
+  }
+}

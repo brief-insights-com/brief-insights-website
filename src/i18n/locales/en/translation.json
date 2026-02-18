@@ -78,5 +78,45 @@
     "title": "404",
     "message": "Oops! Page not found",
     "link": "Return to Home"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "Built for the people who help people.",
+    "mission": "BriefInsights was founded in Munich with one mission: eliminate administrative burden for social workers so they can spend more time with the people who need them most.",
+    "team": "Our team combines expertise in AI, legal tech, and social work to build tools that comply with the strictest German data protection standards — including kirchliches Datenschutzrecht.",
+    "stat1Label": "Founded",
+    "stat1Value": "Munich, 2024",
+    "stat2Label": "Pilot partner",
+    "stat2Value": "Caritas Nexus",
+    "stat3Label": "Active pilot users",
+    "stat3Value": "120 counselors",
+    "contact": "Request a Demo",
+    "contactEmail": "hello@briefinsights.de"
+  },
+  "bentoMock": {
+    "creditor": "Creditor",
+    "amount": "Amount",
+    "fileNo": "File No.",
+    "dueDate": "Due Date",
+    "doc1": "Vodafone Invoice",
+    "doc2": "Riverty Letter",
+    "doc3": "Court Order #3",
+    "masterCase": "→ Master Case #MC-00441"
+  },
+  "demo": {
+    "title": "Request a Demo",
+    "subtitle": "Tell us about your organization and we'll be in touch within 24 hours.",
+    "name": "Full Name",
+    "namePlaceholder": "Anna Müller",
+    "email": "Work Email",
+    "emailPlaceholder": "anna@caritas.de",
+    "org": "Organization",
+    "orgPlaceholder": "Caritas München",
+    "message": "Message (optional)",
+    "messagePlaceholder": "Tell us about your current document process...",
+    "submit": "Send Request",
+    "successTitle": "Request received!",
+    "successMessage": "Thank you — we'll be in touch within 24 hours.",
+    "close": "Close"
   }
 }

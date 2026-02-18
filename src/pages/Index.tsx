@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { BentoGrid } from "@/components/BentoGrid";
 import { BentoCard } from "@/components/BentoCard";
@@ -14,15 +14,27 @@ import {
   Clock,
   CheckCheck,
   MoveRight,
+  Menu,
+  Mail,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import DemoModal from "@/components/DemoModal";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import docWorker from "@/assets/doc-worker.jpg";
 import docStack from "@/assets/doc-stack.jpg";
 
 // ─── Navbar ────────────────────────────────────────────────────────────────
-const Navbar = () => {
+const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
+
+  const navLinks = [
+    { href: "#problem", label: t("nav.problem") },
+    { href: "#product", label: t("nav.product") },
+    { href: "#before-after", label: t("nav.results") },
+    { href: "#about", label: t("nav.about") },
+  ];
 
   return (
     <motion.nav
@@ -35,18 +47,56 @@ const Navbar = () => {
         <span className="text-sm font-semibold tracking-tight text-foreground">
           Brief<span className="text-muted-foreground">Insights</span>
         </span>
+
+        {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#problem" className="hover:text-foreground transition-colors">{t("nav.problem")}</a>
-          <a href="#product" className="hover:text-foreground transition-colors">{t("nav.product")}</a>
-          <a href="#before-after" className="hover:text-foreground transition-colors">{t("nav.results")}</a>
-          <a href="#about" className="hover:text-foreground transition-colors">{t("nav.about")}</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-foreground transition-colors">
+              {link.label}
+            </a>
+          ))}
         </div>
+
         <div className="flex items-center gap-1">
           <LanguageSwitcher />
           <ThemeToggle />
-          <button className="text-sm font-medium text-primary-foreground bg-primary px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity ml-2">
+
+          {/* Desktop CTA */}
+          <button
+            onClick={onRequestDemo}
+            className="hidden md:inline-flex text-sm font-medium text-primary-foreground bg-primary px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity ml-2"
+          >
             {t("nav.requestDemo")}
           </button>
+
+          {/* Mobile hamburger */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden h-9 w-9 ml-1">
+                <Menu className="h-4 w-4" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-64 flex flex-col gap-6 pt-12">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+              <button
+                onClick={onRequestDemo}
+                className="text-sm font-medium text-primary-foreground bg-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity text-center"
+              >
+                {t("nav.requestDemo")}
+              </button>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </motion.nav>
@@ -54,7 +104,7 @@ const Navbar = () => {
 };
 
 // ─── Hero ───────────────────────────────────────────────────────────────────
-const Hero = () => {
+const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
   return (
@@ -97,11 +147,17 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="flex items-center justify-center gap-4"
         >
-          <button className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+          <button
+            onClick={onRequestDemo}
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+          >
             {t("hero.cta")}
             <ArrowRight className="h-4 w-4" />
           </button>
-          <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-2.5">
+          <button
+            onClick={() => document.getElementById("before-after")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-2.5"
+          >
             {t("hero.secondary")}
           </button>
         </motion.div>
@@ -163,10 +219,8 @@ const ProblemVisual = () => {
             alt="Debt counselor overwhelmed by paper documents"
             className="w-full object-cover"
           />
-          {/* Dark gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
 
-          {/* Text overlaid on image */}
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -236,6 +290,19 @@ const ProblemVisual = () => {
 const Features = () => {
   const { t } = useTranslation();
 
+  const extractionRows = [
+    { label: t("bentoMock.creditor"), value: "Vodafone GmbH", conf: "99%" },
+    { label: t("bentoMock.amount"), value: "€ 847.30", conf: "98%" },
+    { label: t("bentoMock.fileNo"), value: "RIV-2024-88412", conf: "97%" },
+    { label: t("bentoMock.dueDate"), value: "15 Jan 2025", conf: "96%" },
+  ];
+
+  const caseDocuments = [
+    { label: t("bentoMock.doc1"), linked: true },
+    { label: t("bentoMock.doc2"), linked: true },
+    { label: t("bentoMock.doc3"), linked: false },
+  ];
+
   return (
     <section id="product" className="px-6 pb-24">
       <div className="max-w-6xl mx-auto mb-10">
@@ -261,7 +328,6 @@ const Features = () => {
       </div>
 
       <BentoGrid>
-        {/* Intelligent Extraction — 2 col */}
         <BentoCard
           title={t("features.extraction")}
           description={t("features.extractionDesc")}
@@ -269,12 +335,7 @@ const Features = () => {
           colSpan={2}
         >
           <div className="h-32 rounded-lg bg-surface-3/50 border border-border/50 p-4 font-mono text-xs text-muted-foreground space-y-2 overflow-hidden">
-            {[
-              { label: "Creditor", value: "Vodafone GmbH", conf: "99%" },
-              { label: "Amount", value: "€ 847.30", conf: "98%" },
-              { label: "File No.", value: "RIV-2024-88412", conf: "97%" },
-              { label: "Due Date", value: "15 Jan 2025", conf: "96%" },
-            ].map((row, i) => (
+            {extractionRows.map((row, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -8 }}
@@ -283,7 +344,7 @@ const Features = () => {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-center justify-between"
               >
-                <span className="text-muted-foreground/60 w-20">{row.label}</span>
+                <span className="text-muted-foreground/60 w-24 shrink-0">{row.label}</span>
                 <span className="text-foreground flex-1">{row.value}</span>
                 <span className="text-status-online">{row.conf}</span>
               </motion.div>
@@ -310,11 +371,7 @@ const Features = () => {
           colSpan={2}
         >
           <div className="h-20 rounded-lg bg-surface-3/50 border border-border/50 flex items-center px-4 gap-3 flex-wrap">
-            {[
-              { label: "Vodafone Invoice", linked: true },
-              { label: "Riverty Letter", linked: true },
-              { label: "Court Order #3", linked: false },
-            ].map((item) => (
+            {caseDocuments.map((item) => (
               <div
                 key={item.label}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-2 border border-border/50 text-xs text-muted-foreground"
@@ -323,7 +380,7 @@ const Features = () => {
                 {item.label}
               </div>
             ))}
-            <div className="text-xs text-muted-foreground/50 ml-auto">→ Master Case #MC-00441</div>
+            <div className="text-xs text-muted-foreground/50 ml-auto">{t("bentoMock.masterCase")}</div>
           </div>
         </BentoCard>
 
@@ -488,7 +545,7 @@ const BeforeAfter = () => {
               <div className="h-2 w-full rounded-full bg-surface-3 overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
-                  whileInView={{ width: "3.1%" }}
+                  whileInView={{ width: "10%" }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
                   className="h-full rounded-full bg-status-online"
@@ -497,6 +554,85 @@ const BeforeAfter = () => {
             </div>
           </div>
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// ─── About ──────────────────────────────────────────────────────────────────
+const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { label: t("about.stat1Label"), value: t("about.stat1Value") },
+    { label: t("about.stat2Label"), value: t("about.stat2Value") },
+    { label: t("about.stat3Label"), value: t("about.stat3Value") },
+  ];
+
+  return (
+    <section id="about" className="px-6 pb-24">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+            {t("about.label")}
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground max-w-2xl">
+            {t("about.title")}
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bento-card rounded-xl p-8 flex flex-col gap-4"
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed">{t("about.mission")}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{t("about.team")}</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bento-card rounded-xl p-8 flex flex-col justify-between gap-6"
+          >
+            <div className="space-y-4">
+              {stats.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center justify-between border-b border-border/40 pb-3 last:border-0 last:pb-0"
+                >
+                  <span className="text-sm text-muted-foreground">{item.label}</span>
+                  <span className="text-sm font-semibold text-foreground">{item.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={onRequestDemo}
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-5 py-2 rounded-lg hover:opacity-90 transition-opacity"
+              >
+                {t("about.contact")}
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <a
+                href={`mailto:${t("about.contactEmail")}`}
+                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground border border-border/60 px-5 py-2 rounded-lg hover:text-foreground hover:border-border transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                {t("about.contactEmail")}
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -529,16 +665,22 @@ const Footer = () => {
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
-const Index = () => (
-  <div className="grain-overlay min-h-screen bg-background">
-    <Navbar />
-    <Hero />
-    <StatsBar />
-    <ProblemVisual />
-    <Features />
-    <BeforeAfter />
-    <Footer />
-  </div>
-);
+const Index = () => {
+  const [demoOpen, setDemoOpen] = useState(false);
+
+  return (
+    <div className="grain-overlay min-h-screen bg-background">
+      <Navbar onRequestDemo={() => setDemoOpen(true)} />
+      <Hero onRequestDemo={() => setDemoOpen(true)} />
+      <StatsBar />
+      <ProblemVisual />
+      <Features />
+      <BeforeAfter />
+      <About onRequestDemo={() => setDemoOpen(true)} />
+      <Footer />
+      <DemoModal open={demoOpen} onOpenChange={setDemoOpen} />
+    </div>
+  );
+};
 
 export default Index;

@@ -78,5 +78,45 @@
     "title": "404",
     "message": "Seite nicht gefunden",
     "link": "Zur Startseite"
+  },
+  "about": {
+    "label": "Über uns",
+    "title": "Gebaut für die Menschen, die Menschen helfen.",
+    "mission": "BriefInsights wurde in München gegründet mit einer Mission: den administrativen Aufwand für Sozialarbeiter zu eliminieren, damit sie mehr Zeit für die Menschen aufwenden können, die sie am meisten brauchen.",
+    "team": "Unser Team vereint Expertise in KI, Legal Tech und Sozialarbeit, um Tools zu entwickeln, die den strengsten deutschen Datenschutzstandards entsprechen – einschließlich des kirchlichen Datenschutzrechts.",
+    "stat1Label": "Gegründet",
+    "stat1Value": "München, 2024",
+    "stat2Label": "Pilotpartner",
+    "stat2Value": "Caritas Nexus",
+    "stat3Label": "Aktive Pilotnutzer",
+    "stat3Value": "120 Berater",
+    "contact": "Demo anfragen",
+    "contactEmail": "hello@briefinsights.de"
+  },
+  "bentoMock": {
+    "creditor": "Gläubiger",
+    "amount": "Betrag",
+    "fileNo": "Aktenzeichen",
+    "dueDate": "Fälligkeitsdatum",
+    "doc1": "Vodafone-Rechnung",
+    "doc2": "Riverty-Schreiben",
+    "doc3": "Gerichtsbescheid #3",
+    "masterCase": "→ Masterfall #MC-00441"
+  },
+  "demo": {
+    "title": "Demo anfragen",
+    "subtitle": "Erzählen Sie uns von Ihrer Organisation – wir melden uns innerhalb von 24 Stunden.",
+    "name": "Vollständiger Name",
+    "namePlaceholder": "Anna Müller",
+    "email": "Dienstliche E-Mail",
+    "emailPlaceholder": "anna@caritas.de",
+    "org": "Organisation",
+    "orgPlaceholder": "Caritas München",
+    "message": "Nachricht (optional)",
+    "messagePlaceholder": "Beschreiben Sie Ihren aktuellen Dokumentenprozess...",
+    "submit": "Anfrage senden",
+    "successTitle": "Anfrage erhalten!",
+    "successMessage": "Vielen Dank – wir melden uns innerhalb von 24 Stunden.",
+    "close": "Schließen"
   }
 }

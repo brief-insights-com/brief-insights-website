@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# BriefInsights — Landing Website
 
-## Project info
+Marketing landing page for **BriefInsights**, an Intelligent Document Processing company based in Berlin, Germany. The product, **BriefXtract**, helps debt counselors cut document-processing time by 90% — from ~150 minutes per case down to ~15 minutes.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech stack
 
-## How can I edit this code?
+- **React 18** + **TypeScript**
+- **Vite** (build tool & dev server)
+- **Tailwind CSS** + **shadcn/ui** (styling & components)
+- **Framer Motion** (animations)
+- **react-i18next** (internationalisation — EN/DE)
+- **React Query** (async state)
 
-There are several ways of editing your application.
+## Project structure
 
-**Use Lovable**
+```
+src/
+├── assets/          # Images and video files
+├── components/      # Shared components (Navbar, BentoGrid, DemoModal, …)
+│   └── ui/          # shadcn/ui primitives
+├── hooks/           # Custom React hooks
+├── pages/
+│   └── Index.tsx    # Main landing page (all sections)
+└── main.tsx         # App entry point
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting started
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Node.js 18+ and npm are required.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1. Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Available scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server with hot-reload |
+| `npm run build` | Production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run unit tests (Vitest) |
 
-**Use GitHub Codespaces**
+## Page sections
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Section | Description |
+|---|---|
+| **Hero** | Full-screen background video with headline and CTAs |
+| **Stats Bar** | Key metrics (90% time saved, ~15 min per case, 4,000+ counselors) |
+| **Problem** | Parallax imagery illustrating manual document chaos |
+| **Features** | Product demo video + bento-grid feature cards |
+| **Before / After** | Side-by-side comparison with animated time-reduction bars |
+| **About** | Company mission, team placeholders, and contact |
+| **Footer** | Email CTA and GDPR / zero-data-retention notice |
 
-## What technologies are used for this project?
+## Internationalisation
 
-This project is built with:
+Translations live under `src/i18n/` (or wherever the locale JSON files are stored). The language switcher in the navbar toggles between English and German at runtime via `react-i18next`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Contact
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**info@brief-insights.com** · Berlin, Germany

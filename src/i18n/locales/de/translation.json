@@ -7,7 +7,6 @@
     "requestDemo": "Demo anfragen"
   },
   "hero": {
-    "badge": "Pilot live bei Caritas Nexus \u00b7 M\u00fcnchen, Deutschland",
     "title1": "Schluss mit dem",
     "title2": "Papierchaos.",
     "subtitle": "BriefXtract nutzt Generative KI, um die Dokumentenverarbeitung f\u00fcr Schuldnerberater zu automatisieren \u2014 von 8 Stunden auf 15 Minuten.",
@@ -17,8 +16,7 @@
   "stats": {
     "timeSaved": "Zeitersparnis pro Fall",
     "downFrom": "Statt 8 Stunden",
-    "counselors": "Berater in Deutschland",
-    "pilotUsers": "Pilotnutzer bei Caritas"
+    "counselors": "Berater in Deutschland"
   },
   "problem": {
     "label": "Das Problem",
@@ -35,7 +33,7 @@
     "extraction": "Intelligente Extraktion",
     "extractionDesc": "LLMs \u00fcber Amazon Bedrock extrahieren Gl\u00e4ubigername, Aktenzeichen, Betrag und Datum aus gemischten PDFs \u2014 Briefe, Gerichtsbeschl\u00fcsse, Rechnungen \u2014 in einem Durchgang.",
     "gdpr": "Zero-Retention DSGVO",
-    "gdprDesc": "Mandantendaten trainieren niemals KI-Modelle. Gehostet auf AWS Frankfurt (eu-central-1) mit integrierter kirchlicher Datenschutzkonformit\u00e4t.",
+    "gdprDesc": "Mandantendaten trainieren niemals KI-Modelle. In Deutschland gehostet mit integrierter kirchlicher Datenschutzkonformit\u00e4t.",
     "urgency": "Dringlichkeitserkennung",
     "urgencyDesc": "R\u00e4umungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden automatisch erkannt und mit visuellen Priorit\u00e4tswarnungen angezeigt.",
     "caseEngine": "Master-Schuldenfall-Engine",
@@ -43,7 +41,7 @@
     "faster": "90 % schnellere Verarbeitung",
     "fasterDesc": "Was fr\u00fcher 1\u20138 Stunden pro Klient dauerte, dauert jetzt 15 Minuten. Berater gewinnen Kapazit\u00e4t f\u00fcr Menschen statt Papierkram.",
     "vivendi": "Vivendi-Integration",
-    "vivendiDesc": "Export nach Excel oder direkte API-Anbindung an Vivendi, das Legacy-Fallmanagementsystem der Caritas-Zentren."
+    "vivendiDesc": "Export nach Excel oder direkte API-Anbindung an Vivendi, das Legacy-Fallmanagementsystem der Beratungszentren."
   },
   "beforeAfter": {
     "label": "Die Transformation",
@@ -62,7 +60,7 @@
     "after5": "Berater konzentrieren sich ganz auf die Klienten",
     "timePerCase": "Zeit pro Klientenfall",
     "reduction": "90 % Reduktion",
-    "manualAvg": "Manuell (Ø 4 Std.)",
+    "manualAvg": "Manuell (\u00d8 4 Std.)",
     "manualMin": "480 Min.",
     "withBriefXtract": "Mit BriefXtract",
     "fifteenMin": "15 Min."
@@ -70,8 +68,8 @@
   "footer": {
     "cta": "Kontakt aufnehmen.",
     "tagline": "Sozialarbeiter entlasten durch Automatisierung administrativer Aufgaben.",
-    "location": "M\u00fcnchen \u00b7 Deutschland",
-    "gdpr": "DSGVO-konform \u00b7 AWS eu-central-1",
+    "location": "Berlin \u00b7 Deutschland",
+    "gdpr": "DSGVO-konform",
     "zeroData": "Zero-Data-Retention-Richtlinie",
     "copyright": "\u00a9 2026 BriefInsights. Alle Rechte vorbehalten."
   },
@@ -81,43 +79,45 @@
     "link": "Zur Startseite"
   },
   "about": {
-    "label": "Über uns",
-    "title": "Gebaut für die Menschen, die Menschen helfen.",
-    "mission": "BriefInsights wurde in München gegründet mit einer Mission: den administrativen Aufwand für Sozialarbeiter zu eliminieren, damit sie mehr Zeit für die Menschen aufwenden können, die sie am meisten brauchen.",
-    "team": "Unser Team vereint Expertise in KI, Legal Tech und Sozialarbeit, um Tools zu entwickeln, die den strengsten deutschen Datenschutzstandards entsprechen – einschließlich des kirchlichen Datenschutzrechts.",
-    "stat1Label": "Gegründet",
-    "stat1Value": "München, 2024",
-    "stat2Label": "Pilotpartner",
-    "stat2Value": "Caritas Nexus",
-    "stat3Label": "Aktive Pilotnutzer",
-    "stat3Value": "120 Berater",
+    "label": "\u00dcber uns",
+    "title": "Gebaut f\u00fcr die Menschen, die Menschen helfen.",
+    "mission": "BriefInsights wurde in Berlin gegr\u00fcndet mit einer Mission: den administrativen Aufwand f\u00fcr Sozialarbeiter zu eliminieren, damit sie mehr Zeit f\u00fcr die Menschen aufwenden k\u00f6nnen, die sie am meisten brauchen.",
+    "team": "Unser Team vereint Expertise in KI, Legal Tech und Sozialarbeit, um Tools zu entwickeln, die den strengsten deutschen Datenschutzstandards entsprechen.",
+    "stat1Label": "Gegr\u00fcndet",
+    "stat1Value": "Berlin, 2026",
+    "teamLabel": "Das Team",
+    "teamMember1Role": "Co-Founder & CEO",
+    "teamMember2Role": "Co-Founder & CTO",
+    "teamMember3Role": "Head of Product",
+    "teamPlaceholderName": "Name Platzhalter",
+    "teamPlaceholderBio": "Kurze Biografie folgt in K\u00fcrze.",
     "contact": "Demo anfragen",
-    "contactEmail": "hello@briefinsights.de"
+    "contactEmail": "info@brief-insights.com"
   },
   "bentoMock": {
-    "creditor": "Gläubiger",
+    "creditor": "Gl\u00e4ubiger",
     "amount": "Betrag",
     "fileNo": "Aktenzeichen",
-    "dueDate": "Fälligkeitsdatum",
+    "dueDate": "F\u00e4lligkeitsdatum",
     "doc1": "Vodafone-Rechnung",
     "doc2": "Riverty-Schreiben",
     "doc3": "Gerichtsbescheid #3",
-    "masterCase": "→ Masterfall #MC-00441"
+    "masterCase": "\u2192 Masterfall #MC-00441"
   },
   "demo": {
     "title": "Demo anfragen",
-    "subtitle": "Erzählen Sie uns von Ihrer Organisation – wir melden uns innerhalb von 24 Stunden.",
-    "name": "Vollständiger Name",
-    "namePlaceholder": "Anna Müller",
+    "subtitle": "Erz\u00e4hlen Sie uns von Ihrer Organisation \u2013 wir melden uns innerhalb von 24 Stunden.",
+    "name": "Vollst\u00e4ndiger Name",
+    "namePlaceholder": "Ihr vollst\u00e4ndiger Name",
     "email": "Dienstliche E-Mail",
-    "emailPlaceholder": "anna@caritas.de",
+    "emailPlaceholder": "name@organisation.com",
     "org": "Organisation",
-    "orgPlaceholder": "Caritas München",
+    "orgPlaceholder": "Ihre Organisation",
     "message": "Nachricht (optional)",
     "messagePlaceholder": "Beschreiben Sie Ihren aktuellen Dokumentenprozess...",
     "submit": "Anfrage senden",
     "successTitle": "Anfrage erhalten!",
-    "successMessage": "Vielen Dank – wir melden uns innerhalb von 24 Stunden.",
-    "close": "Schließen"
+    "successMessage": "Vielen Dank \u2013 wir melden uns innerhalb von 24 Stunden.",
+    "close": "Schlie\u00dfen"
   }
 }

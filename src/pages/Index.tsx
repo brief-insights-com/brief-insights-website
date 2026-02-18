@@ -18,6 +18,7 @@ import {
   Mail,
   Play,
   Pause,
+  User,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -193,7 +194,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-8"
         >
-          AI Document Processing · Munich, Germany
+          Intelligent Document Processing · Berlin, Germany
         </motion.p>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
@@ -268,7 +269,6 @@ const StatsBar = () => {
     { value: "90%", label: t("stats.timeSaved") },
     { value: "~15 min", label: t("stats.downFrom") },
     { value: "4,000+", label: t("stats.counselors") },
-    { value: "120", label: t("stats.pilotUsers") },
   ];
 
   return (
@@ -278,7 +278,7 @@ const StatsBar = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/10 rounded-xl overflow-hidden border border-foreground/10"
+        className="max-w-6xl mx-auto grid grid-cols-3 gap-px bg-foreground/10 rounded-xl overflow-hidden border border-foreground/10"
       >
         {stats.map((s, i) => (
           <div key={i} className="bg-background/80 px-8 py-7 flex flex-col gap-1">
@@ -308,9 +308,9 @@ const ProblemVisual = () => {
           className="relative rounded-2xl overflow-hidden border border-border/40 mb-6"
         >
           <motion.img
-            style={{ y, height: "480px", objectPosition: "center 30%" }}
-            src={overwork}
-            alt="Debt counselor exhausted, asleep on stacks of paper late at night"
+            style={{ y, height: "480px", objectPosition: "center 40%" }}
+            src={digitalSolution}
+            alt="Debt counselor working efficiently with digital document processing"
             className="w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
@@ -730,15 +730,16 @@ const BeforeAfter = () => {
 const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
-  const stats = [
-    { label: t("about.stat1Label"), value: t("about.stat1Value") },
-    { label: t("about.stat2Label"), value: t("about.stat2Value") },
-    { label: t("about.stat3Label"), value: t("about.stat3Value") },
+  const teamMembers = [
+    { role: t("about.teamMember1Role") },
+    { role: t("about.teamMember2Role") },
+    { role: t("about.teamMember3Role") },
   ];
 
   return (
     <section id="about" className="bg-section-orange px-6 py-24">
       <div className="max-w-6xl mx-auto">
+        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -753,8 +754,9 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Left card — Digital Solution image header + mission text */}
+        {/* Mission + contact row */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          {/* Left — Digital Solution image + mission text */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -775,7 +777,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             </div>
           </motion.div>
 
-          {/* Right card — stats + contact */}
+          {/* Right — Founded stat + contact */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -783,16 +785,11 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             transition={{ delay: 0.1 }}
             className="bento-card bento-card-frosted rounded-xl p-8 flex flex-col justify-between gap-6"
           >
-            <div className="space-y-4">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex items-center justify-between border-b border-foreground/10 pb-3 last:border-0 last:pb-0"
-                >
-                  <span className="text-sm text-muted-foreground">{item.label}</span>
-                  <span className="text-sm font-semibold text-foreground">{item.value}</span>
-                </div>
-              ))}
+            <div>
+              <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
+                <span className="text-sm text-muted-foreground">{t("about.stat1Label")}</span>
+                <span className="text-sm font-semibold text-foreground">{t("about.stat1Value")}</span>
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
@@ -811,6 +808,49 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
               </a>
             </div>
           </motion.div>
+        </div>
+
+        {/* Team placeholders */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-6"
+        >
+          {t("about.teamLabel")}
+        </motion.p>
+
+        <div className="grid sm:grid-cols-3 gap-6">
+          {teamMembers.map((member, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bento-card bento-card-frosted rounded-xl p-6 flex flex-col items-center text-center gap-5"
+            >
+              {/* Avatar placeholder */}
+              <div className="h-20 w-20 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center shrink-0">
+                <User className="h-9 w-9 text-primary/40" />
+              </div>
+
+              {/* Name placeholder */}
+              <div className="space-y-2 w-full">
+                <div className="h-4 bg-foreground/10 rounded-full w-3/4 mx-auto" />
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  {member.role}
+                </p>
+              </div>
+
+              {/* Bio placeholder lines */}
+              <div className="space-y-2 w-full">
+                <div className="h-3 bg-foreground/8 rounded-full w-full" />
+                <div className="h-3 bg-foreground/8 rounded-full w-5/6 mx-auto" />
+                <div className="h-3 bg-foreground/8 rounded-full w-2/3 mx-auto" />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -834,10 +874,10 @@ const Footer = () => {
             <AnimatedWords text={t("footer.cta")} delay={0} />
           </h2>
           <a
-            href="mailto:hello@briefinsights.de"
+            href="mailto:info@brief-insights.com"
             className="text-lg text-foreground/60 hover:text-primary transition-colors underline underline-offset-4 decoration-foreground/20 hover:decoration-primary/60"
           >
-            hello@briefinsights.de
+            info@brief-insights.com
           </a>
         </motion.div>
 

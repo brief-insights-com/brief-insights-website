@@ -7,7 +7,6 @@
     "requestDemo": "Request Demo"
   },
   "hero": {
-    "badge": "Pilot live with Caritas Nexus \u00b7 Munich, Germany",
     "title1": "Stop drowning",
     "title2": "in paperwork.",
     "subtitle": "BriefXtract uses Generative AI to automate document processing for debt counselors \u2014 cutting case prep from 8 hours to 15 minutes.",
@@ -17,8 +16,7 @@
   "stats": {
     "timeSaved": "Time saved per case",
     "downFrom": "Down from 8 hours",
-    "counselors": "Counselors in Germany",
-    "pilotUsers": "Pilot users at Caritas"
+    "counselors": "Counselors in Germany"
   },
   "problem": {
     "label": "The Problem",
@@ -35,7 +33,7 @@
     "extraction": "Intelligent Extraction",
     "extractionDesc": "LLMs via Amazon Bedrock extract creditor name, file number, amount, and date from mixed PDFs \u2014 letters, court orders, invoices \u2014 in one pass.",
     "gdpr": "Zero Retention GDPR",
-    "gdprDesc": "Client data never trains AI models. Hosted on AWS Frankfurt (eu-central-1) with church data protection law compliance built in.",
+    "gdprDesc": "Client data never trains AI models. Hosted in Germany with church data protection law compliance built in.",
     "urgency": "Urgency Flagging",
     "urgencyDesc": "Eviction notices, court deadlines, and enforcement orders are automatically detected and surfaced with visual priority alerts.",
     "caseEngine": "Master Debt Case Engine",
@@ -43,7 +41,7 @@
     "faster": "90% Faster Processing",
     "fasterDesc": "What used to take 1\u20138 hours per client now takes 15 minutes. Counselors reclaim capacity for the people, not the paperwork.",
     "vivendi": "Vivendi Integration",
-    "vivendiDesc": "Export to Excel or connect via API directly to Vivendi, the legacy case management system used across Caritas centers."
+    "vivendiDesc": "Export to Excel or connect via API directly to Vivendi, the legacy case management system used across counseling centers."
   },
   "beforeAfter": {
     "label": "The Transformation",
@@ -70,8 +68,8 @@
   "footer": {
     "cta": "Let's Talk.",
     "tagline": "Empowering social workers by automating administrative burdens.",
-    "location": "Munich \u00b7 Germany",
-    "gdpr": "GDPR Compliant \u00b7 AWS eu-central-1",
+    "location": "Berlin \u00b7 Germany",
+    "gdpr": "GDPR Compliant",
     "zeroData": "Zero Data Retention Policy",
     "copyright": "\u00a9 2026 BriefInsights. All rights reserved."
   },
@@ -83,16 +81,18 @@
   "about": {
     "label": "About Us",
     "title": "Built for the people who help people.",
-    "mission": "BriefInsights was founded in Munich with one mission: eliminate administrative burden for social workers so they can spend more time with the people who need them most.",
-    "team": "Our team combines expertise in AI, legal tech, and social work to build tools that comply with the strictest German data protection standards — including kirchliches Datenschutzrecht.",
+    "mission": "BriefInsights was founded in Berlin with one mission: eliminate administrative burden for social workers so they can spend more time with the people who need them most.",
+    "team": "Our team combines expertise in AI, legal tech, and social work to build tools that comply with the strictest German data protection standards.",
     "stat1Label": "Founded",
-    "stat1Value": "Munich, 2024",
-    "stat2Label": "Pilot partner",
-    "stat2Value": "Caritas Nexus",
-    "stat3Label": "Active pilot users",
-    "stat3Value": "120 counselors",
+    "stat1Value": "Berlin, 2026",
+    "teamLabel": "The Team",
+    "teamMember1Role": "Co-Founder & CEO",
+    "teamMember2Role": "Co-Founder & CTO",
+    "teamMember3Role": "Head of Product",
+    "teamPlaceholderName": "Name Placeholder",
+    "teamPlaceholderBio": "Brief bio and background coming soon.",
     "contact": "Request a Demo",
-    "contactEmail": "hello@briefinsights.de"
+    "contactEmail": "info@brief-insights.com"
   },
   "bentoMock": {
     "creditor": "Creditor",
@@ -102,22 +102,22 @@
     "doc1": "Vodafone Invoice",
     "doc2": "Riverty Letter",
     "doc3": "Court Order #3",
-    "masterCase": "→ Master Case #MC-00441"
+    "masterCase": "\u2192 Master Case #MC-00441"
   },
   "demo": {
     "title": "Request a Demo",
     "subtitle": "Tell us about your organization and we'll be in touch within 24 hours.",
     "name": "Full Name",
-    "namePlaceholder": "Anna Müller",
+    "namePlaceholder": "Your Full Name",
     "email": "Work Email",
-    "emailPlaceholder": "anna@caritas.de",
+    "emailPlaceholder": "name@organization.com",
     "org": "Organization",
-    "orgPlaceholder": "Caritas München",
+    "orgPlaceholder": "Your Organization",
     "message": "Message (optional)",
     "messagePlaceholder": "Tell us about your current document process...",
     "submit": "Send Request",
     "successTitle": "Request received!",
-    "successMessage": "Thank you — we'll be in touch within 24 hours.",
+    "successMessage": "Thank you \u2014 we'll be in touch within 24 hours.",
     "close": "Close"
   }
 }

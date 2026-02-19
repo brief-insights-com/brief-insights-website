@@ -18,7 +18,6 @@ import {
   Mail,
   Play,
   Pause,
-  User,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -236,7 +235,7 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             <ArrowRight className="h-4 w-4" />
           </button>
           <button
-            onClick={() => document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("product")?.scrollIntoView({ behavior: "smooth" })}
             className="text-sm font-medium text-white/60 hover:text-white transition-colors px-6 py-2.5 border border-white/20 rounded-lg hover:border-white/40"
           >
             {t("hero.secondary")}
@@ -731,12 +730,6 @@ const BeforeAfter = () => {
 const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const { t } = useTranslation();
 
-  const teamMembers = [
-    { role: t("about.teamMember1Role") },
-    { role: t("about.teamMember2Role") },
-    { role: t("about.teamMember3Role") },
-  ];
-
   return (
     <section id="about" className="bg-section-orange px-6 py-24">
       <div className="max-w-6xl mx-auto">
@@ -811,48 +804,6 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
           </motion.div>
         </div>
 
-        {/* Team placeholders */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-6"
-        >
-          {t("about.teamLabel")}
-        </motion.p>
-
-        <div className="grid sm:grid-cols-3 gap-6">
-          {teamMembers.map((member, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bento-card bento-card-frosted rounded-xl p-6 flex flex-col items-center text-center gap-5"
-            >
-              {/* Avatar placeholder */}
-              <div className="h-20 w-20 rounded-full bg-primary/10 border-2 border-primary/20 flex items-center justify-center shrink-0">
-                <User className="h-9 w-9 text-primary/40" />
-              </div>
-
-              {/* Name placeholder */}
-              <div className="space-y-2 w-full">
-                <div className="h-4 bg-foreground/10 rounded-full w-3/4 mx-auto" />
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                  {member.role}
-                </p>
-              </div>
-
-              {/* Bio placeholder lines */}
-              <div className="space-y-2 w-full">
-                <div className="h-3 bg-foreground/8 rounded-full w-full" />
-                <div className="h-3 bg-foreground/8 rounded-full w-5/6 mx-auto" />
-                <div className="h-3 bg-foreground/8 rounded-full w-2/3 mx-auto" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -175,72 +175,74 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
         loop
         playsInline
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover dark:grayscale dark:contrast-125 transition-all duration-700"
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      {/* Cinematic dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Cinematic dark/light overlay fading from left */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-black/95 dark:via-black/90 dark:to-black/50 w-full transition-colors duration-700" />
 
       {/* Subtle vignette — darkens edges for focus */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55)_100%)]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-14">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-8"
-        >
-          Intelligent Document Processing · Berlin, Germany
-        </motion.p>
-
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-          <AnimatedWords
-            text={t("hero.title1")}
-            className="block text-white"
-            delay={0.25}
-            animate
-          />
-          <AnimatedWords
-            text={t("hero.title2")}
-            className="block font-serif italic font-normal tracking-normal text-primary"
-            delay={0.45}
-            animate
-          />
-        </h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10"
-        >
-          {t("hero.subtitle")}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.85 }}
-          className="flex items-center justify-center gap-4"
-        >
-          <button
-            onClick={onRequestDemo}
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/40"
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20 md:pt-32 flex flex-col items-start text-left">
+        <div className="max-w-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-xs font-semibold uppercase tracking-widest text-foreground/70 dark:text-white/50 mb-8"
           >
-            {t("hero.cta")}
-            <ArrowRight className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => document.getElementById("product")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-sm font-medium text-white/60 hover:text-white transition-colors px-6 py-2.5 border border-white/20 rounded-lg hover:border-white/40"
+            Intelligent Document Processing · Berlin, Germany
+          </motion.p>
+
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+            <AnimatedWords
+              text={t("hero.title1")}
+              className="block text-foreground dark:text-white"
+              delay={0.25}
+              animate
+            />
+            <AnimatedWords
+              text={t("hero.title2")}
+              className="block font-serif italic font-normal tracking-normal text-primary"
+              delay={0.45}
+              animate
+            />
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="text-lg md:text-xl text-foreground/80 dark:text-white/70 max-w-2xl mb-10"
           >
-            {t("hero.secondary")}
-          </button>
-        </motion.div>
+            {t("hero.subtitle")}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.85 }}
+            className="flex items-center justify-start gap-4"
+          >
+            <button
+              onClick={onRequestDemo}
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/40"
+            >
+              {t("hero.cta")}
+              <ArrowRight className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => document.getElementById("product")?.scrollIntoView({ behavior: "smooth" })}
+              className="text-sm font-medium text-foreground/80 hover:text-foreground dark:text-white/60 dark:hover:text-white transition-colors px-6 py-2.5 border border-foreground/30 dark:border-white/20 rounded-lg hover:border-foreground/50 dark:hover:border-white/40"
+            >
+              {t("hero.secondary")}
+            </button>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
@@ -429,9 +431,8 @@ const DemoPlayer = () => {
 
         {/* Play / pause overlay */}
         <div
-          className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 bg-black/30 ${
-            isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-          }`}
+          className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 bg-black/30 ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+            }`}
         >
           {/* Label */}
           {!isPlaying && (

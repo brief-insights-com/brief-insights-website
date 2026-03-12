@@ -16,8 +16,12 @@ import {
   MoveRight,
   Menu,
   Mail,
-  Play,
-  Pause,
+  Server,
+  Trash2,
+  Lock,
+  Building2,
+  Landmark,
+  TrendingUp,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -31,7 +35,6 @@ import digitalSolution from "@/assets/Gemini_Generated_Digital_Solution.png";
 import bagChaos from "@/assets/Gemini_Generated_bag_chaos.png";
 import logoImg from "@/assets/Brief_Insights_name_color.png";
 import heroVideo from "@/assets/Video_Generation_for_Counselor_Paperwork.mp4";
-import demoVideo from "@/assets/Generate_Product_Demo_Video.mp4";
 
 // ─── AnimatedWords ────────────────────────────────────────────────────────────
 const AnimatedWords = ({
@@ -87,6 +90,7 @@ const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   const navLinks = [
     { href: "#problem", label: t("nav.problem") },
     { href: "#product", label: t("nav.product") },
+    { href: "#security", label: t("nav.security") },
     { href: "#before-after", label: t("nav.results") },
     { href: "#about", label: t("nav.about") },
   ];
@@ -100,11 +104,14 @@ const Navbar = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <a href="#" className="flex items-center shrink-0">
-          <img
-            src={logoImg}
-            alt="BriefInsights"
-            className="h-8 w-auto object-contain dark:brightness-[1.15]"
-          />
+          <div className="overflow-hidden h-9 w-auto flex items-start">
+            <img
+              src={logoImg}
+              alt="BriefInsights"
+              className="h-16 w-auto object-contain dark:brightness-[1.15]"
+              style={{ transform: "translateY(-14px) scale(1.25)", transformOrigin: "top center" }}
+            />
+          </div>
         </a>
 
         {/* Desktop nav links */}
@@ -393,66 +400,6 @@ const ProblemVisual = () => {
   );
 };
 
-// ─── Demo Player ─────────────────────────────────────────────────────────────
-const DemoPlayer = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const toggle = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="max-w-6xl mx-auto mb-12"
-    >
-      <div
-        className="bento-card bento-card-frosted rounded-2xl overflow-hidden relative cursor-pointer group"
-        onClick={toggle}
-      >
-        <video
-          ref={videoRef}
-          className="w-full aspect-video"
-          preload="metadata"
-          onEnded={() => setIsPlaying(false)}
-        >
-          <source src={demoVideo} type="video/mp4" />
-        </video>
-
-        {/* Play / pause overlay */}
-        <div
-          className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 bg-black/30 ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-            }`}
-        >
-          {/* Label */}
-          {!isPlaying && (
-            <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-5">
-              Product Demo
-            </p>
-          )}
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-2xl shadow-primary/50 transition-transform duration-200 group-hover:scale-110">
-            {isPlaying ? (
-              <Pause className="h-7 w-7 text-white" />
-            ) : (
-              <Play className="h-7 w-7 text-white ml-1" />
-            )}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 // ─── Features ───────────────────────────────────────────────────────────────
 const Features = () => {
   const { t } = useTranslation();
@@ -486,8 +433,6 @@ const Features = () => {
           <AnimatedWords text={t("features.title2")} className="block text-foreground/50" delay={0.3} />
         </h2>
       </div>
-
-      <DemoPlayer />
 
       <BentoGrid>
         <BentoCard
@@ -642,7 +587,7 @@ const BeforeAfter = () => {
             transition={{ delay: 0.3 }}
             className="flex items-center justify-center pt-14"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-background/60 border border-foreground/10">
+            <div className="flex h-15 w-15 items-center justify-center rounded-full bg-background/60 border border-foreground/10">
               <MoveRight className="h-4 w-4 text-foreground" />
             </div>
           </motion.div>
@@ -772,7 +717,7 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             </div>
           </motion.div>
 
-          {/* Right — Founded stat + contact */}
+          {/* Right — Company facts + contact */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -780,11 +725,18 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
             transition={{ delay: 0.1 }}
             className="bento-card bento-card-frosted rounded-xl p-8 flex flex-col justify-between gap-6"
           >
-            <div>
-              <div className="flex items-center justify-between border-b border-foreground/10 pb-4">
-                <span className="text-sm text-muted-foreground">{t("about.stat1Label")}</span>
-                <span className="text-sm font-semibold text-foreground">{t("about.stat1Value")}</span>
-              </div>
+            <div className="divide-y divide-foreground/10">
+              {[
+                { label: t("about.stat1Label"), value: t("about.stat1Value") },
+                { label: t("about.stat2Label"), value: t("about.stat2Value") },
+                { label: t("about.stat3Label"), value: t("about.stat3Value") },
+                { label: t("about.stat4Label"), value: t("about.stat4Value") },
+              ].map((row) => (
+                <div key={row.label} className="flex items-center justify-between py-4 first:pt-0 last:pb-0">
+                  <span className="text-sm text-muted-foreground">{row.label}</span>
+                  <span className="text-sm font-semibold text-foreground text-right">{row.value}</span>
+                </div>
+              ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <button
@@ -810,18 +762,275 @@ const About = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
   );
 };
 
-// ─── Footer ──────────────────────────────────────────────────────────────────
-const Footer = () => {
+// ─── Security ────────────────────────────────────────────────────────────────
+const Security = () => {
   const { t } = useTranslation();
 
+  const credentials = [
+    { icon: ShieldCheck, title: t("security.gdprTitle"), desc: t("security.gdprDesc") },
+    { icon: Server, title: t("security.hostingTitle"), desc: t("security.hostingDesc") },
+    { icon: Trash2, title: t("security.retentionTitle"), desc: t("security.retentionDesc") },
+    { icon: Landmark, title: t("security.churchTitle"), desc: t("security.churchDesc") },
+    { icon: Lock, title: t("security.encryptionTitle"), desc: t("security.encryptionDesc") },
+    { icon: Building2, title: t("security.infraTitle"), desc: t("security.infraDesc") },
+  ];
+
+  const badges = ["GDPR / DSGVO", "AWS · EU Hosted", "KDG", "DSG-EKD", "Zero Retention", t("security.tlsBadge")];
+
   return (
-    <footer className="bg-section-orange px-6 pt-20 pb-16">
-      <div className="max-w-6xl mx-auto text-center">
+    <section id="security" className="bg-section-blue px-6 py-24">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
+            {t("security.label")}
+          </p>
+          <h2 className="font-serif italic text-4xl md:text-5xl text-foreground leading-tight mb-4 max-w-2xl">
+            <AnimatedWords text={t("security.title")} delay={0.1} />
+          </h2>
+          <p className="text-base text-muted-foreground max-w-xl leading-relaxed">
+            {t("security.subtitle")}
+          </p>
+        </motion.div>
+
+        {/* Trust badge strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="flex flex-wrap gap-2 mb-10"
+        >
+          {badges.map((badge) => (
+            <div
+              key={badge}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-foreground/15 bg-background/60 backdrop-blur-sm text-xs font-medium text-foreground/70"
+            >
+              <CheckCheck className="h-3 w-3 text-status-online shrink-0" />
+              {badge}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Credential grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {credentials.map((cred, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="bento-card bento-card-frosted rounded-xl p-6 flex flex-col gap-3"
+            >
+              <div className="flex h-55 w-55 items-center justify-center rounded-lg bg-primary/10">
+                <cred.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-sm font-semibold text-foreground leading-snug">{cred.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{cred.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ─── ROI Section ─────────────────────────────────────────────────────────────
+const ROISection = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
+  const { t } = useTranslation();
+  const [counselors, setCounselors] = useState(10);
+  const [clientsPerWeek, setClientsPerWeek] = useState(8);
+  const [hourlyRate, setHourlyRate] = useState(20);
+
+  const HOURS_SAVED_PER_CASE = 3.75; // 4h manual − 0.25h with BriefXtract
+  const WEEKS_PER_YEAR = 48;
+
+  const hoursSavedPerWeek = Math.round(counselors * clientsPerWeek * HOURS_SAVED_PER_CASE);
+  const hoursSavedPerYear = hoursSavedPerWeek * WEEKS_PER_YEAR;
+  const eurosSaved = hoursSavedPerYear * hourlyRate;
+
+  const fmt = (n: number) => n.toLocaleString("de-DE");
+  const fmtEur = (n: number) =>
+    new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
+
+  const sliders = [
+    {
+      label: t("roi.calc_counselors"),
+      value: counselors,
+      min: 1, max: 50, step: 1,
+      display: String(counselors),
+      onChange: (v: number) => setCounselors(v),
+      minLabel: "1", maxLabel: "50",
+    },
+    {
+      label: t("roi.calc_clients"),
+      value: clientsPerWeek,
+      min: 1, max: 20, step: 1,
+      display: String(clientsPerWeek),
+      onChange: (v: number) => setClientsPerWeek(v),
+      minLabel: "1", maxLabel: "20",
+    },
+    {
+      label: t("roi.calc_hourly"),
+      value: hourlyRate,
+      min: 15, max: 50, step: 1,
+      display: `€${hourlyRate}`,
+      onChange: (v: number) => setHourlyRate(v),
+      minLabel: "€15", maxLabel: "€50",
+    },
+  ];
+
+  const outputs = [
+    { label: t("roi.calc_hours_week"), value: fmt(hoursSavedPerWeek), unit: "h", highlight: false },
+    { label: t("roi.calc_hours_year"), value: fmt(hoursSavedPerYear), unit: "h / yr", highlight: false },
+    { label: t("roi.calc_savings"), value: fmtEur(eurosSaved), unit: "", highlight: true },
+  ];
+
+  return (
+    <section className="bg-background px-6 py-24">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
+            {t("roi.label")}
+          </p>
+          <h2 className="font-serif italic text-4xl md:text-5xl text-foreground leading-tight mb-4">
+            <AnimatedWords text={t("roi.title")} delay={0.1} />
+          </h2>
+          <p className="text-base text-muted-foreground max-w-lg leading-relaxed">
+            {t("roi.subtitle")}
+          </p>
+        </motion.div>
+
+        {/* Calculator card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14"
+          transition={{ delay: 0.15 }}
+          className="bento-card bento-card-frosted rounded-2xl p-8 mb-5"
+        >
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+
+            {/* Left — sliders */}
+            <div className="flex flex-col gap-8">
+              {sliders.map((s) => (
+                <div key={s.label}>
+                  <div className="flex items-center justify-between mb-3">
+                    <label className="text-sm font-medium text-foreground">{s.label}</label>
+                    <span className="text-lg font-bold text-primary tabular-nums">{s.display}</span>
+                  </div>
+                  <input
+                    type="range"
+                    min={s.min}
+                    max={s.max}
+                    step={s.step}
+                    value={s.value}
+                    onChange={(e) => s.onChange(Number(e.target.value))}
+                    className="w-full accent-primary cursor-pointer"
+                  />
+                  <div className="flex justify-between text-xs text-muted-foreground/50 mt-1.5">
+                    <span>{s.minLabel}</span>
+                    <span>{s.maxLabel}</span>
+                  </div>
+                </div>
+              ))}
+              <p className="text-xs text-muted-foreground/50 leading-relaxed">
+                {t("roi.calc_assumption")}
+              </p>
+            </div>
+
+            {/* Right — output metrics */}
+            <div className="flex flex-col gap-4">
+              {outputs.map((o) => (
+                <div
+                  key={o.label}
+                  className={`rounded-xl p-5 border ${o.highlight
+                    ? "bg-primary/10 border-primary/20"
+                    : "bg-surface-1/60 border-foreground/10"
+                    }`}
+                >
+                  <p className="text-xs text-muted-foreground mb-1.5">{o.label}</p>
+                  <p className={`text-4xl font-bold tabular-nums ${o.highlight ? "text-primary" : "text-foreground"}`}>
+                    {o.value}
+                  </p>
+                  {o.unit && (
+                    <p className="text-xs text-muted-foreground/50 mt-1">{o.unit}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* Disclaimer + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.35 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 p-6 bento-card bento-card-frosted rounded-xl"
+        >
+          <p className="text-xs text-muted-foreground/60 leading-relaxed max-w-lg">
+            {t("roi.disclaimer")}
+          </p>
+          <button
+            onClick={onRequestDemo}
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground bg-primary px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-lg shadow-primary/40 shrink-0"
+          >
+            {t("roi.ctaDemo")}
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// ─── Footer ──────────────────────────────────────────────────────────────────
+const Footer = () => {
+  const { t } = useTranslation();
+
+  const productLinks = [
+    { href: "#problem", label: t("footer.link_problem") },
+    { href: "#product", label: t("footer.link_product") },
+    { href: "#security", label: t("footer.link_security") },
+    { href: "#before-after", label: t("footer.link_results") },
+  ];
+
+  const companyLinks = [
+    { href: "#about", label: t("footer.link_about") },
+    { href: `mailto:${t("about.contactEmail")}`, label: t("footer.link_contact") },
+    { href: "#", label: t("footer.link_privacy") },
+    { href: "#", label: t("footer.link_terms") },
+  ];
+
+  const complianceBadges = [
+    t("footer.gdpr"),
+    t("footer.zeroData"),
+    "AWS · EU Hosted",
+    "KDG · DSG-EKD",
+  ];
+
+  return (
+    <footer className="bg-section-orange px-6 pt-20 pb-12">
+      <div className="max-w-6xl mx-auto">
+        {/* Big CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 pb-16 border-b border-foreground/10"
         >
           <h2 className="font-serif italic text-6xl md:text-8xl text-foreground leading-none mb-6">
             <AnimatedWords text={t("footer.cta")} delay={0} />
@@ -834,15 +1043,87 @@ const Footer = () => {
           </a>
         </motion.div>
 
-        <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-foreground/50">
-          <span className="text-sm font-semibold tracking-tight text-foreground">
-            Brief<span className="text-primary">Insights</span>
-          </span>
-          <div className="flex flex-col items-center gap-1">
-            <span>{t("footer.gdpr")}</span>
-            <span>{t("footer.zeroData")}</span>
+        {/* Navigation grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14 items-start"
+        >
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="overflow-hidden max-w-[160px] mb-4">
+              <img
+                src={logoImg}
+                alt="BriefInsights"
+                className="w-full h-auto object-contain dark:brightness-[1.15]"
+                style={{ transform: "scale(1.35)", transformOrigin: "center" }}
+              />
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {t("footer.tagline")}
+            </p>
           </div>
+
+          {/* Platform */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
+              {t("footer.productTitle")}
+            </p>
+            <ul className="space-y-2.5">
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
+              {t("footer.companyTitle")}
+            </p>
+            <ul className="space-y-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Compliance */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50 mb-4">
+              Compliance
+            </p>
+            <div className="space-y-2.5">
+              {complianceBadges.map((badge) => (
+                <div key={badge} className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <CheckCheck className="h-3.5 w-3.5 text-status-online shrink-0" />
+                  {badge}
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-foreground/40">
           <span>{t("footer.copyright")}</span>
+          <span>{t("footer.location")}</span>
         </div>
       </div>
     </footer>
@@ -860,7 +1141,9 @@ const Index = () => {
       <StatsBar />
       <ProblemVisual />
       <Features />
+      <Security />
       <BeforeAfter />
+      <ROISection onRequestDemo={() => setDemoOpen(true)} />
       <About onRequestDemo={() => setDemoOpen(true)} />
       <Footer />
       <DemoModal open={demoOpen} onOpenChange={setDemoOpen} />

@@ -242,12 +242,6 @@ const Hero = ({ onRequestDemo }: { onRequestDemo: () => void }) => {
               {t("hero.cta")}
               <ArrowRight className="h-4 w-4" />
             </button>
-            <button
-              onClick={() => document.getElementById("product")?.scrollIntoView({ behavior: "smooth" })}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground dark:text-white/60 dark:hover:text-white transition-colors px-6 py-2.5 border border-foreground/30 dark:border-white/20 rounded-lg hover:border-foreground/50 dark:hover:border-white/40"
-            >
-              {t("hero.secondary")}
-            </button>
           </motion.div>
         </div>
       </div>

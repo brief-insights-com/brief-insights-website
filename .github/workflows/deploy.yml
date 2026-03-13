@@ -36,9 +36,8 @@ jobs:
 
       - name: Build project
         run: npm run build
-        # Note: If you have a VITE_DEMO_API_URL set up in GitHub Secrets, you would expose it here like this:
-        # env:
-        #   VITE_DEMO_API_URL: ${{ secrets.VITE_DEMO_API_URL }}
+        env:
+          VITE_DEMO_API_URL: ${{ secrets.VITE_DEMO_API_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

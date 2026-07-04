@@ -1,29 +1,87 @@
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-const Impressum = () => {
-  const { t } = useTranslation();
+const deContent = `
+<h1>Impressum</h1>
 
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="max-w-3xl mx-auto px-6 py-20">
-        <Link
-          to="/"
-          className="text-sm text-muted-foreground hover:text-primary transition-colors mb-10 inline-block"
-        >
-          ← {t("notFound.link")}
-        </Link>
+<p>Brief Insights UG (haftungsbeschränkt)<br />
+Johanna-Stegen-Straße 24<br />
+c/o Alves Avelino<br />
+12167 Berlin</p>
 
-        <h1 className="text-4xl font-bold mb-4">{t("impressum.title")}</h1>
-        <p className="text-muted-foreground mb-12">{t("impressum.placeholder")}</p>
+<p>Handelsregister: HRB 284028 B<br />
+Registergericht: Amtsgericht Charlottenburg</p>
 
-        {/* Paste the e-recht24 generated Impressum content here */}
-        <div className="prose prose-invert max-w-none text-foreground/80 space-y-4">
-          <p className="text-muted-foreground italic">{t("impressum.comingSoon")}</p>
-        </div>
-      </div>
+<p><strong>Vertreten durch:</strong><br />
+Jefferson Alves Avelino, Ali Zomorodian</p>
+
+<h2>Kontakt</h2>
+<p>Telefon: +493016637678<br />
+E-Mail: <a href="mailto:info@brief-insights.com">info@brief-insights.com</a></p>
+
+<h2>Umsatzsteuer-ID</h2>
+<p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+DE461404955</p>
+
+<h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+`;
+
+const enContent = `
+<h1>Site Notice</h1>
+
+<p>Brief Insights UG (haftungsbeschränkt)<br />
+Johanna-Stegen-Straße 24<br />
+c/o Alves Avelino<br />
+12167 Berlin</p>
+
+<p>Commercial Register: HRB 284028 B<br />
+Registration court: Amtsgericht Charlottenburg</p>
+
+<p><strong>Represented by:</strong><br />
+Jefferson Alves Avelino, Ali Zomorodian</p>
+
+<h2>Contact</h2>
+<p>Phone: +493016637678<br />
+E-mail: <a href="mailto:info@brief-insights.com">info@brief-insights.com</a></p>
+
+<h2>VAT ID</h2>
+<p>Sales tax identification number according to Sect. 27 a of the Sales Tax Law:<br />
+DE461404955</p>
+
+<h2>Dispute resolution proceedings in front of a consumer arbitration board</h2>
+<p>We are not willing or obliged to participate in dispute resolution proceedings in front of a consumer arbitration board.</p>
+`;
+
+const legalProse =
+  "[&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-foreground [&_h1]:mb-6 [&_h1]:mt-10 first:[&_h1]:mt-0 " +
+  "[&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-foreground [&_h2]:mt-8 [&_h2]:mb-3 " +
+  "[&_p]:text-sm [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4 " +
+  "[&_strong]:text-foreground [&_strong]:font-semibold " +
+  "[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:opacity-80 [&_a]:transition-opacity";
+
+const Impressum = () => (
+  <div className="min-h-screen bg-background text-foreground">
+    <div className="max-w-2xl mx-auto px-6 py-20">
+      <Link
+        to="/"
+        className="text-sm text-muted-foreground hover:text-primary transition-colors mb-12 inline-block"
+      >
+        ← Back to Home
+      </Link>
+
+      <div
+        className={legalProse}
+        dangerouslySetInnerHTML={{ __html: deContent }}
+      />
+
+      <div className="my-12 border-t border-foreground/10" />
+
+      <div
+        className={legalProse}
+        dangerouslySetInnerHTML={{ __html: enContent }}
+      />
     </div>
-  );
-};
+  </div>
+);
 
 export default Impressum;

@@ -146,6 +146,16 @@
     "link_privacy": "Datenschutzerkl\u00e4rung",
     "link_terms": "Nutzungsbedingungen"
   },
+  "impressum": {
+    "title": "Impressum",
+    "placeholder": "Diese Seite enthält das gesetzlich vorgeschriebene Impressum dieser Website.",
+    "comingSoon": "Inhalt wird nach Generierung über e-recht24.de hinzugefügt."
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "placeholder": "Diese Seite enthält die Datenschutzerklärung dieser Website.",
+    "comingSoon": "Inhalt wird nach Generierung über e-recht24.de hinzugefügt."
+  },
   "notFound": {
     "title": "404",
     "message": "Seite nicht gefunden",
@@ -182,6 +192,12 @@
     "doc2": "Riverty-Schreiben",
     "doc3": "Gerichtsbescheid #3",
     "masterCase": "\u2192 Masterfall #MC-00441"
+  },
+  "cookie": {
+    "message": "Wir verwenden Analytics-Cookies (Metricool), um zu verstehen, wie Besucher mit unserer Website interagieren.",
+    "privacyLink": "Datenschutzerklärung",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
   },
   "demo": {
     "title": "Demo anfragen",

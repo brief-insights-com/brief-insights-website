@@ -146,6 +146,16 @@
     "link_privacy": "Privacy Policy",
     "link_terms": "Terms of Service"
   },
+  "impressum": {
+    "title": "Legal Notice (Impressum)",
+    "placeholder": "This page will contain the legally required Impressum for this website.",
+    "comingSoon": "Content will be added once generated via e-recht24.de."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "placeholder": "This page will contain the Privacy Policy (Datenschutzerklärung) for this website.",
+    "comingSoon": "Content will be added once generated via e-recht24.de."
+  },
   "notFound": {
     "title": "404",
     "message": "Oops! Page not found",
@@ -182,6 +192,12 @@
     "doc2": "Riverty Letter",
     "doc3": "Court Order #3",
     "masterCase": "\u2192 Master Case #MC-00441"
+  },
+  "cookie": {
+    "message": "We use analytics cookies (Metricool) to understand how visitors interact with our website.",
+    "privacyLink": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
   },
   "demo": {
     "title": "Request a Demo",

@@ -1005,8 +1005,8 @@ const Footer = () => {
   const companyLinks = [
     { href: "#about", label: t("footer.link_about") },
     { href: `mailto:${t("about.contactEmail")}`, label: t("footer.link_contact") },
-    { href: "#", label: t("footer.link_privacy") },
-    { href: "#", label: t("footer.link_terms") },
+    { href: "/privacy", label: t("footer.link_privacy") },
+    { href: "/impressum", label: t("footer.link_terms") },
   ];
 
   const complianceBadges = [

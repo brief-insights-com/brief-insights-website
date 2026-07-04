@@ -7,7 +7,11 @@ import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Index from "./pages/Index";
+import Impressum from "./pages/Impressum";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import CookieBanner from "./components/CookieBanner";
+import { getConsent, loadMetricool } from "./lib/analytics";
 
 const queryClient = new QueryClient();
 
@@ -21,16 +25,27 @@ const LangSync = () => {
   return null;
 };
 
+const AnalyticsLoader = () => {
+  useEffect(() => {
+    if (getConsent() === "accepted") loadMetricool();
+  }, []);
+  return null;
+};
+
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LangSync />
+        <AnalyticsLoader />
+        <CookieBanner />
         <Toaster />
         <Sonner />
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/privacy" element={<Privacy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

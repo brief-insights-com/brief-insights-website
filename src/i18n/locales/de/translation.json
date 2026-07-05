@@ -84,22 +84,6 @@
     "infraDesc": "Gebaut auf enterprise-t\u00fcchtiger KI-Cloud-Infrastruktur ohne Datentraining, mit voller Nachvollziehbarkeit und 99,9 % Uptime-SLA.",
     "tlsBadge": "TLS 1,3 \u00b7 AES-256"
   },
-  "testimonials": {
-    "label": "Was Beraterinnen sagen",
-    "title": "Echte Wirkung. Echte Beraterinnen.",
-    "quote1": "BriefXtract hat unsere Fallvorbereitung von einem halben Tag auf unter 20 Minuten reduziert. Unsere Beraterinnen verbringen ihre Zeit jetzt mit dem, was wirklich z\u00e4hlt \u2014 dem Gespr\u00e4ch mit Klienten.",
-    "name1": "Schuldnerberaterin",
-    "org1": "AWO Beratungsstelle, Berlin",
-    "initials1": "M.K.",
-    "quote2": "Die Null-Datenspeicherungsrichtlinie war f\u00fcr uns entscheidend. Die Finanzdaten unserer Klienten geh\u00f6ren zu den sensibelsten Daten \u00fcberhaupt. BriefInsights hat das von Anfang an verstanden.",
-    "name2": "Leiterin Sozialberatung",
-    "org2": "Caritas M\u00fcnchen",
-    "initials2": "T.B.",
-    "quote3": "Wir waren skeptisch gegen\u00fcber KI in der Sozialarbeit. Aber BriefXtract ist unsichtbar \u2014 es erledigt nur die Verwaltungsarbeit. Unsere Beraterinnen arbeiten genau wie immer.",
-    "name3": "Fachberaterin",
-    "org3": "Diakonie Hamburg",
-    "initials3": "S.H."
-  },
   "roi": {
     "label": "Das Gesch\u00e4ftsargument",
     "title": "Die Mathematik spricht f\u00fcr sich.",
@@ -174,12 +158,6 @@
     "stat3Value": "Nur EU",
     "stat4Label": "Compliance",
     "stat4Value": "DSGVO · KDG · DSG-EKD",
-    "teamLabel": "Das Team",
-    "teamMember1Role": "Co-Founder & CEO",
-    "teamMember2Role": "Co-Founder & CTO",
-    "teamMember3Role": "Head of Product",
-    "teamPlaceholderName": "Name Platzhalter",
-    "teamPlaceholderBio": "Kurze Biografie folgt in K\u00fcrze.",
     "contact": "Demo anfragen",
     "contactEmail": "info@brief-insights.com"
   },

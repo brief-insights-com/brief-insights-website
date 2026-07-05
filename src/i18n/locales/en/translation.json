@@ -84,22 +84,6 @@
     "infraDesc": "Built on enterprise-grade AI cloud infrastructure with no data training, full auditability, and 99.9% uptime SLA.",
     "tlsBadge": "TLS 1.3 \u00b7 AES-256"
   },
-  "testimonials": {
-    "label": "What Counselors Say",
-    "title": "Real impact. Real counselors.",
-    "quote1": "BriefXtract reduced our case preparation from half a day to under 20 minutes. Our counselors now spend their time on what matters most \u2014 talking to clients.",
-    "name1": "Debt Counselor",
-    "org1": "AWO Beratungsstelle, Berlin",
-    "initials1": "M.K.",
-    "quote2": "The zero-data-retention policy was critical for us. Our clients\u2019 financial data is among the most sensitive there is. BriefInsights understood that from day one.",
-    "name2": "Head of Social Counseling",
-    "org2": "Caritas, Munich",
-    "initials2": "T.B.",
-    "quote3": "We were skeptical about AI in social work. But BriefXtract is invisible \u2014 it just handles the paperwork. Our counselors work exactly as they always have.",
-    "name3": "Specialist Advisor",
-    "org3": "Diakonie Hamburg",
-    "initials3": "S.H."
-  },
   "roi": {
     "label": "The Business Case",
     "title": "The math speaks for itself.",
@@ -174,12 +158,6 @@
     "stat3Value": "EU Only",
     "stat4Label": "Compliance",
     "stat4Value": "GDPR · KDG · DSG-EKD",
-    "teamLabel": "The Team",
-    "teamMember1Role": "Co-Founder & CEO",
-    "teamMember2Role": "Co-Founder & CTO",
-    "teamMember3Role": "Head of Product",
-    "teamPlaceholderName": "Name Placeholder",
-    "teamPlaceholderBio": "Brief bio and background coming soon.",
     "contact": "Request a Demo",
     "contactEmail": "info@brief-insights.com"
   },

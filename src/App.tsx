@@ -10,6 +10,9 @@ import Index from "./pages/Index";
 import Impressum from "./pages/Impressum";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Security from "./pages/Security";
+import Product from "./pages/Product";
 import CookieBanner from "./components/CookieBanner";
 import { getConsent, loadMetricool } from "./lib/analytics";
 
@@ -46,6 +49,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/security" element={<Security />} />
+            <Route path="/product" element={<Product />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import AnimatedWords from "../Atoms/AnimatedWords";
 import logoImg from "@/assets/Brief_Insights_name_color.png";
 
@@ -21,7 +22,8 @@ function Footer () {
       href: `mailto:${t("about.contactEmail")}`,
       label: t("footer.link_contact"),
     },
-    { href: "#", label: t("footer.link_privacy") },
+    { href: "/privacy", label: t("footer.link_privacy") },
+    { href: "/impressum", label: t("footer.link_terms") },
     { href: "#", label: t("footer.link_terms") },
   ];
 
@@ -101,16 +103,25 @@ function Footer () {
               {t("footer.companyTitle")}
             </p>
             <ul className="space-y-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
+            {companyLinks.map((link) => (
+              <li key={link.label}>
+                {link.href.startsWith("/") ? (
+                  <Link
+                    to={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
                   <a
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </a>
-                </li>
-              ))}
+                )}
+              </li>
+            ))}
             </ul>
           </div>
 

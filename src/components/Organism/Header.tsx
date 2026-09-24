@@ -117,12 +117,7 @@ function Header() {
                     </a>
                   ))}
                 </nav>
-                {/* <button
-                onClick={onRequestDemo}
-                className="text-sm font-medium text-primary-foreground bg-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity text-center"
-              >
-                {t("nav.requestDemo")}
-              </button> */}
+npm run build
               </SheetContent>
             </Sheet>
           </div>

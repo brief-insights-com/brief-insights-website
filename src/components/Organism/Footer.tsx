@@ -24,7 +24,6 @@ function Footer () {
     },
     { href: "/privacy", label: t("footer.link_privacy") },
     { href: "/impressum", label: t("footer.link_terms") },
-    { href: "#", label: t("footer.link_terms") },
   ];
 
   const complianceBadges = [

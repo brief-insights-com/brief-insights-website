@@ -6,7 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Index from "./pages/Index";
+import SiteShell from "./components/site/SiteShell";
+import Home from "./pages/Home";
+import Platform from "./pages/Platform";
+import Security from "./pages/Security";
+import Results from "./pages/Results";
+import About from "./pages/About";
 import Impressum from "./pages/Impressum";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
@@ -19,7 +24,7 @@ const LangSync = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    document.documentElement.lang = i18n.language;
+    document.documentElement.lang = i18n.language?.startsWith("de") ? "de" : "en";
   }, [i18n.language]);
 
   return null;
@@ -33,22 +38,28 @@ const AnalyticsLoader = () => {
 };
 
 const App = () => (
-  <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+  <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LangSync />
         <AnalyticsLoader />
-        <CookieBanner />
         <Toaster />
         <Sonner />
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/privacy" element={<Privacy />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route element={<SiteShell />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/platform" element={<Platform />} />
+              <Route path="/security" element={<Security />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/privacy" element={<Privacy />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Route>
           </Routes>
+          <CookieBanner />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

@@ -1,25 +1,27 @@
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Section } from "@/components/site/Layout";
+import { buttonClass } from "@/components/site/buttonStyles";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const NotFound = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  usePageMeta("notFound");
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">{t("notFound.title")}</h1>
-        <p className="mb-4 text-xl text-muted-foreground">{t("notFound.message")}</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
-          {t("notFound.link")}
-        </a>
-      </div>
-    </div>
+    <Section className="py-24 md:py-32" containerClassName="flex flex-col items-center text-center">
+      <h1 className="text-h2 text-ink md:text-h1">{t("notFound.title")}</h1>
+      <p className="mt-4 max-w-[520px] text-body text-slate">{t("notFound.message")}</p>
+      <Link to="/" className={buttonClass("primary", "mt-8")}>
+        {t("notFound.link")}
+      </Link>
+    </Section>
   );
 };
 

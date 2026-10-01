@@ -1,65 +1,51 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
-import { getConsent, setConsent, loadMetricool } from "@/lib/analytics";
+import { COOKIE_SETTINGS_EVENT, getConsent, loadMetricool, setConsent } from "@/lib/analytics";
+import { buttonClass } from "@/components/site/buttonStyles";
 
+/**
+ * Analytics consent. Accept and Decline carry equal weight, and the footer's
+ * "Cookie settings" link reopens this banner so consent can be withdrawn as easily as given.
+ */
 const CookieBanner = () => {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!getConsent()) setVisible(true);
+    const reopen = () => setVisible(true);
+    window.addEventListener(COOKIE_SETTINGS_EVENT, reopen);
+    return () => window.removeEventListener(COOKIE_SETTINGS_EVENT, reopen);
   }, []);
 
-  const handleAccept = () => {
-    setConsent("accepted");
-    loadMetricool();
+  const choose = (value: "accepted" | "declined") => {
+    setConsent(value);
+    if (value === "accepted") loadMetricool();
     setVisible(false);
   };
 
-  const handleDecline = () => {
-    setConsent("declined");
-    setVisible(false);
-  };
+  if (!visible) return null;
 
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
-        >
-          <div className="max-w-4xl mx-auto bento-card bento-card-frosted rounded-xl px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4 border border-foreground/10 shadow-2xl">
-            <p className="text-sm text-muted-foreground flex-1 leading-relaxed">
-              {t("cookie.message")}{" "}
-              <a
-                href="/privacy"
-                className="text-primary underline underline-offset-2 hover:opacity-80 transition-opacity"
-              >
-                {t("cookie.privacyLink")}
-              </a>
-            </p>
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={handleDecline}
-                className="text-sm text-muted-foreground border border-foreground/20 px-4 py-1.5 rounded-lg hover:text-foreground hover:border-foreground/40 transition-colors"
-              >
-                {t("cookie.decline")}
-              </button>
-              <button
-                onClick={handleAccept}
-                className="text-sm font-medium text-primary-foreground bg-primary px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
-              >
-                {t("cookie.accept")}
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div role="region" aria-label={t("cookie.label")} className="fixed inset-x-0 bottom-0 z-40 p-4 md:p-6">
+      <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-lg border border-hairline bg-canvas px-5 py-4 shadow-4 sm:flex-row sm:items-center">
+        <p className="flex-1 text-body-sm text-slate">
+          {t("cookie.message")}{" "}
+          <Link to="/privacy" className="text-primary underline">
+            {t("cookie.privacyLink")}
+          </Link>
+        </p>
+        <div className="flex shrink-0 gap-2">
+          <button type="button" onClick={() => choose("declined")} className={buttonClass("secondary", "flex-1 sm:flex-none")}>
+            {t("cookie.decline")}
+          </button>
+          <button type="button" onClick={() => choose("accepted")} className={buttonClass("secondary", "flex-1 sm:flex-none")}>
+            {t("cookie.accept")}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

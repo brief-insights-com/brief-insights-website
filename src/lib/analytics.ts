@@ -1,4 +1,5 @@
 export const CONSENT_KEY = "briefinsights_cookie_consent";
+export const COOKIE_SETTINGS_EVENT = "briefinsights:cookie-settings";
 export type ConsentValue = "accepted" | "declined";
 
 export function getConsent(): ConsentValue | null {
@@ -12,7 +13,14 @@ export function getConsent(): ConsentValue | null {
 export function setConsent(value: ConsentValue) {
   try {
     localStorage.setItem(CONSENT_KEY, value);
-  } catch {}
+  } catch {
+    // Storage can be blocked; the banner simply asks again next visit.
+  }
+}
+
+/** Reopens the consent banner so a visitor can change or withdraw their choice. */
+export function openCookieSettings() {
+  window.dispatchEvent(new Event(COOKIE_SETTINGS_EVENT));
 }
 
 export function loadMetricool() {

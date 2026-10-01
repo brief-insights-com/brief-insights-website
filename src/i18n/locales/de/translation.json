@@ -1,196 +1,403 @@
 {
+  "meta": {
+    "home": {
+      "title": "Brief Insights — Jeder Brief, schon gelesen",
+      "description": "BriefXtract liest die Post, die bei Schuldner- und Sozialberatungsstellen eingeht, und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab."
+    },
+    "platform": {
+      "title": "Plattform — Brief Insights",
+      "description": "Wie BriefXtract aus der Tagespost eine Akte macht: gelesen, klassifiziert, extrahiert und abgelegt, jedes Feld an seiner Quellzeile überprüfbar."
+    },
+    "security": {
+      "title": "Sicherheit — Brief Insights",
+      "description": "Hosting in der EU, keine Datenspeicherung, DSGVO Artikel 28, KDG und DSG-EKD. Was mit einem Dokument vom Upload bis zur Löschung passiert."
+    },
+    "results": {
+      "title": "Ergebnisse — Brief Insights",
+      "description": "Rechnen Sie aus, wie viele Stunden BriefXtract Ihrer Beratungsstelle zurückgeben könnte, mit offengelegtem Rechenweg."
+    },
+    "about": {
+      "title": "Über uns — Brief Insights",
+      "description": "Brief Insights ist ein Berliner Softwareunternehmen und entwickelt BriefXtract für Schuldner- und Sozialberatungsstellen."
+    },
+    "impressum": { "title": "Impressum — Brief Insights" },
+    "privacy": { "title": "Datenschutzerklärung — Brief Insights" },
+    "notFound": { "title": "Seite nicht gefunden — Brief Insights" }
+  },
   "nav": {
-    "problem": "Problem",
-    "product": "Plattform",
+    "main": "Hauptnavigation",
+    "skip": "Zum Inhalt springen",
+    "home": "Brief Insights Startseite",
+    "platform": "Plattform",
     "security": "Sicherheit",
     "results": "Ergebnisse",
-    "about": "\u00dcber uns",
-    "requestDemo": "Demo anfragen"
+    "about": "Über uns",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "menu": "Menü",
+    "language": "Sprache",
+    "themeToDark": "Zum dunklen Design wechseln",
+    "themeToLight": "Zum hellen Design wechseln"
   },
-  "hero": {
-    "title1": "Schluss mit dem",
-    "title2": "Papierchaos.",
-    "subtitle": "BriefXtract nutzt Intelligente Dokumentenverarbeitung, um die Fallvorbereitung f\u00fcr Schuldnerberater zu automatisieren \u2014 von 8 Stunden auf 15 Minuten.",
-    "cta": "Demo anfragen",
-    "secondary": "Demo ansehen"
+  "actions": {
+    "requestDemo": "Demo anfragen",
+    "demoShort": "Demo",
+    "seePlatform": "Zur Plattform",
+    "seeWholePlatform": "Die ganze Plattform ansehen",
+    "readSecurity": "Zur Sicherheitsseite",
+    "workOutHours": "Stunden berechnen"
   },
-  "stats": {
-    "timeSaved": "Zeitersparnis pro Fall",
-    "downFrom": "Statt 8 Stunden",
-    "counselors": "Berater in Deutschland"
+  "cta": {
+    "default": {
+      "title": "Sehen Sie, wie es Ihre eigene Post liest.",
+      "body": "Bringen Sie einen Stapel echter Briefe zur Demo mit. Jedes Feld ist Zeile für Zeile überprüfbar."
+    },
+    "security": {
+      "title": "Legen Sie es Ihrem Datenschutz vor.",
+      "body": "Der Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach."
+    },
+    "results": {
+      "title": "Prüfen Sie die Zahlen an Ihrer eigenen Woche.",
+      "body": "Eine Demo läuft mit Ihrer echten Post, und die Stunden ergeben sich aus Ihren eigenen Fällen, nicht aus einem Durchschnitt."
+    }
   },
-  "problem": {
-    "label": "Das Problem",
-    "title": "Jeder Klient bringt eine Kiste voller Chaos mit.",
-    "hoursTitle": "1\u20138 Stunden pro Klient",
-    "hoursDesc": "Schuldnerberater in Deutschland sortieren und \u00fcbertragen chaotische Papierpost manuell \u2014 Briefe, Gerichtsbeschl\u00fcsse, Rechnungen \u2014 bevor die eigentliche Beratung beginnen kann.",
-    "debtTitle": "9 % der Deutschen verschuldet",
-    "debtDesc": "1.400 Beratungsstellen, 4.000+ Berater \u2014 alle \u00fcberfordert vom schieren Volumen unsortierter Korrespondenz von Gl\u00e4ubigern."
+  "mockup": {
+    "intakeQueue": "Posteingang",
+    "caseLine": "Fall 4471 · Eingang {{date}}",
+    "documents": "{{count}} Dokumente",
+    "columns": {
+      "document": "Dokument",
+      "creditor": "Gläubiger",
+      "fileNo": "Aktenzeichen",
+      "amount": "Betrag",
+      "due": "Fällig",
+      "status": "Status"
+    },
+    "dueOn": "fällig {{date}}",
+    "types": {
+      "courtOrder": "Gerichtsbeschluss",
+      "terminationNotice": "Kündigung",
+      "collectionLetter": "Inkassoschreiben",
+      "telephoneInvoice": "Telefonrechnung",
+      "energyInvoice": "Energierechnung"
+    },
+    "status": {
+      "urgent": "Dringend",
+      "check": "Prüfen",
+      "filed": "Abgelegt"
+    },
+    "syntheticLong": "Synthetische Falldaten. In keinem Mockup von Brief Insights erscheinen echte Dokumente, Namen oder Aktenzeichen von Klienten.",
+    "syntheticShort": "Synthetische Falldaten.",
+    "sourcePage": "Quellseite",
+    "pageOf": "Seite {{page}} von {{total}}",
+    "fields": {
+      "creditor": "Gläubiger",
+      "fileNumber": "Aktenzeichen",
+      "amount": "Betrag",
+      "dueDate": "Fällig am"
+    },
+    "line": "Zeile {{n}}",
+    "needsCheck": "prüfen",
+    "syntheticRecord": "Synthetischer Datensatz."
   },
-  "features": {
-    "label": "BriefXtract Plattform",
-    "title1": "Alles, was ein Berater braucht.",
-    "title2": "Nichts \u00dcberfl\u00fcssiges.",
-    "extraction": "Intelligente Extraktion",
-    "extractionDesc": "Unsere KI-Engine extrahiert Gl\u00e4ubigername, Aktenzeichen, Betrag und F\u00e4lligkeitsdatum aus gemischten PDFs \u2014 Briefe, Gerichtsbeschl\u00fcsse, Rechnungen \u2014 automatisch und in einem Durchgang.",
-    "gdpr": "Zero-Retention DSGVO",
-    "gdprDesc": "Mandantendaten trainieren niemals KI-Modelle. In Deutschland gehostet mit integrierter kirchlicher Datenschutzkonformit\u00e4t.",
-    "urgency": "Dringlichkeitserkennung",
-    "urgencyDesc": "R\u00e4umungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden automatisch erkannt und mit visuellen Priorit\u00e4tswarnungen angezeigt.",
-    "caseEngine": "Master-Schuldenfall-Engine",
-    "caseEngineDesc": "Verkn\u00fcpft automatisch unterschiedliche Dokumente \u2014 z.\u00a0B. eine Vodafone-Rechnung und ein Riverty-Inkassoschreiben \u2014 zu einem einheitlichen Schuldenfallbericht.",
-    "faster": "90 % schnellere Verarbeitung",
-    "fasterDesc": "Was fr\u00fcher 1\u20138 Stunden pro Klient dauerte, dauert jetzt 15 Minuten. Berater gewinnen Kapazit\u00e4t f\u00fcr Menschen statt Papierkram.",
-    "vivendi": "Nahtlose Integration",
-    "vivendiDesc": "Exportieren Sie strukturierte Daten in Ihr bevorzugtes Format oder verbinden Sie sich direkt per API mit Ihrem bestehenden Fallmanagementsystem — keine manuelle Nacherfassung erforderlich."
+  "home": {
+    "hero": {
+      "title": "Jeder Brief, schon gelesen.",
+      "subtitle": "BriefXtract liest jedes eingehende Dokument. Gläubiger, Aktenzeichen, Betrag und Frist landen in der richtigen Akte, bevor der Beratungstermin beginnt."
+    },
+    "stats": {
+      "title": "Weniger sortieren. Mehr beraten.",
+      "items": [
+        { "value": "90 %", "label": "Angestrebte Zeitersparnis beim Sortieren und Abtippen der Post." },
+        { "value": "15 Min.", "label": "Angestrebte Vorbereitungszeit pro Klient, statt 1 bis 8 Stunden von Hand." },
+        { "value": "4.000+", "label": "Berater in 1.400 Beratungsstellen in Deutschland, für deren Arbeit das hier gebaut ist." }
+      ],
+      "note": "Die Zeitangaben sind Produktziele. Die Balken zeigen den Anteil am manuellen Aufwand. Marktzahl: BAGFW, 2024."
+    },
+    "features": {
+      "title": "Eine Akte, jedes Dokument.",
+      "lead": "Mit jedem Brief passieren drei Dinge, bevor die Akte geöffnet wird.",
+      "items": [
+        {
+          "title": "Intelligente Extraktion",
+          "body": "Gläubiger, Aktenzeichen, Betrag und Fälligkeit werden in einem Durchgang aus gemischten PDFs gelesen – Briefe, Gerichtsbeschlüsse, Rechnungen – und jedes Feld steht neben der Zeile, aus der es stammt."
+        },
+        {
+          "title": "Dringlichkeitserkennung",
+          "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang erkannt und stehen mit einer beschrifteten Markierung, nie nur mit einer Farbe, oben in der Liste."
+        },
+        {
+          "title": "Master-Schuldenfall-Engine",
+          "body": "Eine Rechnung und das Inkassoschreiben, das darauf folgte, werden zu einem Schuldenfall verknüpft. So liest sich ein Fall als Fall und nicht als Stapel von Absendern."
+        }
+      ]
+    },
+    "photos": {
+      "title": "Vom Karton voller Papier zur Akte.",
+      "lead": "Die Arbeit verschwindet nicht. Sie liegt nur nicht mehr bei den Beratern.",
+      "before": {
+        "alt": "Blick von oben auf einen Schreibtisch voller loser Dokumente in einem dunklen Raum",
+        "caption": "Vorher. Dreißig bis achtzig Briefe pro Klient, von Hand sortiert, bevor die Beratung beginnen kann."
+      },
+      "after": {
+        "alt": "Eine Person prüft einen Fall auf einem Tablet an einem aufgeräumten Schreibtisch",
+        "caption": "Nachher. Eine Akte, jedes Feld an der Seite überprüfbar, von der es gelesen wurde."
+      }
+    },
+    "security": {
+      "title": "Gebaut für die strengsten Standards in Deutschland.",
+      "items": [
+        { "title": "Hosting in der EU", "body": "Die Verarbeitung läuft auf EU-Infrastruktur. Kein Dokument verlässt die EU." },
+        { "title": "Keine Datenspeicherung", "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell." },
+        { "title": "DSGVO Artikel 28", "body": "Ein vollständiger Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich." },
+        { "title": "KDG und DSG-EKD", "body": "Kirchlicher Datenschutz ist eingebaut, für Caritas, Diakonie und AWO." }
+      ]
+    }
   },
-  "beforeAfter": {
-    "label": "Die Transformation",
-    "title": "Was sich mit BriefXtract \u00e4ndert.",
-    "beforeLabel": "Vorher",
-    "afterLabel": "Nach BriefXtract",
-    "before1": "30\u201380 Briefe pro Klient manuell sortieren",
-    "before2": "Daten per Hand in Vivendi eintippen",
-    "before3": "Keine M\u00f6glichkeit, dringende Bescheide zu erkennen",
-    "before4": "1\u20138 Stunden verloren, bevor die Beratung beginnt",
-    "before5": "Engpass begrenzt die Anzahl betreuter Klienten",
-    "after1": "PDF hochladen \u2014 KI erledigt den Rest",
-    "after2": "Daten automatisch in strukturierte F\u00e4lle \u00fcbertragen",
-    "after3": "R\u00e4umungsklagen sofort markiert",
-    "after4": "Fall in ~15 Minuten fertig",
-    "after5": "Berater konzentrieren sich ganz auf die Klienten",
-    "timePerCase": "Zeit pro Klientenfall",
-    "reduction": "90 % Reduktion",
-    "manualAvg": "Manuell (\u00d8 4 Std.)",
-    "manualMin": "480 Min.",
-    "withBriefXtract": "Mit BriefXtract",
-    "fifteenMin": "15 Min."
+  "platform": {
+    "hero": {
+      "title": "Eine Akte, jedes Dokument.",
+      "subtitle": "BriefXtract ist Intelligente Dokumentenverarbeitung (IDP) für eine einzige Aufgabe: aus der Tagespost eine Akte zu machen, die Berater öffnen und der sie vertrauen können."
+    },
+    "steps": {
+      "title": "Vier Schritte, keiner davon Ihrer.",
+      "lead": "Vom Scanner bis zur abgelegten Akte, ohne dass jemand etwas abtippt.",
+      "items": [
+        { "title": "Die Post kommt an", "body": "Scannen oder leiten Sie die Tagespost als ein gemischtes PDF weiter. Ohne Vorsortieren, ohne Namenskonvention." },
+        { "title": "Gelesen und klassifiziert", "body": "Jede Seite wird von ihren Nachbarn getrennt und erkannt: Brief, Gerichtsbeschluss, Rechnung, Bescheid." },
+        { "title": "Felder extrahiert", "body": "Gläubiger, Aktenzeichen, Betrag und Frist kommen zurück, jedes neben der Zeile, aus der es gelesen wurde." },
+        { "title": "In der Akte abgelegt", "body": "Dokumente zur selben Forderung werden zu einem Datensatz verknüpft, bereit für den Termin." }
+      ]
+    },
+    "highlight": {
+      "title": "Extraktion, die Sie Zeile für Zeile prüfen können.",
+      "body": "Jeder extrahierte Wert verweist auf den Satz, aus dem er stammt. Berater bestätigen einen Fall, indem sie die Seite lesen, nicht indem sie einem Score vertrauen."
+    },
+    "capabilities": {
+      "title": "Alles, was ein Berater braucht. Nichts Überflüssiges.",
+      "lead": "Sechs Funktionen, jede verdient durch eine Aufgabe, die bisher Handarbeit war.",
+      "items": [
+        { "title": "Intelligente Extraktion", "body": "Gläubigername, Aktenzeichen, Betrag und Fälligkeitsdatum, in einem Durchgang aus gemischten PDFs gelesen." },
+        { "title": "Dringlichkeitserkennung", "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide erscheinen mit einer beschrifteten Markierung." },
+        { "title": "Master-Schuldenfall-Engine", "body": "Eine Rechnung und das darauf folgende Inkassoschreiben werden zu einem einzigen Schuldenfall verknüpft." },
+        { "title": "Verarbeitung ohne Speicherung", "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell." },
+        { "title": "Export ins Fallmanagement", "body": "Strukturierte Daten im Format Ihrer Wahl oder eine direkte Anbindung an Ihr Fallmanagementsystem per Programmierschnittstelle (API)." },
+        { "title": "Gebaut für die Fallzahlen", "body": "Darauf ausgelegt, die Vorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken, damit die Obergrenze sich verschiebt." }
+      ]
+    },
+    "compare": {
+      "title": "Was sich ändert, Aufgabe für Aufgabe.",
+      "lead": "Dieselben fünf Aufgaben, vor und nach dem Moment, in dem die Post für Sie gelesen wird.",
+      "columns": { "label": "Aufgabe", "before": "Heute von Hand", "after": "Mit BriefXtract" },
+      "rows": [
+        { "label": "Eingehende Post sortieren", "before": "30 bis 80 Briefe pro Klient, von Hand", "after": "Als ein gemischtes PDF hochgeladen" },
+        { "label": "Daten ins Fallmanagement bringen", "before": "Feld für Feld abgetippt", "after": "Aus der Extraktion übernommen" },
+        { "label": "Einen dringenden Bescheid erkennen", "before": "Nicht enthalten", "after": "Enthalten – beim Eingang markiert" },
+        { "label": "Zeit, bis die Beratung beginnt", "before": "1 bis 8 Stunden", "after": "Etwa 15 Minuten (Ziel)" },
+        { "label": "Was die Fallzahl begrenzt", "before": "Papierkram", "after": "Die Verfügbarkeit der Berater" }
+      ],
+      "note": "Manuelle Angaben nach Auskunft von Beratungsstellen. Die Zeit mit BriefXtract ist ein Produktziel."
+    }
   },
   "security": {
-    "label": "Unternehmenssicherheit",
-    "title": "Gebaut f\u00fcr die strengsten Standards in Deutschland.",
-    "subtitle": "Jede Architekturentscheidung wurde im Hinblick auf das deutsche Datenschutzrecht getroffen \u2014 nicht als Nachgedanke.",
-    "gdprTitle": "DSGVO Artikel 28 konform",
-    "gdprDesc": "Vollst\u00e4ndiger Auftragsverarbeitungsvertrag (AVV) verf\u00fcgbar. BriefInsights handelt als zertifizierter Auftragsverarbeiter gem\u00e4\u00df EU-DSGVO.",
-    "hostingTitle": "Hosting in der EU",
-    "hostingDesc": "Alle Daten werden auf AWS-Infrastruktur innerhalb der EU verarbeitet. Keine Daten verlassen die EU. Niemals.",
-    "retentionTitle": "Keine Datenspeicherung",
-    "retentionDesc": "Dokumente werden unmittelbar nach der Verarbeitung dauerhaft gel\u00f6scht. Nichts wird gespeichert, indiziert oder f\u00fcr das KI-Training verwendet.",
-    "churchTitle": "Kirchlicher Datenschutz",
-    "churchDesc": "KDG (katholisch) und DSG-EKD (evangelisch) konform. Speziell entwickelt f\u00fcr Caritas, Diakonie und AWO.",
-    "encryptionTitle": "Ende-zu-Ende verschl\u00fcsselt",
-    "encryptionDesc": "TLS 1,3 bei der \u00dcbertragung, AES-256 im Ruhezustand. Die sensiblen Finanzdaten Ihrer Klienten sind bei jedem Schritt gesch\u00fctzt.",
-    "infraTitle": "Enterprise KI-Infrastruktur",
-    "infraDesc": "Gebaut auf enterprise-t\u00fcchtiger KI-Cloud-Infrastruktur ohne Datentraining, mit voller Nachvollziehbarkeit und 99,9 % Uptime-SLA.",
-    "tlsBadge": "TLS 1,3 \u00b7 AES-256"
+    "hero": {
+      "title": "Gelesen, zurückgegeben, gelöscht.",
+      "subtitle": "Jeder Teil der Verarbeitung wurde mit Blick auf das deutsche und das kirchliche Datenschutzrecht gestaltet. Nicht nachträglich ergänzt."
+    },
+    "lifecycle": {
+      "title": "Was mit einem Dokument passiert.",
+      "lead": "Vier Stationen, und die letzte ist die Löschung. Eine fünfte gibt es nicht.",
+      "items": [
+        { "title": "Empfangen", "body": "Der Upload gelangt per TLS 1.3 auf EU-Infrastruktur und liegt dort mit AES-256 verschlüsselt." },
+        { "title": "Verarbeitet", "body": "Klassifizierung und Extraktion laufen innerhalb der EU. Kein Dokument wird zum Trainieren eines Modells verwendet." },
+        { "title": "Zurückgegeben", "body": "Der strukturierte Fall geht in Ihr Fallmanagementsystem. Die Akte liegt bei der Beratungsstelle." },
+        { "title": "Gelöscht", "body": "Das Quelldokument wird direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert oder indiziert." }
+      ]
+    },
+    "commitments": {
+      "title": "Die Zusagen, schriftlich.",
+      "lead": "Jede ist für Ihre Datenschutzbeauftragten dokumentiert.",
+      "items": [
+        { "tag": "DSGVO", "title": "Verarbeitung nach Artikel 28", "body": "Ein vollständiger Auftragsverarbeitungsvertrag (AVV) ist auf Anfrage erhältlich. Klientendaten werden vollständig nach EU-DSGVO verarbeitet." },
+        { "tag": "Standort", "title": "Hosting in der EU", "body": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU. Kein Klientendokument verlässt die EU." },
+        { "tag": "Speicherung", "title": "Keine Datenspeicherung", "body": "Dokumente werden direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert, indiziert oder zum Training verwendet." },
+        { "tag": "Kirchenrecht", "title": "KDG und DSG-EKD", "body": "Konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht, für Caritas, Diakonie und AWO." },
+        { "tag": "Verschlüsselung", "title": "Ende-zu-Ende verschlüsselt", "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, bei jedem Schritt, den die Finanzdaten Ihrer Klienten durchlaufen." },
+        { "tag": "Betrieb", "title": "Nachvollziehbare Infrastruktur", "body": "KI-Infrastruktur für Unternehmen, ohne Modelltraining, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit." }
+      ]
+    },
+    "faq": {
+      "title": "Fragen, die Datenschutzbeauftragte stellen.",
+      "items": [
+        { "q": "Wo werden unsere Daten gespeichert?", "a": "Innerhalb der EU, auf AWS-Infrastruktur, und nur für die Dauer der Verarbeitung. Der extrahierte Fall geht zurück in Ihr System, das Quelldokument wird gelöscht. Danach bleibt nichts erhalten." },
+        { "q": "Trainieren Klientendokumente Ihre Modelle?", "a": "Nein. Klientendaten trainieren niemals KI-Modelle. Dokumente werden verarbeitet, als strukturierter Fall zurückgegeben und dauerhaft gelöscht." },
+        { "q": "Unterzeichnen Sie einen Auftragsverarbeitungsvertrag?", "a": "Ja. Ein vollständiger Auftragsverarbeitungsvertrag nach DSGVO Artikel 28 ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach." },
+        { "q": "Erfüllt das KDG und DSG-EKD?", "a": "Ja. BriefXtract ist konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht und wurde für Caritas, Diakonie und AWO entwickelt." },
+        { "q": "Wer sind die Unterauftragsverarbeiter?", "a": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle, die auf Amazon Bedrock laufen." }
+      ]
+    }
   },
-  "roi": {
-    "label": "Das Gesch\u00e4ftsargument",
-    "title": "Die Mathematik spricht f\u00fcr sich.",
-    "subtitle": "F\u00fcr ein durchschnittliches Beratungszentrum mit 10 Mitarbeitern amortisiert sich BriefXtract vielfach \u2014 und gibt Beratern ihre Zeit zur\u00fcck.",
-    "withoutLabel": "Ohne BriefXtract",
-    "withLabel": "Mit BriefXtract",
-    "row1Label": "\u00d8 Vorbereitung pro Fall",
-    "row1Without": "4 Stunden",
-    "row1With": "15 Minuten",
-    "row2Label": "Klienten pro Berater / Woche",
-    "row2Without": "~5 Klienten",
-    "row2With": "~20 Klienten",
-    "row3Label": "Gesparte Verwaltungsstunden / Jahr (10 Mitarb.)",
-    "row3Without": "\u2014",
-    "row3With": "37.500 Stunden",
-    "row4Label": "Gesch\u00e4tzte Personalkosteneinsparung",
-    "row4Without": "\u2014",
-    "row4With": "750.000 \u20ac+",
-    "calc_counselors": "Anzahl der Berater",
-    "calc_clients": "Klienten pro Berater / Woche",
-    "calc_hourly": "Durchschn. Personalkosten / Std.",
-    "calc_hours_week": "Freigesetzte Stunden pro Woche",
-    "calc_hours_year": "Freigesetzte Stunden pro Jahr",
-    "calc_savings": "Gesch\u00e4tzte Personalkosteneinsparung / Jahr",
-    "calc_assumption": "Basierend auf durchschn. 4 Std. manuellem Aufwand, reduziert auf 15 Min. mit BriefXtract, \u00fcber 48 Arbeitswochen.",
-    "disclaimer": "*Sch\u00e4tzungen basieren auf deutschen Bundesstatistiken zur Schuldnerberatung (BAGFW, 2024). Die tats\u00e4chlichen Einsparungen variieren je nach Organisationsgr\u00f6\u00dfe und aktuellem Prozessreifegrad.",
-    "ctaDemo": "Demo anfragen"
-  },
-  "footer": {
-    "cta": "Kontakt aufnehmen.",
-    "tagline": "Sozialarbeiter entlasten durch Automatisierung administrativer Aufgaben.",
-    "location": "Berlin \u00b7 Deutschland",
-    "gdpr": "DSGVO-konform",
-    "zeroData": "Keine Datenspeicherung",
-    "copyright": "\u00a9 2026 BriefInsights. Alle Rechte vorbehalten.",
-    "productTitle": "Plattform",
-    "link_problem": "Das Problem",
-    "link_product": "BriefXtract Plattform",
-    "link_security": "Sicherheit & Compliance",
-    "link_results": "Ergebnisse",
-    "companyTitle": "Unternehmen",
-    "link_about": "\u00dcber uns",
-    "link_contact": "Kontakt",
-    "link_privacy": "Datenschutzerkl\u00e4rung",
-    "link_terms": "Impressum"
-  },
-  "impressum": {
-    "title": "Impressum",
-    "placeholder": "Diese Seite enthält das gesetzlich vorgeschriebene Impressum dieser Website.",
-    "comingSoon": "Inhalt wird nach Generierung über e-recht24.de hinzugefügt."
-  },
-  "privacy": {
-    "title": "Datenschutzerklärung",
-    "placeholder": "Diese Seite enthält die Datenschutzerklärung dieser Website.",
-    "comingSoon": "Inhalt wird nach Generierung über e-recht24.de hinzugefügt."
-  },
-  "notFound": {
-    "title": "404",
-    "message": "Seite nicht gefunden",
-    "link": "Zur Startseite"
+  "results": {
+    "hero": {
+      "title": "Stunden zurück, jede Woche.",
+      "subtitle": "Was fünfzehn Minuten statt vier Stunden in einer ganzen Beratungsstelle ausmachen würden. Tragen Sie Ihre eigenen Zahlen ein und prüfen Sie die Rechnung."
+    },
+    "compare": {
+      "title": "Was eine Beratungsstelle zurückbekommt.",
+      "lead": "Eine Beratungsstelle mit zehn Beratern, bevor und nachdem die Post für sie gelesen wird.",
+      "columns": { "label": "Kennzahl", "before": "Ohne BriefXtract", "after": "Mit BriefXtract" },
+      "rows": [
+        { "label": "Durchschnittliche Vorbereitung pro Fall", "before": "4 Stunden", "after": "Etwa 15 Minuten (Ziel)" },
+        { "label": "Zurückgewonnene Verwaltungsstunden pro Jahr, 10 Berater", "before": "Entfällt", "after": "9.000 Stunden" },
+        { "label": "Geschätzte zurückgewonnene Personalkosten pro Jahr", "before": "Entfällt", "after": "315.000 €" }
+      ],
+      "note": "Gerechnet mit dem 15-Minuten-Ziel, 10 Beratern mit je 5 Klientenfällen pro Woche, 48 Arbeitswochen und 35 € pro Stunde. Jeden dieser Werte können Sie unten im Rechner ändern."
+    },
+    "calculator": {
+      "title": "Rechnen Sie es für Ihre Beratungsstelle aus.",
+      "lead": "Drei Zahlen, die Sie schon kennen. Der Rechenweg steht darunter.",
+      "counselors": "Berater in der Beratungsstelle",
+      "casesPerWeek": "Klientenfälle pro Berater und Woche",
+      "hourlyCost": "Personalkosten pro Stunde, in Euro",
+      "hoursPerWeek": "Freigesetzte Stunden pro Woche",
+      "hoursPerYear": "Freigesetzte Stunden pro Jahr",
+      "costPerYear": "Zurückgewonnene Personalkosten pro Jahr",
+      "hoursUnit": "{{value}} Std.",
+      "formula": "{{counselors}} Berater × {{cases}} Fälle pro Woche × 3,75 Std. Ersparnis = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
+      "note": "Angenommen sind 4 Stunden manuelle Vorbereitung, reduziert auf das 15-Minuten-Ziel, also 3,75 Stunden Ersparnis pro Fall, über 48 Arbeitswochen. Zurückgewonnene Zeit ist Kapazität, kein Geld: Sie fließt zurück in die Beratung."
+    },
+    "capacity": {
+      "title": "Wohin die Stunde geht.",
+      "lead": "Zurückgewonnene Zeit ist Kapazität, und Kapazität zeigt sich an drei Stellen.",
+      "items": [
+        { "title": "Termine statt Vorbereitung", "body": "Die Stunden, die ins Sortieren gingen, fließen zurück in die Zeit, in der Klienten tatsächlich im Raum sind." },
+        { "title": "Fristen, die nicht verpasst werden", "body": "Ein Vollstreckungsbescheid fällt am Tag seines Eingangs auf, nicht erst an dem Tag, an dem jemand diesen Umschlag öffnet." },
+        { "title": "Eine kürzere Warteliste", "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit der Berater, bewegt sich die Warteschlange." }
+      ]
+    }
   },
   "about": {
-    "label": "\u00dcber uns",
-    "title": "Gebaut f\u00fcr die Menschen, die Menschen helfen.",
-    "mission": "BriefInsights wurde in Berlin gegr\u00fcndet mit einer Mission: den administrativen Aufwand f\u00fcr Sozialarbeiter zu eliminieren, damit sie mehr Zeit f\u00fcr die Menschen aufwenden k\u00f6nnen, die sie am meisten brauchen.",
-    "team": "Unser Team vereint Expertise in KI, Legal Tech und Sozialarbeit, um Tools zu entwickeln, die den strengsten deutschen Datenschutzstandards entsprechen.",
-    "stat1Label": "Gegr\u00fcndet",
-    "stat1Value": "Berlin, 2026",
-    "stat2Label": "Branche",
-    "stat2Value": "Schulden- & Sozialberatung",
-    "stat3Label": "Datenspeicherung",
-    "stat3Value": "Nur EU",
-    "stat4Label": "Compliance",
-    "stat4Value": "DSGVO · KDG · DSG-EKD",
-    "contact": "Demo anfragen",
-    "contactEmail": "info@brief-insights.com"
+    "hero": {
+      "title": "Gebaut für die Menschen, die Menschen helfen.",
+      "subtitle": "Brief Insights ist ein Berliner Softwareunternehmen. Es entwickelt ein einziges Produkt für einen Teil der Arbeit: den Papierkram, der zwischen Beratern und dem Termin steht."
+    },
+    "why": {
+      "title": "Warum es das gibt.",
+      "p1": "Neun Prozent der Menschen in Deutschland sind verschuldet, und wer ihnen hilft, verbringt die ersten Stunden mit Umschlägen statt mit Gesprächen. Pro Klient kommen dreißig bis achtzig Briefe an – Gerichtsbeschlüsse, Vollstreckungsbescheide, Rechnungen, Inkassoschreiben – und jeder davon wird von Hand sortiert, gelesen und abgetippt, bevor die Beratung beginnen kann.",
+      "p2": "Brief Insights wurde in Berlin gegründet, um diese Arbeit vom Schreibtisch zu nehmen. BriefXtract liest die Post, extrahiert die wichtigen Felder und legt jedes Dokument in der richtigen Akte ab. So fließt die Stunde, die ins Sortieren ging, zurück zu dem Menschen, der auf den Termin wartet.",
+      "p3Before": "Das Produkt tut eine Sache, und sie ist überprüfbar. Jeder extrahierte Wert verweist auf die Zeile, aus der er gelesen wurde, jedes Dokument wird direkt nach der Verarbeitung gelöscht, und die Regeln für beides stehen auf der ",
+      "p3Link": "Sicherheitsseite",
+      "p3After": ".",
+      "facts": [
+        { "label": "Gegründet", "value": "Berlin, 2026" },
+        { "label": "Produkt", "value": "BriefXtract, eine Plattform für Intelligente Dokumentenverarbeitung (IDP)" },
+        { "label": "Branche", "value": "Schuldner- und Sozialberatung" },
+        { "label": "Datenstandort", "value": "Nur EU" },
+        { "label": "Compliance", "value": "DSGVO · KDG · DSG-EKD" }
+      ]
+    },
+    "photos": {
+      "title": "Die Woche, die sich ändern soll.",
+      "lead": "Der Stapel, der den Tagesablauf bestimmt, und die Übergabe, die ihn beendet.",
+      "before": {
+        "alt": "Nahaufnahme eines Papierstapels bei wenig Licht",
+        "caption": "Vorher. Der Stapel bestimmt den Tagesablauf."
+      },
+      "after": {
+        "alt": "Ein Karton mit losen Unterlagen wird übergeben und entgegengenommen",
+        "caption": "Nachher. Der Karton wird einmal übergeben und kommt als Akte zurück."
+      },
+      "note": "Gestellte Fotos. Keine Kunden, keine bestimmte Beratungsstelle."
+    },
+    "contact": {
+      "title": "Eine Adresse, ein Postfach.",
+      "email": { "label": "E-Mail", "body": "Pilotprojekte, Auftragsverarbeitungsverträge und Fragen zur Anbindung landen alle hier." },
+      "office": { "label": "Büro", "value": "Berlin, Deutschland", "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin" },
+      "audience": {
+        "label": "Für wen das ist",
+        "value": "Beratungsstellen",
+        "body": "Caritas, Diakonie, AWO sowie unabhängige Schuldner- und Sozialberatungsstellen."
+      }
+    }
   },
-  "bentoMock": {
-    "creditor": "Gl\u00e4ubiger",
-    "amount": "Betrag",
-    "fileNo": "Aktenzeichen",
-    "dueDate": "F\u00e4lligkeitsdatum",
-    "doc1": "Vodafone-Rechnung",
-    "doc2": "Riverty-Schreiben",
-    "doc3": "Gerichtsbescheid #3",
-    "masterCase": "\u2192 Masterfall #MC-00441"
+  "demo": {
+    "title": "Demo anfragen",
+    "description": "Hinterlassen Sie Ihre Angaben, und das Team von Brief Insights vereinbart einen Termin, um Ihre eigene Post durch BriefXtract laufen zu lassen.",
+    "name": "Vollständiger Name",
+    "email": "Dienstliche E-Mail",
+    "emailPlaceholder": "name@ihre-beratungsstelle.de",
+    "org": "Organisation",
+    "message": "Nachricht",
+    "optional": "(optional)",
+    "messageHint": "Zum Beispiel Ihr Fallmanagementsystem oder eine Anfrage nach dem Auftragsverarbeitungsvertrag.",
+    "privacyBefore": "Wie diese Angaben verarbeitet werden, steht in der ",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": ".",
+    "submit": "Demo anfragen",
+    "sending": "Wird gesendet …",
+    "close": "Schließen",
+    "errors": {
+      "nameRequired": "Geben Sie Ihren vollständigen Namen ein.",
+      "emailRequired": "Geben Sie Ihre dienstliche E-Mail-Adresse ein.",
+      "emailInvalid": "Geben Sie eine E-Mail-Adresse im Format name@ihre-beratungsstelle.de ein.",
+      "orgRequired": "Geben Sie den Namen Ihrer Organisation ein."
+    },
+    "failedTitle": "Die Anfrage wurde nicht gesendet.",
+    "failedBefore": "Versuchen Sie es erneut oder schreiben Sie direkt an ",
+    "failedAfter": ".",
+    "successTitle": "Anfrage erhalten.",
+    "successBody": "Das Team von Brief Insights meldet sich, um einen Termin für Ihre Demo zu vereinbaren."
+  },
+  "footer": {
+    "logoAlt": "Brief Insights",
+    "columns": {
+      "product": "Produkt",
+      "security": "Sicherheit",
+      "resources": "Ressourcen",
+      "solutions": "Lösungen",
+      "company": "Unternehmen",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "platform": "Plattform",
+      "extraction": "Extraktion",
+      "caseEngine": "Schuldenfall-Engine",
+      "urgency": "Dringlichkeitserkennung",
+      "overview": "Überblick",
+      "residency": "Datenstandort",
+      "retention": "Keine Datenspeicherung",
+      "dpa": "Auftragsverarbeitung",
+      "results": "Ergebnisse",
+      "calculator": "Stundenrechner",
+      "questions": "Häufige Fragen",
+      "debt": "Schuldnerberatung",
+      "social": "Sozialberatung",
+      "nonProfit": "Gemeinnützige Träger",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "impressum": "Impressum",
+      "privacy": "Datenschutzerklärung",
+      "cookies": "Cookie-Einstellungen"
+    },
+    "copyright": "© {{year}} Brief Insights UG (haftungsbeschränkt). Berlin, Deutschland.",
+    "assurance": "TLS 1.3 · AES-256 · Nur EU"
   },
   "cookie": {
-    "message": "Wir verwenden Analytics-Cookies (Metricool), um zu verstehen, wie Besucher mit unserer Website interagieren.",
+    "label": "Cookie-Einwilligung",
+    "message": "Wir verwenden Analyse-Cookies (Metricool), um zu verstehen, wie Besucher diese Website nutzen. Geladen wird erst, wenn Sie zustimmen.",
     "privacyLink": "Datenschutzerklärung",
     "accept": "Akzeptieren",
     "decline": "Ablehnen"
   },
-  "demo": {
-    "title": "Demo anfragen",
-    "subtitle": "Erz\u00e4hlen Sie uns von Ihrer Organisation \u2013 wir melden uns innerhalb von 24 Stunden.",
-    "name": "Vollst\u00e4ndiger Name",
-    "namePlaceholder": "Ihr vollst\u00e4ndiger Name",
-    "email": "Dienstliche E-Mail",
-    "emailPlaceholder": "name@organisation.com",
-    "org": "Organisation",
-    "orgPlaceholder": "Ihre Organisation",
-    "message": "Nachricht (optional)",
-    "messagePlaceholder": "Beschreiben Sie Ihren aktuellen Dokumentenprozess...",
-    "submit": "Anfrage senden",
-    "successTitle": "Anfrage erhalten!",
-    "successMessage": "Vielen Dank \u2013 wir melden uns innerhalb von 24 Stunden.",
-    "close": "Schlie\u00dfen"
+  "legal": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "germanVersion": "Deutsche Fassung",
+    "englishVersion": "English version"
+  },
+  "notFound": {
+    "title": "Diese Seite gibt es nicht.",
+    "message": "Vielleicht ist die Adresse vertippt, oder die Seite ist beim Umbau der Website umgezogen.",
+    "link": "Zur Startseite"
   }
 }

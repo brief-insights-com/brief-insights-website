@@ -1,87 +1,111 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
+
+const token = (name: string) => `rgb(var(--bi-${name}) / <alpha-value>)`;
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ['"Inter Variable"', "Inter", "-apple-system", "system-ui", '"Segoe UI"', "Helvetica", "sans-serif"],
+      },
+      // Brief Insights type scale (design system: Display, Headings, Text, Utility).
+      fontSize: {
+        hero: ["80px", { lineHeight: "1.05", letterSpacing: "-2px", fontWeight: "600" }],
+        display: ["56px", { lineHeight: "1.1", letterSpacing: "-1px", fontWeight: "600" }],
+        h1: ["48px", { lineHeight: "1.15", letterSpacing: "-0.5px", fontWeight: "600" }],
+        h2: ["36px", { lineHeight: "1.2", letterSpacing: "-0.5px", fontWeight: "600" }],
+        h3: ["28px", { lineHeight: "1.25", letterSpacing: "-0.25px", fontWeight: "600" }],
+        h4: ["22px", { lineHeight: "1.3", fontWeight: "600" }],
+        h5: ["18px", { lineHeight: "1.4", fontWeight: "600" }],
+        subtitle: ["18px", { lineHeight: "1.5" }],
+        body: ["16px", { lineHeight: "1.55" }],
+        "body-sm": ["14px", { lineHeight: "1.5" }],
+        caption: ["13px", { lineHeight: "1.4" }],
+        micro: ["11px", { lineHeight: "1.4", letterSpacing: "1px", fontWeight: "600" }],
+        button: ["14px", { lineHeight: "1.3", fontWeight: "500" }],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Design-system names.
+        canvas: token("canvas"),
+        surface: { DEFAULT: token("surface"), soft: token("surface-soft") },
+        hairline: { DEFAULT: token("hairline"), soft: token("hairline-soft"), strong: token("hairline-strong") },
+        ink: { DEFAULT: token("ink"), deep: token("ink-deep") },
+        charcoal: token("charcoal"),
+        slate: token("slate"),
+        steel: token("steel"),
+        stone: token("stone"),
+        disabled: token("muted"),
+        "on-dark": { DEFAULT: token("on-dark"), muted: token("on-dark-muted") },
+        "brand-navy": { DEFAULT: token("brand-navy"), deep: token("brand-navy-deep"), mid: token("brand-navy-mid") },
+        tint: {
+          peach: token("card-tint-peach"),
+          amber: token("card-tint-amber"),
+          "amber-bold": token("card-tint-amber-bold"),
+          sky: token("card-tint-sky"),
+          teal: token("card-tint-teal"),
+          violet: token("card-tint-violet"),
+          rose: token("card-tint-rose"),
+          cream: token("card-tint-cream"),
+          gray: token("card-tint-gray"),
+        },
+        chip: {
+          sky: token("brand-sky"),
+          teal: token("brand-teal"),
+          violet: token("brand-violet"),
+          "violet-800": token("brand-violet-800"),
+          rose: token("brand-rose"),
+          "rose-deep": token("brand-rose-deep"),
+          amber: token("brand-amber"),
+          green: token("brand-green"),
+          brown: token("brand-brown"),
+        },
+        success: token("semantic-success"),
+        warning: token("semantic-warning"),
+        error: token("semantic-error"),
+
+        // Names the shadcn/ui primitives expect, pointed at the same tokens.
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: token("primary"),
+          pressed: token("primary-pressed"),
+          deep: token("primary-deep"),
+          foreground: token("on-primary"),
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        glow: {
-          DEFAULT: "hsl(var(--glow))",
-          muted: "hsl(var(--glow-muted))",
-        },
-        surface: {
-          1: "hsl(var(--surface-1))",
-          2: "hsl(var(--surface-2))",
-          3: "hsl(var(--surface-3))",
-        },
-        status: {
-          online: "hsl(var(--status-online))",
-        },
-        section: {
-          orange: "hsl(var(--section-orange))",
-          blue: "hsl(var(--section-blue))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        accent: { DEFAULT: token("accent"), deep: token("accent-deep"), foreground: token("on-accent") },
+        background: token("canvas"),
+        foreground: token("ink"),
+        border: token("hairline"),
+        input: token("hairline-strong"),
+        ring: token("primary"),
+        card: { DEFAULT: token("canvas"), foreground: token("ink") },
+        popover: { DEFAULT: token("canvas"), foreground: token("ink") },
+        secondary: { DEFAULT: token("surface"), foreground: token("ink") },
+        muted: { DEFAULT: token("surface"), foreground: token("slate") },
+        destructive: { DEFAULT: token("semantic-error"), foreground: token("on-primary") },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "6px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+      },
+      boxShadow: {
+        1: "var(--bi-shadow-1)",
+        2: "var(--bi-shadow-2)",
+        3: "var(--bi-shadow-3)",
+        4: "var(--bi-shadow-4)",
+      },
+      maxWidth: {
+        container: "1280px",
       },
       keyframes: {
         "accordion-down": {
@@ -92,17 +116,12 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-6px)" },
-        },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 6s ease-in-out infinite",
+        "accordion-down": "accordion-down 0.18s ease-out",
+        "accordion-up": "accordion-up 0.18s ease-out",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 } satisfies Config;

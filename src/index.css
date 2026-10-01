@@ -1,174 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Brief Insights design tokens.
+ * Colour values are generated from the design system's tokens.json
+ * (https://claude.ai/code/artifact/31eccd26-2d2c-4019-8467-3fadfe2c31c8) and stored as
+ * RGB channels so Tailwind opacity modifiers work, e.g. bg-brand-navy-deep/65.
+ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 4%;
-
-    --card: 0 0% 97%;
-    --card-foreground: 0 0% 4%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 4%;
-
-    --primary: 32 91% 54%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 240 5% 92%;
-    --secondary-foreground: 0 0% 9%;
-
-    --muted: 240 5% 92%;
-    --muted-foreground: 240 4% 46%;
-
-    --accent: 240 5% 92%;
-    --accent-foreground: 0 0% 9%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 32 80% 55%;
-
+    --bi-primary: 53 103 159;
+    --bi-primary-pressed: 42 82 128;
+    --bi-primary-deep: 29 60 94;
+    --bi-on-primary: 255 255 255;
+    --bi-accent: 241 137 30;
+    --bi-accent-deep: 162 86 6;
+    --bi-on-accent: 26 26 26;
+    --bi-brand-navy: 20 40 63;
+    --bi-brand-navy-deep: 13 27 42;
+    --bi-brand-navy-mid: 36 64 95;
+    --bi-brand-sky: 42 114 153;
+    --bi-brand-teal: 31 127 134;
+    --bi-brand-violet: 84 87 168;
+    --bi-brand-violet-300: 191 192 228;
+    --bi-brand-violet-800: 43 45 99;
+    --bi-brand-rose: 176 69 102;
+    --bi-brand-rose-deep: 122 44 68;
+    --bi-brand-amber: 184 132 15;
+    --bi-brand-green: 42 111 73;
+    --bi-brand-brown: 92 67 38;
+    --bi-card-tint-peach: 253 234 219;
+    --bi-card-tint-amber: 253 242 218;
+    --bi-card-tint-amber-bold: 248 211 160;
+    --bi-card-tint-sky: 221 232 245;
+    --bi-card-tint-teal: 219 236 235;
+    --bi-card-tint-violet: 227 227 243;
+    --bi-card-tint-rose: 249 227 232;
+    --bi-card-tint-cream: 250 246 238;
+    --bi-card-tint-gray: 236 237 240;
+    --bi-canvas: 255 255 255;
+    --bi-surface: 243 245 248;
+    --bi-surface-soft: 249 250 252;
+    --bi-hairline: 223 228 234;
+    --bi-hairline-soft: 233 237 242;
+    --bi-hairline-strong: 127 136 148;
+    --bi-ink-deep: 0 0 0;
+    --bi-on-ink-deep: 255 255 255;
+    --bi-ink: 22 32 43;
+    --bi-charcoal: 38 49 61;
+    --bi-slate: 77 90 104;
+    --bi-steel: 99 111 123;
+    --bi-stone: 139 149 160;
+    --bi-muted: 176 184 192;
+    --bi-on-dark: 255 255 255;
+    --bi-on-dark-muted: 159 173 189;
+    --bi-semantic-success: 42 111 73;
+    --bi-semantic-warning: 162 86 6;
+    --bi-semantic-error: 191 44 44;
+    --bi-shadow-1: 0px 1px 2px 0px rgba(13, 27, 42, 0.05);
+    --bi-shadow-2: 0px 4px 12px 0px rgba(13, 27, 42, 0.1);
+    --bi-shadow-3: 0px 24px 48px -8px rgba(13, 27, 42, 0.24);
+    --bi-shadow-4: 0px 16px 48px -8px rgba(13, 27, 42, 0.18);
     --radius: 0.75rem;
-
-    --glow: 32 91% 54%;
-    --glow-muted: 32 75% 45%;
-
-    --surface-1: 0 0% 96%;
-    --surface-2: 0 0% 93%;
-    --surface-3: 0 0% 90%;
-    --status-online: 142 71% 45%;
-
-    --card-border: 0 0% 0%;
-
-    --section-orange: 32 80% 93%;
-    --section-blue: 215 48% 88%;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 32 88% 58%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 55%;
-
-    --accent: 240 4% 16%;
-    --accent-foreground: 0 0% 95%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 32 80% 58%;
-
-    --glow: 32 88% 58%;
-    --glow-muted: 32 72% 50%;
-
-    --surface-1: 0 0% 6%;
-    --surface-2: 0 0% 9%;
-    --surface-3: 0 0% 12%;
-    --status-online: 142 71% 45%;
-
-    --card-border: 0 0% 100%;
-
-    --section-orange: 32 35% 16%;
-    --section-blue: 215 25% 16%;
+    --bi-primary: 111 163 221;
+    --bi-primary-pressed: 143 184 232;
+    --bi-primary-deep: 77 134 196;
+    --bi-on-primary: 13 27 42;
+    --bi-accent: 241 137 30;
+    --bi-accent-deep: 245 185 120;
+    --bi-on-accent: 26 26 26;
+    --bi-brand-navy: 26 51 80;
+    --bi-brand-navy-deep: 13 27 42;
+    --bi-brand-navy-mid: 45 78 115;
+    --bi-brand-sky: 95 179 221;
+    --bi-brand-teal: 79 184 189;
+    --bi-brand-violet: 144 149 224;
+    --bi-brand-violet-300: 205 206 240;
+    --bi-brand-violet-800: 197 199 239;
+    --bi-brand-rose: 224 122 153;
+    --bi-brand-rose-deep: 232 163 184;
+    --bi-brand-amber: 227 182 83;
+    --bi-brand-green: 92 189 133;
+    --bi-brand-brown: 184 154 118;
+    --bi-card-tint-peach: 59 42 26;
+    --bi-card-tint-amber: 58 51 32;
+    --bi-card-tint-amber-bold: 109 83 32;
+    --bi-card-tint-sky: 28 48 71;
+    --bi-card-tint-teal: 23 51 47;
+    --bi-card-tint-violet: 40 42 68;
+    --bi-card-tint-rose: 58 37 44;
+    --bi-card-tint-cream: 45 42 35;
+    --bi-card-tint-gray: 36 40 48;
+    --bi-canvas: 13 27 42;
+    --bi-surface: 20 40 63;
+    --bi-surface-soft: 16 31 49;
+    --bi-hairline: 43 69 95;
+    --bi-hairline-soft: 30 50 71;
+    --bi-hairline-strong: 100 122 144;
+    --bi-ink-deep: 255 255 255;
+    --bi-on-ink-deep: 13 27 42;
+    --bi-ink: 234 240 246;
+    --bi-charcoal: 213 222 231;
+    --bi-slate: 174 190 205;
+    --bi-steel: 143 159 174;
+    --bi-stone: 117 132 148;
+    --bi-muted: 85 101 119;
+    --bi-on-dark: 255 255 255;
+    --bi-on-dark-muted: 159 173 189;
+    --bi-semantic-success: 92 189 133;
+    --bi-semantic-warning: 237 169 79;
+    --bi-semantic-error: 239 115 112;
+    --bi-shadow-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    --bi-shadow-2: 0px 4px 12px 0px rgba(0, 0, 0, 0.55);
+    --bi-shadow-3: 0px 24px 48px -8px rgba(0, 0, 0, 0.65);
+    --bi-shadow-4: 0px 16px 48px -8px rgba(0, 0, 0, 0.6);
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-hairline;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-canvas font-sans text-body text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgb(var(--bi-card-tint-sky));
+    color: rgb(var(--bi-ink));
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+
+  /* One focus treatment everywhere: a blue ring with a canvas-coloured gap,
+     so it stays visible on white, on surface bands and on the navy hero. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--bi-primary));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgb(var(--bi-canvas));
+  }
+
+  .on-dark :focus-visible {
+    outline-color: rgb(var(--bi-on-dark));
+    box-shadow: 0 0 0 2px rgb(var(--bi-brand-navy));
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgb(var(--bi-muted));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 }
 
-/* Grain overlay */
-.grain-overlay::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
-
-/* Glow border animation */
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-.bento-card {
-  position: relative;
-  background: linear-gradient(
-    145deg,
-    hsl(var(--surface-1)),
-    hsl(var(--surface-2))
-  );
-  border: 1px solid hsl(var(--card-border) / 0.06);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bento-card:hover {
-  border-color: hsl(var(--card-border) / 0.12);
-  transform: translateY(-2px) scale(1.005);
-  box-shadow:
-    0 0 40px -10px hsl(var(--glow) / 0.08),
-    0 20px 50px -20px hsl(0 0% 0% / 0.5);
-}
-
-.bento-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    145deg,
-    hsl(var(--card-border) / 0.1),
-    transparent 40%,
-    transparent 60%,
-    hsl(var(--card-border) / 0.05)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.bento-card:hover::before {
-  opacity: 1;
-}
-
-.bento-card.bento-card-frosted {
-  background: hsl(var(--background) / 0.55);
-  backdrop-filter: blur(12px);
+@layer components {
+  /* Prose for the legal pages, which arrive as HTML from eRecht24. */
+  .legal-prose {
+    @apply max-w-[72ch] text-body text-charcoal;
+  }
+  .legal-prose h1 {
+    @apply mb-6 mt-14 text-h2 text-ink first:mt-0 md:text-h1;
+  }
+  .legal-prose h2 {
+    @apply mb-3 mt-10 text-h4 text-ink;
+  }
+  .legal-prose h3 {
+    @apply mb-2 mt-8 text-h5 text-ink;
+  }
+  .legal-prose h4 {
+    @apply mb-2 mt-6 text-body font-semibold text-ink;
+  }
+  .legal-prose p,
+  .legal-prose li {
+    @apply mb-4 text-body-sm text-slate;
+  }
+  .legal-prose ul {
+    @apply mb-4 list-disc space-y-2 pl-5;
+  }
+  .legal-prose strong {
+    @apply font-semibold text-ink;
+  }
+  .legal-prose a {
+    @apply break-words text-primary underline decoration-1;
+  }
 }

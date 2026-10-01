@@ -1,196 +1,403 @@
 {
+  "meta": {
+    "home": {
+      "title": "Brief Insights — Every letter, already read",
+      "description": "BriefXtract reads the post that arrives at debt and social counseling centres and files creditor, file number, amount and deadline against the case."
+    },
+    "platform": {
+      "title": "Platform — Brief Insights",
+      "description": "How BriefXtract turns the day's post into a case file: read, classified, extracted and filed, with every field checkable against its source line."
+    },
+    "security": {
+      "title": "Security — Brief Insights",
+      "description": "Hosted in the EU, zero data retention, GDPR Article 28, KDG and DSG-EKD. What happens to a document from upload to deletion."
+    },
+    "results": {
+      "title": "Results — Brief Insights",
+      "description": "Work out the hours BriefXtract could return to your counseling centre, with the arithmetic shown."
+    },
+    "about": {
+      "title": "About — Brief Insights",
+      "description": "Brief Insights is a Berlin software company building BriefXtract for debt and social counseling centres."
+    },
+    "impressum": { "title": "Impressum — Brief Insights" },
+    "privacy": { "title": "Privacy policy — Brief Insights" },
+    "notFound": { "title": "Page not found — Brief Insights" }
+  },
   "nav": {
-    "problem": "Problem",
-    "product": "Platform",
+    "main": "Main",
+    "skip": "Skip to content",
+    "home": "Brief Insights home",
+    "platform": "Platform",
     "security": "Security",
     "results": "Results",
     "about": "About",
-    "requestDemo": "Request Demo"
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu",
+    "language": "Language",
+    "themeToDark": "Switch to dark theme",
+    "themeToLight": "Switch to light theme"
   },
-  "hero": {
-    "title1": "Stop drowning",
-    "title2": "in paperwork.",
-    "subtitle": "BriefXtract uses Intelligent Document Processing to automate case preparation for debt counselors \u2014 cutting case prep from 8 hours to 15 minutes.",
-    "cta": "Request a Demo",
-    "secondary": "Watch the Demo"
+  "actions": {
+    "requestDemo": "Request a demo",
+    "demoShort": "Demo",
+    "seePlatform": "See the platform",
+    "seeWholePlatform": "See the whole platform",
+    "readSecurity": "Read the security page",
+    "workOutHours": "Work out the hours"
   },
-  "stats": {
-    "timeSaved": "Time saved per case",
-    "downFrom": "Down from 8 hours",
-    "counselors": "Counselors in Germany"
+  "cta": {
+    "default": {
+      "title": "See it read your own post.",
+      "body": "Bring a stack of real letters to the demo. Every field comes back checkable line by line."
+    },
+    "security": {
+      "title": "Send it to your data protection officer.",
+      "body": "The data processing agreement is available on request. Ask for it in your demo request."
+    },
+    "results": {
+      "title": "Check the numbers against your own week.",
+      "body": "A demo runs your real post, and the hours come out of your own caseload, not an average."
+    }
   },
-  "problem": {
-    "label": "The Problem",
-    "title": "Every client arrives with a box of chaos.",
-    "hoursTitle": "1\u20138 hours per client",
-    "hoursDesc": "Debt counselors in Germany manually sort and transcribe chaotic paper mail \u2014 letters, court orders, invoices \u2014 before any actual counseling can begin.",
-    "debtTitle": "9% of Germany in debt",
-    "debtDesc": "1,400 counseling centers, 4,000+ counselors \u2014 all overwhelmed by the sheer volume of unsorted paper correspondence from creditors."
+  "mockup": {
+    "intakeQueue": "Intake queue",
+    "caseLine": "Case 4471 · Intake {{date}}",
+    "documents": "{{count}} documents",
+    "columns": {
+      "document": "Document",
+      "creditor": "Creditor",
+      "fileNo": "File no.",
+      "amount": "Amount",
+      "due": "Due",
+      "status": "Status"
+    },
+    "dueOn": "due {{date}}",
+    "types": {
+      "courtOrder": "Court order",
+      "terminationNotice": "Termination notice",
+      "collectionLetter": "Collection letter",
+      "telephoneInvoice": "Telephone invoice",
+      "energyInvoice": "Energy invoice"
+    },
+    "status": {
+      "urgent": "Urgent",
+      "check": "Needs check",
+      "filed": "Filed"
+    },
+    "syntheticLong": "Synthetic case records shown. No client document, name or case number appears in any Brief Insights mockup.",
+    "syntheticShort": "Synthetic case records shown.",
+    "sourcePage": "Source page",
+    "pageOf": "Page {{page}} of {{total}}",
+    "fields": {
+      "creditor": "Creditor",
+      "fileNumber": "File number",
+      "amount": "Amount",
+      "dueDate": "Due date"
+    },
+    "line": "line {{n}}",
+    "needsCheck": "needs check",
+    "syntheticRecord": "Synthetic record shown."
   },
-  "features": {
-    "label": "BriefXtract Platform",
-    "title1": "Everything a counselor needs.",
-    "title2": "Nothing extra.",
-    "extraction": "Intelligent Extraction",
-    "extractionDesc": "Our AI engine extracts creditor name, file number, amount, and due date from mixed PDFs \u2014 letters, court orders, invoices \u2014 automatically and in one pass.",
-    "gdpr": "Zero Retention GDPR",
-    "gdprDesc": "Client data never trains AI models. Hosted in Germany with church data protection law compliance built in.",
-    "urgency": "Urgency Flagging",
-    "urgencyDesc": "Eviction notices, court deadlines, and enforcement orders are automatically detected and surfaced with visual priority alerts.",
-    "caseEngine": "Master Debt Case Engine",
-    "caseEngineDesc": "Automatically links disparate documents \u2014 e.g., a Vodafone invoice and a Riverty collection letter \u2014 into a single unified debt case record.",
-    "faster": "90% Faster Processing",
-    "fasterDesc": "What used to take 1\u20138 hours per client now takes 15 minutes. Counselors reclaim capacity for the people, not the paperwork.",
-    "vivendi": "Seamless Integration",
-    "vivendiDesc": "Export structured data to your preferred format or connect directly to your existing case management system via API — no manual re-entry required."
+  "home": {
+    "hero": {
+      "title": "Every letter, already read.",
+      "subtitle": "BriefXtract reads every document that arrives. Creditor, file number, amount and deadline come back filed against the case, before the appointment starts."
+    },
+    "stats": {
+      "title": "Less sorting. More counseling.",
+      "items": [
+        { "value": "90%", "label": "Target reduction in the time counselors spend sorting and transcribing post." },
+        { "value": "15 min", "label": "Target preparation time per client, against 1 to 8 hours by hand." },
+        { "value": "4,000+", "label": "Counselors across 1,400 centres in Germany, the caseload this is built for." }
+      ],
+      "note": "Time figures are product targets. Bars read as a share of the manual baseline. Market figure: BAGFW, 2024."
+    },
+    "features": {
+      "title": "One case file, every document.",
+      "lead": "Three things happen to every letter before a counselor opens the case.",
+      "items": [
+        {
+          "title": "Intelligent extraction",
+          "body": "Creditor, file number, amount and due date are pulled from mixed PDFs — letters, court orders, invoices — in a single pass, and every field is shown beside the line it came from."
+        },
+        {
+          "title": "Urgency flagging",
+          "body": "Eviction notices, court deadlines and enforcement orders are detected on arrival and carry a labelled chip, never a colour alone, at the top of the queue."
+        },
+        {
+          "title": "Master debt case engine",
+          "body": "An invoice and the collection letter that followed it are linked into one debt record, so a case is read as a case rather than as a pile of senders."
+        }
+      ]
+    },
+    "photos": {
+      "title": "From a box of paper to a case file.",
+      "lead": "The work does not disappear. It stops being the counselor's.",
+      "before": {
+        "alt": "Overhead view of a desk covered in loose documents in a dimly lit room",
+        "caption": "Before. Thirty to eighty letters per client, sorted by hand before counseling can start."
+      },
+      "after": {
+        "alt": "A person reviewing a case on a tablet at a clear desk",
+        "caption": "After. One case file, every field checkable against the page it was read from."
+      }
+    },
+    "security": {
+      "title": "Built for the strictest standards in Germany.",
+      "items": [
+        { "title": "Hosted in the EU", "body": "Processing runs on EU infrastructure. No document leaves the EU." },
+        { "title": "Zero retention", "body": "Documents are deleted immediately after processing, and never train a model." },
+        { "title": "GDPR Article 28", "body": "A full data processing agreement is available on request." },
+        { "title": "KDG and DSG-EKD", "body": "Church data protection law is built in, for Caritas, Diakonie and AWO centres." }
+      ]
+    }
   },
-  "beforeAfter": {
-    "label": "The Transformation",
-    "title": "What changes with BriefXtract.",
-    "beforeLabel": "Before",
-    "afterLabel": "After BriefXtract",
-    "before1": "Manually sort 30\u201380 letters per client",
-    "before2": "Type data into Vivendi by hand",
-    "before3": "No way to flag urgent notices",
-    "before4": "1\u20138 hours lost before counseling starts",
-    "before5": "Bottleneck limits how many clients are seen",
-    "after1": "Upload a PDF \u2014 AI handles the rest",
-    "after2": "Data auto-populated into structured cases",
-    "after3": "Eviction notices flagged instantly",
-    "after4": "Case ready in ~15 minutes",
-    "after5": "Counselors focus entirely on clients",
-    "timePerCase": "Time per client case",
-    "reduction": "90% reduction",
-    "manualAvg": "Manual (avg. 4 hrs)",
-    "manualMin": "480 min",
-    "withBriefXtract": "With BriefXtract",
-    "fifteenMin": "15 min"
+  "platform": {
+    "hero": {
+      "title": "One case file, every document.",
+      "subtitle": "BriefXtract is Intelligent Document Processing (IDP) built for one job: turning the day's post into a case a counselor can open and trust."
+    },
+    "steps": {
+      "title": "Four steps, none of them yours.",
+      "lead": "From the scanner to a filed case, without a counselor retyping anything.",
+      "items": [
+        { "title": "Post arrives", "body": "Scan the day's mail, or forward it, as one mixed PDF. No pre-sorting, no naming convention." },
+        { "title": "Read and classified", "body": "Every page is split from its neighbours and identified: letter, court order, invoice, notice." },
+        { "title": "Fields extracted", "body": "Creditor, file number, amount and deadline come back, each one beside the line it was read from." },
+        { "title": "Filed against the case", "body": "Documents belonging to the same debt are linked into one record, ready for the appointment." }
+      ]
+    },
+    "highlight": {
+      "title": "Extraction you can check line by line.",
+      "body": "Every extracted value keeps a pointer to the sentence it came from. A counselor confirms a case by reading the page, not by trusting a score."
+    },
+    "capabilities": {
+      "title": "Everything a counselor needs. Nothing extra.",
+      "lead": "Six capabilities, each one earned by a task that used to be manual.",
+      "items": [
+        { "title": "Intelligent extraction", "body": "Creditor name, file number, amount and due date, pulled from mixed PDFs in one pass." },
+        { "title": "Urgency flagging", "body": "Eviction notices, court deadlines and enforcement orders surface with a labelled chip." },
+        { "title": "Master debt case engine", "body": "An invoice and the collection letter that followed it are linked into a single debt record." },
+        { "title": "Zero-retention processing", "body": "Documents are deleted immediately after processing and never train a model." },
+        { "title": "Case-management export", "body": "Structured output to your format, or a direct connection to your case system by application programming interface (API)." },
+        { "title": "Built for the caseload", "body": "Designed to bring preparation from 1 to 8 hours per client down to about 15 minutes, so the ceiling moves." }
+      ]
+    },
+    "compare": {
+      "title": "What changes, task by task.",
+      "lead": "The same five jobs, before and after the post is read for you.",
+      "columns": { "label": "Task", "before": "Manual today", "after": "With BriefXtract" },
+      "rows": [
+        { "label": "Sorting inbound post", "before": "30 to 80 letters per client, by hand", "after": "Uploaded as one mixed PDF" },
+        { "label": "Getting data into the case system", "before": "Retyped field by field", "after": "Populated from the extraction" },
+        { "label": "Catching an urgent notice", "before": "Not included", "after": "Included — flagged on arrival" },
+        { "label": "Time before counseling starts", "before": "1 to 8 hours", "after": "About 15 minutes (target)" },
+        { "label": "What sets the caseload ceiling", "before": "Paperwork", "after": "Counselor availability" }
+      ],
+      "note": "Manual figures as reported by counseling centres. The time with BriefXtract is a product target."
+    }
   },
   "security": {
-    "label": "Enterprise Security",
-    "title": "Built for the strictest standards in Germany.",
-    "subtitle": "Every architecture decision was made with German data protection law in mind \u2014 not as an afterthought.",
-    "gdprTitle": "GDPR Article 28 Compliant",
-    "gdprDesc": "Full data processing agreement (DPA) available on request. BriefInsights processes client data in full compliance with EU GDPR requirements.",
-    "hostingTitle": "Hosted in the EU",
-    "hostingDesc": "All data is processed on AWS infrastructure within the EU. No data leaves the EU. Ever.",
-    "retentionTitle": "Zero Data Retention",
-    "retentionDesc": "Documents are permanently deleted immediately after processing. Nothing is stored, indexed, or used for AI training.",
-    "churchTitle": "Church Data Protection",
-    "churchDesc": "KDG (Catholic) and DSG-EKD (Protestant) compliant. Purpose-built for Caritas, Diakonie, and AWO centers.",
-    "encryptionTitle": "Encrypted End-to-End",
-    "encryptionDesc": "TLS 1.3 in transit, AES-256 at rest. Your clients\u2019 sensitive financial data is protected at every step.",
-    "infraTitle": "Enterprise AI Infrastructure",
-    "infraDesc": "Built on enterprise-grade AI cloud infrastructure with no data training, full auditability, and 99.9% uptime SLA.",
-    "tlsBadge": "TLS 1.3 \u00b7 AES-256"
+    "hero": {
+      "title": "Read, returned, deleted.",
+      "subtitle": "Every part of the processing path was designed with German and church data protection law in mind. It was not added afterwards."
+    },
+    "lifecycle": {
+      "title": "What happens to a document.",
+      "lead": "Four stages, and the last one is deletion. There is no fifth.",
+      "items": [
+        { "title": "Received", "body": "The upload travels over TLS 1.3 into EU infrastructure and is held encrypted at rest with AES-256." },
+        { "title": "Processed", "body": "Classification and extraction run inside the EU. No document is used to train a model." },
+        { "title": "Returned", "body": "The structured case goes to your case-management system. The centre holds the record." },
+        { "title": "Deleted", "body": "The source document is permanently deleted immediately after processing. Nothing is stored or indexed." }
+      ]
+    },
+    "commitments": {
+      "title": "The commitments, in writing.",
+      "lead": "Each one is documented for your data protection officer.",
+      "items": [
+        { "tag": "GDPR", "title": "Article 28 processing", "body": "A full data processing agreement (DPA) is available on request. Client data is processed in full compliance with EU GDPR." },
+        { "tag": "Residency", "title": "Hosted in the EU", "body": "All processing runs on AWS infrastructure within the EU. No client document leaves the EU." },
+        { "tag": "Retention", "title": "Zero data retention", "body": "Documents are permanently deleted immediately after processing. Nothing is stored, indexed or used for training." },
+        { "tag": "Church law", "title": "KDG and DSG-EKD", "body": "Compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, for Caritas, Diakonie and AWO centres." },
+        { "tag": "Encryption", "title": "Encrypted end to end", "body": "TLS 1.3 in transit and AES-256 at rest, at every step a client's financial data passes through." },
+        { "tag": "Operations", "title": "Audited infrastructure", "body": "Enterprise AI infrastructure with no model training, full auditability and a 99.9% uptime service level agreement (SLA)." }
+      ]
+    },
+    "faq": {
+      "title": "Questions a data protection officer asks.",
+      "items": [
+        { "q": "Where is our data stored?", "a": "Inside the EU, on AWS infrastructure, for the duration of processing only. The extracted case is returned to your system and the source document is deleted. Nothing is kept afterwards." },
+        { "q": "Do client documents train your models?", "a": "No. Client data never trains AI models. Documents are processed, returned as a structured case and permanently deleted." },
+        { "q": "Will you sign a data processing agreement?", "a": "Yes. A full data processing agreement under GDPR Article 28 is available on request. Ask for it in your demo request." },
+        { "q": "Does this satisfy KDG and DSG-EKD?", "a": "Yes. BriefXtract is compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, and was built for Caritas, Diakonie and AWO centres." },
+        { "q": "Who are the sub-processors?", "a": "All processing runs on AWS infrastructure within the EU, including the AI models, which run on Amazon Bedrock." }
+      ]
+    }
   },
-  "roi": {
-    "label": "The Business Case",
-    "title": "The math speaks for itself.",
-    "subtitle": "For an average counseling center with 10 staff, BriefXtract pays for itself many times over \u2014 and gives counselors their time back.",
-    "withoutLabel": "Without BriefXtract",
-    "withLabel": "With BriefXtract",
-    "row1Label": "Average case prep time",
-    "row1Without": "4 hours",
-    "row1With": "15 minutes",
-    "row2Label": "Clients seen per counselor / week",
-    "row2Without": "~5 clients",
-    "row2With": "~20 clients",
-    "row3Label": "Admin hours saved / year (10 staff)",
-    "row3Without": "\u2014",
-    "row3With": "37,500 hours",
-    "row4Label": "Estimated staff time recovered",
-    "row4Without": "\u2014",
-    "row4With": "\u20ac750,000+",
-    "calc_counselors": "Number of counselors",
-    "calc_clients": "Clients per counselor / week",
-    "calc_hourly": "Avg. hourly staff cost",
-    "calc_hours_week": "Hours freed per week",
-    "calc_hours_year": "Hours freed per year",
-    "calc_savings": "Estimated staff cost recovered / year",
-    "calc_assumption": "Based on avg. 4h manual prep reduced to 15 min with BriefXtract, over 48 working weeks.",
-    "disclaimer": "*Estimates based on German federal debt counseling statistics (BAGFW, 2024). Actual savings vary by organization size and current process maturity.",
-    "ctaDemo": "Request a Demo"
-  },
-  "footer": {
-    "cta": "Let\u2019s Talk.",
-    "tagline": "Empowering social workers by automating administrative burdens.",
-    "location": "Berlin \u00b7 Germany",
-    "gdpr": "GDPR Compliant",
-    "zeroData": "Zero Data Retention",
-    "copyright": "\u00a9 2026 BriefInsights. All rights reserved.",
-    "productTitle": "Platform",
-    "link_problem": "The Problem",
-    "link_product": "BriefXtract Platform",
-    "link_security": "Security & Compliance",
-    "link_results": "Results",
-    "companyTitle": "Company",
-    "link_about": "About Us",
-    "link_contact": "Contact",
-    "link_privacy": "Privacy Policy",
-    "link_terms": "Impressum"
-  },
-  "impressum": {
-    "title": "Legal Notice (Impressum)",
-    "placeholder": "This page will contain the legally required Impressum for this website.",
-    "comingSoon": "Content will be added once generated via e-recht24.de."
-  },
-  "privacy": {
-    "title": "Privacy Policy",
-    "placeholder": "This page will contain the Privacy Policy (Datenschutzerklärung) for this website.",
-    "comingSoon": "Content will be added once generated via e-recht24.de."
-  },
-  "notFound": {
-    "title": "404",
-    "message": "Oops! Page not found",
-    "link": "Return to Home"
+  "results": {
+    "hero": {
+      "title": "Hours back, every week.",
+      "subtitle": "What fifteen minutes instead of four hours would add up to across a centre. Put your own numbers in the fields and check the arithmetic."
+    },
+    "compare": {
+      "title": "What a centre gets back.",
+      "lead": "A ten-counselor centre, before and after the post is read for them.",
+      "columns": { "label": "Measure", "before": "Without BriefXtract", "after": "With BriefXtract" },
+      "rows": [
+        { "label": "Average case preparation time", "before": "4 hours", "after": "About 15 minutes (target)" },
+        { "label": "Admin hours recovered per year, 10 counselors", "before": "Not applicable", "after": "9,000 hours" },
+        { "label": "Estimated staff cost recovered per year", "before": "Not applicable", "after": "€315,000" }
+      ],
+      "note": "Worked from the 15-minute target, with 10 counselors preparing 5 client cases a week over 48 working weeks, at €35 an hour. Change any of those in the calculator below."
+    },
+    "calculator": {
+      "title": "Work it out for your centre.",
+      "lead": "Three numbers you already know. The arithmetic is shown underneath.",
+      "counselors": "Counselors in the centre",
+      "casesPerWeek": "Client cases per counselor, per week",
+      "hourlyCost": "Staff cost per hour, in euro",
+      "hoursPerWeek": "Hours freed per week",
+      "hoursPerYear": "Hours freed per year",
+      "costPerYear": "Staff cost recovered per year",
+      "hoursUnit": "{{value}} h",
+      "formula": "{{counselors}} counselors × {{cases}} cases a week × 3.75 h saved = {{week}} h a week. × 48 weeks = {{year}} h a year. × {{rate}} an hour = {{cost}}.",
+      "note": "Assumes 4 hours of manual preparation reduced to the 15-minute target, so 3.75 hours saved per case, over 48 working weeks. Recovered time is staff capacity, not cash: it returns to the caseload."
+    },
+    "capacity": {
+      "title": "Where the hour goes.",
+      "lead": "Recovered time is capacity, and capacity shows up in three places.",
+      "items": [
+        { "title": "Appointments, not preparation", "body": "The hours that went into sorting go back into the hours a client is actually in the room." },
+        { "title": "Deadlines that are not missed", "body": "An enforcement order surfaces on the day it arrives rather than on the day someone reaches that envelope." },
+        { "title": "A shorter waiting list", "body": "When paperwork stops setting the ceiling, counselor availability does, and the queue moves." }
+      ]
+    }
   },
   "about": {
-    "label": "About Us",
-    "title": "Built for the people who help people.",
-    "mission": "BriefInsights was founded in Berlin with one mission: eliminate administrative burden for social workers so they can spend more time with the people who need them most.",
-    "team": "Our team combines expertise in AI, legal tech, and social work to build tools that comply with the strictest German data protection standards.",
-    "stat1Label": "Founded",
-    "stat1Value": "Berlin, 2026",
-    "stat2Label": "Sector",
-    "stat2Value": "Debt & Social Counseling",
-    "stat3Label": "Data Residency",
-    "stat3Value": "EU Only",
-    "stat4Label": "Compliance",
-    "stat4Value": "GDPR · KDG · DSG-EKD",
-    "contact": "Request a Demo",
-    "contactEmail": "info@brief-insights.com"
+    "hero": {
+      "title": "Built for the people who help people.",
+      "subtitle": "Brief Insights is a Berlin software company. It builds one product, for one end of the job: the paperwork that stands between a counselor and an appointment."
+    },
+    "why": {
+      "title": "Why this exists.",
+      "p1": "Nine per cent of Germany is in debt, and the people who help with it spend their first hours on an envelope rather than on a conversation. Thirty to eighty letters arrive per client — court orders, enforcement notices, invoices, collection letters — and every one of them is sorted, read and retyped by hand before counseling can start.",
+      "p2": "Brief Insights was founded in Berlin to take that work off the desk. BriefXtract reads the post, extracts the fields that matter and files each document against the case, so the hour that went into sorting goes back to the person waiting for the appointment.",
+      "p3Before": "The product does one thing, and it is checkable. Every extracted value carries a pointer to the line it was read from, every document is deleted immediately after processing, and the rules governing both are written down on the ",
+      "p3Link": "security page",
+      "p3After": ".",
+      "facts": [
+        { "label": "Founded", "value": "Berlin, 2026" },
+        { "label": "Product", "value": "BriefXtract, an Intelligent Document Processing (IDP) platform" },
+        { "label": "Sector", "value": "Debt and social counseling" },
+        { "label": "Data residency", "value": "EU only" },
+        { "label": "Compliance", "value": "GDPR · KDG · DSG-EKD" }
+      ]
+    },
+    "photos": {
+      "title": "The week this is meant to change.",
+      "lead": "The stack that sets the order of the day, and the handover that ends it.",
+      "before": {
+        "alt": "Close-up of a stack of paper documents in low light",
+        "caption": "Before. The stack sets the order of the day."
+      },
+      "after": {
+        "alt": "A box of loose paperwork being handed over and received",
+        "caption": "After. The box is handed over once, and comes back as a case."
+      },
+      "note": "Staged photographs. Not customers, not a named centre."
+    },
+    "contact": {
+      "title": "One address, one inbox.",
+      "email": { "label": "Email", "body": "Pilots, processing agreements and integration questions all go here." },
+      "office": { "label": "Office", "value": "Berlin, Germany", "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin" },
+      "audience": {
+        "label": "Who this is for",
+        "value": "Counseling centres",
+        "body": "Caritas, Diakonie, AWO and independent debt and social counseling services."
+      }
+    }
   },
-  "bentoMock": {
-    "creditor": "Creditor",
-    "amount": "Amount",
-    "fileNo": "File No.",
-    "dueDate": "Due Date",
-    "doc1": "Vodafone Invoice",
-    "doc2": "Riverty Letter",
-    "doc3": "Court Order #3",
-    "masterCase": "\u2192 Master Case #MC-00441"
+  "demo": {
+    "title": "Request a demo",
+    "description": "Leave your details and the Brief Insights team will arrange a time to run your own post through BriefXtract.",
+    "name": "Full name",
+    "email": "Work email",
+    "emailPlaceholder": "name@your-centre.de",
+    "org": "Organisation",
+    "message": "Message",
+    "optional": "(optional)",
+    "messageHint": "For example, the case system you use, or a request for the data processing agreement.",
+    "privacyBefore": "How these details are handled is set out in the ",
+    "privacyLink": "privacy policy",
+    "privacyAfter": ".",
+    "submit": "Request a demo",
+    "sending": "Sending…",
+    "close": "Close",
+    "errors": {
+      "nameRequired": "Enter your full name.",
+      "emailRequired": "Enter your work email.",
+      "emailInvalid": "Enter an email address in the format name@your-centre.de.",
+      "orgRequired": "Enter the name of your organisation."
+    },
+    "failedTitle": "The request did not go through.",
+    "failedBefore": "Try again, or email ",
+    "failedAfter": " directly.",
+    "successTitle": "Request received.",
+    "successBody": "The Brief Insights team will be in touch to arrange a time for your demo."
+  },
+  "footer": {
+    "logoAlt": "Brief Insights",
+    "columns": {
+      "product": "Product",
+      "security": "Security",
+      "resources": "Resources",
+      "solutions": "Solutions",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "platform": "Platform",
+      "extraction": "Extraction",
+      "caseEngine": "Case engine",
+      "urgency": "Urgency flagging",
+      "overview": "Overview",
+      "residency": "Data residency",
+      "retention": "Zero retention",
+      "dpa": "Processing agreement",
+      "results": "Results",
+      "calculator": "Hours calculator",
+      "questions": "Questions",
+      "debt": "Debt counseling",
+      "social": "Social counseling",
+      "nonProfit": "Non-profit centres",
+      "about": "About",
+      "contact": "Contact",
+      "impressum": "Impressum",
+      "privacy": "Privacy policy",
+      "cookies": "Cookie settings"
+    },
+    "copyright": "© {{year}} Brief Insights UG (haftungsbeschränkt). Berlin, Germany.",
+    "assurance": "TLS 1.3 · AES-256 · EU only"
   },
   "cookie": {
-    "message": "We use analytics cookies (Metricool) to understand how visitors interact with our website.",
-    "privacyLink": "Privacy Policy",
+    "label": "Cookie consent",
+    "message": "We use analytics cookies (Metricool) to understand how visitors use this website. Nothing is loaded until you accept.",
+    "privacyLink": "Privacy policy",
     "accept": "Accept",
     "decline": "Decline"
   },
-  "demo": {
-    "title": "Request a Demo",
-    "subtitle": "Tell us about your organization and we'll be in touch within 24 hours.",
-    "name": "Full Name",
-    "namePlaceholder": "Your Full Name",
-    "email": "Work Email",
-    "emailPlaceholder": "name@organization.com",
-    "org": "Organization",
-    "orgPlaceholder": "Your Organization",
-    "message": "Message (optional)",
-    "messagePlaceholder": "Tell us about your current document process...",
-    "submit": "Send Request",
-    "successTitle": "Request received!",
-    "successMessage": "Thank you \u2014 we'll be in touch within 24 hours.",
-    "close": "Close"
+  "legal": {
+    "impressum": "Impressum",
+    "privacy": "Privacy policy",
+    "germanVersion": "Deutsche Fassung",
+    "englishVersion": "English version"
+  },
+  "notFound": {
+    "title": "This page does not exist.",
+    "message": "The address may be mistyped, or the page may have moved when the site was reorganised.",
+    "link": "Go to the home page"
   }
 }

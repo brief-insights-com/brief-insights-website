@@ -1,28 +1,43 @@
 {
   "meta": {
     "home": {
-      "title": "Brief Insights — Every letter, already read",
-      "description": "BriefXtract reads the post that arrives at debt and social counseling centres and files creditor, file number, amount and deadline against the case."
+      "title": "Document processing for debt counseling | Brief Insights",
+      "description": "BriefXtract reads the letters that reach debt counseling centres and files creditor, file number, amount and deadline against the case. GDPR, EU-hosted."
     },
     "platform": {
-      "title": "Platform — Brief Insights",
-      "description": "How BriefXtract turns the day's post into a case file: read, classified, extracted and filed, with every field checkable against its source line."
+      "title": "How BriefXtract reads and files creditor post | Brief Insights",
+      "description": "From scanned post to a filed case in four steps: BriefXtract classifies each page, extracts creditor, file number, amount and deadline, and flags urgent notices.",
+      "crumb": "Platform"
     },
     "security": {
-      "title": "Security — Brief Insights",
-      "description": "Hosted in the EU, zero data retention, GDPR Article 28, KDG and DSG-EKD. What happens to a document from upload to deletion."
+      "title": "Security: GDPR, KDG and DSG-EKD, hosted in the EU | Brief Insights",
+      "description": "BriefXtract processes documents on AWS in the EU, deletes them right after processing and never trains models on them. DPA under GDPR Article 28 on request.",
+      "crumb": "Security"
     },
     "results": {
-      "title": "Results — Brief Insights",
-      "description": "Work out the hours BriefXtract could return to your counseling centre, with the arithmetic shown."
+      "title": "Calculate the hours saved in debt counseling | Brief Insights",
+      "description": "Work out how many staff hours a 15-minute case preparation target would return to your counseling centre each year, with the arithmetic shown.",
+      "crumb": "Results"
     },
     "about": {
-      "title": "About — Brief Insights",
-      "description": "Brief Insights is a Berlin software company building BriefXtract for debt and social counseling centres."
+      "title": "About Brief Insights, software for counseling centres",
+      "description": "Brief Insights UG is a Berlin software company building BriefXtract, document processing for debt and social counseling centres in Germany.",
+      "crumb": "About"
     },
-    "impressum": { "title": "Impressum — Brief Insights" },
-    "privacy": { "title": "Privacy policy — Brief Insights" },
-    "notFound": { "title": "Page not found — Brief Insights" }
+    "impressum": {
+      "title": "Legal notice (Impressum) | Brief Insights",
+      "crumb": "Impressum",
+      "description": "Legal notice for Brief Insights UG (haftungsbeschränkt), Berlin: registered address, commercial register, VAT ID and contact details."
+    },
+    "privacy": {
+      "title": "Privacy policy | Brief Insights",
+      "crumb": "Privacy policy",
+      "description": "How Brief Insights processes personal data on this website: hosting, cookies and analytics with Metricool, contact requests and your rights under the GDPR."
+    },
+    "notFound": {
+      "title": "Page not found | Brief Insights",
+      "description": "This page does not exist. Go to the Brief Insights home page."
+    }
   },
   "nav": {
     "main": "Main",
@@ -37,7 +52,8 @@
     "menu": "Menu",
     "language": "Language",
     "themeToDark": "Switch to dark theme",
-    "themeToLight": "Switch to light theme"
+    "themeToLight": "Switch to light theme",
+    "homeCrumb": "Home"
   },
   "actions": {
     "requestDemo": "Request a demo",
@@ -103,14 +119,23 @@
   "home": {
     "hero": {
       "title": "Every letter, already read.",
-      "subtitle": "BriefXtract reads every document that arrives. Creditor, file number, amount and deadline come back filed against the case, before the appointment starts."
+      "subtitle": "BriefXtract is document processing software for debt and social counseling centres. It reads every letter that arrives and files creditor, file number, amount and deadline against the case, before the appointment starts."
     },
     "stats": {
       "title": "Less sorting. More counseling.",
       "items": [
-        { "value": "90%", "label": "Target reduction in the time counselors spend sorting and transcribing post." },
-        { "value": "15 min", "label": "Target preparation time per client, against 1 to 8 hours by hand." },
-        { "value": "4,000+", "label": "Counselors across 1,400 centres in Germany, the caseload this is built for." }
+        {
+          "value": "90%",
+          "label": "Target reduction in the time counselors spend sorting and transcribing post."
+        },
+        {
+          "value": "15 min",
+          "label": "Target preparation time per client, against 1 to 8 hours by hand."
+        },
+        {
+          "value": "4,000+",
+          "label": "Counselors across 1,400 centres in Germany, the caseload this is built for."
+        }
       ],
       "note": "Time figures are product targets. Bars read as a share of the manual baseline. Market figure: BAGFW, 2024."
     },
@@ -147,10 +172,22 @@
     "security": {
       "title": "Built for the strictest standards in Germany.",
       "items": [
-        { "title": "Hosted in the EU", "body": "Processing runs on EU infrastructure. No document leaves the EU." },
-        { "title": "Zero retention", "body": "Documents are deleted immediately after processing, and never train a model." },
-        { "title": "GDPR Article 28", "body": "A full data processing agreement is available on request." },
-        { "title": "KDG and DSG-EKD", "body": "Church data protection law is built in, for Caritas, Diakonie and AWO centres." }
+        {
+          "title": "Hosted in the EU",
+          "body": "Processing runs on EU infrastructure. No document leaves the EU."
+        },
+        {
+          "title": "Zero retention",
+          "body": "Documents are deleted immediately after processing, and never train a model."
+        },
+        {
+          "title": "GDPR Article 28",
+          "body": "A full data processing agreement is available on request."
+        },
+        {
+          "title": "KDG and DSG-EKD",
+          "body": "Church data protection law is built in, for Caritas, Diakonie and AWO centres."
+        }
       ]
     }
   },
@@ -159,14 +196,30 @@
       "title": "One case file, every document.",
       "subtitle": "BriefXtract is Intelligent Document Processing (IDP) built for one job: turning the day's post into a case a counselor can open and trust."
     },
+    "what": {
+      "title": "What is BriefXtract?",
+      "body": "BriefXtract is intelligent document processing (IDP) software for debt and social counseling centres in Germany, made by Brief Insights in Berlin. A centre scans or forwards the day's post as one mixed PDF. BriefXtract splits it into documents, identifies each one — letter, court order, invoice, collection letter or notice — and extracts the creditor, file number, amount and due date. Every value is shown beside the line it was read from, so a counselor can check it against the page. Eviction notices, court deadlines and enforcement orders are flagged on arrival. Documents that belong to the same debt are linked into one case record, which can be exported in your format or passed to your case-management system through an API. Processing runs on AWS inside the EU, documents are deleted immediately afterwards, and nothing is used to train a model."
+    },
     "steps": {
       "title": "Four steps, none of them yours.",
       "lead": "From the scanner to a filed case, without a counselor retyping anything.",
       "items": [
-        { "title": "Post arrives", "body": "Scan the day's mail, or forward it, as one mixed PDF. No pre-sorting, no naming convention." },
-        { "title": "Read and classified", "body": "Every page is split from its neighbours and identified: letter, court order, invoice, notice." },
-        { "title": "Fields extracted", "body": "Creditor, file number, amount and deadline come back, each one beside the line it was read from." },
-        { "title": "Filed against the case", "body": "Documents belonging to the same debt are linked into one record, ready for the appointment." }
+        {
+          "title": "Post arrives",
+          "body": "Scan the day's mail, or forward it, as one mixed PDF. No pre-sorting, no naming convention."
+        },
+        {
+          "title": "Read and classified",
+          "body": "Every page is split from its neighbours and identified: letter, court order, invoice, notice."
+        },
+        {
+          "title": "Fields extracted",
+          "body": "Creditor, file number, amount and deadline come back, each one beside the line it was read from."
+        },
+        {
+          "title": "Filed against the case",
+          "body": "Documents belonging to the same debt are linked into one record, ready for the appointment."
+        }
       ]
     },
     "highlight": {
@@ -177,26 +230,100 @@
       "title": "Everything a counselor needs. Nothing extra.",
       "lead": "Six capabilities, each one earned by a task that used to be manual.",
       "items": [
-        { "title": "Intelligent extraction", "body": "Creditor name, file number, amount and due date, pulled from mixed PDFs in one pass." },
-        { "title": "Urgency flagging", "body": "Eviction notices, court deadlines and enforcement orders surface with a labelled chip." },
-        { "title": "Master debt case engine", "body": "An invoice and the collection letter that followed it are linked into a single debt record." },
-        { "title": "Zero-retention processing", "body": "Documents are deleted immediately after processing and never train a model." },
-        { "title": "Case-management export", "body": "Structured output to your format, or a direct connection to your case system by application programming interface (API)." },
-        { "title": "Built for the caseload", "body": "Designed to bring preparation from 1 to 8 hours per client down to about 15 minutes, so the ceiling moves." }
+        {
+          "title": "Intelligent extraction",
+          "body": "Creditor name, file number, amount and due date, pulled from mixed PDFs in one pass."
+        },
+        {
+          "title": "Urgency flagging",
+          "body": "Eviction notices, court deadlines and enforcement orders surface with a labelled chip."
+        },
+        {
+          "title": "Master debt case engine",
+          "body": "An invoice and the collection letter that followed it are linked into a single debt record."
+        },
+        {
+          "title": "Zero-retention processing",
+          "body": "Documents are deleted immediately after processing and never train a model."
+        },
+        {
+          "title": "Case-management export",
+          "body": "Structured output to your format, or a direct connection to your case system by application programming interface (API)."
+        },
+        {
+          "title": "Built for the caseload",
+          "body": "Designed to bring preparation from 1 to 8 hours per client down to about 15 minutes, so the ceiling moves."
+        }
       ]
     },
     "compare": {
       "title": "What changes, task by task.",
       "lead": "The same five jobs, before and after the post is read for you.",
-      "columns": { "label": "Task", "before": "Manual today", "after": "With BriefXtract" },
+      "columns": {
+        "label": "Task",
+        "before": "Manual today",
+        "after": "With BriefXtract"
+      },
       "rows": [
-        { "label": "Sorting inbound post", "before": "30 to 80 letters per client, by hand", "after": "Uploaded as one mixed PDF" },
-        { "label": "Getting data into the case system", "before": "Retyped field by field", "after": "Populated from the extraction" },
-        { "label": "Catching an urgent notice", "before": "Not included", "after": "Included — flagged on arrival" },
-        { "label": "Time before counseling starts", "before": "1 to 8 hours", "after": "About 15 minutes (target)" },
-        { "label": "What sets the caseload ceiling", "before": "Paperwork", "after": "Counselor availability" }
+        {
+          "label": "Sorting inbound post",
+          "before": "30 to 80 letters per client, by hand",
+          "after": "Uploaded as one mixed PDF"
+        },
+        {
+          "label": "Getting data into the case system",
+          "before": "Retyped field by field",
+          "after": "Populated from the extraction"
+        },
+        {
+          "label": "Catching an urgent notice",
+          "before": "Not included",
+          "after": "Included — flagged on arrival"
+        },
+        {
+          "label": "Time before counseling starts",
+          "before": "1 to 8 hours",
+          "after": "About 15 minutes (target)"
+        },
+        {
+          "label": "What sets the caseload ceiling",
+          "before": "Paperwork",
+          "after": "Counselor availability"
+        }
       ],
       "note": "Manual figures as reported by counseling centres. The time with BriefXtract is a product target."
+    },
+    "faq": {
+      "title": "Questions counseling centres ask.",
+      "lead": "Short answers, each one checkable against the rest of this site.",
+      "items": [
+        {
+          "q": "Which documents can BriefXtract read?",
+          "a": "The post a counseling centre receives for a client: letters from creditors, collection letters, invoices, court orders and enforcement notices. Scan or forward them together as one mixed PDF; BriefXtract separates and identifies each document."
+        },
+        {
+          "q": "What does BriefXtract extract from a letter?",
+          "a": "The document type, the creditor, the file number, the amount and the due date. Each value keeps a pointer to the line it was read from, and values that need a second look are marked."
+        },
+        {
+          "q": "How does a counselor check the results?",
+          "a": "By reading the page, not by trusting a score. Every extracted field sits beside its source line, so confirming a case means comparing the two."
+        },
+        {
+          "q": "Does it work with our case-management system?",
+          "a": "BriefXtract returns structured data in the format you need, or connects directly to your case-management system through an API, so nothing has to be retyped."
+        },
+        {
+          "q": "Where is client data processed, and is it kept?",
+          "a": "On AWS infrastructure inside the EU, including the AI models on Amazon Bedrock. Documents are deleted immediately after processing and are never used to train a model.",
+          "more": "security"
+        },
+        {
+          "q": "How much time does BriefXtract save?",
+          "a": "It is designed to bring case preparation from 1 to 8 hours per client down to about 15 minutes. That is a product target, not a measured result.",
+          "more": "results"
+        }
+      ]
     }
   },
   "security": {
@@ -208,32 +335,83 @@
       "title": "What happens to a document.",
       "lead": "Four stages, and the last one is deletion. There is no fifth.",
       "items": [
-        { "title": "Received", "body": "The upload travels over TLS 1.3 into EU infrastructure and is held encrypted at rest with AES-256." },
-        { "title": "Processed", "body": "Classification and extraction run inside the EU. No document is used to train a model." },
-        { "title": "Returned", "body": "The structured case goes to your case-management system. The centre holds the record." },
-        { "title": "Deleted", "body": "The source document is permanently deleted immediately after processing. Nothing is stored or indexed." }
+        {
+          "title": "Received",
+          "body": "The upload travels over TLS 1.3 into EU infrastructure and is held encrypted at rest with AES-256."
+        },
+        {
+          "title": "Processed",
+          "body": "Classification and extraction run inside the EU. No document is used to train a model."
+        },
+        {
+          "title": "Returned",
+          "body": "The structured case goes to your case-management system. The centre holds the record."
+        },
+        {
+          "title": "Deleted",
+          "body": "The source document is permanently deleted immediately after processing. Nothing is stored or indexed."
+        }
       ]
     },
     "commitments": {
       "title": "The commitments, in writing.",
       "lead": "Each one is documented for your data protection officer.",
       "items": [
-        { "tag": "GDPR", "title": "Article 28 processing", "body": "A full data processing agreement (DPA) is available on request. Client data is processed in full compliance with EU GDPR." },
-        { "tag": "Residency", "title": "Hosted in the EU", "body": "All processing runs on AWS infrastructure within the EU. No client document leaves the EU." },
-        { "tag": "Retention", "title": "Zero data retention", "body": "Documents are permanently deleted immediately after processing. Nothing is stored, indexed or used for training." },
-        { "tag": "Church law", "title": "KDG and DSG-EKD", "body": "Compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, for Caritas, Diakonie and AWO centres." },
-        { "tag": "Encryption", "title": "Encrypted end to end", "body": "TLS 1.3 in transit and AES-256 at rest, at every step a client's financial data passes through." },
-        { "tag": "Operations", "title": "Audited infrastructure", "body": "Enterprise AI infrastructure with no model training, full auditability and a 99.9% uptime service level agreement (SLA)." }
+        {
+          "tag": "GDPR",
+          "title": "Article 28 processing",
+          "body": "A full data processing agreement (DPA) is available on request. Client data is processed in full compliance with EU GDPR."
+        },
+        {
+          "tag": "Residency",
+          "title": "Hosted in the EU",
+          "body": "All processing runs on AWS infrastructure within the EU. No client document leaves the EU."
+        },
+        {
+          "tag": "Retention",
+          "title": "Zero data retention",
+          "body": "Documents are permanently deleted immediately after processing. Nothing is stored, indexed or used for training."
+        },
+        {
+          "tag": "Church law",
+          "title": "KDG and DSG-EKD",
+          "body": "Compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, for Caritas, Diakonie and AWO centres."
+        },
+        {
+          "tag": "Encryption",
+          "title": "Encrypted end to end",
+          "body": "TLS 1.3 in transit and AES-256 at rest, at every step a client's financial data passes through."
+        },
+        {
+          "tag": "Operations",
+          "title": "Audited infrastructure",
+          "body": "Enterprise AI infrastructure with no model training, full auditability and a 99.9% uptime service level agreement (SLA)."
+        }
       ]
     },
     "faq": {
       "title": "Questions a data protection officer asks.",
       "items": [
-        { "q": "Where is our data stored?", "a": "Inside the EU, on AWS infrastructure, for the duration of processing only. The extracted case is returned to your system and the source document is deleted. Nothing is kept afterwards." },
-        { "q": "Do client documents train your models?", "a": "No. Client data never trains AI models. Documents are processed, returned as a structured case and permanently deleted." },
-        { "q": "Will you sign a data processing agreement?", "a": "Yes. A full data processing agreement under GDPR Article 28 is available on request. Ask for it in your demo request." },
-        { "q": "Does this satisfy KDG and DSG-EKD?", "a": "Yes. BriefXtract is compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, and was built for Caritas, Diakonie and AWO centres." },
-        { "q": "Who are the sub-processors?", "a": "All processing runs on AWS infrastructure within the EU, including the AI models, which run on Amazon Bedrock." }
+        {
+          "q": "Where is our data stored?",
+          "a": "Inside the EU, on AWS infrastructure, for the duration of processing only. The extracted case is returned to your system and the source document is deleted. Nothing is kept afterwards."
+        },
+        {
+          "q": "Do client documents train your models?",
+          "a": "No. Client data never trains AI models. Documents are processed, returned as a structured case and permanently deleted."
+        },
+        {
+          "q": "Will you sign a data processing agreement?",
+          "a": "Yes. A full data processing agreement under GDPR Article 28 is available on request. Ask for it in your demo request."
+        },
+        {
+          "q": "Does this satisfy KDG and DSG-EKD?",
+          "a": "Yes. BriefXtract is compliant with Catholic (KDG) and Protestant (DSG-EKD) data protection law, and was built for Caritas, Diakonie and AWO centres."
+        },
+        {
+          "q": "Who are the sub-processors?",
+          "a": "All processing runs on AWS infrastructure within the EU, including the AI models, which run on Amazon Bedrock."
+        }
       ]
     }
   },
@@ -245,11 +423,27 @@
     "compare": {
       "title": "What a centre gets back.",
       "lead": "A ten-counselor centre, before and after the post is read for them.",
-      "columns": { "label": "Measure", "before": "Without BriefXtract", "after": "With BriefXtract" },
+      "columns": {
+        "label": "Measure",
+        "before": "Without BriefXtract",
+        "after": "With BriefXtract"
+      },
       "rows": [
-        { "label": "Average case preparation time", "before": "4 hours", "after": "About 15 minutes (target)" },
-        { "label": "Admin hours recovered per year, 10 counselors", "before": "Not applicable", "after": "9,000 hours" },
-        { "label": "Estimated staff cost recovered per year", "before": "Not applicable", "after": "€315,000" }
+        {
+          "label": "Average case preparation time",
+          "before": "4 hours",
+          "after": "About 15 minutes (target)"
+        },
+        {
+          "label": "Admin hours recovered per year, 10 counselors",
+          "before": "Not applicable",
+          "after": "9,000 hours"
+        },
+        {
+          "label": "Estimated staff cost recovered per year",
+          "before": "Not applicable",
+          "after": "€315,000"
+        }
       ],
       "note": "Worked from the 15-minute target, with 10 counselors preparing 5 client cases a week over 48 working weeks, at €35 an hour. Change any of those in the calculator below."
     },
@@ -270,9 +464,18 @@
       "title": "Where the hour goes.",
       "lead": "Recovered time is capacity, and capacity shows up in three places.",
       "items": [
-        { "title": "Appointments, not preparation", "body": "The hours that went into sorting go back into the hours a client is actually in the room." },
-        { "title": "Deadlines that are not missed", "body": "An enforcement order surfaces on the day it arrives rather than on the day someone reaches that envelope." },
-        { "title": "A shorter waiting list", "body": "When paperwork stops setting the ceiling, counselor availability does, and the queue moves." }
+        {
+          "title": "Appointments, not preparation",
+          "body": "The hours that went into sorting go back into the hours a client is actually in the room."
+        },
+        {
+          "title": "Deadlines that are not missed",
+          "body": "An enforcement order surfaces on the day it arrives rather than on the day someone reaches that envelope."
+        },
+        {
+          "title": "A shorter waiting list",
+          "body": "When paperwork stops setting the ceiling, counselor availability does, and the queue moves."
+        }
       ]
     }
   },
@@ -289,11 +492,26 @@
       "p3Link": "security page",
       "p3After": ".",
       "facts": [
-        { "label": "Founded", "value": "Berlin, 2026" },
-        { "label": "Product", "value": "BriefXtract, an Intelligent Document Processing (IDP) platform" },
-        { "label": "Sector", "value": "Debt and social counseling" },
-        { "label": "Data residency", "value": "EU only" },
-        { "label": "Compliance", "value": "GDPR · KDG · DSG-EKD" }
+        {
+          "label": "Founded",
+          "value": "Berlin, 2026"
+        },
+        {
+          "label": "Product",
+          "value": "BriefXtract, an Intelligent Document Processing (IDP) platform"
+        },
+        {
+          "label": "Sector",
+          "value": "Debt and social counseling"
+        },
+        {
+          "label": "Data residency",
+          "value": "EU only"
+        },
+        {
+          "label": "Compliance",
+          "value": "GDPR · KDG · DSG-EKD"
+        }
       ]
     },
     "photos": {
@@ -311,8 +529,15 @@
     },
     "contact": {
       "title": "One address, one inbox.",
-      "email": { "label": "Email", "body": "Pilots, processing agreements and integration questions all go here." },
-      "office": { "label": "Office", "value": "Berlin, Germany", "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin" },
+      "email": {
+        "label": "Email",
+        "body": "Pilots, processing agreements and integration questions all go here."
+      },
+      "office": {
+        "label": "Office",
+        "value": "Berlin, Germany",
+        "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin"
+      },
       "audience": {
         "label": "Who this is for",
         "value": "Counseling centres",
@@ -399,5 +624,19 @@
     "title": "This page does not exist.",
     "message": "The address may be mistyped, or the page may have moved when the site was reorganised.",
     "link": "Go to the home page"
+  },
+  "seo": {
+    "organization": "Berlin software company building BriefXtract, intelligent document processing for debt and social counseling centres.",
+    "knowsAbout": [
+      "Intelligent document processing",
+      "Debt counseling",
+      "Social counseling",
+      "GDPR",
+      "Church data protection (KDG, DSG-EKD)"
+    ],
+    "softwareCategory": "Intelligent document processing (IDP)",
+    "software": "Reads the post that reaches debt and social counseling centres, extracts creditor, file number, amount and deadline, flags urgent notices and files each document against the case. Hosted in the EU with zero data retention.",
+    "audience": "Debt and social counseling centres",
+    "imageAlt": "Brief Insights: Every letter, already read."
   }
 }

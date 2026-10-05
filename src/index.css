@@ -199,7 +199,8 @@
   .legal-prose h3 {
     @apply mb-2 mt-8 text-h5 text-ink;
   }
-  .legal-prose h4 {
+  .legal-prose h4,
+  .legal-prose h5 {
     @apply mb-2 mt-6 text-body font-semibold text-ink;
   }
   .legal-prose p,

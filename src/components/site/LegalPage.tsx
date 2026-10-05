@@ -14,6 +14,8 @@ export default function LegalPage({ page, de, en }: { page: "impressum" | "priva
     { lang: "en", html: en },
   ];
   if (i18n.language?.startsWith("en")) versions.reverse();
+  // One h1 per page: the second-language version's headings move down a level.
+  versions[1].html = versions[1].html.replace(/<(\/?)h([1-5])(\s|>)/g, (_, slash, level, rest) => `<${slash}h${Number(level) + 1}${rest}`);
 
   return (
     <Section>

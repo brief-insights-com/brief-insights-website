@@ -9,10 +9,14 @@ import { DemoButton } from "@/components/site/DemoDialog";
 import { Caption, Container, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
 import { buttonClass } from "@/components/site/buttonStyles";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { usePath } from "@/hooks/use-locale";
 import { cn } from "@/lib/utils";
-import deskBefore from "@/assets/doc-worker.jpg";
+import deskBefore from "@/assets/overwhelmed-desk-overhead.jpg";
+import deskBeforeWebp from "@/assets/overwhelmed-desk-overhead.webp";
 import tabletAfter from "@/assets/counselor-tablet-review-1600.jpg";
 import tabletAfterSmall from "@/assets/counselor-tablet-review-800.jpg";
+import tabletAfterWebp from "@/assets/counselor-tablet-review-1600.webp";
+import tabletAfterSmallWebp from "@/assets/counselor-tablet-review-800.webp";
 
 type Item = { title: string; body: string };
 
@@ -26,6 +30,7 @@ const STAT_BARS = [
 
 export default function Home() {
   const { t } = useTranslation();
+  const path = usePath();
   usePageMeta("home");
 
   const stats = t("home.stats.items", { returnObjects: true }) as { value: string; label: string }[];
@@ -40,7 +45,7 @@ export default function Home() {
         actions={
           <>
             <DemoButton />
-            <Link to="/platform" className={buttonClass("secondaryOnDark")}>
+            <Link to={path("platform")} className={buttonClass("secondaryOnDark")}>
               {t("actions.seePlatform")}
             </Link>
           </>
@@ -82,7 +87,7 @@ export default function Home() {
           })}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/platform" className={buttonClass("link")}>
+          <Link to={path("platform")} className={buttonClass("link")}>
             {t("actions.seeWholePlatform")}
             <ArrowRight className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
           </Link>
@@ -94,6 +99,7 @@ export default function Home() {
         <PhotoPair
           before={{
             src: deskBefore,
+            webpSrcSet: `${deskBeforeWebp} 1216w`,
             width: 1216,
             height: 768,
             alt: t("home.photos.before.alt"),
@@ -102,6 +108,7 @@ export default function Home() {
           after={{
             src: tabletAfter,
             srcSet: `${tabletAfterSmall} 800w, ${tabletAfter} 1600w`,
+            webpSrcSet: `${tabletAfterSmallWebp} 800w, ${tabletAfterWebp} 1600w`,
             width: 1600,
             height: 773,
             alt: t("home.photos.after.alt"),
@@ -121,14 +128,14 @@ export default function Home() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/security" className={buttonClass("link")}>
+          <Link to={path("security")} className={buttonClass("link")}>
             {t("actions.readSecurity")}
             <ArrowRight className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
           </Link>
         </div>
       </Section>
 
-      <CtaBanner secondary={{ to: "/results", label: t("actions.workOutHours") }} />
+      <CtaBanner secondary={{ page: "results", label: t("actions.workOutHours") }} />
     </>
   );
 }

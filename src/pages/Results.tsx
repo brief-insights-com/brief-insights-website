@@ -46,7 +46,7 @@ export default function Results() {
         </div>
       </Section>
 
-      <CtaBanner variant="results" secondary={{ to: "/platform", label: t("actions.seePlatform") }} />
+      <CtaBanner variant="results" secondary={{ page: "platform", label: t("actions.seePlatform") }} />
     </>
   );
 }

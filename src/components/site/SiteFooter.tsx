@@ -4,57 +4,59 @@ import { ChevronDown } from "lucide-react";
 import logo from "@/assets/Brief_Insights_name_color.png";
 import { openCookieSettings } from "@/lib/analytics";
 import { Container } from "./Layout";
+import { usePath } from "@/hooks/use-locale";
+import type { PageKey } from "@/routes";
 
-type FooterLink = { key: string; to?: string; href?: string; action?: () => void };
+type FooterLink = { key: string; page?: PageKey; href?: string; action?: () => void };
 
 const COLUMNS: { key: string; links: FooterLink[] }[] = [
   {
     key: "product",
     links: [
-      { key: "platform", to: "/platform" },
-      { key: "extraction", to: "/platform" },
-      { key: "caseEngine", to: "/platform" },
-      { key: "urgency", to: "/platform" },
+      { key: "platform", page: "platform" },
+      { key: "extraction", page: "platform" },
+      { key: "caseEngine", page: "platform" },
+      { key: "urgency", page: "platform" },
     ],
   },
   {
     key: "security",
     links: [
-      { key: "overview", to: "/security" },
-      { key: "residency", to: "/security" },
-      { key: "retention", to: "/security" },
-      { key: "dpa", to: "/security" },
+      { key: "overview", page: "security" },
+      { key: "residency", page: "security" },
+      { key: "retention", page: "security" },
+      { key: "dpa", page: "security" },
     ],
   },
   {
     key: "resources",
     links: [
-      { key: "results", to: "/results" },
-      { key: "calculator", to: "/results" },
-      { key: "questions", to: "/security" },
+      { key: "results", page: "results" },
+      { key: "calculator", page: "results" },
+      { key: "questions", page: "security" },
     ],
   },
   {
     key: "solutions",
     links: [
-      { key: "debt", to: "/about" },
-      { key: "social", to: "/about" },
-      { key: "nonProfit", to: "/about" },
+      { key: "debt", page: "about" },
+      { key: "social", page: "about" },
+      { key: "nonProfit", page: "about" },
     ],
   },
   {
     key: "company",
     links: [
-      { key: "about", to: "/about" },
-      { key: "contact", to: "/about" },
+      { key: "about", page: "about" },
+      { key: "contact", page: "about" },
       { key: "email", href: "mailto:info@brief-insights.com" },
     ],
   },
   {
     key: "legal",
     links: [
-      { key: "impressum", to: "/impressum" },
-      { key: "privacy", to: "/privacy" },
+      { key: "impressum", page: "impressum" },
+      { key: "privacy", page: "privacy" },
       { key: "cookies", action: openCookieSettings },
     ],
   },
@@ -64,10 +66,11 @@ const linkClass = "block py-1 text-body-sm text-steel hover:text-ink md:py-1";
 
 function FooterItem({ link }: { link: FooterLink }) {
   const { t } = useTranslation();
+  const path = usePath();
   const label = link.key === "email" ? "info@brief-insights.com" : t(`footer.links.${link.key}`);
-  if (link.to) {
+  if (link.page) {
     return (
-      <Link to={link.to} className={linkClass}>
+      <Link to={path(link.page)} className={linkClass}>
         {label}
       </Link>
     );

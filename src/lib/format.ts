@@ -16,8 +16,10 @@ export function useFormat() {
         minimumFractionDigits: fractionDigits,
         maximumFractionDigits: fractionDigits,
       }).format(value);
+    // Dates are calendar days, not instants: format in UTC so a visitor west of the build server
+    // doesn't see the previous day (and the prerendered HTML matches the browser's render).
     const date = (iso: string) =>
-      new Intl.DateTimeFormat(locale, { day: "2-digit", month: "short", year: "numeric" }).format(new Date(iso));
+      new Intl.DateTimeFormat(locale, { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(iso));
     return { locale, number, euro, date };
   }, [locale]);
 }

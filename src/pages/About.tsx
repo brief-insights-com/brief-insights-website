@@ -5,14 +5,19 @@ import PhotoPair from "@/components/site/PhotoPair";
 import CtaBanner from "@/components/site/CtaBanner";
 import { Caption, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import stackBefore from "@/assets/doc-stack.jpg";
+import { usePath } from "@/hooks/use-locale";
+import stackBefore from "@/assets/document-stack-lowlight.jpg";
+import stackBeforeWebp from "@/assets/document-stack-lowlight.webp";
 import handoverAfter from "@/assets/intake-box-handover-1600.jpg";
 import handoverAfterSmall from "@/assets/intake-box-handover-800.jpg";
+import handoverAfterWebp from "@/assets/intake-box-handover-1600.webp";
+import handoverAfterSmallWebp from "@/assets/intake-box-handover-800.webp";
 
 const CONTACT_EMAIL = "info@brief-insights.com";
 
 export default function About() {
   const { t } = useTranslation();
+  const path = usePath();
   usePageMeta("about");
 
   const facts = t("about.why.facts", { returnObjects: true }) as { label: string; value: string }[];
@@ -29,7 +34,7 @@ export default function About() {
             <p>{t("about.why.p2")}</p>
             <p>
               {t("about.why.p3Before")}
-              <Link to="/security" className="font-medium text-primary underline decoration-1">
+              <Link to={path("security")} className="font-medium text-primary underline decoration-1">
                 {t("about.why.p3Link")}
               </Link>
               {t("about.why.p3After")}
@@ -52,6 +57,7 @@ export default function About() {
         <PhotoPair
           before={{
             src: stackBefore,
+            webpSrcSet: `${stackBeforeWebp} 896w`,
             width: 896,
             height: 640,
             alt: t("about.photos.before.alt"),
@@ -60,6 +66,7 @@ export default function About() {
           after={{
             src: handoverAfter,
             srcSet: `${handoverAfterSmall} 800w, ${handoverAfter} 1600w`,
+            webpSrcSet: `${handoverAfterSmallWebp} 800w, ${handoverAfterWebp} 1600w`,
             width: 1600,
             height: 773,
             alt: t("about.photos.after.alt"),
@@ -94,7 +101,7 @@ export default function About() {
         </div>
       </Section>
 
-      <CtaBanner secondary={{ to: "/results", label: t("actions.workOutHours") }} />
+      <CtaBanner secondary={{ page: "results", label: t("actions.workOutHours") }} />
     </>
   );
 }

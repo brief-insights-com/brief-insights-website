@@ -1,28 +1,43 @@
 {
   "meta": {
     "home": {
-      "title": "Brief Insights — Jeder Brief, schon gelesen",
-      "description": "BriefXtract liest die Post, die bei Schuldner- und Sozialberatungsstellen eingeht, und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab."
+      "title": "Software für Schuldnerberatung – BriefXtract | Brief Insights",
+      "description": "BriefXtract liest die Post in Schuldner- und Sozialberatungsstellen und legt Gläubiger, Aktenzeichen, Betrag und Frist in der Akte ab. DSGVO-konform, EU-Hosting."
     },
     "platform": {
-      "title": "Plattform — Brief Insights",
-      "description": "Wie BriefXtract aus der Tagespost eine Akte macht: gelesen, klassifiziert, extrahiert und abgelegt, jedes Feld an seiner Quellzeile überprüfbar."
+      "title": "Gläubigerpost automatisch erfassen | Brief Insights",
+      "description": "Vom Posteingang zur Akte in vier Schritten: BriefXtract erkennt jede Seite, liest Gläubiger, Aktenzeichen, Betrag und Frist aus und markiert dringende Post.",
+      "crumb": "Plattform"
     },
     "security": {
-      "title": "Sicherheit — Brief Insights",
-      "description": "Hosting in der EU, keine Datenspeicherung, DSGVO Artikel 28, KDG und DSG-EKD. Was mit einem Dokument vom Upload bis zur Löschung passiert."
+      "title": "DSGVO, KDG und DSG-EKD: Datensicherheit | Brief Insights",
+      "description": "BriefXtract verarbeitet Dokumente auf AWS in der EU, löscht sie direkt nach der Verarbeitung und trainiert nie Modelle damit. AVV nach Art. 28 DSGVO auf Anfrage.",
+      "crumb": "Sicherheit"
     },
     "results": {
-      "title": "Ergebnisse — Brief Insights",
-      "description": "Rechnen Sie aus, wie viele Stunden BriefXtract Ihrer Beratungsstelle zurückgeben könnte, mit offengelegtem Rechenweg."
+      "title": "Zeitersparnis in der Schuldnerberatung | Brief Insights",
+      "description": "Rechnen Sie aus, wie viele Personalstunden ein Ziel von 15 Minuten Fallvorbereitung Ihrer Beratungsstelle pro Jahr zurückgeben würde, mit offenem Rechenweg.",
+      "crumb": "Ergebnisse"
     },
     "about": {
-      "title": "Über uns — Brief Insights",
-      "description": "Brief Insights ist ein Berliner Softwareunternehmen und entwickelt BriefXtract für Schuldner- und Sozialberatungsstellen."
+      "title": "Über uns – Software für Beratungsstellen | Brief Insights",
+      "description": "Brief Insights UG ist ein Berliner Softwareunternehmen und entwickelt BriefXtract, Dokumentenverarbeitung für Schuldner- und Sozialberatungsstellen.",
+      "crumb": "Über uns"
     },
-    "impressum": { "title": "Impressum — Brief Insights" },
-    "privacy": { "title": "Datenschutzerklärung — Brief Insights" },
-    "notFound": { "title": "Seite nicht gefunden — Brief Insights" }
+    "impressum": {
+      "title": "Impressum | Brief Insights",
+      "crumb": "Impressum",
+      "description": "Impressum der Brief Insights UG (haftungsbeschränkt), Berlin: Anschrift, Handelsregister, Umsatzsteuer-ID und Kontakt."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung | Brief Insights",
+      "crumb": "Datenschutzerklärung",
+      "description": "Wie Brief Insights auf dieser Website personenbezogene Daten verarbeitet: Hosting, Cookies und Analyse mit Metricool, Kontaktanfragen und Ihre Rechte nach der DSGVO."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden | Brief Insights",
+      "description": "Diese Seite gibt es nicht. Zur Startseite von Brief Insights."
+    }
   },
   "nav": {
     "main": "Hauptnavigation",
@@ -37,7 +52,8 @@
     "menu": "Menü",
     "language": "Sprache",
     "themeToDark": "Zum dunklen Design wechseln",
-    "themeToLight": "Zum hellen Design wechseln"
+    "themeToLight": "Zum hellen Design wechseln",
+    "homeCrumb": "Startseite"
   },
   "actions": {
     "requestDemo": "Demo anfragen",
@@ -103,14 +119,23 @@
   "home": {
     "hero": {
       "title": "Jeder Brief, schon gelesen.",
-      "subtitle": "BriefXtract liest jedes eingehende Dokument. Gläubiger, Aktenzeichen, Betrag und Frist landen in der richtigen Akte, bevor der Beratungstermin beginnt."
+      "subtitle": "BriefXtract ist Software für Schuldner- und Sozialberatungsstellen. Sie liest jeden eingehenden Brief und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab, bevor der Beratungstermin beginnt."
     },
     "stats": {
       "title": "Weniger sortieren. Mehr beraten.",
       "items": [
-        { "value": "90 %", "label": "Angestrebte Zeitersparnis beim Sortieren und Abtippen der Post." },
-        { "value": "15 Min.", "label": "Angestrebte Vorbereitungszeit pro Klient, statt 1 bis 8 Stunden von Hand." },
-        { "value": "4.000+", "label": "Berater in 1.400 Beratungsstellen in Deutschland, für deren Arbeit das hier gebaut ist." }
+        {
+          "value": "90 %",
+          "label": "Angestrebte Zeitersparnis beim Sortieren und Abtippen der Post."
+        },
+        {
+          "value": "15 Min.",
+          "label": "Angestrebte Vorbereitungszeit pro Klient, statt 1 bis 8 Stunden von Hand."
+        },
+        {
+          "value": "4.000+",
+          "label": "Berater in 1.400 Beratungsstellen in Deutschland, für deren Arbeit das hier gebaut ist."
+        }
       ],
       "note": "Die Zeitangaben sind Produktziele. Die Balken zeigen den Anteil am manuellen Aufwand. Marktzahl: BAGFW, 2024."
     },
@@ -147,10 +172,22 @@
     "security": {
       "title": "Gebaut für die strengsten Standards in Deutschland.",
       "items": [
-        { "title": "Hosting in der EU", "body": "Die Verarbeitung läuft auf EU-Infrastruktur. Kein Dokument verlässt die EU." },
-        { "title": "Keine Datenspeicherung", "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell." },
-        { "title": "DSGVO Artikel 28", "body": "Ein vollständiger Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich." },
-        { "title": "KDG und DSG-EKD", "body": "Kirchlicher Datenschutz ist eingebaut, für Caritas, Diakonie und AWO." }
+        {
+          "title": "Hosting in der EU",
+          "body": "Die Verarbeitung läuft auf EU-Infrastruktur. Kein Dokument verlässt die EU."
+        },
+        {
+          "title": "Keine Datenspeicherung",
+          "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell."
+        },
+        {
+          "title": "DSGVO Artikel 28",
+          "body": "Ein vollständiger Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich."
+        },
+        {
+          "title": "KDG und DSG-EKD",
+          "body": "Kirchlicher Datenschutz ist eingebaut, für Caritas, Diakonie und AWO."
+        }
       ]
     }
   },
@@ -159,14 +196,30 @@
       "title": "Eine Akte, jedes Dokument.",
       "subtitle": "BriefXtract ist Intelligente Dokumentenverarbeitung (IDP) für eine einzige Aufgabe: aus der Tagespost eine Akte zu machen, die Berater öffnen und der sie vertrauen können."
     },
+    "what": {
+      "title": "Was ist BriefXtract?",
+      "body": "BriefXtract ist eine Software für intelligente Dokumentenverarbeitung (IDP) für Schuldner- und Sozialberatungsstellen in Deutschland, entwickelt von Brief Insights in Berlin. Eine Beratungsstelle scannt die Tagespost oder leitet sie als ein gemischtes PDF weiter. BriefXtract trennt es in einzelne Dokumente, erkennt jedes davon – Brief, Gerichtsbeschluss, Rechnung, Inkassoschreiben oder Bescheid – und liest Gläubiger, Aktenzeichen, Betrag und Fälligkeit aus. Jeder Wert steht neben der Zeile, aus der er stammt, sodass Berater ihn an der Seite prüfen können. Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang markiert. Dokumente zur selben Forderung werden zu einer Akte verknüpft, die im Format Ihrer Wahl exportiert oder per API an Ihr Fallmanagementsystem übergeben werden kann. Die Verarbeitung läuft auf AWS innerhalb der EU, Dokumente werden direkt danach gelöscht, und nichts davon trainiert ein Modell."
+    },
     "steps": {
       "title": "Vier Schritte, keiner davon Ihrer.",
       "lead": "Vom Scanner bis zur abgelegten Akte, ohne dass jemand etwas abtippt.",
       "items": [
-        { "title": "Die Post kommt an", "body": "Scannen oder leiten Sie die Tagespost als ein gemischtes PDF weiter. Ohne Vorsortieren, ohne Namenskonvention." },
-        { "title": "Gelesen und klassifiziert", "body": "Jede Seite wird von ihren Nachbarn getrennt und erkannt: Brief, Gerichtsbeschluss, Rechnung, Bescheid." },
-        { "title": "Felder extrahiert", "body": "Gläubiger, Aktenzeichen, Betrag und Frist kommen zurück, jedes neben der Zeile, aus der es gelesen wurde." },
-        { "title": "In der Akte abgelegt", "body": "Dokumente zur selben Forderung werden zu einem Datensatz verknüpft, bereit für den Termin." }
+        {
+          "title": "Die Post kommt an",
+          "body": "Scannen oder leiten Sie die Tagespost als ein gemischtes PDF weiter. Ohne Vorsortieren, ohne Namenskonvention."
+        },
+        {
+          "title": "Gelesen und klassifiziert",
+          "body": "Jede Seite wird von ihren Nachbarn getrennt und erkannt: Brief, Gerichtsbeschluss, Rechnung, Bescheid."
+        },
+        {
+          "title": "Felder extrahiert",
+          "body": "Gläubiger, Aktenzeichen, Betrag und Frist kommen zurück, jedes neben der Zeile, aus der es gelesen wurde."
+        },
+        {
+          "title": "In der Akte abgelegt",
+          "body": "Dokumente zur selben Forderung werden zu einem Datensatz verknüpft, bereit für den Termin."
+        }
       ]
     },
     "highlight": {
@@ -177,26 +230,100 @@
       "title": "Alles, was ein Berater braucht. Nichts Überflüssiges.",
       "lead": "Sechs Funktionen, jede verdient durch eine Aufgabe, die bisher Handarbeit war.",
       "items": [
-        { "title": "Intelligente Extraktion", "body": "Gläubigername, Aktenzeichen, Betrag und Fälligkeitsdatum, in einem Durchgang aus gemischten PDFs gelesen." },
-        { "title": "Dringlichkeitserkennung", "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide erscheinen mit einer beschrifteten Markierung." },
-        { "title": "Master-Schuldenfall-Engine", "body": "Eine Rechnung und das darauf folgende Inkassoschreiben werden zu einem einzigen Schuldenfall verknüpft." },
-        { "title": "Verarbeitung ohne Speicherung", "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell." },
-        { "title": "Export ins Fallmanagement", "body": "Strukturierte Daten im Format Ihrer Wahl oder eine direkte Anbindung an Ihr Fallmanagementsystem per Programmierschnittstelle (API)." },
-        { "title": "Gebaut für die Fallzahlen", "body": "Darauf ausgelegt, die Vorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken, damit die Obergrenze sich verschiebt." }
+        {
+          "title": "Intelligente Extraktion",
+          "body": "Gläubigername, Aktenzeichen, Betrag und Fälligkeitsdatum, in einem Durchgang aus gemischten PDFs gelesen."
+        },
+        {
+          "title": "Dringlichkeitserkennung",
+          "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide erscheinen mit einer beschrifteten Markierung."
+        },
+        {
+          "title": "Master-Schuldenfall-Engine",
+          "body": "Eine Rechnung und das darauf folgende Inkassoschreiben werden zu einem einzigen Schuldenfall verknüpft."
+        },
+        {
+          "title": "Verarbeitung ohne Speicherung",
+          "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell."
+        },
+        {
+          "title": "Export ins Fallmanagement",
+          "body": "Strukturierte Daten im Format Ihrer Wahl oder eine direkte Anbindung an Ihr Fallmanagementsystem per Programmierschnittstelle (API)."
+        },
+        {
+          "title": "Gebaut für die Fallzahlen",
+          "body": "Darauf ausgelegt, die Vorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken, damit die Obergrenze sich verschiebt."
+        }
       ]
     },
     "compare": {
       "title": "Was sich ändert, Aufgabe für Aufgabe.",
       "lead": "Dieselben fünf Aufgaben, vor und nach dem Moment, in dem die Post für Sie gelesen wird.",
-      "columns": { "label": "Aufgabe", "before": "Heute von Hand", "after": "Mit BriefXtract" },
+      "columns": {
+        "label": "Aufgabe",
+        "before": "Heute von Hand",
+        "after": "Mit BriefXtract"
+      },
       "rows": [
-        { "label": "Eingehende Post sortieren", "before": "30 bis 80 Briefe pro Klient, von Hand", "after": "Als ein gemischtes PDF hochgeladen" },
-        { "label": "Daten ins Fallmanagement bringen", "before": "Feld für Feld abgetippt", "after": "Aus der Extraktion übernommen" },
-        { "label": "Einen dringenden Bescheid erkennen", "before": "Nicht enthalten", "after": "Enthalten – beim Eingang markiert" },
-        { "label": "Zeit, bis die Beratung beginnt", "before": "1 bis 8 Stunden", "after": "Etwa 15 Minuten (Ziel)" },
-        { "label": "Was die Fallzahl begrenzt", "before": "Papierkram", "after": "Die Verfügbarkeit der Berater" }
+        {
+          "label": "Eingehende Post sortieren",
+          "before": "30 bis 80 Briefe pro Klient, von Hand",
+          "after": "Als ein gemischtes PDF hochgeladen"
+        },
+        {
+          "label": "Daten ins Fallmanagement bringen",
+          "before": "Feld für Feld abgetippt",
+          "after": "Aus der Extraktion übernommen"
+        },
+        {
+          "label": "Einen dringenden Bescheid erkennen",
+          "before": "Nicht enthalten",
+          "after": "Enthalten – beim Eingang markiert"
+        },
+        {
+          "label": "Zeit, bis die Beratung beginnt",
+          "before": "1 bis 8 Stunden",
+          "after": "Etwa 15 Minuten (Ziel)"
+        },
+        {
+          "label": "Was die Fallzahl begrenzt",
+          "before": "Papierkram",
+          "after": "Die Verfügbarkeit der Berater"
+        }
       ],
       "note": "Manuelle Angaben nach Auskunft von Beratungsstellen. Die Zeit mit BriefXtract ist ein Produktziel."
+    },
+    "faq": {
+      "title": "Fragen, die Beratungsstellen stellen.",
+      "lead": "Kurze Antworten, jede am Rest dieser Website überprüfbar.",
+      "items": [
+        {
+          "q": "Welche Dokumente kann BriefXtract lesen?",
+          "a": "Die Post, die eine Beratungsstelle für Klienten erhält: Gläubigerschreiben, Inkassoschreiben, Rechnungen, Gerichtsbeschlüsse und Vollstreckungsbescheide. Scannen oder leiten Sie alles zusammen als ein gemischtes PDF weiter; BriefXtract trennt und erkennt jedes Dokument."
+        },
+        {
+          "q": "Was liest BriefXtract aus einem Brief aus?",
+          "a": "Dokumenttyp, Gläubiger, Aktenzeichen, Betrag und Fälligkeit. Jeder Wert verweist auf die Zeile, aus der er stammt, und Werte, die eine zweite Prüfung brauchen, sind markiert."
+        },
+        {
+          "q": "Wie prüfen Berater die Ergebnisse?",
+          "a": "Indem sie die Seite lesen, nicht indem sie einem Score vertrauen. Jedes extrahierte Feld steht neben seiner Quellzeile, sodass die Prüfung ein direkter Vergleich ist."
+        },
+        {
+          "q": "Funktioniert das mit unserem Fallmanagementsystem?",
+          "a": "BriefXtract liefert strukturierte Daten im Format, das Sie brauchen, oder verbindet sich per API direkt mit Ihrem Fallmanagementsystem. So muss nichts abgetippt werden."
+        },
+        {
+          "q": "Wo werden Klientendaten verarbeitet, und bleiben sie gespeichert?",
+          "a": "Auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle auf Amazon Bedrock. Dokumente werden direkt nach der Verarbeitung gelöscht und nie zum Trainieren eines Modells verwendet.",
+          "more": "security"
+        },
+        {
+          "q": "Wie viel Zeit spart BriefXtract?",
+          "a": "Es ist darauf ausgelegt, die Fallvorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken. Das ist ein Produktziel, kein gemessenes Ergebnis.",
+          "more": "results"
+        }
+      ]
     }
   },
   "security": {
@@ -208,32 +335,83 @@
       "title": "Was mit einem Dokument passiert.",
       "lead": "Vier Stationen, und die letzte ist die Löschung. Eine fünfte gibt es nicht.",
       "items": [
-        { "title": "Empfangen", "body": "Der Upload gelangt per TLS 1.3 auf EU-Infrastruktur und liegt dort mit AES-256 verschlüsselt." },
-        { "title": "Verarbeitet", "body": "Klassifizierung und Extraktion laufen innerhalb der EU. Kein Dokument wird zum Trainieren eines Modells verwendet." },
-        { "title": "Zurückgegeben", "body": "Der strukturierte Fall geht in Ihr Fallmanagementsystem. Die Akte liegt bei der Beratungsstelle." },
-        { "title": "Gelöscht", "body": "Das Quelldokument wird direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert oder indiziert." }
+        {
+          "title": "Empfangen",
+          "body": "Der Upload gelangt per TLS 1.3 auf EU-Infrastruktur und liegt dort mit AES-256 verschlüsselt."
+        },
+        {
+          "title": "Verarbeitet",
+          "body": "Klassifizierung und Extraktion laufen innerhalb der EU. Kein Dokument wird zum Trainieren eines Modells verwendet."
+        },
+        {
+          "title": "Zurückgegeben",
+          "body": "Der strukturierte Fall geht in Ihr Fallmanagementsystem. Die Akte liegt bei der Beratungsstelle."
+        },
+        {
+          "title": "Gelöscht",
+          "body": "Das Quelldokument wird direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert oder indiziert."
+        }
       ]
     },
     "commitments": {
       "title": "Die Zusagen, schriftlich.",
       "lead": "Jede ist für Ihre Datenschutzbeauftragten dokumentiert.",
       "items": [
-        { "tag": "DSGVO", "title": "Verarbeitung nach Artikel 28", "body": "Ein vollständiger Auftragsverarbeitungsvertrag (AVV) ist auf Anfrage erhältlich. Klientendaten werden vollständig nach EU-DSGVO verarbeitet." },
-        { "tag": "Standort", "title": "Hosting in der EU", "body": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU. Kein Klientendokument verlässt die EU." },
-        { "tag": "Speicherung", "title": "Keine Datenspeicherung", "body": "Dokumente werden direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert, indiziert oder zum Training verwendet." },
-        { "tag": "Kirchenrecht", "title": "KDG und DSG-EKD", "body": "Konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht, für Caritas, Diakonie und AWO." },
-        { "tag": "Verschlüsselung", "title": "Ende-zu-Ende verschlüsselt", "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, bei jedem Schritt, den die Finanzdaten Ihrer Klienten durchlaufen." },
-        { "tag": "Betrieb", "title": "Nachvollziehbare Infrastruktur", "body": "KI-Infrastruktur für Unternehmen, ohne Modelltraining, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit." }
+        {
+          "tag": "DSGVO",
+          "title": "Verarbeitung nach Artikel 28",
+          "body": "Ein vollständiger Auftragsverarbeitungsvertrag (AVV) ist auf Anfrage erhältlich. Klientendaten werden vollständig nach EU-DSGVO verarbeitet."
+        },
+        {
+          "tag": "Standort",
+          "title": "Hosting in der EU",
+          "body": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU. Kein Klientendokument verlässt die EU."
+        },
+        {
+          "tag": "Speicherung",
+          "title": "Keine Datenspeicherung",
+          "body": "Dokumente werden direkt nach der Verarbeitung dauerhaft gelöscht. Nichts wird gespeichert, indiziert oder zum Training verwendet."
+        },
+        {
+          "tag": "Kirchenrecht",
+          "title": "KDG und DSG-EKD",
+          "body": "Konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht, für Caritas, Diakonie und AWO."
+        },
+        {
+          "tag": "Verschlüsselung",
+          "title": "Ende-zu-Ende verschlüsselt",
+          "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, bei jedem Schritt, den die Finanzdaten Ihrer Klienten durchlaufen."
+        },
+        {
+          "tag": "Betrieb",
+          "title": "Nachvollziehbare Infrastruktur",
+          "body": "KI-Infrastruktur für Unternehmen, ohne Modelltraining, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit."
+        }
       ]
     },
     "faq": {
       "title": "Fragen, die Datenschutzbeauftragte stellen.",
       "items": [
-        { "q": "Wo werden unsere Daten gespeichert?", "a": "Innerhalb der EU, auf AWS-Infrastruktur, und nur für die Dauer der Verarbeitung. Der extrahierte Fall geht zurück in Ihr System, das Quelldokument wird gelöscht. Danach bleibt nichts erhalten." },
-        { "q": "Trainieren Klientendokumente Ihre Modelle?", "a": "Nein. Klientendaten trainieren niemals KI-Modelle. Dokumente werden verarbeitet, als strukturierter Fall zurückgegeben und dauerhaft gelöscht." },
-        { "q": "Unterzeichnen Sie einen Auftragsverarbeitungsvertrag?", "a": "Ja. Ein vollständiger Auftragsverarbeitungsvertrag nach DSGVO Artikel 28 ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach." },
-        { "q": "Erfüllt das KDG und DSG-EKD?", "a": "Ja. BriefXtract ist konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht und wurde für Caritas, Diakonie und AWO entwickelt." },
-        { "q": "Wer sind die Unterauftragsverarbeiter?", "a": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle, die auf Amazon Bedrock laufen." }
+        {
+          "q": "Wo werden unsere Daten gespeichert?",
+          "a": "Innerhalb der EU, auf AWS-Infrastruktur, und nur für die Dauer der Verarbeitung. Der extrahierte Fall geht zurück in Ihr System, das Quelldokument wird gelöscht. Danach bleibt nichts erhalten."
+        },
+        {
+          "q": "Trainieren Klientendokumente Ihre Modelle?",
+          "a": "Nein. Klientendaten trainieren niemals KI-Modelle. Dokumente werden verarbeitet, als strukturierter Fall zurückgegeben und dauerhaft gelöscht."
+        },
+        {
+          "q": "Unterzeichnen Sie einen Auftragsverarbeitungsvertrag?",
+          "a": "Ja. Ein vollständiger Auftragsverarbeitungsvertrag nach DSGVO Artikel 28 ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach."
+        },
+        {
+          "q": "Erfüllt das KDG und DSG-EKD?",
+          "a": "Ja. BriefXtract ist konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht und wurde für Caritas, Diakonie und AWO entwickelt."
+        },
+        {
+          "q": "Wer sind die Unterauftragsverarbeiter?",
+          "a": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle, die auf Amazon Bedrock laufen."
+        }
       ]
     }
   },
@@ -245,11 +423,27 @@
     "compare": {
       "title": "Was eine Beratungsstelle zurückbekommt.",
       "lead": "Eine Beratungsstelle mit zehn Beratern, bevor und nachdem die Post für sie gelesen wird.",
-      "columns": { "label": "Kennzahl", "before": "Ohne BriefXtract", "after": "Mit BriefXtract" },
+      "columns": {
+        "label": "Kennzahl",
+        "before": "Ohne BriefXtract",
+        "after": "Mit BriefXtract"
+      },
       "rows": [
-        { "label": "Durchschnittliche Vorbereitung pro Fall", "before": "4 Stunden", "after": "Etwa 15 Minuten (Ziel)" },
-        { "label": "Zurückgewonnene Verwaltungsstunden pro Jahr, 10 Berater", "before": "Entfällt", "after": "9.000 Stunden" },
-        { "label": "Geschätzte zurückgewonnene Personalkosten pro Jahr", "before": "Entfällt", "after": "315.000 €" }
+        {
+          "label": "Durchschnittliche Vorbereitung pro Fall",
+          "before": "4 Stunden",
+          "after": "Etwa 15 Minuten (Ziel)"
+        },
+        {
+          "label": "Zurückgewonnene Verwaltungsstunden pro Jahr, 10 Berater",
+          "before": "Entfällt",
+          "after": "9.000 Stunden"
+        },
+        {
+          "label": "Geschätzte zurückgewonnene Personalkosten pro Jahr",
+          "before": "Entfällt",
+          "after": "315.000 €"
+        }
       ],
       "note": "Gerechnet mit dem 15-Minuten-Ziel, 10 Beratern mit je 5 Klientenfällen pro Woche, 48 Arbeitswochen und 35 € pro Stunde. Jeden dieser Werte können Sie unten im Rechner ändern."
     },
@@ -270,9 +464,18 @@
       "title": "Wohin die Stunde geht.",
       "lead": "Zurückgewonnene Zeit ist Kapazität, und Kapazität zeigt sich an drei Stellen.",
       "items": [
-        { "title": "Termine statt Vorbereitung", "body": "Die Stunden, die ins Sortieren gingen, fließen zurück in die Zeit, in der Klienten tatsächlich im Raum sind." },
-        { "title": "Fristen, die nicht verpasst werden", "body": "Ein Vollstreckungsbescheid fällt am Tag seines Eingangs auf, nicht erst an dem Tag, an dem jemand diesen Umschlag öffnet." },
-        { "title": "Eine kürzere Warteliste", "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit der Berater, bewegt sich die Warteschlange." }
+        {
+          "title": "Termine statt Vorbereitung",
+          "body": "Die Stunden, die ins Sortieren gingen, fließen zurück in die Zeit, in der Klienten tatsächlich im Raum sind."
+        },
+        {
+          "title": "Fristen, die nicht verpasst werden",
+          "body": "Ein Vollstreckungsbescheid fällt am Tag seines Eingangs auf, nicht erst an dem Tag, an dem jemand diesen Umschlag öffnet."
+        },
+        {
+          "title": "Eine kürzere Warteliste",
+          "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit der Berater, bewegt sich die Warteschlange."
+        }
       ]
     }
   },
@@ -289,11 +492,26 @@
       "p3Link": "Sicherheitsseite",
       "p3After": ".",
       "facts": [
-        { "label": "Gegründet", "value": "Berlin, 2026" },
-        { "label": "Produkt", "value": "BriefXtract, eine Plattform für Intelligente Dokumentenverarbeitung (IDP)" },
-        { "label": "Branche", "value": "Schuldner- und Sozialberatung" },
-        { "label": "Datenstandort", "value": "Nur EU" },
-        { "label": "Compliance", "value": "DSGVO · KDG · DSG-EKD" }
+        {
+          "label": "Gegründet",
+          "value": "Berlin, 2026"
+        },
+        {
+          "label": "Produkt",
+          "value": "BriefXtract, eine Plattform für Intelligente Dokumentenverarbeitung (IDP)"
+        },
+        {
+          "label": "Branche",
+          "value": "Schuldner- und Sozialberatung"
+        },
+        {
+          "label": "Datenstandort",
+          "value": "Nur EU"
+        },
+        {
+          "label": "Compliance",
+          "value": "DSGVO · KDG · DSG-EKD"
+        }
       ]
     },
     "photos": {
@@ -311,8 +529,15 @@
     },
     "contact": {
       "title": "Eine Adresse, ein Postfach.",
-      "email": { "label": "E-Mail", "body": "Pilotprojekte, Auftragsverarbeitungsverträge und Fragen zur Anbindung landen alle hier." },
-      "office": { "label": "Büro", "value": "Berlin, Deutschland", "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin" },
+      "email": {
+        "label": "E-Mail",
+        "body": "Pilotprojekte, Auftragsverarbeitungsverträge und Fragen zur Anbindung landen alle hier."
+      },
+      "office": {
+        "label": "Büro",
+        "value": "Berlin, Deutschland",
+        "address": "Johanna-Stegen-Straße 24, c/o Alves Avelino, 12167 Berlin"
+      },
       "audience": {
         "label": "Für wen das ist",
         "value": "Beratungsstellen",
@@ -399,5 +624,19 @@
     "title": "Diese Seite gibt es nicht.",
     "message": "Vielleicht ist die Adresse vertippt, oder die Seite ist beim Umbau der Website umgezogen.",
     "link": "Zur Startseite"
+  },
+  "seo": {
+    "organization": "Berliner Softwareunternehmen, das BriefXtract entwickelt: intelligente Dokumentenverarbeitung für Schuldner- und Sozialberatungsstellen.",
+    "knowsAbout": [
+      "Intelligente Dokumentenverarbeitung",
+      "Schuldnerberatung",
+      "Sozialberatung",
+      "DSGVO",
+      "Kirchlicher Datenschutz (KDG, DSG-EKD)"
+    ],
+    "softwareCategory": "Intelligente Dokumentenverarbeitung (IDP)",
+    "software": "Liest die Post, die bei Schuldner- und Sozialberatungsstellen eingeht, extrahiert Gläubiger, Aktenzeichen, Betrag und Frist, markiert dringende Bescheide und legt jedes Dokument in der richtigen Akte ab. Hosting in der EU, keine Datenspeicherung.",
+    "audience": "Schuldner- und Sozialberatungsstellen",
+    "imageAlt": "Brief Insights: Jeder Brief, schon gelesen."
   }
 }

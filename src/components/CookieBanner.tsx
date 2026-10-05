@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { COOKIE_SETTINGS_EVENT, getConsent, loadMetricool, setConsent } from "@/lib/analytics";
 import { buttonClass } from "@/components/site/buttonStyles";
+import { usePath } from "@/hooks/use-locale";
 
 /**
  * Analytics consent. Accept and Decline carry equal weight, and the footer's
@@ -10,6 +11,7 @@ import { buttonClass } from "@/components/site/buttonStyles";
  */
 const CookieBanner = () => {
   const { t } = useTranslation();
+  const path = usePath();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ const CookieBanner = () => {
       <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-lg border border-hairline bg-canvas px-5 py-4 shadow-4 sm:flex-row sm:items-center">
         <p className="flex-1 text-body-sm text-slate">
           {t("cookie.message")}{" "}
-          <Link to="/privacy" className="text-primary underline">
+          <Link to={path("privacy")} className="text-primary underline">
             {t("cookie.privacyLink")}
           </Link>
         </p>

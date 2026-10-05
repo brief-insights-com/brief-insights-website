@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
@@ -9,40 +9,45 @@ import { Container } from "./Layout";
 import { DemoButton } from "./DemoDialog";
 import { useDemoDialog } from "./demoDialogContext";
 import { buttonClass } from "./buttonStyles";
+import { useLang, usePath } from "@/hooks/use-locale";
+import { pageFromPath, pathFor, type PageKey } from "@/routes";
 
-const NAV = [
-  { to: "/platform", key: "nav.platform" },
-  { to: "/security", key: "nav.security" },
-  { to: "/results", key: "nav.results" },
-  { to: "/about", key: "nav.about" },
-] as const;
+const NAV: { page: PageKey; key: string }[] = [
+  { page: "platform", key: "nav.platform" },
+  { page: "security", key: "nav.security" },
+  { page: "results", key: "nav.results" },
+  { page: "about", key: "nav.about" },
+];
 
 const LANGUAGES = [
   { code: "en", label: "EN", name: "English" },
   { code: "de", label: "DE", name: "Deutsch" },
 ] as const;
 
+/** Links to the same page in the other language, so crawlers can follow them too. */
 function LanguageSwitch({ className }: { className?: string }) {
-  const { t, i18n } = useTranslation();
-  const current = i18n.language?.startsWith("de") ? "de" : "en";
+  const { t } = useTranslation();
+  const current = useLang();
+  const { pathname } = useLocation();
+  const page = pageFromPath(pathname) ?? "home";
   return (
     <div role="group" aria-label={t("nav.language")} className={cn("flex items-center", className)}>
       {LANGUAGES.map((lang, index) => (
         <span key={lang.code} className="flex items-center">
           {index > 0 ? <span aria-hidden="true" className="mx-1 h-3.5 w-px bg-hairline" /> : null}
-          <button
-            type="button"
+          <Link
+            to={pathFor(page, lang.code)}
+            hrefLang={lang.code}
             lang={lang.code}
             aria-label={lang.name}
-            aria-pressed={current === lang.code}
-            onClick={() => i18n.changeLanguage(lang.code)}
+            aria-current={current === lang.code ? "true" : undefined}
             className={cn(
               "flex h-11 min-w-9 items-center justify-center rounded-sm px-1 text-body-sm",
               current === lang.code ? "font-medium text-ink" : "text-steel",
             )}
           >
             {lang.label}
-          </button>
+          </Link>
         </span>
       ))}
     </div>
@@ -52,7 +57,11 @@ function LanguageSwitch({ className }: { className?: string }) {
 function ThemeToggle({ className }: { className?: string }) {
   const { t } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  // The saved theme is only known in the browser; render the light-mode icon until then
+  // so the prerendered HTML and the first client render match.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const isDark = mounted && resolvedTheme === "dark";
   return (
     <button
       type="button"
@@ -67,10 +76,11 @@ function ThemeToggle({ className }: { className?: string }) {
 
 function Wordmark() {
   const { t } = useTranslation();
+  const path = usePath();
   // The supplied logo is a stacked lockup and is illegible at nav height,
   // so the bar carries the wordmark as type until a horizontal lockup exists.
   return (
-    <Link to="/" aria-label={t("nav.home")} className="rounded-sm py-2 text-h5 tracking-[-0.2px] text-ink lg:text-h4">
+    <Link to={path("home")} aria-label={t("nav.home")} className="rounded-sm py-2 text-h5 tracking-[-0.2px] text-ink lg:text-h4">
       Brief Insights
     </Link>
   );
@@ -78,6 +88,7 @@ function Wordmark() {
 
 function MobileMenu() {
   const { t } = useTranslation();
+  const path = usePath();
   const { open: openDemo } = useDemoDialog();
   const [open, setOpen] = useState(false);
 
@@ -105,8 +116,8 @@ function MobileMenu() {
           <nav aria-label={t("nav.main")} className="flex flex-col px-6 py-4">
             {NAV.map((item) => (
               <NavLink
-                key={item.to}
-                to={item.to}
+                key={item.page}
+                to={path(item.page)}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
@@ -143,6 +154,7 @@ function MobileMenu() {
 
 export default function SiteHeader() {
   const { t } = useTranslation();
+  const path = usePath();
   return (
     <header className="sticky top-0 z-40 border-b border-hairline bg-canvas">
       <Container className="flex h-14 items-center gap-2 pr-2 md:pr-4 lg:h-16 lg:gap-10 lg:pr-8">
@@ -151,8 +163,8 @@ export default function SiteHeader() {
         <nav aria-label={t("nav.main")} className="hidden flex-1 items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <NavLink
-              key={item.to}
-              to={item.to}
+              key={item.page}
+              to={path(item.page)}
               className={({ isActive }) =>
                 cn(
                   "flex h-16 items-center border-b-2 pt-0.5 text-body-sm font-medium",

@@ -1,38 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#14283f" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="shortcut icon" type="image/png" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
-    <title>Brief Insights — Every letter, already read</title>
-    <meta name="description" content="BriefXtract reads the post that arrives at debt and social counseling centres and files creditor, file number, amount and deadline against the case. Hosted in the EU, with zero data retention." />
     <meta name="author" content="Brief Insights UG (haftungsbeschränkt)" />
-
-    <link rel="canonical" href="https://brief-insights.com/" />
-
-    <meta property="og:title" content="Brief Insights — Every letter, already read" />
-    <meta property="og:description" content="BriefXtract reads every document that arrives and files it against the case, before the appointment starts." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://brief-insights.com/" />
-    <meta property="og:image" content="https://brief-insights.com/logo.png" />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="1000" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://brief-insights.com/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <!--app-head-->
   </head>
 
   <body>
-    <div id="root"></div>
-    <script>
-      // Restore path encoded by public/404.html for GitHub Pages SPA routing
-      (function () {
-        var p = new URLSearchParams(window.location.search).get('p');
-        if (p) window.history.replaceState(null, '', decodeURIComponent(p));
-      })();
-    </script>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

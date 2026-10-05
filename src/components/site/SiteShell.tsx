@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import { DemoDialogProvider } from "./DemoDialog";
+import CookieBanner from "@/components/CookieBanner";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -30,6 +31,7 @@ export default function SiteShell({ children }: { children?: ReactNode }) {
         {children ?? <Outlet />}
       </main>
       <SiteFooter />
+      <CookieBanner />
     </DemoDialogProvider>
   );
 }

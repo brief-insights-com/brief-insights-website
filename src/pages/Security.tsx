@@ -56,7 +56,7 @@ export default function Security() {
         <FaqList items={faq} />
       </Section>
 
-      <CtaBanner variant="security" secondary={{ to: "/platform", label: t("actions.seePlatform") }} />
+      <CtaBanner variant="security" secondary={{ page: "platform", label: t("actions.seePlatform") }} />
     </>
   );
 }

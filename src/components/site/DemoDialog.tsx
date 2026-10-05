@@ -14,6 +14,7 @@ import {
 } from "@/lib/demoRequest";
 import { buttonClass } from "./buttonStyles";
 import { DemoDialogContext, useDemoDialog } from "./demoDialogContext";
+import { usePath } from "@/hooks/use-locale";
 
 type Phase = "form" | "sending" | "failed" | "sent";
 
@@ -29,6 +30,7 @@ function errorKey(field: DemoField, error: NonNullable<DemoErrors[DemoField]>) {
 
 function DemoForm({ onDone }: { onDone: () => void }) {
   const { t } = useTranslation();
+  const path = usePath();
   const [values, setValues] = useState<DemoRequest>(EMPTY_DEMO_REQUEST);
   const [phase, setPhase] = useState<Phase>("form");
   const [showErrors, setShowErrors] = useState(false);
@@ -160,7 +162,7 @@ function DemoForm({ onDone }: { onDone: () => void }) {
 
         <p className="text-caption text-steel">
           {t("demo.privacyBefore")}
-          <Link to="/privacy" onClick={onDone} className="text-primary underline">
+          <Link to={path("privacy")} onClick={onDone} className="text-primary underline">
             {t("demo.privacyLink")}
           </Link>
           {t("demo.privacyAfter")}

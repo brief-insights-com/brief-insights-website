@@ -18,7 +18,7 @@ const head = "text-micro uppercase text-steel";
 export default function IntakeMockup() {
   const { t } = useTranslation();
   const { euro, date } = useFormat();
-  const amount = (value: number | null) => (value === null ? "—" : euro(value, 2));
+  const amount = (value: number | null) => (value === null ? t("mockup.noAmount") : euro(value, 2));
 
   return (
     <figure className="w-full max-w-[1000px] overflow-hidden rounded-lg border border-hairline bg-canvas text-left shadow-3 [font-variant-numeric:tabular-nums]">

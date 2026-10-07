@@ -74,7 +74,7 @@
     },
     "results": {
       "title": "Check the numbers against your own week.",
-      "body": "A demo runs your real post, and the hours come out of your own caseload, not an average."
+      "body": "A demo runs on your real post, so the hours are based on your own cases."
     }
   },
   "mockup": {
@@ -114,7 +114,8 @@
     },
     "line": "line {{n}}",
     "needsCheck": "needs check",
-    "syntheticRecord": "Synthetic record shown."
+    "syntheticRecord": "Synthetic record shown.",
+    "noAmount": "No amount"
   },
   "home": {
     "hero": {
@@ -122,7 +123,7 @@
       "subtitle": "BriefXtract is document processing software for debt and social counseling centres and for consumer insolvency law firms. It reads every letter that arrives and files creditor, file number, amount and deadline against the case, before the appointment starts."
     },
     "stats": {
-      "title": "Less sorting. More casework.",
+      "title": "Designed to cut the hours spent on post.",
       "items": [
         {
           "value": "90%",
@@ -140,7 +141,7 @@
       "note": "Time figures are product targets. Bars read as a share of the manual baseline. Market figure: BAGFW, 2024."
     },
     "audience": {
-      "title": "Two desks, the same post.",
+      "title": "Who BriefXtract is for.",
       "lead": "Before a consumer insolvency, the same letters land at a counseling centre or at a law firm. BriefXtract reads them for both.",
       "items": [
         {
@@ -154,37 +155,37 @@
       ]
     },
     "features": {
-      "title": "One case file, every document.",
-      "lead": "Three things happen to every letter before anyone opens the case.",
+      "title": "What happens to each letter.",
+      "lead": "BriefXtract does three things with each letter before anyone opens the case.",
       "items": [
         {
           "title": "Intelligent extraction",
-          "body": "Creditor, file number, amount and due date are pulled from mixed PDFs — letters, court orders, invoices — in a single pass, and every field is shown beside the line it came from."
+          "body": "Creditor, file number, amount and due date are read from mixed PDFs of letters, court orders and invoices in a single pass. Each field is shown beside the line it came from."
         },
         {
           "title": "Urgency flagging",
-          "body": "Eviction notices, court deadlines and enforcement orders are detected on arrival and carry a labelled chip, never a colour alone, at the top of the queue."
+          "body": "Eviction notices, court deadlines and enforcement orders are detected on arrival and placed at the top of the queue with a text label."
         },
         {
           "title": "Master debt case engine",
-          "body": "An invoice and the collection letter that followed it are linked into one debt record, so a case is read as a case rather than as a pile of senders."
+          "body": "An invoice and the collection letter that followed it are linked into one debt record, so each debt appears once in the case."
         }
       ]
     },
     "photos": {
       "title": "From a box of paper to a case file.",
-      "lead": "The work does not disappear. It stops being done by hand.",
+      "lead": "The sorting still happens. BriefXtract does it, so your staff no longer have to.",
       "before": {
         "alt": "Overhead view of a desk covered in loose documents in a dimly lit room",
         "caption": "Before. Thirty to eighty letters per client, sorted by hand before advice can start."
       },
       "after": {
         "alt": "A person reviewing a case on a tablet at a clear desk",
-        "caption": "After. One case file, every field checkable against the page it was read from."
+        "caption": "After. One case file, with each field checkable against the page it was read from."
       }
     },
     "security": {
-      "title": "Built for the strictest standards in Germany.",
+      "title": "Data protection for client files in Germany.",
       "items": [
         {
           "title": "Hosted in the EU",
@@ -208,15 +209,15 @@
   "platform": {
     "hero": {
       "title": "One case file, every document.",
-      "subtitle": "BriefXtract is Intelligent Document Processing (IDP) built for one job: turning the day's post into a case your team can open and trust."
+      "subtitle": "BriefXtract is Intelligent Document Processing (IDP) software that turns the day's post into a case your team can open and check."
     },
     "what": {
       "title": "What is BriefXtract?",
-      "body": "BriefXtract is intelligent document processing (IDP) software for debt and social counseling centres and consumer insolvency law firms in Germany, made by Brief Insights in Berlin. A centre or firm scans or forwards the day's post as one mixed PDF. BriefXtract splits it into documents, identifies each one — letter, court order, invoice, collection letter or notice — and extracts the creditor, file number, amount and due date. Every value is shown beside the line it was read from, so whoever handles the case can check it against the page. Eviction notices, court deadlines and enforcement orders are flagged on arrival. Documents that belong to the same debt are linked into one case record, which can be exported in your format or passed to your case-management system through an API. Processing runs on AWS inside the EU, documents are deleted immediately afterwards, and nothing is used to train a model."
+      "body": "BriefXtract is intelligent document processing (IDP) software for debt and social counseling centres and consumer insolvency law firms in Germany, made by Brief Insights in Berlin. A centre or firm scans or forwards the day's post as one mixed PDF. BriefXtract splits it into documents, identifies each one as a letter, court order, invoice, collection letter or notice, and extracts the creditor, file number, amount and due date. Each value is shown beside the line it was read from, so whoever handles the case can check it against the page. Eviction notices, court deadlines and enforcement orders are flagged on arrival. Documents that belong to the same debt are linked into one case record, which can be exported in your format or passed to your case-management system through an API. Processing runs on AWS inside the EU, documents are deleted immediately afterwards, and nothing is used to train a model."
     },
     "steps": {
-      "title": "Four steps, none of them yours.",
-      "lead": "From the scanner to a filed case, without anyone retyping anything.",
+      "title": "How the post becomes a case.",
+      "lead": "From the scanner to a filed case in four steps, with no retyping.",
       "items": [
         {
           "title": "Post arrives",
@@ -238,11 +239,11 @@
     },
     "highlight": {
       "title": "Extraction you can check line by line.",
-      "body": "Every extracted value keeps a pointer to the sentence it came from. Your team confirms a case by reading the page, not by trusting a score."
+      "body": "Each extracted value keeps a pointer to the sentence it came from. Your team confirms a case by comparing each value with the page."
     },
     "capabilities": {
-      "title": "Everything casework needs. Nothing extra.",
-      "lead": "Six capabilities, each one earned by a task that used to be manual.",
+      "title": "Six capabilities.",
+      "lead": "Each one replaces a task that used to be done by hand.",
       "items": [
         {
           "title": "Intelligent extraction",
@@ -266,13 +267,13 @@
         },
         {
           "title": "Built for the caseload",
-          "body": "Designed to bring preparation from 1 to 8 hours per client down to about 15 minutes, so the ceiling moves."
+          "body": "Designed to bring preparation from 1 to 8 hours per client down to about 15 minutes."
         }
       ]
     },
     "compare": {
       "title": "What changes, task by task.",
-      "lead": "The same five jobs, before and after the post is read for you.",
+      "lead": "Five tasks, done by hand today and with BriefXtract.",
       "columns": {
         "label": "Task",
         "before": "Manual today",
@@ -292,7 +293,7 @@
         {
           "label": "Catching an urgent notice",
           "before": "Not included",
-          "after": "Included — flagged on arrival"
+          "after": "Flagged on arrival"
         },
         {
           "label": "Time before advice starts",
@@ -309,7 +310,7 @@
     },
     "faq": {
       "title": "Questions centres and law firms ask.",
-      "lead": "Short answers, each one checkable against the rest of this site.",
+      "lead": "Short answers. The platform, security and results pages have the details.",
       "items": [
         {
           "q": "Which documents can BriefXtract read?",
@@ -321,7 +322,7 @@
         },
         {
           "q": "How do we check the results?",
-          "a": "By reading the page, not by trusting a score. Every extracted field sits beside its source line, so confirming a case means comparing the two."
+          "a": "Each extracted field sits beside the line it was read from. To confirm a case, compare the two."
         },
         {
           "q": "Does it work with our case-management system?",
@@ -334,7 +335,7 @@
         },
         {
           "q": "How much time does BriefXtract save?",
-          "a": "It is designed to bring case preparation from 1 to 8 hours per client down to about 15 minutes. That is a product target, not a measured result.",
+          "a": "It is designed to bring case preparation from 1 to 8 hours per client down to about 15 minutes. This is a product target and has not yet been measured.",
           "more": "results"
         }
       ]
@@ -342,12 +343,12 @@
   },
   "security": {
     "hero": {
-      "title": "Read, returned, deleted.",
-      "subtitle": "Every part of the processing path was designed with German and church data protection law in mind, and with the secrecy lawyers owe their clients. None of it was added afterwards."
+      "title": "How client documents are protected.",
+      "subtitle": "The processing path was designed from the start around German and church data protection law and the professional secrecy lawyers owe their clients."
     },
     "lifecycle": {
       "title": "What happens to a document.",
-      "lead": "Four stages, and the last one is deletion. There is no fifth.",
+      "lead": "Each document passes through four stages. The last one is deletion.",
       "items": [
         {
           "title": "Received",
@@ -368,7 +369,7 @@
       ]
     },
     "commitments": {
-      "title": "The commitments, in writing.",
+      "title": "What we commit to in writing.",
       "lead": "Each one is documented for your data protection officer.",
       "items": [
         {
@@ -435,12 +436,12 @@
   },
   "results": {
     "hero": {
-      "title": "Hours back, every week.",
+      "title": "The hours BriefXtract could save.",
       "subtitle": "What fifteen minutes instead of four hours would add up to across a counseling centre or law firm. Put your own numbers in the fields and check the arithmetic."
     },
     "compare": {
-      "title": "What a team gets back.",
-      "lead": "A team of ten, before and after the post is read for them.",
+      "title": "What a team of ten gets back.",
+      "lead": "The same team, with and without BriefXtract.",
       "columns": {
         "label": "Measure",
         "before": "Without BriefXtract",
@@ -467,7 +468,7 @@
     },
     "calculator": {
       "title": "Work it out for your team.",
-      "lead": "Three numbers you already know. The arithmetic is shown underneath.",
+      "lead": "Enter three numbers from your own team. The arithmetic is shown underneath.",
       "counselors": "People preparing cases",
       "casesPerWeek": "Client cases per person, per week",
       "hourlyCost": "Staff cost per hour, in euro",
@@ -476,37 +477,37 @@
       "costPerYear": "Staff cost recovered per year",
       "hoursUnit": "{{value}} h",
       "formula": "{{counselors}} people × {{cases}} cases a week × 3.75 h saved = {{week}} h a week. × 48 weeks = {{year}} h a year. × {{rate}} an hour = {{cost}}.",
-      "note": "Assumes 4 hours of manual preparation reduced to the 15-minute target, so 3.75 hours saved per case, over 48 working weeks. Recovered time is staff capacity, not cash: it returns to the caseload."
+      "note": "Assumes 4 hours of manual preparation reduced to the 15-minute target, so 3.75 hours saved per case, over 48 working weeks. The saved hours become staff capacity for casework. They do not appear as savings in the budget."
     },
     "capacity": {
-      "title": "Where the hour goes.",
-      "lead": "Recovered time is capacity, and capacity shows up in three places.",
+      "title": "What the saved hours are used for.",
+      "lead": "Saved time shows up in three places.",
       "items": [
         {
-          "title": "Appointments, not preparation",
-          "body": "The hours that went into sorting go back into the hours a client is actually in the room."
+          "title": "More time with clients",
+          "body": "Hours that went into sorting go into appointments instead."
         },
         {
           "title": "Deadlines that are not missed",
-          "body": "An enforcement order surfaces on the day it arrives rather than on the day someone reaches that envelope."
+          "body": "An enforcement order is flagged on the day it arrives, so its deadline is visible from the start."
         },
         {
           "title": "A shorter waiting list",
-          "body": "When paperwork stops setting the ceiling, staff availability does, and the queue moves."
+          "body": "With less paperwork per case, the same team can take on more clients and the waiting list gets shorter."
         }
       ]
     }
   },
   "about": {
     "hero": {
-      "title": "Built for the people who help people.",
-      "subtitle": "Brief Insights is a Berlin software company. It builds one product, for one end of the job: the paperwork that stands between a debtor and the person advising them."
+      "title": "About Brief Insights.",
+      "subtitle": "Brief Insights is a Berlin software company. It builds one product, BriefXtract, which handles the paperwork that comes before debt advice."
     },
     "why": {
-      "title": "Why this exists.",
-      "p1": "Nine per cent of Germany is in debt, and the people who help with it spend their first hours on an envelope rather than on a conversation. Thirty to eighty letters arrive per client — court orders, enforcement notices, invoices, collection letters — and every one of them is sorted, read and retyped by hand before advice can start.",
-      "p2": "Brief Insights was founded in Berlin to take that work off the desk. BriefXtract reads the post, extracts the fields that matter and files each document against the case, so the hour that went into sorting goes back to the person waiting for the appointment.",
-      "p3Before": "The product does one thing, and it is checkable. Every extracted value carries a pointer to the line it was read from, every document is deleted immediately after processing, and the rules governing both are written down on the ",
+      "title": "Why Brief Insights exists.",
+      "p1": "Nine per cent of people in Germany are in debt. The people who help them often spend the first hours of a case opening envelopes. Thirty to eighty letters arrive per client, including court orders, enforcement notices, invoices and collection letters, and each one is sorted, read and retyped by hand before advice can start.",
+      "p2": "Brief Insights was founded in Berlin to take that work off the desk. BriefXtract reads the post, extracts the fields that matter and files each document against the case, so the time spent sorting goes to the client instead.",
+      "p3Before": "Each extracted value carries a pointer to the line it was read from, each document is deleted immediately after processing, and the rules for both are written down on the ",
       "p3Link": "security page",
       "p3After": ".",
       "facts": [
@@ -533,20 +534,20 @@
       ]
     },
     "photos": {
-      "title": "The week this is meant to change.",
-      "lead": "The stack that sets the order of the day, and the handover that ends it.",
+      "title": "The paperwork BriefXtract takes over.",
+      "lead": "A stack of unsorted post, and the same post handed over for processing.",
       "before": {
         "alt": "Close-up of a stack of paper documents in low light",
-        "caption": "Before. The stack sets the order of the day."
+        "caption": "Before. The day starts with a stack of unsorted post."
       },
       "after": {
         "alt": "A box of loose paperwork being handed over and received",
-        "caption": "After. The box is handed over once, and comes back as a case."
+        "caption": "After. The post is handed over once and comes back as a sorted case."
       },
-      "note": "Staged photographs. Not customers, not a named centre or firm."
+      "note": "Staged photographs. They do not show customers or a named centre or firm."
     },
     "contact": {
-      "title": "One address, one inbox.",
+      "title": "Contact.",
       "email": {
         "label": "Email",
         "body": "Pilots, processing and confidentiality agreements, and integration questions all go here."

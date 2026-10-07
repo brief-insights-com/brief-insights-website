@@ -20,7 +20,7 @@
       "crumb": "Ergebnisse"
     },
     "about": {
-      "title": "Über uns – Software für Beratung und Kanzlei | Brief Insights",
+      "title": "Über Brief Insights: Software für Beratung und Kanzleien",
       "description": "Brief Insights UG ist ein Berliner Softwareunternehmen und entwickelt BriefXtract, Dokumentenverarbeitung für Schuldnerberatungsstellen und Insolvenzkanzleien.",
       "crumb": "Über uns"
     },
@@ -74,7 +74,7 @@
     },
     "results": {
       "title": "Prüfen Sie die Zahlen an Ihrer eigenen Woche.",
-      "body": "Eine Demo läuft mit Ihrer echten Post, und die Stunden ergeben sich aus Ihren eigenen Fällen, nicht aus einem Durchschnitt."
+      "body": "Eine Demo läuft mit Ihrer echten Post, sodass sich die Stunden aus Ihren eigenen Fällen ergeben."
     }
   },
   "mockup": {
@@ -114,7 +114,8 @@
     },
     "line": "Zeile {{n}}",
     "needsCheck": "prüfen",
-    "syntheticRecord": "Synthetischer Datensatz."
+    "syntheticRecord": "Synthetischer Datensatz.",
+    "noAmount": "Kein Betrag"
   },
   "home": {
     "hero": {
@@ -122,7 +123,7 @@
       "subtitle": "BriefXtract ist Software für Schuldner- und Sozialberatungsstellen und für Kanzleien im Verbraucherinsolvenzrecht. Sie liest jeden eingehenden Brief und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab, bevor der Termin beginnt."
     },
     "stats": {
-      "title": "Weniger sortieren. Mehr beraten.",
+      "title": "Damit die Post weniger Zeit kostet.",
       "items": [
         {
           "value": "90 %",
@@ -140,7 +141,7 @@
       "note": "Die Zeitangaben sind Produktziele. Die Balken zeigen den Anteil am manuellen Aufwand. Marktzahl: BAGFW, 2024."
     },
     "audience": {
-      "title": "Zwei Schreibtische, dieselbe Post.",
+      "title": "Für wen BriefXtract gemacht ist.",
       "lead": "Vor einer Verbraucherinsolvenz landen dieselben Briefe in der Beratungsstelle oder in der Kanzlei. BriefXtract liest sie für beide.",
       "items": [
         {
@@ -154,37 +155,37 @@
       ]
     },
     "features": {
-      "title": "Eine Akte, jedes Dokument.",
-      "lead": "Mit jedem Brief passieren drei Dinge, bevor die Akte geöffnet wird.",
+      "title": "Was mit jedem Brief passiert.",
+      "lead": "BriefXtract erledigt drei Dinge mit jedem Brief, bevor jemand die Akte öffnet.",
       "items": [
         {
           "title": "Intelligente Extraktion",
-          "body": "Gläubiger, Aktenzeichen, Betrag und Fälligkeit werden in einem Durchgang aus gemischten PDFs gelesen – Briefe, Gerichtsbeschlüsse, Rechnungen – und jedes Feld steht neben der Zeile, aus der es stammt."
+          "body": "Gläubiger, Aktenzeichen, Betrag und Fälligkeit werden in einem Durchgang aus gemischten PDFs mit Briefen, Gerichtsbeschlüssen und Rechnungen gelesen. Jedes Feld steht neben der Zeile, aus der es stammt."
         },
         {
           "title": "Dringlichkeitserkennung",
-          "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang erkannt und stehen mit einer beschrifteten Markierung, nie nur mit einer Farbe, oben in der Liste."
+          "body": "Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang erkannt und mit einer Textmarkierung oben in die Liste gestellt."
         },
         {
           "title": "Master-Schuldenfall-Engine",
-          "body": "Eine Rechnung und das Inkassoschreiben, das darauf folgte, werden zu einem Schuldenfall verknüpft. So liest sich ein Fall als Fall und nicht als Stapel von Absendern."
+          "body": "Eine Rechnung und das Inkassoschreiben, das darauf folgte, werden zu einem Schuldenfall verknüpft. So erscheint jede Forderung nur einmal in der Akte."
         }
       ]
     },
     "photos": {
       "title": "Vom Karton voller Papier zur Akte.",
-      "lead": "Die Arbeit verschwindet nicht. Sie wird nur nicht mehr von Hand erledigt.",
+      "lead": "Sortiert wird weiterhin. Das übernimmt BriefXtract, damit Ihr Team es nicht mehr tun muss.",
       "before": {
         "alt": "Blick von oben auf einen Schreibtisch voller loser Dokumente in einem dunklen Raum",
         "caption": "Vorher. Dreißig bis achtzig Briefe pro Klient, von Hand sortiert, bevor die Beratung beginnen kann."
       },
       "after": {
         "alt": "Eine Person prüft einen Fall auf einem Tablet an einem aufgeräumten Schreibtisch",
-        "caption": "Nachher. Eine Akte, jedes Feld an der Seite überprüfbar, von der es gelesen wurde."
+        "caption": "Nachher. Eine Akte, in der jedes Feld an der Seite überprüfbar ist, von der es gelesen wurde."
       }
     },
     "security": {
-      "title": "Gebaut für die strengsten Standards in Deutschland.",
+      "title": "Datenschutz für Klientenakten in Deutschland.",
       "items": [
         {
           "title": "Hosting in der EU",
@@ -208,15 +209,15 @@
   "platform": {
     "hero": {
       "title": "Eine Akte, jedes Dokument.",
-      "subtitle": "BriefXtract ist Intelligente Dokumentenverarbeitung (IDP) für eine einzige Aufgabe: aus der Tagespost eine Akte zu machen, die Ihr Team öffnen und der es vertrauen kann."
+      "subtitle": "BriefXtract ist Software für Intelligente Dokumentenverarbeitung (IDP), die aus der Tagespost eine Akte macht, die Ihr Team öffnen und prüfen kann."
     },
     "what": {
       "title": "Was ist BriefXtract?",
-      "body": "BriefXtract ist eine Software für intelligente Dokumentenverarbeitung (IDP) für Schuldner- und Sozialberatungsstellen sowie Kanzleien im Verbraucherinsolvenzrecht in Deutschland, entwickelt von Brief Insights in Berlin. Eine Beratungsstelle oder Kanzlei scannt die Tagespost oder leitet sie als ein gemischtes PDF weiter. BriefXtract trennt es in einzelne Dokumente, erkennt jedes davon – Brief, Gerichtsbeschluss, Rechnung, Inkassoschreiben oder Bescheid – und liest Gläubiger, Aktenzeichen, Betrag und Fälligkeit aus. Jeder Wert steht neben der Zeile, aus der er stammt, sodass er sich an der Seite prüfen lässt. Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang markiert. Dokumente zur selben Forderung werden zu einer Akte verknüpft, die im Format Ihrer Wahl exportiert oder per API an Ihr Fallmanagementsystem übergeben werden kann. Die Verarbeitung läuft auf AWS innerhalb der EU, Dokumente werden direkt danach gelöscht, und nichts davon trainiert ein Modell."
+      "body": "BriefXtract ist eine Software für intelligente Dokumentenverarbeitung (IDP) für Schuldner- und Sozialberatungsstellen sowie Kanzleien im Verbraucherinsolvenzrecht in Deutschland, entwickelt von Brief Insights in Berlin. Eine Beratungsstelle oder Kanzlei scannt die Tagespost oder leitet sie als ein gemischtes PDF weiter. BriefXtract trennt es in einzelne Dokumente, erkennt bei jedem, ob es ein Brief, Gerichtsbeschluss, Rechnung, Inkassoschreiben oder Bescheid ist, und liest Gläubiger, Aktenzeichen, Betrag und Fälligkeit aus. Jeder Wert steht neben der Zeile, aus der er stammt, sodass er sich an der Seite prüfen lässt. Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang markiert. Dokumente zur selben Forderung werden zu einer Akte verknüpft, die im Format Ihrer Wahl exportiert oder per API an Ihr Fallmanagementsystem übergeben werden kann. Die Verarbeitung läuft auf AWS innerhalb der EU, Dokumente werden direkt danach gelöscht, und nichts davon trainiert ein Modell."
     },
     "steps": {
-      "title": "Vier Schritte, keiner davon Ihrer.",
-      "lead": "Vom Scanner bis zur abgelegten Akte, ohne dass jemand etwas abtippt.",
+      "title": "Wie aus der Post eine Akte wird.",
+      "lead": "Vom Scanner bis zur abgelegten Akte in vier Schritten, ohne Abtippen.",
       "items": [
         {
           "title": "Die Post kommt an",
@@ -238,11 +239,11 @@
     },
     "highlight": {
       "title": "Extraktion, die Sie Zeile für Zeile prüfen können.",
-      "body": "Jeder extrahierte Wert verweist auf den Satz, aus dem er stammt. Ihr Team bestätigt einen Fall, indem es die Seite liest, nicht indem es einem Score vertraut."
+      "body": "Jeder extrahierte Wert verweist auf den Satz, aus dem er stammt. Ihr Team bestätigt einen Fall, indem es jeden Wert mit der Seite vergleicht."
     },
     "capabilities": {
-      "title": "Alles, was die Fallarbeit braucht. Nichts Überflüssiges.",
-      "lead": "Sechs Funktionen, jede verdient durch eine Aufgabe, die bisher Handarbeit war.",
+      "title": "Sechs Funktionen.",
+      "lead": "Jede ersetzt eine Aufgabe, die bisher von Hand erledigt wurde.",
       "items": [
         {
           "title": "Intelligente Extraktion",
@@ -266,13 +267,13 @@
         },
         {
           "title": "Gebaut für die Fallzahlen",
-          "body": "Darauf ausgelegt, die Vorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken, damit die Obergrenze sich verschiebt."
+          "body": "Darauf ausgelegt, die Vorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken."
         }
       ]
     },
     "compare": {
       "title": "Was sich ändert, Aufgabe für Aufgabe.",
-      "lead": "Dieselben fünf Aufgaben, vor und nach dem Moment, in dem die Post für Sie gelesen wird.",
+      "lead": "Fünf Aufgaben, heute von Hand und mit BriefXtract.",
       "columns": {
         "label": "Aufgabe",
         "before": "Heute von Hand",
@@ -292,7 +293,7 @@
         {
           "label": "Einen dringenden Bescheid erkennen",
           "before": "Nicht enthalten",
-          "after": "Enthalten – beim Eingang markiert"
+          "after": "Beim Eingang markiert"
         },
         {
           "label": "Zeit, bis die Beratung beginnt",
@@ -309,7 +310,7 @@
     },
     "faq": {
       "title": "Fragen, die Beratungsstellen und Kanzleien stellen.",
-      "lead": "Kurze Antworten, jede am Rest dieser Website überprüfbar.",
+      "lead": "Kurze Antworten. Details stehen auf den Seiten zu Plattform, Sicherheit und Ergebnissen.",
       "items": [
         {
           "q": "Welche Dokumente kann BriefXtract lesen?",
@@ -321,7 +322,7 @@
         },
         {
           "q": "Wie prüfen wir die Ergebnisse?",
-          "a": "Indem sie die Seite lesen, nicht indem sie einem Score vertrauen. Jedes extrahierte Feld steht neben seiner Quellzeile, sodass die Prüfung ein direkter Vergleich ist."
+          "a": "Jedes extrahierte Feld steht neben der Zeile, aus der es gelesen wurde. Zum Bestätigen vergleichen Sie beides."
         },
         {
           "q": "Funktioniert das mit unserem Fallmanagementsystem?",
@@ -334,7 +335,7 @@
         },
         {
           "q": "Wie viel Zeit spart BriefXtract?",
-          "a": "Es ist darauf ausgelegt, die Fallvorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken. Das ist ein Produktziel, kein gemessenes Ergebnis.",
+          "a": "Es ist darauf ausgelegt, die Fallvorbereitung von 1 bis 8 Stunden pro Klient auf etwa 15 Minuten zu senken. Das ist ein Produktziel und wurde noch nicht gemessen.",
           "more": "results"
         }
       ]
@@ -342,12 +343,12 @@
   },
   "security": {
     "hero": {
-      "title": "Gelesen, zurückgegeben, gelöscht.",
-      "subtitle": "Jeder Teil der Verarbeitung wurde mit Blick auf das deutsche und das kirchliche Datenschutzrecht und auf die anwaltliche Verschwiegenheit gestaltet. Nichts davon wurde nachträglich ergänzt."
+      "title": "Wie Klientendokumente geschützt sind.",
+      "subtitle": "Die Verarbeitung wurde von Anfang an auf das deutsche und das kirchliche Datenschutzrecht und auf die anwaltliche Verschwiegenheit ausgelegt."
     },
     "lifecycle": {
       "title": "Was mit einem Dokument passiert.",
-      "lead": "Vier Stationen, und die letzte ist die Löschung. Eine fünfte gibt es nicht.",
+      "lead": "Jedes Dokument durchläuft vier Stationen. Die letzte ist die Löschung.",
       "items": [
         {
           "title": "Empfangen",
@@ -368,7 +369,7 @@
       ]
     },
     "commitments": {
-      "title": "Die Zusagen, schriftlich.",
+      "title": "Wozu wir uns schriftlich verpflichten.",
       "lead": "Jede ist für Ihre Datenschutzbeauftragten dokumentiert.",
       "items": [
         {
@@ -435,12 +436,12 @@
   },
   "results": {
     "hero": {
-      "title": "Stunden zurück, jede Woche.",
+      "title": "Die Stunden, die BriefXtract sparen könnte.",
       "subtitle": "Was fünfzehn Minuten statt vier Stunden in einer ganzen Beratungsstelle oder Kanzlei ausmachen würden. Tragen Sie Ihre eigenen Zahlen ein und prüfen Sie die Rechnung."
     },
     "compare": {
-      "title": "Was ein Team zurückbekommt.",
-      "lead": "Ein Team aus zehn Fachkräften, bevor und nachdem die Post für sie gelesen wird.",
+      "title": "Was ein Team aus zehn Fachkräften zurückbekommt.",
+      "lead": "Dasselbe Team, ohne und mit BriefXtract.",
       "columns": {
         "label": "Kennzahl",
         "before": "Ohne BriefXtract",
@@ -467,7 +468,7 @@
     },
     "calculator": {
       "title": "Rechnen Sie es für Ihr Team aus.",
-      "lead": "Drei Zahlen, die Sie schon kennen. Der Rechenweg steht darunter.",
+      "lead": "Tragen Sie drei Zahlen aus Ihrem Team ein. Der Rechenweg steht darunter.",
       "counselors": "Fachkräfte, die Fälle vorbereiten",
       "casesPerWeek": "Fälle pro Fachkraft und Woche",
       "hourlyCost": "Personalkosten pro Stunde, in Euro",
@@ -476,37 +477,37 @@
       "costPerYear": "Zurückgewonnene Personalkosten pro Jahr",
       "hoursUnit": "{{value}} Std.",
       "formula": "{{counselors}} Fachkräfte × {{cases}} Fälle pro Woche × 3,75 Std. Ersparnis = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
-      "note": "Angenommen sind 4 Stunden manuelle Vorbereitung, reduziert auf das 15-Minuten-Ziel, also 3,75 Stunden Ersparnis pro Fall, über 48 Arbeitswochen. Zurückgewonnene Zeit ist Kapazität, kein Geld: Sie fließt zurück in die Beratung."
+      "note": "Angenommen sind 4 Stunden manuelle Vorbereitung, reduziert auf das 15-Minuten-Ziel, also 3,75 Stunden Ersparnis pro Fall, über 48 Arbeitswochen. Die gesparten Stunden werden zu Kapazität für die Fallarbeit. Im Budget erscheinen sie nicht als Einsparung."
     },
     "capacity": {
-      "title": "Wohin die Stunde geht.",
-      "lead": "Zurückgewonnene Zeit ist Kapazität, und Kapazität zeigt sich an drei Stellen.",
+      "title": "Wofür die gesparten Stunden genutzt werden.",
+      "lead": "Gesparte Zeit zeigt sich an drei Stellen.",
       "items": [
         {
-          "title": "Termine statt Vorbereitung",
-          "body": "Die Stunden, die ins Sortieren gingen, fließen zurück in die Zeit, in der Klienten tatsächlich im Raum sind."
+          "title": "Mehr Zeit für Klienten",
+          "body": "Stunden, die ins Sortieren gingen, fließen stattdessen in Termine."
         },
         {
           "title": "Fristen, die nicht verpasst werden",
-          "body": "Ein Vollstreckungsbescheid fällt am Tag seines Eingangs auf, nicht erst an dem Tag, an dem jemand diesen Umschlag öffnet."
+          "body": "Ein Vollstreckungsbescheid wird am Tag seines Eingangs markiert, sodass seine Frist von Anfang an sichtbar ist."
         },
         {
           "title": "Eine kürzere Warteliste",
-          "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit Ihres Teams, bewegt sich die Warteschlange."
+          "body": "Mit weniger Papierkram pro Fall kann dasselbe Team mehr Klienten aufnehmen, und die Warteliste wird kürzer."
         }
       ]
     }
   },
   "about": {
     "hero": {
-      "title": "Gebaut für die Menschen, die Menschen helfen.",
-      "subtitle": "Brief Insights ist ein Berliner Softwareunternehmen. Es entwickelt ein einziges Produkt für einen Teil der Arbeit: den Papierkram, der zwischen Schuldnern und den Menschen steht, die sie beraten."
+      "title": "Über Brief Insights.",
+      "subtitle": "Brief Insights ist ein Berliner Softwareunternehmen. Es entwickelt ein Produkt, BriefXtract, das den Papierkram vor der Schuldnerberatung übernimmt."
     },
     "why": {
-      "title": "Warum es das gibt.",
-      "p1": "Neun Prozent der Menschen in Deutschland sind verschuldet, und wer ihnen hilft, verbringt die ersten Stunden mit Umschlägen statt mit Gesprächen. Pro Klient kommen dreißig bis achtzig Briefe an – Gerichtsbeschlüsse, Vollstreckungsbescheide, Rechnungen, Inkassoschreiben – und jeder davon wird von Hand sortiert, gelesen und abgetippt, bevor die Beratung beginnen kann.",
-      "p2": "Brief Insights wurde in Berlin gegründet, um diese Arbeit vom Schreibtisch zu nehmen. BriefXtract liest die Post, extrahiert die wichtigen Felder und legt jedes Dokument in der richtigen Akte ab. So fließt die Stunde, die ins Sortieren ging, zurück zu dem Menschen, der auf den Termin wartet.",
-      "p3Before": "Das Produkt tut eine Sache, und sie ist überprüfbar. Jeder extrahierte Wert verweist auf die Zeile, aus der er gelesen wurde, jedes Dokument wird direkt nach der Verarbeitung gelöscht, und die Regeln für beides stehen auf der ",
+      "title": "Warum es Brief Insights gibt.",
+      "p1": "Neun Prozent der Menschen in Deutschland sind verschuldet. Wer ihnen hilft, verbringt die ersten Stunden eines Falls oft mit dem Öffnen von Umschlägen. Pro Klient kommen dreißig bis achtzig Briefe an, darunter Gerichtsbeschlüsse, Vollstreckungsbescheide, Rechnungen und Inkassoschreiben, und jeder davon wird von Hand sortiert, gelesen und abgetippt, bevor die Beratung beginnen kann.",
+      "p2": "Brief Insights wurde in Berlin gegründet, um diese Arbeit vom Schreibtisch zu nehmen. BriefXtract liest die Post, extrahiert die wichtigen Felder und legt jedes Dokument in der richtigen Akte ab. So geht die Zeit, die ins Sortieren floss, an die Klienten.",
+      "p3Before": "Jeder extrahierte Wert verweist auf die Zeile, aus der er gelesen wurde, jedes Dokument wird direkt nach der Verarbeitung gelöscht, und die Regeln für beides stehen auf der ",
       "p3Link": "Sicherheitsseite",
       "p3After": ".",
       "facts": [
@@ -533,20 +534,20 @@
       ]
     },
     "photos": {
-      "title": "Die Woche, die sich ändern soll.",
-      "lead": "Der Stapel, der den Tagesablauf bestimmt, und die Übergabe, die ihn beendet.",
+      "title": "Der Papierkram, den BriefXtract übernimmt.",
+      "lead": "Ein Stapel unsortierter Post und dieselbe Post bei der Übergabe zur Verarbeitung.",
       "before": {
         "alt": "Nahaufnahme eines Papierstapels bei wenig Licht",
-        "caption": "Vorher. Der Stapel bestimmt den Tagesablauf."
+        "caption": "Vorher. Der Tag beginnt mit einem Stapel unsortierter Post."
       },
       "after": {
         "alt": "Ein Karton mit losen Unterlagen wird übergeben und entgegengenommen",
-        "caption": "Nachher. Der Karton wird einmal übergeben und kommt als Akte zurück."
+        "caption": "Nachher. Die Post wird einmal übergeben und kommt als sortierte Akte zurück."
       },
-      "note": "Gestellte Fotos. Keine Kunden, keine bestimmte Beratungsstelle oder Kanzlei."
+      "note": "Gestellte Fotos. Sie zeigen keine Kunden und keine bestimmte Beratungsstelle oder Kanzlei."
     },
     "contact": {
-      "title": "Eine Adresse, ein Postfach.",
+      "title": "Kontakt.",
       "email": {
         "label": "E-Mail",
         "body": "Pilotprojekte, Auftragsverarbeitung, Verschwiegenheitsvereinbarungen und Fragen zur Anbindung landen alle hier."

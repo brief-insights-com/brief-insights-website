@@ -172,7 +172,7 @@ function DemoForm({ onDone }: { onDone: () => void }) {
           type="submit"
           disabled={sending}
           aria-busy={sending || undefined}
-          className={buttonClass("primary", sending && "disabled:bg-primary-pressed disabled:text-primary-foreground cursor-progress")}
+          className={buttonClass("demo", sending && "cursor-progress disabled:bg-accent disabled:text-accent-foreground disabled:opacity-75")}
         >
           {sending ? t("demo.sending") : t("demo.submit")}
         </button>
@@ -236,11 +236,11 @@ export function DemoDialogProvider({ children }: { children: ReactNode }) {
 /** A "Request a demo" button that opens the dialog. */
 export function DemoButton({
   label,
-  variant = "primary",
+  variant = "demo",
   className,
 }: {
   label?: string;
-  variant?: "primary" | "secondary";
+  variant?: "demo" | "secondary";
   className?: string;
 }) {
   const { t } = useTranslation();

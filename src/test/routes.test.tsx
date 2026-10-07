@@ -102,7 +102,7 @@ describe("demo request dialog", () => {
     fireEvent.change(within(dialog).getByLabelText("Full name"), { target: { value: "Alex Example" } });
     fireEvent.change(within(dialog).getByLabelText("Work email"), { target: { value: "alex@centre" } });
     submit();
-    expect(within(dialog).getByText("Enter an email address in the format name@your-centre.de.")).toBeInTheDocument();
+    expect(within(dialog).getByText("Enter an email address in the format name@your-organisation.de.")).toBeInTheDocument();
 
     fireEvent.change(within(dialog).getByLabelText("Work email"), { target: { value: "alex@centre.de" } });
     fireEvent.change(within(dialog).getByLabelText("Organisation"), { target: { value: "Beratungsstelle Musterstadt" } });

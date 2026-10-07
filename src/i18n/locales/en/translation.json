@@ -1,8 +1,8 @@
 {
   "meta": {
     "home": {
-      "title": "Document processing for debt counseling | Brief Insights",
-      "description": "BriefXtract reads the letters that reach debt counseling centres and files creditor, file number, amount and deadline against the case. GDPR, EU-hosted."
+      "title": "Document software for debt counseling and insolvency | Brief Insights",
+      "description": "BriefXtract reads the post that reaches debt counseling centres and consumer insolvency law firms and files creditor, file number, amount and deadline against the case."
     },
     "platform": {
       "title": "How BriefXtract reads and files creditor post | Brief Insights",
@@ -11,17 +11,17 @@
     },
     "security": {
       "title": "Security: GDPR, KDG and DSG-EKD, hosted in the EU | Brief Insights",
-      "description": "BriefXtract processes documents on AWS in the EU, deletes them right after processing and never trains models on them. DPA under GDPR Article 28 on request.",
+      "description": "BriefXtract processes documents on AWS in the EU and deletes them right after. GDPR data processing and § 43e BRAO confidentiality agreements are signed on request.",
       "crumb": "Security"
     },
     "results": {
-      "title": "Calculate the hours saved in debt counseling | Brief Insights",
-      "description": "Work out how many staff hours a 15-minute case preparation target would return to your counseling centre each year, with the arithmetic shown.",
+      "title": "Calculate the hours saved on case preparation | Brief Insights",
+      "description": "Work out how many staff hours a 15-minute case preparation target would return to your counseling centre or law firm each year, with the arithmetic shown.",
       "crumb": "Results"
     },
     "about": {
-      "title": "About Brief Insights, software for counseling centres",
-      "description": "Brief Insights UG is a Berlin software company building BriefXtract, document processing for debt and social counseling centres in Germany.",
+      "title": "About Brief Insights, software for debt and insolvency work",
+      "description": "Brief Insights UG is a Berlin software company building BriefXtract, document processing for debt counseling centres and insolvency law firms in Germany.",
       "crumb": "About"
     },
     "impressum": {
@@ -70,7 +70,7 @@
     },
     "security": {
       "title": "Send it to your data protection officer.",
-      "body": "The data processing agreement is available on request. Ask for it in your demo request."
+      "body": "The data processing agreement, and the confidentiality agreement under § 43e BRAO for law firms, are available on request. Ask in your demo request."
     },
     "results": {
       "title": "Check the numbers against your own week.",
@@ -119,29 +119,43 @@
   "home": {
     "hero": {
       "title": "Every letter, already read.",
-      "subtitle": "BriefXtract is document processing software for debt and social counseling centres. It reads every letter that arrives and files creditor, file number, amount and deadline against the case, before the appointment starts."
+      "subtitle": "BriefXtract is document processing software for debt and social counseling centres and for consumer insolvency law firms. It reads every letter that arrives and files creditor, file number, amount and deadline against the case, before the appointment starts."
     },
     "stats": {
-      "title": "Less sorting. More counseling.",
+      "title": "Less sorting. More casework.",
       "items": [
         {
           "value": "90%",
-          "label": "Target reduction in the time counselors spend sorting and transcribing post."
+          "label": "Target reduction in the time spent sorting and transcribing post."
         },
         {
           "value": "15 min",
-          "label": "Target preparation time per client, against 1 to 8 hours by hand."
+          "label": "Target preparation time per case, against 1 to 8 hours by hand."
         },
         {
           "value": "4,000+",
-          "label": "Counselors across 1,400 centres in Germany, the caseload this is built for."
+          "label": "Debt counselors across 1,400 centres in Germany, plus the law firms that handle consumer insolvencies."
         }
       ],
       "note": "Time figures are product targets. Bars read as a share of the manual baseline. Market figure: BAGFW, 2024."
     },
+    "audience": {
+      "title": "Two desks, the same post.",
+      "lead": "Before a consumer insolvency, the same letters land at a counseling centre or at a law firm. BriefXtract reads them for both.",
+      "items": [
+        {
+          "title": "Debt and social counseling centres",
+          "body": "Caritas, Diakonie, AWO and independent services. A client's post is one sorted case before the first full appointment, and church data protection law (KDG, DSG-EKD) is covered."
+        },
+        {
+          "title": "Consumer insolvency law firms",
+          "body": "Lawyers representing debtors. Every creditor letter is filed before the out-of-court settlement attempt and the application under section 305 of the Insolvency Code (InsO). Brief Insights signs a confidentiality agreement under section 43e of the Federal Lawyers' Act (BRAO)."
+        }
+      ]
+    },
     "features": {
       "title": "One case file, every document.",
-      "lead": "Three things happen to every letter before a counselor opens the case.",
+      "lead": "Three things happen to every letter before anyone opens the case.",
       "items": [
         {
           "title": "Intelligent extraction",
@@ -159,10 +173,10 @@
     },
     "photos": {
       "title": "From a box of paper to a case file.",
-      "lead": "The work does not disappear. It stops being the counselor's.",
+      "lead": "The work does not disappear. It stops being done by hand.",
       "before": {
         "alt": "Overhead view of a desk covered in loose documents in a dimly lit room",
-        "caption": "Before. Thirty to eighty letters per client, sorted by hand before counseling can start."
+        "caption": "Before. Thirty to eighty letters per client, sorted by hand before advice can start."
       },
       "after": {
         "alt": "A person reviewing a case on a tablet at a clear desk",
@@ -181,8 +195,8 @@
           "body": "Documents are deleted immediately after processing, and never train a model."
         },
         {
-          "title": "GDPR Article 28",
-          "body": "A full data processing agreement is available on request."
+          "title": "GDPR and § 43e BRAO",
+          "body": "A data processing agreement on request, and a confidentiality agreement for law firms."
         },
         {
           "title": "KDG and DSG-EKD",
@@ -194,15 +208,15 @@
   "platform": {
     "hero": {
       "title": "One case file, every document.",
-      "subtitle": "BriefXtract is Intelligent Document Processing (IDP) built for one job: turning the day's post into a case a counselor can open and trust."
+      "subtitle": "BriefXtract is Intelligent Document Processing (IDP) built for one job: turning the day's post into a case your team can open and trust."
     },
     "what": {
       "title": "What is BriefXtract?",
-      "body": "BriefXtract is intelligent document processing (IDP) software for debt and social counseling centres in Germany, made by Brief Insights in Berlin. A centre scans or forwards the day's post as one mixed PDF. BriefXtract splits it into documents, identifies each one — letter, court order, invoice, collection letter or notice — and extracts the creditor, file number, amount and due date. Every value is shown beside the line it was read from, so a counselor can check it against the page. Eviction notices, court deadlines and enforcement orders are flagged on arrival. Documents that belong to the same debt are linked into one case record, which can be exported in your format or passed to your case-management system through an API. Processing runs on AWS inside the EU, documents are deleted immediately afterwards, and nothing is used to train a model."
+      "body": "BriefXtract is intelligent document processing (IDP) software for debt and social counseling centres and consumer insolvency law firms in Germany, made by Brief Insights in Berlin. A centre or firm scans or forwards the day's post as one mixed PDF. BriefXtract splits it into documents, identifies each one — letter, court order, invoice, collection letter or notice — and extracts the creditor, file number, amount and due date. Every value is shown beside the line it was read from, so whoever handles the case can check it against the page. Eviction notices, court deadlines and enforcement orders are flagged on arrival. Documents that belong to the same debt are linked into one case record, which can be exported in your format or passed to your case-management system through an API. Processing runs on AWS inside the EU, documents are deleted immediately afterwards, and nothing is used to train a model."
     },
     "steps": {
       "title": "Four steps, none of them yours.",
-      "lead": "From the scanner to a filed case, without a counselor retyping anything.",
+      "lead": "From the scanner to a filed case, without anyone retyping anything.",
       "items": [
         {
           "title": "Post arrives",
@@ -224,10 +238,10 @@
     },
     "highlight": {
       "title": "Extraction you can check line by line.",
-      "body": "Every extracted value keeps a pointer to the sentence it came from. A counselor confirms a case by reading the page, not by trusting a score."
+      "body": "Every extracted value keeps a pointer to the sentence it came from. Your team confirms a case by reading the page, not by trusting a score."
     },
     "capabilities": {
-      "title": "Everything a counselor needs. Nothing extra.",
+      "title": "Everything casework needs. Nothing extra.",
       "lead": "Six capabilities, each one earned by a task that used to be manual.",
       "items": [
         {
@@ -281,32 +295,32 @@
           "after": "Included — flagged on arrival"
         },
         {
-          "label": "Time before counseling starts",
+          "label": "Time before advice starts",
           "before": "1 to 8 hours",
           "after": "About 15 minutes (target)"
         },
         {
           "label": "What sets the caseload ceiling",
           "before": "Paperwork",
-          "after": "Counselor availability"
+          "after": "Staff availability"
         }
       ],
       "note": "Manual figures as reported by counseling centres. The time with BriefXtract is a product target."
     },
     "faq": {
-      "title": "Questions counseling centres ask.",
+      "title": "Questions centres and law firms ask.",
       "lead": "Short answers, each one checkable against the rest of this site.",
       "items": [
         {
           "q": "Which documents can BriefXtract read?",
-          "a": "The post a counseling centre receives for a client: letters from creditors, collection letters, invoices, court orders and enforcement notices. Scan or forward them together as one mixed PDF; BriefXtract separates and identifies each document."
+          "a": "The post a counseling centre or law firm receives for a client: letters from creditors, collection letters, invoices, court orders and enforcement notices. Scan or forward them together as one mixed PDF; BriefXtract separates and identifies each document."
         },
         {
           "q": "What does BriefXtract extract from a letter?",
           "a": "The document type, the creditor, the file number, the amount and the due date. Each value keeps a pointer to the line it was read from, and values that need a second look are marked."
         },
         {
-          "q": "How does a counselor check the results?",
+          "q": "How do we check the results?",
           "a": "By reading the page, not by trusting a score. Every extracted field sits beside its source line, so confirming a case means comparing the two."
         },
         {
@@ -329,7 +343,7 @@
   "security": {
     "hero": {
       "title": "Read, returned, deleted.",
-      "subtitle": "Every part of the processing path was designed with German and church data protection law in mind. It was not added afterwards."
+      "subtitle": "Every part of the processing path was designed with German and church data protection law in mind, and with the secrecy lawyers owe their clients. None of it was added afterwards."
     },
     "lifecycle": {
       "title": "What happens to a document.",
@@ -345,7 +359,7 @@
         },
         {
           "title": "Returned",
-          "body": "The structured case goes to your case-management system. The centre holds the record."
+          "body": "The structured case goes to your case-management system. Your organisation holds the record."
         },
         {
           "title": "Deleted",
@@ -379,18 +393,18 @@
         },
         {
           "tag": "Encryption",
-          "title": "Encrypted end to end",
-          "body": "TLS 1.3 in transit and AES-256 at rest, at every step a client's financial data passes through."
+          "title": "Encrypted, on audited infrastructure",
+          "body": "TLS 1.3 in transit and AES-256 at rest, on enterprise AI infrastructure with full auditability and a 99.9% uptime service level agreement (SLA)."
         },
         {
-          "tag": "Operations",
-          "title": "Audited infrastructure",
-          "body": "Enterprise AI infrastructure with no model training, full auditability and a 99.9% uptime service level agreement (SLA)."
+          "tag": "Secrecy",
+          "title": "Professional secrecy",
+          "body": "For law firms, Brief Insights signs a confidentiality agreement under section 43e of the Federal Lawyers' Act (BRAO), covering the duty of secrecy in section 203 of the Criminal Code (StGB)."
         }
       ]
     },
     "faq": {
-      "title": "Questions a data protection officer asks.",
+      "title": "Questions data protection officers and law firms ask.",
       "items": [
         {
           "q": "Where is our data stored?",
@@ -403,6 +417,10 @@
         {
           "q": "Will you sign a data processing agreement?",
           "a": "Yes. A full data processing agreement under GDPR Article 28 is available on request. Ask for it in your demo request."
+        },
+        {
+          "q": "Will you sign a confidentiality agreement under § 43e BRAO?",
+          "a": "Yes. For law firms, Brief Insights signs a confidentiality agreement under section 43e of the Federal Lawyers' Act (BRAO), which obliges it to secrecy and sets out the criminal liability under section 203 of the Criminal Code (StGB). It comes in addition to the data processing agreement under GDPR Article 28."
         },
         {
           "q": "Does this satisfy KDG and DSG-EKD?",
@@ -418,11 +436,11 @@
   "results": {
     "hero": {
       "title": "Hours back, every week.",
-      "subtitle": "What fifteen minutes instead of four hours would add up to across a centre. Put your own numbers in the fields and check the arithmetic."
+      "subtitle": "What fifteen minutes instead of four hours would add up to across a counseling centre or law firm. Put your own numbers in the fields and check the arithmetic."
     },
     "compare": {
-      "title": "What a centre gets back.",
-      "lead": "A ten-counselor centre, before and after the post is read for them.",
+      "title": "What a team gets back.",
+      "lead": "A team of ten, before and after the post is read for them.",
       "columns": {
         "label": "Measure",
         "before": "Without BriefXtract",
@@ -435,7 +453,7 @@
           "after": "About 15 minutes (target)"
         },
         {
-          "label": "Admin hours recovered per year, 10 counselors",
+          "label": "Admin hours recovered per year, team of 10",
           "before": "Not applicable",
           "after": "9,000 hours"
         },
@@ -445,19 +463,19 @@
           "after": "€315,000"
         }
       ],
-      "note": "Worked from the 15-minute target, with 10 counselors preparing 5 client cases a week over 48 working weeks, at €35 an hour. Change any of those in the calculator below."
+      "note": "Worked from the 15-minute target, with 10 people preparing 5 client cases a week over 48 working weeks, at €35 an hour. Change any of those in the calculator below."
     },
     "calculator": {
-      "title": "Work it out for your centre.",
+      "title": "Work it out for your team.",
       "lead": "Three numbers you already know. The arithmetic is shown underneath.",
-      "counselors": "Counselors in the centre",
-      "casesPerWeek": "Client cases per counselor, per week",
+      "counselors": "People preparing cases",
+      "casesPerWeek": "Client cases per person, per week",
       "hourlyCost": "Staff cost per hour, in euro",
       "hoursPerWeek": "Hours freed per week",
       "hoursPerYear": "Hours freed per year",
       "costPerYear": "Staff cost recovered per year",
       "hoursUnit": "{{value}} h",
-      "formula": "{{counselors}} counselors × {{cases}} cases a week × 3.75 h saved = {{week}} h a week. × 48 weeks = {{year}} h a year. × {{rate}} an hour = {{cost}}.",
+      "formula": "{{counselors}} people × {{cases}} cases a week × 3.75 h saved = {{week}} h a week. × 48 weeks = {{year}} h a year. × {{rate}} an hour = {{cost}}.",
       "note": "Assumes 4 hours of manual preparation reduced to the 15-minute target, so 3.75 hours saved per case, over 48 working weeks. Recovered time is staff capacity, not cash: it returns to the caseload."
     },
     "capacity": {
@@ -474,7 +492,7 @@
         },
         {
           "title": "A shorter waiting list",
-          "body": "When paperwork stops setting the ceiling, counselor availability does, and the queue moves."
+          "body": "When paperwork stops setting the ceiling, staff availability does, and the queue moves."
         }
       ]
     }
@@ -482,11 +500,11 @@
   "about": {
     "hero": {
       "title": "Built for the people who help people.",
-      "subtitle": "Brief Insights is a Berlin software company. It builds one product, for one end of the job: the paperwork that stands between a counselor and an appointment."
+      "subtitle": "Brief Insights is a Berlin software company. It builds one product, for one end of the job: the paperwork that stands between a debtor and the person advising them."
     },
     "why": {
       "title": "Why this exists.",
-      "p1": "Nine per cent of Germany is in debt, and the people who help with it spend their first hours on an envelope rather than on a conversation. Thirty to eighty letters arrive per client — court orders, enforcement notices, invoices, collection letters — and every one of them is sorted, read and retyped by hand before counseling can start.",
+      "p1": "Nine per cent of Germany is in debt, and the people who help with it spend their first hours on an envelope rather than on a conversation. Thirty to eighty letters arrive per client — court orders, enforcement notices, invoices, collection letters — and every one of them is sorted, read and retyped by hand before advice can start.",
       "p2": "Brief Insights was founded in Berlin to take that work off the desk. BriefXtract reads the post, extracts the fields that matter and files each document against the case, so the hour that went into sorting goes back to the person waiting for the appointment.",
       "p3Before": "The product does one thing, and it is checkable. Every extracted value carries a pointer to the line it was read from, every document is deleted immediately after processing, and the rules governing both are written down on the ",
       "p3Link": "security page",
@@ -502,7 +520,7 @@
         },
         {
           "label": "Sector",
-          "value": "Debt and social counseling"
+          "value": "Debt counseling and consumer insolvency law"
         },
         {
           "label": "Data residency",
@@ -510,7 +528,7 @@
         },
         {
           "label": "Compliance",
-          "value": "GDPR · KDG · DSG-EKD"
+          "value": "GDPR · KDG · DSG-EKD · § 43e BRAO"
         }
       ]
     },
@@ -525,13 +543,13 @@
         "alt": "A box of loose paperwork being handed over and received",
         "caption": "After. The box is handed over once, and comes back as a case."
       },
-      "note": "Staged photographs. Not customers, not a named centre."
+      "note": "Staged photographs. Not customers, not a named centre or firm."
     },
     "contact": {
       "title": "One address, one inbox.",
       "email": {
         "label": "Email",
-        "body": "Pilots, processing agreements and integration questions all go here."
+        "body": "Pilots, processing and confidentiality agreements, and integration questions all go here."
       },
       "office": {
         "label": "Office",
@@ -540,8 +558,8 @@
       },
       "audience": {
         "label": "Who this is for",
-        "value": "Counseling centres",
-        "body": "Caritas, Diakonie, AWO and independent debt and social counseling services."
+        "value": "Counseling centres and law firms",
+        "body": "Caritas, Diakonie, AWO and independent debt and social counseling services, and law firms representing debtors in consumer insolvency."
       }
     }
   },
@@ -550,11 +568,11 @@
     "description": "Leave your details and the Brief Insights team will arrange a time to run your own post through BriefXtract.",
     "name": "Full name",
     "email": "Work email",
-    "emailPlaceholder": "name@your-centre.de",
+    "emailPlaceholder": "name@your-organisation.de",
     "org": "Organisation",
     "message": "Message",
     "optional": "(optional)",
-    "messageHint": "For example, the case system you use, or a request for the data processing agreement.",
+    "messageHint": "For example, the case system you use, or a request for the data processing or confidentiality agreement.",
     "privacyBefore": "How these details are handled is set out in the ",
     "privacyLink": "privacy policy",
     "privacyAfter": ".",
@@ -564,7 +582,7 @@
     "errors": {
       "nameRequired": "Enter your full name.",
       "emailRequired": "Enter your work email.",
-      "emailInvalid": "Enter an email address in the format name@your-centre.de.",
+      "emailInvalid": "Enter an email address in the format name@your-organisation.de.",
       "orgRequired": "Enter the name of your organisation."
     },
     "failedTitle": "The request did not go through.",
@@ -597,7 +615,7 @@
       "questions": "Questions",
       "debt": "Debt counseling",
       "social": "Social counseling",
-      "nonProfit": "Non-profit centres",
+      "lawFirms": "Insolvency law firms",
       "about": "About",
       "contact": "Contact",
       "impressum": "Impressum",
@@ -626,17 +644,19 @@
     "link": "Go to the home page"
   },
   "seo": {
-    "organization": "Berlin software company building BriefXtract, intelligent document processing for debt and social counseling centres.",
+    "organization": "Berlin software company building BriefXtract, intelligent document processing for debt counseling centres and consumer insolvency law firms.",
     "knowsAbout": [
       "Intelligent document processing",
       "Debt counseling",
       "Social counseling",
+      "Consumer insolvency (InsO)",
       "GDPR",
-      "Church data protection (KDG, DSG-EKD)"
+      "Church data protection (KDG, DSG-EKD)",
+      "Professional secrecy (§ 43e BRAO)"
     ],
     "softwareCategory": "Intelligent document processing (IDP)",
-    "software": "Reads the post that reaches debt and social counseling centres, extracts creditor, file number, amount and deadline, flags urgent notices and files each document against the case. Hosted in the EU with zero data retention.",
-    "audience": "Debt and social counseling centres",
+    "software": "Reads the post that reaches debt counseling centres and insolvency law firms, extracts creditor, file number, amount and deadline, flags urgent notices and files each document against the case. Hosted in the EU with zero data retention.",
+    "audience": "Debt and social counseling centres, consumer insolvency law firms",
     "imageAlt": "Brief Insights: Every letter, already read."
   }
 }

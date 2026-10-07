@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowRight, FileText, Share2, TriangleAlert, type LucideIcon } from "lucide-react";
+import { ArrowRight, FileText, HandHeart, Scale, Share2, TriangleAlert, type LucideIcon } from "lucide-react";
 import HeroBand from "@/components/site/HeroBand";
 import IntakeMockup from "@/components/site/IntakeMockup";
 import PhotoPair from "@/components/site/PhotoPair";
 import CtaBanner from "@/components/site/CtaBanner";
 import { DemoButton } from "@/components/site/DemoDialog";
-import { Caption, Container, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
+import { Caption, Card, Container, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
 import { buttonClass } from "@/components/site/buttonStyles";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { usePath } from "@/hooks/use-locale";
@@ -21,6 +21,8 @@ import tabletAfterSmallWebp from "@/assets/counselor-tablet-review-800.webp";
 type Item = { title: string; body: string };
 
 const FEATURE_ICONS: LucideIcon[] = [FileText, TriangleAlert, Share2];
+// Counseling centres first, law firms second, matching home.audience.items.
+const AUDIENCE_ICONS: LucideIcon[] = [HandHeart, Scale];
 // One hue per figure; the bar is a second reading of the number, never extra information.
 const STAT_BARS = [
   { width: "90%", tone: "bg-primary" },
@@ -34,6 +36,7 @@ export default function Home() {
   usePageMeta("home");
 
   const stats = t("home.stats.items", { returnObjects: true }) as { value: string; label: string }[];
+  const audiences = t("home.audience.items", { returnObjects: true }) as Item[];
   const features = t("home.features.items", { returnObjects: true }) as Item[];
   const assurances = t("home.security.items", { returnObjects: true }) as Item[];
 
@@ -73,16 +76,32 @@ export default function Home() {
       </section>
 
       <Section>
-        <SectionHeader size="display" title={t("home.features.title")} lead={t("home.features.lead")} />
-        <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
+        <SectionHeader size="display" title={t("home.audience.title")} lead={t("home.audience.lead")} />
+        <div className="mx-auto mt-12 grid max-w-[960px] gap-8 md:grid-cols-2 md:gap-10">
+          {audiences.map((audience, index) => {
+            const Icon = AUDIENCE_ICONS[index];
+            return (
+              <RuledItem key={audience.title} className="pt-6">
+                <Icon className="h-6 w-6 text-primary" strokeWidth={1.6} aria-hidden="true" />
+                <h3 className="mt-4 text-h4 text-ink">{audience.title}</h3>
+                <p className="mt-3 text-body-sm text-slate">{audience.body}</p>
+              </RuledItem>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section tone="surface">
+        <SectionHeader title={t("home.features.title")} lead={t("home.features.lead")} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = FEATURE_ICONS[index];
             return (
-              <RuledItem key={feature.title} className="pt-6">
+              <Card key={feature.title}>
                 <Icon className="h-6 w-6 text-primary" strokeWidth={1.6} aria-hidden="true" />
                 <h3 className="mt-4 text-h4 text-ink">{feature.title}</h3>
                 <p className="mt-3 text-body-sm text-slate">{feature.body}</p>
-              </RuledItem>
+              </Card>
             );
           })}
         </div>
@@ -94,7 +113,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tone="surface">
+      <Section>
         <SectionHeader title={t("home.photos.title")} lead={t("home.photos.lead")} />
         <PhotoPair
           before={{
@@ -117,14 +136,14 @@ export default function Home() {
         />
       </Section>
 
-      <Section>
+      <Section tone="surface">
         <SectionHeader title={t("home.security.title")} />
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {assurances.map((item) => (
-            <RuledItem key={item.title}>
+            <Card key={item.title}>
               <h3 className="text-h5 text-ink">{item.title}</h3>
               <p className="mt-2 text-body-sm text-slate">{item.body}</p>
-            </RuledItem>
+            </Card>
           ))}
         </div>
         <div className="mt-10 text-center">

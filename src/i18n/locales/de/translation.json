@@ -1,8 +1,8 @@
 {
   "meta": {
     "home": {
-      "title": "Software für Schuldnerberatung – BriefXtract | Brief Insights",
-      "description": "BriefXtract liest die Post in Schuldner- und Sozialberatungsstellen und legt Gläubiger, Aktenzeichen, Betrag und Frist in der Akte ab. DSGVO-konform, EU-Hosting."
+      "title": "Software für Schuldnerberatung und Insolvenzrecht | Brief Insights",
+      "description": "BriefXtract liest die Post in Schuldnerberatungsstellen und Insolvenzkanzleien und legt Gläubiger, Aktenzeichen, Betrag und Frist in der Akte ab. DSGVO-konform."
     },
     "platform": {
       "title": "Gläubigerpost automatisch erfassen | Brief Insights",
@@ -11,17 +11,17 @@
     },
     "security": {
       "title": "DSGVO, KDG und DSG-EKD: Datensicherheit | Brief Insights",
-      "description": "BriefXtract verarbeitet Dokumente auf AWS in der EU, löscht sie direkt nach der Verarbeitung und trainiert nie Modelle damit. AVV nach Art. 28 DSGVO auf Anfrage.",
+      "description": "BriefXtract verarbeitet Dokumente auf AWS in der EU und löscht sie direkt danach. AVV nach Art. 28 DSGVO und Vereinbarung nach § 43e BRAO auf Anfrage.",
       "crumb": "Sicherheit"
     },
     "results": {
-      "title": "Zeitersparnis in der Schuldnerberatung | Brief Insights",
-      "description": "Rechnen Sie aus, wie viele Personalstunden ein Ziel von 15 Minuten Fallvorbereitung Ihrer Beratungsstelle pro Jahr zurückgeben würde, mit offenem Rechenweg.",
+      "title": "Zeitersparnis bei der Fallvorbereitung | Brief Insights",
+      "description": "Rechnen Sie aus, wie viele Personalstunden ein Ziel von 15 Minuten Fallvorbereitung Ihrer Beratungsstelle oder Kanzlei pro Jahr zurückgeben würde, mit Rechenweg.",
       "crumb": "Ergebnisse"
     },
     "about": {
-      "title": "Über uns – Software für Beratungsstellen | Brief Insights",
-      "description": "Brief Insights UG ist ein Berliner Softwareunternehmen und entwickelt BriefXtract, Dokumentenverarbeitung für Schuldner- und Sozialberatungsstellen.",
+      "title": "Über uns – Software für Beratung und Kanzlei | Brief Insights",
+      "description": "Brief Insights UG ist ein Berliner Softwareunternehmen und entwickelt BriefXtract, Dokumentenverarbeitung für Schuldnerberatungsstellen und Insolvenzkanzleien.",
       "crumb": "Über uns"
     },
     "impressum": {
@@ -70,7 +70,7 @@
     },
     "security": {
       "title": "Legen Sie es Ihrem Datenschutz vor.",
-      "body": "Der Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach."
+      "body": "Der Auftragsverarbeitungsvertrag und für Kanzleien die Verschwiegenheitsvereinbarung nach § 43e BRAO sind auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach."
     },
     "results": {
       "title": "Prüfen Sie die Zahlen an Ihrer eigenen Woche.",
@@ -119,7 +119,7 @@
   "home": {
     "hero": {
       "title": "Jeder Brief, schon gelesen.",
-      "subtitle": "BriefXtract ist Software für Schuldner- und Sozialberatungsstellen. Sie liest jeden eingehenden Brief und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab, bevor der Beratungstermin beginnt."
+      "subtitle": "BriefXtract ist Software für Schuldner- und Sozialberatungsstellen und für Kanzleien im Verbraucherinsolvenzrecht. Sie liest jeden eingehenden Brief und legt Gläubiger, Aktenzeichen, Betrag und Frist in der richtigen Akte ab, bevor der Termin beginnt."
     },
     "stats": {
       "title": "Weniger sortieren. Mehr beraten.",
@@ -130,14 +130,28 @@
         },
         {
           "value": "15 Min.",
-          "label": "Angestrebte Vorbereitungszeit pro Klient, statt 1 bis 8 Stunden von Hand."
+          "label": "Angestrebte Vorbereitungszeit pro Fall, statt 1 bis 8 Stunden von Hand."
         },
         {
           "value": "4.000+",
-          "label": "Berater in 1.400 Beratungsstellen in Deutschland, für deren Arbeit das hier gebaut ist."
+          "label": "Schuldnerberater in 1.400 Beratungsstellen in Deutschland, dazu die Kanzleien im Verbraucherinsolvenzrecht."
         }
       ],
       "note": "Die Zeitangaben sind Produktziele. Die Balken zeigen den Anteil am manuellen Aufwand. Marktzahl: BAGFW, 2024."
+    },
+    "audience": {
+      "title": "Zwei Schreibtische, dieselbe Post.",
+      "lead": "Vor einer Verbraucherinsolvenz landen dieselben Briefe in der Beratungsstelle oder in der Kanzlei. BriefXtract liest sie für beide.",
+      "items": [
+        {
+          "title": "Schuldner- und Sozialberatungsstellen",
+          "body": "Caritas, Diakonie, AWO und unabhängige Träger. Die Post eines Klienten liegt als eine sortierte Akte vor, bevor das erste ausführliche Gespräch beginnt, und der kirchliche Datenschutz (KDG, DSG-EKD) ist abgedeckt."
+        },
+        {
+          "title": "Kanzleien für Verbraucherinsolvenz",
+          "body": "Anwältinnen und Anwälte auf Schuldnerseite. Jedes Gläubigerschreiben ist abgelegt, bevor der außergerichtliche Einigungsversuch und der Antrag nach § 305 Insolvenzordnung (InsO) vorbereitet werden. Brief Insights unterzeichnet eine Verschwiegenheitsvereinbarung nach § 43e BRAO."
+        }
+      ]
     },
     "features": {
       "title": "Eine Akte, jedes Dokument.",
@@ -159,7 +173,7 @@
     },
     "photos": {
       "title": "Vom Karton voller Papier zur Akte.",
-      "lead": "Die Arbeit verschwindet nicht. Sie liegt nur nicht mehr bei den Beratern.",
+      "lead": "Die Arbeit verschwindet nicht. Sie wird nur nicht mehr von Hand erledigt.",
       "before": {
         "alt": "Blick von oben auf einen Schreibtisch voller loser Dokumente in einem dunklen Raum",
         "caption": "Vorher. Dreißig bis achtzig Briefe pro Klient, von Hand sortiert, bevor die Beratung beginnen kann."
@@ -181,8 +195,8 @@
           "body": "Dokumente werden direkt nach der Verarbeitung gelöscht und trainieren nie ein Modell."
         },
         {
-          "title": "DSGVO Artikel 28",
-          "body": "Ein vollständiger Auftragsverarbeitungsvertrag ist auf Anfrage erhältlich."
+          "title": "DSGVO und § 43e BRAO",
+          "body": "Ein Auftragsverarbeitungsvertrag auf Anfrage, für Kanzleien zusätzlich eine Verschwiegenheitsvereinbarung."
         },
         {
           "title": "KDG und DSG-EKD",
@@ -194,11 +208,11 @@
   "platform": {
     "hero": {
       "title": "Eine Akte, jedes Dokument.",
-      "subtitle": "BriefXtract ist Intelligente Dokumentenverarbeitung (IDP) für eine einzige Aufgabe: aus der Tagespost eine Akte zu machen, die Berater öffnen und der sie vertrauen können."
+      "subtitle": "BriefXtract ist Intelligente Dokumentenverarbeitung (IDP) für eine einzige Aufgabe: aus der Tagespost eine Akte zu machen, die Ihr Team öffnen und der es vertrauen kann."
     },
     "what": {
       "title": "Was ist BriefXtract?",
-      "body": "BriefXtract ist eine Software für intelligente Dokumentenverarbeitung (IDP) für Schuldner- und Sozialberatungsstellen in Deutschland, entwickelt von Brief Insights in Berlin. Eine Beratungsstelle scannt die Tagespost oder leitet sie als ein gemischtes PDF weiter. BriefXtract trennt es in einzelne Dokumente, erkennt jedes davon – Brief, Gerichtsbeschluss, Rechnung, Inkassoschreiben oder Bescheid – und liest Gläubiger, Aktenzeichen, Betrag und Fälligkeit aus. Jeder Wert steht neben der Zeile, aus der er stammt, sodass Berater ihn an der Seite prüfen können. Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang markiert. Dokumente zur selben Forderung werden zu einer Akte verknüpft, die im Format Ihrer Wahl exportiert oder per API an Ihr Fallmanagementsystem übergeben werden kann. Die Verarbeitung läuft auf AWS innerhalb der EU, Dokumente werden direkt danach gelöscht, und nichts davon trainiert ein Modell."
+      "body": "BriefXtract ist eine Software für intelligente Dokumentenverarbeitung (IDP) für Schuldner- und Sozialberatungsstellen sowie Kanzleien im Verbraucherinsolvenzrecht in Deutschland, entwickelt von Brief Insights in Berlin. Eine Beratungsstelle oder Kanzlei scannt die Tagespost oder leitet sie als ein gemischtes PDF weiter. BriefXtract trennt es in einzelne Dokumente, erkennt jedes davon – Brief, Gerichtsbeschluss, Rechnung, Inkassoschreiben oder Bescheid – und liest Gläubiger, Aktenzeichen, Betrag und Fälligkeit aus. Jeder Wert steht neben der Zeile, aus der er stammt, sodass er sich an der Seite prüfen lässt. Räumungsklagen, Gerichtsfristen und Vollstreckungsbescheide werden beim Eingang markiert. Dokumente zur selben Forderung werden zu einer Akte verknüpft, die im Format Ihrer Wahl exportiert oder per API an Ihr Fallmanagementsystem übergeben werden kann. Die Verarbeitung läuft auf AWS innerhalb der EU, Dokumente werden direkt danach gelöscht, und nichts davon trainiert ein Modell."
     },
     "steps": {
       "title": "Vier Schritte, keiner davon Ihrer.",
@@ -224,10 +238,10 @@
     },
     "highlight": {
       "title": "Extraktion, die Sie Zeile für Zeile prüfen können.",
-      "body": "Jeder extrahierte Wert verweist auf den Satz, aus dem er stammt. Berater bestätigen einen Fall, indem sie die Seite lesen, nicht indem sie einem Score vertrauen."
+      "body": "Jeder extrahierte Wert verweist auf den Satz, aus dem er stammt. Ihr Team bestätigt einen Fall, indem es die Seite liest, nicht indem es einem Score vertraut."
     },
     "capabilities": {
-      "title": "Alles, was ein Berater braucht. Nichts Überflüssiges.",
+      "title": "Alles, was die Fallarbeit braucht. Nichts Überflüssiges.",
       "lead": "Sechs Funktionen, jede verdient durch eine Aufgabe, die bisher Handarbeit war.",
       "items": [
         {
@@ -288,25 +302,25 @@
         {
           "label": "Was die Fallzahl begrenzt",
           "before": "Papierkram",
-          "after": "Die Verfügbarkeit der Berater"
+          "after": "Die Verfügbarkeit Ihres Teams"
         }
       ],
       "note": "Manuelle Angaben nach Auskunft von Beratungsstellen. Die Zeit mit BriefXtract ist ein Produktziel."
     },
     "faq": {
-      "title": "Fragen, die Beratungsstellen stellen.",
+      "title": "Fragen, die Beratungsstellen und Kanzleien stellen.",
       "lead": "Kurze Antworten, jede am Rest dieser Website überprüfbar.",
       "items": [
         {
           "q": "Welche Dokumente kann BriefXtract lesen?",
-          "a": "Die Post, die eine Beratungsstelle für Klienten erhält: Gläubigerschreiben, Inkassoschreiben, Rechnungen, Gerichtsbeschlüsse und Vollstreckungsbescheide. Scannen oder leiten Sie alles zusammen als ein gemischtes PDF weiter; BriefXtract trennt und erkennt jedes Dokument."
+          "a": "Die Post, die eine Beratungsstelle oder Kanzlei für Klienten erhält: Gläubigerschreiben, Inkassoschreiben, Rechnungen, Gerichtsbeschlüsse und Vollstreckungsbescheide. Scannen oder leiten Sie alles zusammen als ein gemischtes PDF weiter; BriefXtract trennt und erkennt jedes Dokument."
         },
         {
           "q": "Was liest BriefXtract aus einem Brief aus?",
           "a": "Dokumenttyp, Gläubiger, Aktenzeichen, Betrag und Fälligkeit. Jeder Wert verweist auf die Zeile, aus der er stammt, und Werte, die eine zweite Prüfung brauchen, sind markiert."
         },
         {
-          "q": "Wie prüfen Berater die Ergebnisse?",
+          "q": "Wie prüfen wir die Ergebnisse?",
           "a": "Indem sie die Seite lesen, nicht indem sie einem Score vertrauen. Jedes extrahierte Feld steht neben seiner Quellzeile, sodass die Prüfung ein direkter Vergleich ist."
         },
         {
@@ -329,7 +343,7 @@
   "security": {
     "hero": {
       "title": "Gelesen, zurückgegeben, gelöscht.",
-      "subtitle": "Jeder Teil der Verarbeitung wurde mit Blick auf das deutsche und das kirchliche Datenschutzrecht gestaltet. Nicht nachträglich ergänzt."
+      "subtitle": "Jeder Teil der Verarbeitung wurde mit Blick auf das deutsche und das kirchliche Datenschutzrecht und auf die anwaltliche Verschwiegenheit gestaltet. Nichts davon wurde nachträglich ergänzt."
     },
     "lifecycle": {
       "title": "Was mit einem Dokument passiert.",
@@ -345,7 +359,7 @@
         },
         {
           "title": "Zurückgegeben",
-          "body": "Der strukturierte Fall geht in Ihr Fallmanagementsystem. Die Akte liegt bei der Beratungsstelle."
+          "body": "Der strukturierte Fall geht in Ihr Fallmanagementsystem. Die Akte liegt bei Ihnen."
         },
         {
           "title": "Gelöscht",
@@ -379,18 +393,18 @@
         },
         {
           "tag": "Verschlüsselung",
-          "title": "Ende-zu-Ende verschlüsselt",
-          "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, bei jedem Schritt, den die Finanzdaten Ihrer Klienten durchlaufen."
+          "title": "Verschlüsselt, auf geprüfter Infrastruktur",
+          "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, auf KI-Infrastruktur für Unternehmen, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit."
         },
         {
-          "tag": "Betrieb",
-          "title": "Nachvollziehbare Infrastruktur",
-          "body": "KI-Infrastruktur für Unternehmen, ohne Modelltraining, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit."
+          "tag": "Berufsgeheimnis",
+          "title": "Anwaltliche Verschwiegenheit",
+          "body": "Für Kanzleien unterzeichnet Brief Insights eine Verschwiegenheitsvereinbarung nach § 43e der Bundesrechtsanwaltsordnung (BRAO), mit Verpflichtung auf das Berufsgeheimnis nach § 203 Strafgesetzbuch (StGB)."
         }
       ]
     },
     "faq": {
-      "title": "Fragen, die Datenschutzbeauftragte stellen.",
+      "title": "Fragen von Datenschutzbeauftragten und Kanzleien.",
       "items": [
         {
           "q": "Wo werden unsere Daten gespeichert?",
@@ -403,6 +417,10 @@
         {
           "q": "Unterzeichnen Sie einen Auftragsverarbeitungsvertrag?",
           "a": "Ja. Ein vollständiger Auftragsverarbeitungsvertrag nach DSGVO Artikel 28 ist auf Anfrage erhältlich. Fragen Sie in Ihrer Demo-Anfrage danach."
+        },
+        {
+          "q": "Unterzeichnen Sie eine Verschwiegenheitsvereinbarung nach § 43e BRAO?",
+          "a": "Ja. Für Kanzleien unterzeichnet Brief Insights eine Verschwiegenheitsvereinbarung nach § 43e BRAO, die zur Verschwiegenheit verpflichtet und auf die Strafbarkeit nach § 203 StGB hinweist. Sie kommt zum Auftragsverarbeitungsvertrag nach Art. 28 DSGVO hinzu."
         },
         {
           "q": "Erfüllt das KDG und DSG-EKD?",
@@ -418,11 +436,11 @@
   "results": {
     "hero": {
       "title": "Stunden zurück, jede Woche.",
-      "subtitle": "Was fünfzehn Minuten statt vier Stunden in einer ganzen Beratungsstelle ausmachen würden. Tragen Sie Ihre eigenen Zahlen ein und prüfen Sie die Rechnung."
+      "subtitle": "Was fünfzehn Minuten statt vier Stunden in einer ganzen Beratungsstelle oder Kanzlei ausmachen würden. Tragen Sie Ihre eigenen Zahlen ein und prüfen Sie die Rechnung."
     },
     "compare": {
-      "title": "Was eine Beratungsstelle zurückbekommt.",
-      "lead": "Eine Beratungsstelle mit zehn Beratern, bevor und nachdem die Post für sie gelesen wird.",
+      "title": "Was ein Team zurückbekommt.",
+      "lead": "Ein Team aus zehn Fachkräften, bevor und nachdem die Post für sie gelesen wird.",
       "columns": {
         "label": "Kennzahl",
         "before": "Ohne BriefXtract",
@@ -435,7 +453,7 @@
           "after": "Etwa 15 Minuten (Ziel)"
         },
         {
-          "label": "Zurückgewonnene Verwaltungsstunden pro Jahr, 10 Berater",
+          "label": "Zurückgewonnene Verwaltungsstunden pro Jahr, Team aus 10",
           "before": "Entfällt",
           "after": "9.000 Stunden"
         },
@@ -445,19 +463,19 @@
           "after": "315.000 €"
         }
       ],
-      "note": "Gerechnet mit dem 15-Minuten-Ziel, 10 Beratern mit je 5 Klientenfällen pro Woche, 48 Arbeitswochen und 35 € pro Stunde. Jeden dieser Werte können Sie unten im Rechner ändern."
+      "note": "Gerechnet mit dem 15-Minuten-Ziel, 10 Fachkräften mit je 5 Fällen pro Woche, 48 Arbeitswochen und 35 € pro Stunde. Jeden dieser Werte können Sie unten im Rechner ändern."
     },
     "calculator": {
-      "title": "Rechnen Sie es für Ihre Beratungsstelle aus.",
+      "title": "Rechnen Sie es für Ihr Team aus.",
       "lead": "Drei Zahlen, die Sie schon kennen. Der Rechenweg steht darunter.",
-      "counselors": "Berater in der Beratungsstelle",
-      "casesPerWeek": "Klientenfälle pro Berater und Woche",
+      "counselors": "Fachkräfte, die Fälle vorbereiten",
+      "casesPerWeek": "Fälle pro Fachkraft und Woche",
       "hourlyCost": "Personalkosten pro Stunde, in Euro",
       "hoursPerWeek": "Freigesetzte Stunden pro Woche",
       "hoursPerYear": "Freigesetzte Stunden pro Jahr",
       "costPerYear": "Zurückgewonnene Personalkosten pro Jahr",
       "hoursUnit": "{{value}} Std.",
-      "formula": "{{counselors}} Berater × {{cases}} Fälle pro Woche × 3,75 Std. Ersparnis = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
+      "formula": "{{counselors}} Fachkräfte × {{cases}} Fälle pro Woche × 3,75 Std. Ersparnis = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
       "note": "Angenommen sind 4 Stunden manuelle Vorbereitung, reduziert auf das 15-Minuten-Ziel, also 3,75 Stunden Ersparnis pro Fall, über 48 Arbeitswochen. Zurückgewonnene Zeit ist Kapazität, kein Geld: Sie fließt zurück in die Beratung."
     },
     "capacity": {
@@ -474,7 +492,7 @@
         },
         {
           "title": "Eine kürzere Warteliste",
-          "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit der Berater, bewegt sich die Warteschlange."
+          "body": "Wenn nicht mehr der Papierkram die Obergrenze setzt, sondern die Verfügbarkeit Ihres Teams, bewegt sich die Warteschlange."
         }
       ]
     }
@@ -482,7 +500,7 @@
   "about": {
     "hero": {
       "title": "Gebaut für die Menschen, die Menschen helfen.",
-      "subtitle": "Brief Insights ist ein Berliner Softwareunternehmen. Es entwickelt ein einziges Produkt für einen Teil der Arbeit: den Papierkram, der zwischen Beratern und dem Termin steht."
+      "subtitle": "Brief Insights ist ein Berliner Softwareunternehmen. Es entwickelt ein einziges Produkt für einen Teil der Arbeit: den Papierkram, der zwischen Schuldnern und den Menschen steht, die sie beraten."
     },
     "why": {
       "title": "Warum es das gibt.",
@@ -502,7 +520,7 @@
         },
         {
           "label": "Branche",
-          "value": "Schuldner- und Sozialberatung"
+          "value": "Schuldnerberatung und Verbraucherinsolvenzrecht"
         },
         {
           "label": "Datenstandort",
@@ -510,7 +528,7 @@
         },
         {
           "label": "Compliance",
-          "value": "DSGVO · KDG · DSG-EKD"
+          "value": "DSGVO · KDG · DSG-EKD · § 43e BRAO"
         }
       ]
     },
@@ -525,13 +543,13 @@
         "alt": "Ein Karton mit losen Unterlagen wird übergeben und entgegengenommen",
         "caption": "Nachher. Der Karton wird einmal übergeben und kommt als Akte zurück."
       },
-      "note": "Gestellte Fotos. Keine Kunden, keine bestimmte Beratungsstelle."
+      "note": "Gestellte Fotos. Keine Kunden, keine bestimmte Beratungsstelle oder Kanzlei."
     },
     "contact": {
       "title": "Eine Adresse, ein Postfach.",
       "email": {
         "label": "E-Mail",
-        "body": "Pilotprojekte, Auftragsverarbeitungsverträge und Fragen zur Anbindung landen alle hier."
+        "body": "Pilotprojekte, Auftragsverarbeitung, Verschwiegenheitsvereinbarungen und Fragen zur Anbindung landen alle hier."
       },
       "office": {
         "label": "Büro",
@@ -540,8 +558,8 @@
       },
       "audience": {
         "label": "Für wen das ist",
-        "value": "Beratungsstellen",
-        "body": "Caritas, Diakonie, AWO sowie unabhängige Schuldner- und Sozialberatungsstellen."
+        "value": "Beratungsstellen und Kanzleien",
+        "body": "Caritas, Diakonie, AWO, unabhängige Schuldner- und Sozialberatungsstellen sowie Kanzleien, die Schuldner in der Verbraucherinsolvenz vertreten."
       }
     }
   },
@@ -550,11 +568,11 @@
     "description": "Hinterlassen Sie Ihre Angaben, und das Team von Brief Insights vereinbart einen Termin, um Ihre eigene Post durch BriefXtract laufen zu lassen.",
     "name": "Vollständiger Name",
     "email": "Dienstliche E-Mail",
-    "emailPlaceholder": "name@ihre-beratungsstelle.de",
+    "emailPlaceholder": "name@ihre-organisation.de",
     "org": "Organisation",
     "message": "Nachricht",
     "optional": "(optional)",
-    "messageHint": "Zum Beispiel Ihr Fallmanagementsystem oder eine Anfrage nach dem Auftragsverarbeitungsvertrag.",
+    "messageHint": "Zum Beispiel Ihr Fallmanagementsystem oder eine Anfrage nach dem Auftragsverarbeitungsvertrag oder der Verschwiegenheitsvereinbarung.",
     "privacyBefore": "Wie diese Angaben verarbeitet werden, steht in der ",
     "privacyLink": "Datenschutzerklärung",
     "privacyAfter": ".",
@@ -564,7 +582,7 @@
     "errors": {
       "nameRequired": "Geben Sie Ihren vollständigen Namen ein.",
       "emailRequired": "Geben Sie Ihre dienstliche E-Mail-Adresse ein.",
-      "emailInvalid": "Geben Sie eine E-Mail-Adresse im Format name@ihre-beratungsstelle.de ein.",
+      "emailInvalid": "Geben Sie eine E-Mail-Adresse im Format name@ihre-organisation.de ein.",
       "orgRequired": "Geben Sie den Namen Ihrer Organisation ein."
     },
     "failedTitle": "Die Anfrage wurde nicht gesendet.",
@@ -597,7 +615,7 @@
       "questions": "Häufige Fragen",
       "debt": "Schuldnerberatung",
       "social": "Sozialberatung",
-      "nonProfit": "Gemeinnützige Träger",
+      "lawFirms": "Insolvenzkanzleien",
       "about": "Über uns",
       "contact": "Kontakt",
       "impressum": "Impressum",
@@ -626,17 +644,19 @@
     "link": "Zur Startseite"
   },
   "seo": {
-    "organization": "Berliner Softwareunternehmen, das BriefXtract entwickelt: intelligente Dokumentenverarbeitung für Schuldner- und Sozialberatungsstellen.",
+    "organization": "Berliner Softwareunternehmen, das BriefXtract entwickelt: intelligente Dokumentenverarbeitung für Schuldnerberatungsstellen und Kanzleien im Verbraucherinsolvenzrecht.",
     "knowsAbout": [
       "Intelligente Dokumentenverarbeitung",
       "Schuldnerberatung",
       "Sozialberatung",
+      "Verbraucherinsolvenz (InsO)",
       "DSGVO",
-      "Kirchlicher Datenschutz (KDG, DSG-EKD)"
+      "Kirchlicher Datenschutz (KDG, DSG-EKD)",
+      "Anwaltliche Verschwiegenheit (§ 43e BRAO)"
     ],
     "softwareCategory": "Intelligente Dokumentenverarbeitung (IDP)",
-    "software": "Liest die Post, die bei Schuldner- und Sozialberatungsstellen eingeht, extrahiert Gläubiger, Aktenzeichen, Betrag und Frist, markiert dringende Bescheide und legt jedes Dokument in der richtigen Akte ab. Hosting in der EU, keine Datenspeicherung.",
-    "audience": "Schuldner- und Sozialberatungsstellen",
+    "software": "Liest die Post, die bei Schuldnerberatungsstellen und Insolvenzkanzleien eingeht, extrahiert Gläubiger, Aktenzeichen, Betrag und Frist, markiert dringende Bescheide und legt jedes Dokument in der richtigen Akte ab. Hosting in der EU, keine Datenspeicherung.",
+    "audience": "Schuldner- und Sozialberatungsstellen, Kanzleien im Verbraucherinsolvenzrecht",
     "imageAlt": "Brief Insights: Jeder Brief, schon gelesen."
   }
 }

@@ -41,7 +41,7 @@ const COLUMNS: { key: string; links: FooterLink[] }[] = [
     links: [
       { key: "debt", page: "about" },
       { key: "social", page: "about" },
-      { key: "nonProfit", page: "about" },
+      { key: "lawFirms", page: "about" },
     ],
   },
   {

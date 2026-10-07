@@ -11,6 +11,7 @@ import { useDemoDialog } from "./demoDialogContext";
 import { buttonClass } from "./buttonStyles";
 import { useLang, usePath } from "@/hooks/use-locale";
 import { pageFromPath, pathFor, type PageKey } from "@/routes";
+import bulb from "@/assets/brief-insights-bulb.png";
 
 const NAV: { page: PageKey; key: string }[] = [
   { page: "platform", key: "nav.platform" },
@@ -78,9 +79,14 @@ function Wordmark() {
   const { t } = useTranslation();
   const path = usePath();
   // The supplied logo is a stacked lockup and is illegible at nav height,
-  // so the bar carries the wordmark as type until a horizontal lockup exists.
+  // so the bar pairs its bulb with the wordmark set as type.
   return (
-    <Link to={path("home")} aria-label={t("nav.home")} className="rounded-sm py-2 text-h5 tracking-[-0.2px] text-ink lg:text-h4">
+    <Link
+      to={path("home")}
+      aria-label={t("nav.home")}
+      className="flex items-center gap-2 rounded-sm py-2 text-h5 tracking-[-0.2px] text-ink lg:gap-2.5 lg:text-h4"
+    >
+      <img src={bulb} alt="" width={305} height={428} className="h-7 w-auto lg:h-8" />
       Brief Insights
     </Link>
   );
@@ -137,7 +143,7 @@ function MobileMenu() {
             </div>
             <button
               type="button"
-              className={buttonClass("primary", "w-full")}
+              className={buttonClass("demo", "w-full")}
               onClick={() => {
                 setOpen(false);
                 openDemo();

@@ -29,7 +29,7 @@ export default function About() {
       <Section>
         <SectionHeader size="display" title={t("about.why.title")} />
         <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-20">
-          <div className="max-w-[680px] space-y-6 text-body text-charcoal md:text-subtitle md:leading-[1.6]">
+          <div className="justified max-w-[680px] space-y-6 text-body text-charcoal md:text-subtitle md:leading-[1.6]">
             <p>{t("about.why.p1")}</p>
             <p>{t("about.why.p2")}</p>
             <p>
@@ -86,7 +86,7 @@ export default function About() {
                 {CONTACT_EMAIL}
               </a>
             </p>
-            <p className="mt-3 text-body-sm text-slate">{t("about.contact.email.body")}</p>
+            <p className="justified mt-3 text-body-sm text-slate">{t("about.contact.email.body")}</p>
           </RuledItem>
           <RuledItem className="pt-6">
             <h3 className="text-body-sm font-medium text-slate">{t("about.contact.office.label")}</h3>
@@ -96,7 +96,7 @@ export default function About() {
           <RuledItem className="pt-6">
             <h3 className="text-body-sm font-medium text-slate">{t("about.contact.audience.label")}</h3>
             <p className="mt-2 text-h4 text-ink">{t("about.contact.audience.value")}</p>
-            <p className="mt-3 text-body-sm text-slate">{t("about.contact.audience.body")}</p>
+            <p className="justified mt-3 text-body-sm text-slate">{t("about.contact.audience.body")}</p>
           </RuledItem>
         </div>
       </Section>

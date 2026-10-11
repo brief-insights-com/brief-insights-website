@@ -186,6 +186,30 @@
 }
 
 @layer components {
+  /* Justified body copy. Hyphenation keeps the word gaps even, which matters most
+     for German compounds in narrow card columns; html and the legal blocks carry lang. */
+  .justified,
+  .justified-center {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 8 3 3;
+  }
+  /* Centred intros: lines run edge to edge and the last line stays centred. */
+  .justified-center {
+    text-align-last: center;
+  }
+  /* Set by the check in index.html when the browser cannot hyphenate: without
+     hyphens, justified narrow columns open wide gaps, so stay ragged instead. */
+  html[data-hyphens="none"] .justified,
+  html[data-hyphens="none"] .legal-prose p,
+  html[data-hyphens="none"] .legal-prose li {
+    text-align: start;
+  }
+  html[data-hyphens="none"] .justified-center {
+    text-align: center;
+  }
+
   /* Prose for the legal pages, which arrive as HTML from eRecht24. */
   .legal-prose {
     @apply max-w-[72ch] text-body text-charcoal;
@@ -205,7 +229,7 @@
   }
   .legal-prose p,
   .legal-prose li {
-    @apply mb-4 text-body-sm text-slate;
+    @apply justified mb-4 text-body-sm text-slate;
   }
   .legal-prose ul {
     @apply mb-4 list-disc space-y-2 pl-5;

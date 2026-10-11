@@ -21,7 +21,7 @@ export default function CtaBanner({
       <Container>
         <div className="rounded-lg bg-surface px-6 py-10 text-center md:p-16">
           <h2 className="text-h3 text-ink md:text-h2">{t(`cta.${variant}.title`)}</h2>
-          <p className="mx-auto mt-3 max-w-[560px] text-body text-slate md:mt-4 md:text-subtitle">{t(`cta.${variant}.body`)}</p>
+          <p className="justified-center mx-auto mt-3 max-w-[560px] text-body text-slate md:mt-4 md:text-subtitle">{t(`cta.${variant}.body`)}</p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center md:mt-8">
             <DemoButton />
             <Link to={path(secondary.page)} className={buttonClass("secondary")}>

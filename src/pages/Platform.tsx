@@ -33,7 +33,7 @@ export default function Platform() {
       <Section>
         {/* A self-contained definition: the passage search and AI answers can quote whole. */}
         <SectionHeader size="display" title={t("platform.what.title")} />
-        <p className="mx-auto mt-8 max-w-[72ch] text-body text-charcoal md:text-subtitle md:leading-[1.6]">{t("platform.what.body")}</p>
+        <p className="justified mx-auto mt-8 max-w-[72ch] text-body text-charcoal md:text-subtitle md:leading-[1.6]">{t("platform.what.body")}</p>
 
         <SectionHeader className="mt-20 md:mt-24" title={t("platform.steps.title")} lead={t("platform.steps.lead")} />
         <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -42,7 +42,7 @@ export default function Platform() {
               <h3 className="text-h5 text-ink">
                 {index + 1}. {step.title}
               </h3>
-              <p className="mt-2 text-body-sm text-slate">{step.body}</p>
+              <p className="justified mt-2 text-body-sm text-slate">{step.body}</p>
             </RuledItem>
           ))}
         </ol>
@@ -54,7 +54,7 @@ export default function Platform() {
           <div className="flex flex-col gap-8 rounded-lg bg-tint-sky p-6 md:p-12 lg:flex-row lg:items-center lg:gap-12">
             <div className="flex-1">
               <h2 className="max-w-[460px] text-h3 text-charcoal md:text-h2">{t("platform.highlight.title")}</h2>
-              <p className="mt-4 max-w-[460px] text-body text-charcoal">{t("platform.highlight.body")}</p>
+              <p className="justified mt-4 max-w-[460px] text-body text-charcoal">{t("platform.highlight.body")}</p>
             </div>
             <SourcePageMockup />
           </div>
@@ -67,7 +67,7 @@ export default function Platform() {
           {capabilities.map((item) => (
             <Card key={item.title}>
               <h3 className="text-h4 text-ink">{item.title}</h3>
-              <p className="mt-3 text-body-sm text-slate">{item.body}</p>
+              <p className="justified mt-3 text-body-sm text-slate">{item.body}</p>
             </Card>
           ))}
         </div>
@@ -88,7 +88,7 @@ export default function Platform() {
           {questions.map((item) => (
             <Card key={item.q}>
               <h3 className="text-h5 text-ink">{item.q}</h3>
-              <p className="mt-3 text-body-sm text-slate">{item.a}</p>
+              <p className="justified mt-3 text-body-sm text-slate">{item.a}</p>
               {item.more ? (
                 <Link to={path(item.more)} className={buttonClass("link", "mt-2")}>
                   {t(MORE_LABEL[item.more] as string)}

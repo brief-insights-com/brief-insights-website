@@ -32,7 +32,7 @@ export default function Security() {
               <h3 className="text-h5 text-ink">
                 {index + 1}. {stage.title}
               </h3>
-              <p className="mt-2 text-body-sm text-slate">{stage.body}</p>
+              <p className="justified mt-2 text-body-sm text-slate">{stage.body}</p>
             </RuledItem>
           ))}
         </ol>
@@ -45,7 +45,7 @@ export default function Security() {
             <Card key={item.title}>
               <TagBadge tone={TAG_TONES[index]}>{item.tag}</TagBadge>
               <h3 className="mt-4 text-h4 text-ink">{item.title}</h3>
-              <p className="mt-3 text-body-sm text-slate">{item.body}</p>
+              <p className="justified mt-3 text-body-sm text-slate">{item.body}</p>
             </Card>
           ))}
         </div>

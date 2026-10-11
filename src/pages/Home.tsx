@@ -64,7 +64,7 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div key={stat.value}>
                 <p className="text-h1 text-ink lg:text-display">{stat.value}</p>
-                <p className="mt-2 text-body-sm text-slate md:mt-3">{stat.label}</p>
+                <p className="justified mt-2 text-body-sm text-slate md:mt-3">{stat.label}</p>
                 <div aria-hidden="true" className="mt-3 h-2 overflow-hidden rounded-full bg-hairline md:mt-4">
                   <div className={cn("h-2 rounded-full", STAT_BARS[index].tone)} style={{ width: STAT_BARS[index].width }} />
                 </div>
@@ -84,7 +84,7 @@ export default function Home() {
               <RuledItem key={audience.title} className="pt-6">
                 <Icon className="h-6 w-6 text-primary" strokeWidth={1.6} aria-hidden="true" />
                 <h3 className="mt-4 text-h4 text-ink">{audience.title}</h3>
-                <p className="mt-3 text-body-sm text-slate">{audience.body}</p>
+                <p className="justified mt-3 text-body-sm text-slate">{audience.body}</p>
               </RuledItem>
             );
           })}
@@ -100,7 +100,7 @@ export default function Home() {
               <Card key={feature.title}>
                 <Icon className="h-6 w-6 text-primary" strokeWidth={1.6} aria-hidden="true" />
                 <h3 className="mt-4 text-h4 text-ink">{feature.title}</h3>
-                <p className="mt-3 text-body-sm text-slate">{feature.body}</p>
+                <p className="justified mt-3 text-body-sm text-slate">{feature.body}</p>
               </Card>
             );
           })}
@@ -142,7 +142,7 @@ export default function Home() {
           {assurances.map((item) => (
             <Card key={item.title}>
               <h3 className="text-h5 text-ink">{item.title}</h3>
-              <p className="mt-2 text-body-sm text-slate">{item.body}</p>
+              <p className="justified mt-2 text-body-sm text-slate">{item.body}</p>
             </Card>
           ))}
         </div>

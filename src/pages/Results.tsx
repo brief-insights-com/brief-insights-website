@@ -40,7 +40,7 @@ export default function Results() {
           {capacity.map((item) => (
             <RuledItem key={item.title} className="pt-6">
               <h3 className="text-h4 text-ink">{item.title}</h3>
-              <p className="mt-3 text-body-sm text-slate">{item.body}</p>
+              <p className="justified mt-3 text-body-sm text-slate">{item.body}</p>
             </RuledItem>
           ))}
         </div>

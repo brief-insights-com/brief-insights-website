@@ -88,7 +88,7 @@ export default function HeroBand({
       <Decoration variant={variant} />
       <Container className="relative z-[1] flex flex-col items-center text-center">
         <h1 className="max-w-[1000px] text-h2 text-on-dark md:text-h1 lg:text-display xl:text-hero">{title}</h1>
-        <p className="mt-4 max-w-[640px] text-body text-on-dark-muted md:mt-6 md:text-subtitle">{subtitle}</p>
+        <p className="justified-center mt-4 max-w-[640px] text-body text-on-dark-muted md:mt-6 md:text-subtitle">{subtitle}</p>
         {actions ? (
           <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">{actions}</div>
         ) : null}

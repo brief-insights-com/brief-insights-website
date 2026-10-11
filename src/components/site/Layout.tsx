@@ -44,7 +44,7 @@ export function SectionHeader({
   return (
     <div className={cn("text-center", className)}>
       <Heading className={cn(titleSizes[size], "text-ink")}>{title}</Heading>
-      {lead ? <p className="mx-auto mt-4 max-w-[620px] text-body text-slate md:text-subtitle">{lead}</p> : null}
+      {lead ? <p className="justified-center mx-auto mt-4 max-w-[620px] text-body text-slate md:text-subtitle">{lead}</p> : null}
     </div>
   );
 }

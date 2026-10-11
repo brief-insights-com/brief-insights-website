@@ -11,6 +11,28 @@
   </head>
 
   <body>
+    <script>
+      // Justified copy only reads evenly when the browser can hyphenate. Before the
+      // first paint, check that it can for both site languages; if not, keep the
+      // copy ragged-right (see .justified in index.css).
+      (function () {
+        try {
+          var probe = function (lang, word) {
+            var el = document.createElement("span");
+            el.lang = lang;
+            el.textContent = word;
+            el.style.cssText = "position:absolute;visibility:hidden;display:block;width:3em;font-size:16px;line-height:20px;hyphens:auto;-webkit-hyphens:auto";
+            document.body.appendChild(el);
+            var lines = el.offsetHeight / 20;
+            el.remove();
+            return lines > 1.5;
+          };
+          if (!probe("de", "Verschwiegenheitsvereinbarung") || !probe("en", "confidentiality")) {
+            document.documentElement.setAttribute("data-hyphens", "none");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

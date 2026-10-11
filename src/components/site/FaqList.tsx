@@ -24,7 +24,7 @@ export default function FaqList({ items }: { items: { q: string; a: string }[] }
           {/* forceMount keeps every answer in the HTML, so search and AI crawlers can read the
               collapsed ones; the closed state is hidden rather than removed. */}
           <AccordionPrimitive.Content forceMount className="overflow-hidden data-[state=closed]:hidden">
-            <p className="px-1 pb-5 pr-10 text-body-sm text-slate md:px-6 md:pb-6 md:pr-16">{item.a}</p>
+            <p className="justified px-1 pb-5 pr-10 text-body-sm text-slate md:px-6 md:pb-6 md:pr-16">{item.a}</p>
           </AccordionPrimitive.Content>
         </AccordionPrimitive.Item>
       ))}

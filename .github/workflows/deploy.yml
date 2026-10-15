@@ -1,10 +1,13 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow on push to the main branch
+  # Publish whenever main changes.
   push:
     branches: ["main"]
-  # Allow manual trigger from the Actions tab
+  # Check pull requests into main with the same lint, tests and build, without publishing.
+  pull_request:
+    branches: ["main"]
+  # Allow a manual run from the Actions tab.
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -13,10 +16,11 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# One deployment at a time, and a running deployment is never cancelled halfway.
+# Pull request checks run in their own group, so they never block a release.
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -28,24 +32,33 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      # Builds the client, the server bundle, and prerenders every page,
+      # the 404 page, the legacy redirects and sitemap.xml into dist/.
       - name: Build project
         run: npm run build
         env:
           VITE_DEMO_API_URL: ${{ secrets.VITE_DEMO_API_URL }}
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite outputs to the 'dist' folder by default
           path: ./dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

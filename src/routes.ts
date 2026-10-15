@@ -25,6 +25,10 @@ export const PAGE_KEYS = Object.keys(PATHS) as PageKey[];
 /** Addresses that existed before the redesign and now forward to their German page. */
 export const LEGACY_REDIRECTS: Record<string, string> = {
   "/privacy": PATHS.privacy.de,
+  // Addresses from the previous version of the site, so shared links keep working.
+  "/about": PATHS.about.de,
+  "/security": PATHS.security.de,
+  "/product": PATHS.platform.de,
 };
 
 export function pathFor(page: PageKey, lang: Lang): string {

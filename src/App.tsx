@@ -1,64 +1,13 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "next-themes";
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import Index from "./pages/Index";
-import Impressum from "./pages/Impressum";
-import Privacy from "./pages/Privacy";
-import NotFound from "./pages/NotFound";
-import About from "./pages/About";
-import Security from "./pages/Security";
-import Product from "./pages/Product";
-import CookieBanner from "./components/CookieBanner";
-import { getConsent, loadMetricool } from "./lib/analytics";
+import { BrowserRouter } from "react-router-dom";
+import { AppProviders, AppRoutes } from "./AppRoutes";
 
-const queryClient = new QueryClient();
-
-const LangSync = () => {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
-
-  return null;
-};
-
-const AnalyticsLoader = () => {
-  useEffect(() => {
-    if (getConsent() === "accepted") loadMetricool();
-  }, []);
-  return null;
-};
-
+// Must render the same tree as src/entry-server.tsx so the prerendered HTML hydrates cleanly.
 const App = () => (
-  <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <LangSync />
-        <AnalyticsLoader />
-        <CookieBanner />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/security" element={<Security />} />
-            <Route path="/product" element={<Product />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
+  <AppProviders>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AppRoutes />
+    </BrowserRouter>
+  </AppProviders>
 );
 
 export default App;

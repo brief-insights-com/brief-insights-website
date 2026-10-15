@@ -1,37 +1,39 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14283f" />
+    <meta name="author" content="Brief Insights UG (haftungsbeschränkt)" />
     <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="shortcut icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    <title>BriefInsights — Intelligent Document Processing for Debt Counselors</title>
-    <meta name="description" content="BriefXtract automates document processing for debt counseling centers, cutting case prep from 8 hours to 15 minutes using Generative AI." />
-    <meta name="author" content="BriefInsights" />
-
-    <link rel="canonical" href="https://brief-insights.com/" />
-
-    <meta property="og:title" content="BriefInsights — Stop Drowning in Paperwork" />
-    <meta property="og:description" content="BriefXtract reduces administrative time by 90% for German debt counselors using intelligent document processing." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://brief-insights.com/" />
-    <meta property="og:image" content="https://brief-insights.com/logo.png" />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="1000" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://brief-insights.com/logo.png" />
+    <!--app-head-->
   </head>
 
   <body>
-    <div id="root"></div>
     <script>
-      // Restore path encoded by public/404.html for GitHub Pages SPA routing
+      // Justified copy only reads evenly when the browser can hyphenate. Before the
+      // first paint, check that it can for both site languages; if not, keep the
+      // copy ragged-right (see .justified in index.css).
       (function () {
-        var p = new URLSearchParams(window.location.search).get('p');
-        if (p) window.history.replaceState(null, '', decodeURIComponent(p));
+        try {
+          var probe = function (lang, word) {
+            var el = document.createElement("span");
+            el.lang = lang;
+            el.textContent = word;
+            el.style.cssText = "position:absolute;visibility:hidden;display:block;width:3em;font-size:16px;line-height:20px;hyphens:auto;-webkit-hyphens:auto";
+            document.body.appendChild(el);
+            var lines = el.offsetHeight / 20;
+            el.remove();
+            return lines > 1.5;
+          };
+          if (!probe("de", "Verschwiegenheitsvereinbarung") || !probe("en", "confidentiality")) {
+            document.documentElement.setAttribute("data-hyphens", "none");
+          }
+        } catch (e) {}
       })();
     </script>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

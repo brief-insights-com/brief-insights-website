@@ -1,15 +1,4 @@
-import { Link } from "react-router-dom";
-
-const legalProse =
-  "[&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-foreground [&_h1]:mb-6 [&_h1]:mt-10 first:[&_h1]:mt-0 " +
-  "[&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-foreground [&_h2]:mt-10 [&_h2]:mb-4 " +
-  "[&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-foreground [&_h3]:mt-6 [&_h3]:mb-2 " +
-  "[&_h4]:text-sm [&_h4]:font-semibold [&_h4]:text-foreground [&_h4]:mt-4 [&_h4]:mb-2 " +
-  "[&_p]:text-sm [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4 " +
-  "[&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-4 [&_ul]:space-y-2 " +
-  "[&_li]:text-sm [&_li]:text-muted-foreground [&_li]:leading-relaxed " +
-  "[&_strong]:text-foreground [&_strong]:font-semibold " +
-  "[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:opacity-80 [&_a]:transition-opacity";
+import LegalPage from "@/components/site/LegalPage";
 
 const deContent = `
 <h1>Datenschutzerklärung</h1>
@@ -220,29 +209,6 @@ E-mail: <a href="mailto:info@brief-insights.com">info@brief-insights.com</a></p>
 <p>For more information, please refer to Metricool's privacy policy at: <a href="https://metricool.com/privacy-policy" target="_blank" rel="noopener noreferrer">https://metricool.com/privacy-policy</a></p>
 `;
 
-const Privacy = () => (
-  <div className="min-h-screen bg-background text-foreground">
-    <div className="max-w-2xl mx-auto px-6 py-20">
-      <Link
-        to="/"
-        className="text-sm text-muted-foreground hover:text-primary transition-colors mb-12 inline-block"
-      >
-        ← Back to Home
-      </Link>
-
-      <div
-        className={legalProse}
-        dangerouslySetInnerHTML={{ __html: deContent }}
-      />
-
-      <div className="my-16 border-t border-foreground/10" />
-
-      <div
-        className={legalProse}
-        dangerouslySetInnerHTML={{ __html: enContent }}
-      />
-    </div>
-  </div>
-);
+const Privacy = () => <LegalPage page="privacy" de={deContent} en={enContent} />;
 
 export default Privacy;

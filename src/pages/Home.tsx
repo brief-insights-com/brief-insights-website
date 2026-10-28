@@ -5,6 +5,7 @@ import HeroBand from "@/components/site/HeroBand";
 import IntakeMockup from "@/components/site/IntakeMockup";
 import PhotoPair from "@/components/site/PhotoPair";
 import CtaBanner from "@/components/site/CtaBanner";
+import DemoVideo from "@/components/site/DemoVideo";
 import { DemoButton } from "@/components/site/DemoDialog";
 import { Caption, Card, Container, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
 import { buttonClass } from "@/components/site/buttonStyles";
@@ -105,6 +106,7 @@ export default function Home() {
             );
           })}
         </div>
+        <DemoVideo className="mt-12 md:mt-16" />
         <div className="mt-10 text-center">
           <Link to={path("platform")} className={buttonClass("link")}>
             {t("actions.seeWholePlatform")}

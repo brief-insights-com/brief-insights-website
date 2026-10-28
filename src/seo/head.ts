@@ -1,5 +1,6 @@
 import type { TFunction } from "i18next";
 import { absoluteUrl, DEFAULT_LANG, LANGS, pathFor, SITE_URL, type Lang, type PageKey } from "@/routes";
+import { DEMO_VIDEO, DEMO_VIDEO_DURATION, DEMO_VIDEO_HEIGHT, DEMO_VIDEO_WIDTH } from "@/lib/demoVideo";
 
 export type HeadPage = PageKey | "notFound";
 
@@ -62,6 +63,26 @@ function software(t: TFunction, lang: Lang) {
   };
 }
 
+/** The product walkthrough shown on the home and platform pages. */
+function demoVideo(t: TFunction, lang: Lang) {
+  const video = DEMO_VIDEO[lang];
+  return {
+    "@type": "VideoObject",
+    "@id": `${SITE_URL}/#demo-video-${lang}`,
+    name: t("video.title"),
+    description: t("video.description"),
+    thumbnailUrl: absoluteUrl(video.poster),
+    contentUrl: absoluteUrl(video.src),
+    uploadDate: video.uploadDate,
+    duration: DEMO_VIDEO_DURATION,
+    width: DEMO_VIDEO_WIDTH,
+    height: DEMO_VIDEO_HEIGHT,
+    inLanguage: IN_LANGUAGE[lang],
+    publisher: { "@id": ORG_ID },
+    about: { "@id": PRODUCT_ID },
+  };
+}
+
 export function buildHead(page: HeadPage, lang: Lang, t: TFunction): HeadData {
   const title = t(`meta.${page}.title`);
   const description = t(`meta.${page}.description`);
@@ -88,7 +109,10 @@ export function buildHead(page: HeadPage, lang: Lang, t: TFunction): HeadData {
     isPartOf: { "@id": SITE_ID },
     publisher: { "@id": ORG_ID },
   };
-  if (page === "home" || page === "platform") webPage.about = { "@id": PRODUCT_ID };
+  if (page === "home" || page === "platform") {
+    webPage.about = { "@id": PRODUCT_ID };
+    webPage.video = { "@id": `${SITE_URL}/#demo-video-${lang}` };
+  }
   if (page !== "home") {
     webPage.breadcrumb = {
       "@type": "BreadcrumbList",
@@ -104,7 +128,7 @@ export function buildHead(page: HeadPage, lang: Lang, t: TFunction): HeadData {
     { "@type": "WebSite", "@id": SITE_ID, url: `${SITE_URL}/`, name: "Brief Insights", inLanguage: LANGS.map((l) => IN_LANGUAGE[l]), publisher: { "@id": ORG_ID } },
     webPage,
   ];
-  if (page === "home" || page === "platform") graph.push(software(t, lang));
+  if (page === "home" || page === "platform") graph.push(software(t, lang), demoVideo(t, lang));
 
   return {
     lang,

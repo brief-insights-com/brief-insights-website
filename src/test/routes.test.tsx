@@ -8,7 +8,7 @@ import { render as renderToHtml } from "@/entry-server";
 import { LANGS, PAGE_KEYS, PATHS } from "@/routes";
 
 // A translation key that failed to resolve renders as its own path, e.g. "home.hero.title".
-const RAW_KEY = /\b(meta|seo|nav|actions|cta|mockup|home|platform|security|results|about|demo|footer|cookie|legal|notFound)(\.[a-z][a-zA-Z]*)+\b/;
+const RAW_KEY = /\b(meta|seo|nav|actions|cta|mockup|home|platform|security|results|about|demo|video|footer|cookie|legal|notFound)(\.[a-z][a-zA-Z]*)+\b/;
 
 const ALL_URLS = PAGE_KEYS.flatMap((page) => LANGS.map((lang) => ({ page, lang, url: PATHS[page][lang] })));
 
@@ -54,7 +54,10 @@ describe("every page in both languages", () => {
 
   it("keeps internal links in the page's language", () => {
     const { container } = renderAt(PATHS.home.en);
-    const internal = [...container.querySelectorAll("a[href^='/']")].map((a) => a.getAttribute("href") ?? "");
+    // Page links only: files such as the demo video's download link have no language path.
+    const internal = [...container.querySelectorAll("a[href^='/']")]
+      .map((a) => a.getAttribute("href") ?? "")
+      .filter((href) => !/\.[a-z0-9]+$/i.test(href));
     const german = internal.filter((href) => !href.startsWith("/en") && href !== PATHS.home.de);
     // The only German link on an English page is the language switch.
     expect(german).toEqual([]);
@@ -110,4 +113,18 @@ describe("demo request dialog", () => {
 
     await waitFor(() => expect(within(dialog).getByText("Request received.")).toBeInTheDocument(), { timeout: 3000 });
   });
+});
+
+describe("demo video", () => {
+  it.each(LANGS.flatMap((lang) => (["home", "platform"] as const).map((page) => ({ page, lang }))))(
+    "$page in $lang shows the walkthrough in its own language, loading nothing until played",
+    ({ page, lang }) => {
+      const { container } = renderAt(PATHS[page][lang]);
+      const video = container.querySelector("video");
+      expect(video).not.toBeNull();
+      expect(video?.getAttribute("preload")).toBe("none");
+      expect(video?.getAttribute("poster")).toBe(`/videos/briefxtract-demo-${lang}.jpg`);
+      expect(container.querySelector("video source")?.getAttribute("src")).toBe(`/videos/briefxtract-demo-${lang}.mp4`);
+    },
+  );
 });

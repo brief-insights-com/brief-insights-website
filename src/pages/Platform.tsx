@@ -5,6 +5,7 @@ import HeroBand from "@/components/site/HeroBand";
 import SourcePageMockup from "@/components/site/SourcePageMockup";
 import ComparisonTable, { type ComparisonRow } from "@/components/site/ComparisonTable";
 import CtaBanner from "@/components/site/CtaBanner";
+import DemoVideo from "@/components/site/DemoVideo";
 import { Card, Container, RuledItem, Section, SectionHeader } from "@/components/site/Layout";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { usePath } from "@/hooks/use-locale";
@@ -46,6 +47,7 @@ export default function Platform() {
             </RuledItem>
           ))}
         </ol>
+        <DemoVideo className="mt-12 md:mt-16" />
       </Section>
 
       {/* One highlight banner per page, on the sky card tint. */}

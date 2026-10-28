@@ -66,7 +66,15 @@ describe("page head", () => {
     const org = data["@graph"].find((node: { "@type": string }) => node["@type"] === "Organization");
     expect(org.legalName).toBe("Brief Insights UG (haftungsbeschränkt)");
     expect(org.address.postalCode).toBe("12167");
-    if (page === "home" || page === "platform") expect(types).toContain("SoftwareApplication");
+    if (page === "home" || page === "platform") {
+      expect(types).toContain("SoftwareApplication");
+      const video = data["@graph"].find((node: { "@type": string }) => node["@type"] === "VideoObject");
+      expect(video.contentUrl).toBe(`https://brief-insights.com/videos/briefxtract-demo-${lang}.mp4`);
+      expect(video.thumbnailUrl).toBe(`https://brief-insights.com/videos/briefxtract-demo-${lang}.jpg`);
+      expect(video.duration).toBe("PT37S");
+    } else {
+      expect(types).not.toContain("VideoObject");
+    }
     if (page !== "home") {
       const webPage = data["@graph"].find((node: { breadcrumb?: unknown }) => node.breadcrumb);
       expect(webPage.breadcrumb.itemListElement).toHaveLength(2);

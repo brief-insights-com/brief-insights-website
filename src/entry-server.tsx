@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components -- build-time server entry, never hot-reloaded */
 import { renderToString } from "react-dom/server";
-import { StaticRouter } from "react-router-dom/server";
+import { StaticRouter } from "react-router-dom";
 import { AppProviders, AppRoutes } from "./AppRoutes";
 import { i18nByLang } from "./i18n/i18n";
 import { buildHead, renderHeadTags } from "./seo/head";

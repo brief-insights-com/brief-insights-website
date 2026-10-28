@@ -13,6 +13,22 @@ export const EMPTY_DEMO_REQUEST: DemoRequest = { name: "", email: "", org: "", m
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const API_URL: string | undefined = import.meta.env.VITE_DEMO_API_URL?.replace(/\/+$/, "") || undefined;
+
+/**
+ * Where the bot check fetches its proof-of-work challenge: GET <api>/challenge, served by the
+ * same Lambda that receives the request. Undefined without an API, where the widget runs in test mode.
+ */
+export const DEMO_CHALLENGE_URL = API_URL ? `${API_URL}/challenge` : undefined;
+
+/** Sent alongside the form fields; the server rejects requests without a valid `altcha`. */
+export interface BotCheckFields {
+  /** The solved ALTCHA challenge, as the widget's base64 payload. */
+  altcha: string | null;
+  /** A field people never see. Anything in it marks the request as automated. */
+  website: string;
+}
+
 export function validateDemoRequest(values: DemoRequest): DemoErrors {
   const errors: DemoErrors = {};
   if (!values.name.trim()) errors.name = "required";
@@ -27,8 +43,8 @@ export function validateDemoRequest(values: DemoRequest): DemoErrors {
  * simulates success so the dialog can be exercised locally; a production build fails
  * instead, so a missing secret shows the email fallback rather than a false confirmation.
  */
-export async function submitDemoRequest(values: DemoRequest): Promise<void> {
-  const apiUrl = import.meta.env.VITE_DEMO_API_URL;
+export async function submitDemoRequest(values: DemoRequest, botCheck: BotCheckFields): Promise<void> {
+  const apiUrl = API_URL;
 
   if (!apiUrl) {
     if (import.meta.env.DEV) {
@@ -47,6 +63,8 @@ export async function submitDemoRequest(values: DemoRequest): Promise<void> {
       email: values.email.trim(),
       org: values.org.trim(),
       message: values.message.trim(),
+      altcha: botCheck.altcha,
+      website: botCheck.website,
     }),
   });
 

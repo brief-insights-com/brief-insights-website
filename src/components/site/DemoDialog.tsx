@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CircleAlert, CircleCheck, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
+  DEMO_CHALLENGE_URL,
   EMPTY_DEMO_REQUEST,
   submitDemoRequest,
   validateDemoRequest,
@@ -13,6 +14,7 @@ import {
   type DemoRequest,
 } from "@/lib/demoRequest";
 import { buttonClass } from "./buttonStyles";
+import BotCheck, { type BotCheckHandle } from "./BotCheck";
 import { DemoDialogContext, useDemoDialog } from "./demoDialogContext";
 import { usePath } from "@/hooks/use-locale";
 
@@ -34,6 +36,8 @@ function DemoForm({ onDone }: { onDone: () => void }) {
   const [values, setValues] = useState<DemoRequest>(EMPTY_DEMO_REQUEST);
   const [phase, setPhase] = useState<Phase>("form");
   const [showErrors, setShowErrors] = useState(false);
+  const botCheck = useRef<BotCheckHandle>(null);
+  const honeypot = useRef<HTMLInputElement>(null);
 
   const errors = useMemo(() => (showErrors ? validateDemoRequest(values) : {}), [showErrors, values]);
   const sending = phase === "sending";
@@ -52,7 +56,9 @@ function DemoForm({ onDone }: { onDone: () => void }) {
     }
     setPhase("sending");
     try {
-      await submitDemoRequest(values);
+      const altcha = (await botCheck.current?.getPayload()) ?? null;
+      if (DEMO_CHALLENGE_URL && !altcha) throw new Error("Bot check did not complete.");
+      await submitDemoRequest(values, { altcha, website: honeypot.current?.value ?? "" });
       setPhase("sent");
     } catch (error) {
       console.error("Demo request failed:", error);
@@ -159,6 +165,14 @@ function DemoForm({ onDone }: { onDone: () => void }) {
             )}
           />
         </div>
+
+        {/* Hidden from people and screen readers; robots that fill every field fill this one too. */}
+        <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+          <label htmlFor="demo-website">Website</label>
+          <input ref={honeypot} id="demo-website" name="website" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </div>
+
+        <BotCheck ref={botCheck} />
 
         <p className="text-caption text-steel">
           {t("demo.privacyBefore")}

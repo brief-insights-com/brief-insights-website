@@ -113,6 +113,27 @@ describe("demo request dialog", () => {
 
     await waitFor(() => expect(within(dialog).getByText("Request received.")).toBeInTheDocument(), { timeout: 3000 });
   });
+
+  it("carries a self-hosted bot check and a honeypot no person can reach", async () => {
+    renderAt(PATHS.home.de);
+    fireEvent.click(screen.getAllByRole("button", { name: "Demo anfragen" })[0]);
+    const dialog = await screen.findByRole("dialog", { name: "Demo anfragen" });
+
+    const widget = await waitFor(() => {
+      const element = dialog.querySelector("altcha-widget");
+      expect(element).not.toBeNull();
+      return element as HTMLElement;
+    });
+    expect(widget.getAttribute("language")).toBe("de");
+    expect(widget.getAttribute("auto")).toBe("onfocus");
+    // Without an API in tests the widget mocks its challenge; nothing is fetched from anyone else.
+    expect(JSON.parse(widget.getAttribute("configuration") ?? "{}")).toMatchObject({ test: true, humanInteractionSignature: false });
+
+    const honeypot = dialog.querySelector<HTMLInputElement>("input[name='website']");
+    expect(honeypot).not.toBeNull();
+    expect(honeypot?.tabIndex).toBe(-1);
+    expect(honeypot?.closest("[aria-hidden='true']")).not.toBeNull();
+  });
 });
 
 describe("demo video", () => {

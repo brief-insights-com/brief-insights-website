@@ -124,8 +124,8 @@
   },
   "home": {
     "hero": {
-      "title": "Every letter, already read.",
-      "subtitle": "BriefXtract is document processing software for debt and social counseling centres and for consumer insolvency law firms. It reads every letter that arrives and files creditor, file number, amount and deadline against the case, before the appointment starts."
+      "title": "Less admin. More time for advice.",
+      "subtitle": "BriefXtract is software for debt and social counseling centres and for consumer insolvency law firms. It reads every incoming letter and files creditor, file number, amount and deadline in the right case file, before your appointment starts."
     },
     "stats": {
       "title": "Minutes instead of hours per case.",
@@ -666,6 +666,6 @@
     "softwareCategory": "Intelligent document processing (IDP)",
     "software": "Reads the post that reaches debt counseling centres and insolvency law firms, extracts creditor, file number, amount and deadline, flags urgent notices and files each document against the case. Hosted in the EU, with no permanent storage.",
     "audience": "Debt and social counseling centres, consumer insolvency law firms",
-    "imageAlt": "Brief Insights: Every letter, already read."
+    "imageAlt": "Brief Insights: Less admin. More time for advice."
   }
 }

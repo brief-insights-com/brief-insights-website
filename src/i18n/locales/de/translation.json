@@ -437,7 +437,7 @@
         },
         {
           "q": "Wer sind die Unterauftragsverarbeiter?",
-          "a": "Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle, die auf Amazon Bedrock laufen."
+          "a": "Für Hosting und KI-Modelle ist Amazon Web Services (AWS) unser Unterauftragsverarbeiter. Die gesamte Verarbeitung läuft auf AWS-Infrastruktur innerhalb der EU, einschließlich der KI-Modelle auf Amazon Bedrock."
         }
       ]
     }

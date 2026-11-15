@@ -437,7 +437,7 @@
         },
         {
           "q": "Who are the sub-processors?",
-          "a": "All processing runs on AWS infrastructure within the EU, including the AI models, which run on Amazon Bedrock."
+          "a": "For hosting and the AI models, our sub-processor is Amazon Web Services (AWS). All processing runs on AWS infrastructure within the EU, including the AI models on Amazon Bedrock."
         }
       ]
     }

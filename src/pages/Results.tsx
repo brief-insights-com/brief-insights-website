@@ -35,7 +35,7 @@ export default function Results() {
       </Section>
 
       <Section>
-        <SectionHeader title={t("results.capacity.title")} lead={t("results.capacity.lead")} />
+        <SectionHeader title={t("results.capacity.title")} />
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
           {capacity.map((item) => (
             <RuledItem key={item.title} className="pt-6">

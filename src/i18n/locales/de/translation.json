@@ -65,8 +65,8 @@
   },
   "cta": {
     "default": {
-      "title": "Sehen Sie, wie BriefXtract Ihre eigenen Schreiben liest.",
-      "body": "Bringen Sie einen Stapel echter Briefe zur Demo mit. Jedes Feld ist Zeile für Zeile überprüfbar."
+      "title": "Sehen Sie, wie BriefXtract einen Fall vorbereitet.",
+      "body": "Die Demo zeigt BriefXtract mit Beispielschreiben. Jeder ausgelesene Wert lässt sich Zeile für Zeile prüfen."
     },
     "security": {
       "title": "Unterlagen für Ihre Datenschutzprüfung.",
@@ -74,7 +74,7 @@
     },
     "results": {
       "title": "Prüfen Sie die Zahlen an Ihrem eigenen Arbeitsalltag.",
-      "body": "Eine Demo läuft mit Ihrer echten Post, sodass sich die Stunden aus Ihren eigenen Fällen ergeben."
+      "body": "Die Demo zeigt BriefXtract mit Beispielschreiben. Die Stunden für Ihr Team ergeben sich aus Ihren eigenen Zahlen im Rechner oben."
     }
   },
   "mockup": {
@@ -131,19 +131,22 @@
       "title": "Minuten statt Stunden pro Fall.",
       "items": [
         {
-          "value": "90 %",
-          "label": "Zeitersparnis beim Sortieren und Erfassen eingehender Schreiben."
+          "tag": "Heute",
+          "value": "30–80",
+          "label": "Schreiben pro Fall, die heute von Hand sortiert werden."
         },
         {
+          "tag": "Ziel",
           "value": "15 Min.",
           "label": "Vorbereitungszeit pro Fall statt 1 bis 8 Stunden von Hand."
         },
         {
-          "value": "4.000+",
-          "label": "Schuldnerberater in 1.400 Beratungsstellen in Deutschland, dazu die Kanzleien im Verbraucherinsolvenzrecht."
+          "tag": "Ziel",
+          "value": "90 %",
+          "label": "Zeitersparnis beim Sortieren und Erfassen eingehender Schreiben."
         }
       ],
-      "note": "Die Zeitangaben sind Produktziele, keine Messwerte. Die Balken zeigen den Anteil am manuellen Aufwand. Marktzahl: BAGFW, 2024."
+      "note": "Die Zeitangaben sind Produktziele, keine Messwerte."
     },
     "audience": {
       "title": "Für wen BriefXtract gedacht ist.",
@@ -151,7 +154,7 @@
       "items": [
         {
           "title": "Schuldner- und Sozialberatungsstellen",
-          "body": "Caritas, Diakonie, AWO und unabhängige Träger. Alle Schreiben eines Falls liegen als sortierte Akte vor, bevor das erste ausführliche Gespräch beginnt. BriefXtract ist DSGVO-, KDG- und DSG-EKD-konform."
+          "body": "Caritas, Diakonie, AWO und unabhängige Träger. Alle Schreiben eines Falls liegen als sortierte Akte vor, bevor das erste ausführliche Gespräch beginnt. BriefXtract ist DSGVO-konform und auf KDG und DSG-EKD ausgelegt."
         },
         {
           "title": "Kanzleien für Verbraucherinsolvenz",
@@ -165,7 +168,7 @@
       "items": [
         {
           "title": "Intelligentes Auslesen",
-          "body": "Gläubiger, Aktenzeichen, Betrag und Fälligkeit werden in einem Durchgang ausgelesen – auch aus gemischten und unsortierten PDFs mit Briefen, Gerichtsbeschlüssen und Rechnungen. Neben jedem Wert steht die Zeile, aus der er stammt."
+          "body": "Gläubiger, Aktenzeichen, Betrag und Fälligkeit werden in einem Durchgang ausgelesen, auch aus gemischten und unsortierten PDFs mit Briefen, Gerichtsbeschlüssen und Rechnungen. Neben jedem Wert steht die Zeile, aus der er stammt."
         },
         {
           "title": "Dringlichkeitserkennung",
@@ -206,7 +209,7 @@
         },
         {
           "title": "KDG und DSG-EKD",
-          "body": "Kirchlicher Datenschutz ist berücksichtigt – für Träger von Caritas und Diakonie."
+          "body": "Kirchlicher Datenschutz ist berücksichtigt, für Träger von Caritas und Diakonie."
         }
       ]
     }
@@ -226,7 +229,7 @@
       "items": [
         {
           "title": "Hochladen der Schreiben",
-          "body": "Laden Sie alle eingegangenen Schreiben hoch, auch gesammelt in einem einzigen PDF – ohne Vorsortieren und ohne feste Dateinamen."
+          "body": "Laden Sie alle eingegangenen Schreiben hoch, auch gesammelt in einem einzigen PDF. Vorsortieren und feste Dateinamen sind nicht nötig."
         },
         {
           "title": "Klassifizieren der Dokumente",
@@ -252,7 +255,7 @@
       "items": [
         {
           "title": "Intelligentes Auslesen",
-          "body": "Gläubigername, Aktenzeichen, Betrag und Fälligkeitsdatum – in einem Durchgang ausgelesen, auch aus PDFs mit vielen unsortierten Schreiben."
+          "body": "Gläubigername, Aktenzeichen, Betrag und Fälligkeitsdatum werden in einem Durchgang ausgelesen, auch aus PDFs mit vielen unsortierten Schreiben."
         },
         {
           "title": "Dringlichkeitserkennung",
@@ -268,7 +271,7 @@
         },
         {
           "title": "Export ins Fallmanagement",
-          "body": "Strukturierte Daten im gewünschten Format oder direkte Anbindung an Ihr Fallmanagementsystem über eine Schnittstelle (API)."
+          "body": "Strukturierte Daten als Export im gewünschten Format und zusätzlich über eine Schnittstelle (API)."
         },
         {
           "title": "Für hohe Fallzahlen gemacht",
@@ -331,7 +334,7 @@
         },
         {
           "q": "Funktioniert das mit unserem Fallmanagementsystem?",
-          "a": "BriefXtract liefert strukturierte Daten im Format, das Sie brauchen, oder verbindet sich per API direkt mit Ihrem Fallmanagementsystem. So muss nichts abgetippt werden."
+          "a": "BriefXtract liefert die ausgelesenen Daten als Export im Format, das Ihr System braucht, und zusätzlich über eine API. So muss nichts abgetippt werden."
         },
         {
           "q": "Wo werden die Daten verarbeitet, und werden sie gespeichert?",
@@ -395,12 +398,12 @@
         {
           "tag": "Kirchenrecht",
           "title": "KDG und DSG-EKD",
-          "body": "Konform mit dem katholischen (KDG) und dem evangelischen (DSG-EKD) Datenschutzrecht – für Einrichtungen von Caritas und Diakonie."
+          "body": "Ausgelegt auf das katholische (KDG) und das evangelische (DSG-EKD) Datenschutzrecht, für Einrichtungen von Caritas und Diakonie."
         },
         {
           "tag": "Verschlüsselung",
           "title": "Verschlüsselt, auf geprüfter Infrastruktur",
-          "body": "TLS 1.3 bei der Übertragung und AES-256 im Ruhezustand, auf KI-Infrastruktur für Unternehmen, vollständig nachvollziehbar und mit einer Service-Level-Vereinbarung (SLA) über 99,9 % Verfügbarkeit."
+          "body": "TLS 1.3 bei der Übertragung und AES-256 bei der Speicherung. Audit-Logs machen die Verarbeitung nachvollziehbar. Brief Insights sichert 99,9 % Verfügbarkeit in einer Service-Level-Vereinbarung (SLA) zu, auf AWS-Infrastruktur mit BSI-C5-Testat."
         },
         {
           "tag": "Berufsgeheimnis",
@@ -430,7 +433,7 @@
         },
         {
           "q": "Erfüllt BriefXtract die Anforderungen von KDG und DSG-EKD?",
-          "a": "Ja. BriefXtract erfüllt die Anforderungen des katholischen (KDG) und des evangelischen (DSG-EKD) Datenschutzrechts und wurde mit Blick auf Träger wie Caritas und Diakonie entwickelt."
+          "a": "BriefXtract ist auf die Anforderungen des katholischen (KDG) und des evangelischen (DSG-EKD) Datenschutzrechts ausgelegt und wurde mit Blick auf Träger wie Caritas und Diakonie entwickelt."
         },
         {
           "q": "Wer sind die Unterauftragsverarbeiter?",
@@ -473,20 +476,20 @@
     },
     "calculator": {
       "title": "Rechnen Sie es für Ihr Team aus.",
-      "lead": "Tragen Sie drei Zahlen aus Ihrem Team ein. Der Rechenweg steht darunter.",
+      "lead": "Tragen Sie vier Zahlen aus Ihrem Team ein. Der Rechenweg steht darunter.",
       "counselors": "Fachkräfte, die Fälle vorbereiten",
       "casesPerWeek": "Fälle pro Fachkraft und Woche",
+      "prepHours": "Vorbereitungszeit pro Fall heute, in Stunden",
       "hourlyCost": "Personalkosten pro Stunde, in Euro",
       "hoursPerWeek": "Freigesetzte Stunden pro Woche",
       "hoursPerYear": "Freigesetzte Stunden pro Jahr",
       "costPerYear": "Gegenwert in Personalkosten pro Jahr",
       "hoursUnit": "{{value}} Std.",
-      "formula": "{{counselors}} Fachkräfte × {{cases}} Fälle pro Woche × 3,75 Std. Ersparnis = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
-      "note": "Die Rechnung geht von 4 Stunden manueller Vorbereitung pro Fall aus, die mit BriefXtract auf den Zielwert von 15 Minuten sinken. Das ergibt 3,75 Stunden Ersparnis pro Fall, gerechnet über 48 Arbeitswochen. Die gewonnene Zeit steht für die Fallarbeit zur Verfügung; im Budget erscheint sie nicht als Einsparung."
+      "formula": "{{counselors}} Fachkräfte × {{cases}} Fälle pro Woche × {{saved}} Std. Ersparnis ({{prep}} Std. minus 15 Min.) = {{week}} Std. pro Woche. × 48 Wochen = {{year}} Std. pro Jahr. × {{rate}} pro Stunde = {{cost}}.",
+      "note": "Die Ersparnis pro Fall ist Ihre heutige Vorbereitungszeit abzüglich des Zielwerts von 15 Minuten, gerechnet über 48 Arbeitswochen. Die gewonnene Zeit steht für die Fallarbeit zur Verfügung; im Budget erscheint sie nicht als Einsparung."
     },
     "capacity": {
       "title": "Wofür die gewonnene Zeit genutzt werden kann.",
-      "lead": "Gesparte Zeit zeigt sich an drei Stellen.",
       "items": [
         {
           "title": "Mehr Zeit für Gespräche",
@@ -533,21 +536,21 @@
           "value": "Nur EU"
         },
         {
-          "label": "Compliance",
+          "label": "Ausgelegt auf",
           "value": "DSGVO · KDG · DSG-EKD · § 43e BRAO"
         }
       ]
     },
     "photos": {
       "title": "Was BriefXtract Ihrem Team abnimmt.",
-      "lead": "Ein Stapel unsortierter Post und dieselbe Post bei der Übergabe zur Verarbeitung.",
+      "lead": "Ein Stapel unsortierter Schreiben und die fertige Akte am Bildschirm.",
       "before": {
         "alt": "Nahaufnahme eines Papierstapels bei wenig Licht",
         "caption": "Früher: Der Tag begann mit einem Stapel unsortierter Schreiben."
       },
       "after": {
-        "alt": "Ein Karton mit losen Unterlagen wird übergeben und entgegengenommen",
-        "caption": "Nachher. Die Post wird einmal übergeben und kommt als sortierte Akte zurück."
+        "alt": "Eine Person prüft einen Fall auf einem Tablet an einem aufgeräumten Schreibtisch",
+        "caption": "Jetzt: eine übersichtliche Akte, in der sich jeder Wert direkt an der Originalseite prüfen lässt."
       },
       "note": "KI-generierte Bilder. Sie zeigen keine Kunden und keine bestimmte Beratungsstelle oder Kanzlei."
     },
@@ -571,7 +574,7 @@
   },
   "demo": {
     "title": "Demo anfragen",
-    "description": "Hinterlassen Sie Ihre Angaben, und das Team von Brief Insights vereinbart einen Termin, um Ihre eigene Post durch BriefXtract laufen zu lassen.",
+    "description": "Hinterlassen Sie Ihre Angaben, und das Team von Brief Insights vereinbart mit Ihnen einen Termin für eine Online-Demo mit Beispielschreiben.",
     "name": "Vollständiger Name",
     "email": "Dienstliche E-Mail",
     "emailPlaceholder": "name@ihre-organisation.de",

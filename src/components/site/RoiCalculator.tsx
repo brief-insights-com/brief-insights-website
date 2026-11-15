@@ -4,25 +4,19 @@ import { useFormat } from "@/lib/format";
 import { calculateRoi, readInput, ROI_DEFAULTS, ROI_LIMITS, type RoiInput } from "@/lib/roi";
 import { Card, Caption, RuledItem } from "./Layout";
 
-const FIELDS: (keyof RoiInput)[] = ["counselors", "casesPerWeek", "hourlyCost"];
+const FIELDS: (keyof RoiInput)[] = ["counselors", "casesPerWeek", "prepHours", "hourlyCost"];
+const DECIMAL_FIELDS: (keyof RoiInput)[] = ["prepHours", "hourlyCost"];
 
 /** The hours calculator, with the arithmetic written out live underneath the results. */
 export default function RoiCalculator() {
   const { t } = useTranslation();
   const { number, euro } = useFormat();
-  const [raw, setRaw] = useState<Record<keyof RoiInput, string>>({
-    counselors: String(ROI_DEFAULTS.counselors),
-    casesPerWeek: String(ROI_DEFAULTS.casesPerWeek),
-    hourlyCost: String(ROI_DEFAULTS.hourlyCost),
-  });
+  const [raw, setRaw] = useState(
+    () => Object.fromEntries(FIELDS.map((field) => [field, String(ROI_DEFAULTS[field])])) as Record<keyof RoiInput, string>,
+  );
 
   const result = useMemo(
-    () =>
-      calculateRoi({
-        counselors: readInput(raw.counselors, "counselors"),
-        casesPerWeek: readInput(raw.casesPerWeek, "casesPerWeek"),
-        hourlyCost: readInput(raw.hourlyCost, "hourlyCost"),
-      }),
+    () => calculateRoi(Object.fromEntries(FIELDS.map((field) => [field, readInput(raw[field], field)])) as unknown as RoiInput),
     [raw],
   );
 
@@ -34,16 +28,17 @@ export default function RoiCalculator() {
 
   return (
     <Card className="mt-12 md:p-10 [font-variant-numeric:tabular-nums]">
-      <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+      <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
         {FIELDS.map((field) => (
-          <div key={field} className="flex flex-col gap-2">
+          <div key={field} className="flex flex-col justify-between gap-2">
             <label htmlFor={`roi-${field}`} className="text-body-sm font-medium text-charcoal">
               {t(`results.calculator.${field}`)}
             </label>
             <input
               id={`roi-${field}`}
               type="number"
-              inputMode={field === "hourlyCost" ? "decimal" : "numeric"}
+              inputMode={DECIMAL_FIELDS.includes(field) ? "decimal" : "numeric"}
+              step={field === "prepHours" ? 0.25 : undefined}
               min={ROI_LIMITS[field].min}
               max={ROI_LIMITS[field].max}
               value={raw[field]}
@@ -67,6 +62,8 @@ export default function RoiCalculator() {
         {t("results.calculator.formula", {
           counselors: number(result.counselors),
           cases: number(result.casesPerWeek),
+          saved: number(result.hoursSavedPerCase, 2),
+          prep: number(result.prepHours, 2),
           week: number(result.hoursPerWeek, 1),
           year: number(result.hoursPerYear),
           rate: euro(result.hourlyCost, Number.isInteger(result.hourlyCost) ? 0 : 2),

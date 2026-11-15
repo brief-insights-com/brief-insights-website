@@ -8,10 +8,10 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { usePath } from "@/hooks/use-locale";
 import stackBefore from "@/assets/document-stack-lowlight.jpg";
 import stackBeforeWebp from "@/assets/document-stack-lowlight.webp";
-import handoverAfter from "@/assets/intake-box-handover-1600.jpg";
-import handoverAfterSmall from "@/assets/intake-box-handover-800.jpg";
-import handoverAfterWebp from "@/assets/intake-box-handover-1600.webp";
-import handoverAfterSmallWebp from "@/assets/intake-box-handover-800.webp";
+import tabletAfter from "@/assets/counselor-tablet-review-1600.jpg";
+import tabletAfterSmall from "@/assets/counselor-tablet-review-800.jpg";
+import tabletAfterWebp from "@/assets/counselor-tablet-review-1600.webp";
+import tabletAfterSmallWebp from "@/assets/counselor-tablet-review-800.webp";
 
 const CONTACT_EMAIL = "info@brief-insights.com";
 
@@ -64,9 +64,9 @@ export default function About() {
             caption: t("about.photos.before.caption"),
           }}
           after={{
-            src: handoverAfter,
-            srcSet: `${handoverAfterSmall} 800w, ${handoverAfter} 1600w`,
-            webpSrcSet: `${handoverAfterSmallWebp} 800w, ${handoverAfterWebp} 1600w`,
+            src: tabletAfter,
+            srcSet: `${tabletAfterSmall} 800w, ${tabletAfter} 1600w`,
+            webpSrcSet: `${tabletAfterSmallWebp} 800w, ${tabletAfterWebp} 1600w`,
             width: 1600,
             height: 773,
             alt: t("about.photos.after.alt"),

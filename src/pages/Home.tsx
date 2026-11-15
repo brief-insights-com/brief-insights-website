@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRight, FileText, HandHeart, Scale, Share2, TriangleAlert, type LucideIcon } from "lucide-react";
 import HeroBand from "@/components/site/HeroBand";
 import IntakeMockup from "@/components/site/IntakeMockup";
+import { TagBadge } from "@/components/site/StatusChip";
 import PhotoPair from "@/components/site/PhotoPair";
 import CtaBanner from "@/components/site/CtaBanner";
 import DemoVideo from "@/components/site/DemoVideo";
@@ -11,7 +12,6 @@ import { Caption, Card, Container, RuledItem, Section, SectionHeader } from "@/c
 import { buttonClass } from "@/components/site/buttonStyles";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { usePath } from "@/hooks/use-locale";
-import { cn } from "@/lib/utils";
 import deskBefore from "@/assets/overwhelmed-desk-overhead.jpg";
 import deskBeforeWebp from "@/assets/overwhelmed-desk-overhead.webp";
 import tabletAfter from "@/assets/counselor-tablet-review-1600.jpg";
@@ -24,19 +24,15 @@ type Item = { title: string; body: string };
 const FEATURE_ICONS: LucideIcon[] = [FileText, TriangleAlert, Share2];
 // Counseling centres first, law firms second, matching home.audience.items.
 const AUDIENCE_ICONS: LucideIcon[] = [HandHeart, Scale];
-// One hue per figure; the bar is a second reading of the number, never extra information.
-const STAT_BARS = [
-  { width: "90%", tone: "bg-primary" },
-  { width: "94%", tone: "bg-chip-teal" },
-  { width: "100%", tone: "bg-chip-violet" },
-];
+// Today's figure reads as the problem, the product targets as the answer; the word carries the meaning.
+const STAT_TONES = { problem: "peach", target: "teal" } as const;
 
 export default function Home() {
   const { t } = useTranslation();
   const path = usePath();
   usePageMeta("home");
 
-  const stats = t("home.stats.items", { returnObjects: true }) as { value: string; label: string }[];
+  const stats = t("home.stats.items", { returnObjects: true }) as { tag: string; value: string; label: string }[];
   const audiences = t("home.audience.items", { returnObjects: true }) as Item[];
   const features = t("home.features.items", { returnObjects: true }) as Item[];
   const assurances = t("home.security.items", { returnObjects: true }) as Item[];
@@ -63,13 +59,11 @@ export default function Home() {
           <h2 className="text-center text-h3 text-ink md:text-h2">{t("home.stats.title")}</h2>
           <div className="mt-8 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-10 [font-variant-numeric:tabular-nums]">
             {stats.map((stat, index) => (
-              <div key={stat.value}>
-                <p className="text-h1 text-ink lg:text-display">{stat.value}</p>
+              <RuledItem key={stat.value}>
+                <TagBadge tone={index === 0 ? STAT_TONES.problem : STAT_TONES.target}>{stat.tag}</TagBadge>
+                <p className="mt-4 text-h1 text-ink lg:text-display">{stat.value}</p>
                 <p className="justified mt-2 text-body-sm text-slate md:mt-3">{stat.label}</p>
-                <div aria-hidden="true" className="mt-3 h-2 overflow-hidden rounded-full bg-hairline md:mt-4">
-                  <div className={cn("h-2 rounded-full", STAT_BARS[index].tone)} style={{ width: STAT_BARS[index].width }} />
-                </div>
-              </div>
+              </RuledItem>
             ))}
           </div>
           <Caption className="mt-8 md:text-center">{t("home.stats.note")}</Caption>
